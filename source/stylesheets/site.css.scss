@@ -1,5 +1,9 @@
-$section-color: #c5a0f0;
-$header-color: #19181a;
+$section-color-1: #44475A;
+$section-color-2: #6272A4;
+$header-color: #282a36;
+$dracula-cyan: #8BE9FD;
+$dracula-green: #50FA7B;
+$dracula-red: #FF5555;
 
 body {
   width: 100%;
@@ -10,11 +14,43 @@ header {
   color: white;
 }
 
+.btn {
+  border: .05rem solid $dracula-cyan;
+}
+
+.btn.btn-link.active,
+.btn.btn-link:active,
+.btn.btn-link:focus,
+.btn.btn-link:hover {
+  color: cyan;
+}
+
+.btn.btn-link {
+  color: $dracula-cyan;
+}
+
+.header-title {
+  margin-bottom: 0;
+}
+
 .sec {
-  padding: 0 20%;
+  padding: 10px 20%;
   width: 100%;
+
+  h2 {
+    // color: $dracula-green;
+  }
+}
+
+.sec:nth-child(even) {
+  // background-color: $section-color-1;
 }
 
 .sec:nth-child(odd) {
-  background-color: $section-color;
+  background-color: $section-color-2;
+  color: white;
+}
+
+.sec:last-child {
+  padding-bottom: 50px;
 }

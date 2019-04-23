@@ -5,7 +5,7 @@ title: welcome to my ted talk
 %header.navbar
   %section.navbar-section
     = image_tag 'https://unsplash.it/32'
-    %h1
+    %h1.header-title
       UAIS
   %section.navbar-section
     %a{ href: 'https://github.com/undergraduateartificialintelligenceclub', class: 'btn btn-link' }
@@ -35,4 +35,13 @@ title: welcome to my ted talk
   %h2
     Sign up as a member!
   %form
-    stuff
+    .form-group
+      %label.form-label
+        Name
+      %input.form-input{ type: 'text', placeholder: 'Name' }
+      %label.form-label
+        Email
+      %input.form-input{ type: 'email', placeholder: 'Email' }
+      %br
+      %button{ type: 'submit' }
+        Sign Up!
