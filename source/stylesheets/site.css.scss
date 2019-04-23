@@ -1,24 +1,20 @@
+$section-color: #c5a0f0;
+$header-color: #19181a;
+
 body {
-  background-color: #fbc547;
-  color: #333;
-  font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
-    "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
-    "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
-    "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-  padding: 18vh 1rem;
-  text-align: center;
+  width: 100%;
 }
 
-a {
-  color: rgba(#000, 0.7);
-
-  &:focus,
-  &:hover {
-    color: rgba(#000, 0.6);
-  }
+header {
+  background-color: $header-color;
+  color: white;
 }
 
-.middleman-logo {
-  margin-bottom: 1rem;
-  width: 10rem;
+.sec {
+  padding: 0 20%;
+  width: 100%;
+}
+
+.sec:nth-child(odd) {
+  background-color: $section-color;
 }
