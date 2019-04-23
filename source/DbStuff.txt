@@ -1,0 +1,6 @@
+MEMBER TABLE
+
+unique email address
+name
+timestamp
+program
