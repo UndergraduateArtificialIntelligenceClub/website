@@ -1,0 +1,47 @@
+---
+title: welcome to my ted talk
+---
+
+%header.navbar
+  %section.navbar-section
+    = image_tag 'https://unsplash.it/32'
+    %h1.header-title
+      UAIS
+  %section.navbar-section
+    %a{ href: 'https://github.com/undergraduateartificialintelligenceclub', class: 'btn btn-link' }
+      %i{ class: "fab fa-github" }
+      GitHub
+    %a{ href: 'https://albertaundergradai.slack.com', class: 'btn btn-link' }
+      %i{ class: "fab fa-slack" }
+      Slack
+    %a{ href: 'https://example.com', class: 'btn btn-link' }
+      %i{ class: "fas fa-envelope" }
+      email list
+%section.sec
+  %h2
+    Basic Information
+  %p
+    = lorem.paragraph
+%section.sec
+  %h2
+    Upcoming events:
+  %p
+    There aren't any upcoming events right now.
+%section.sec
+  %h2
+    Events!!1!
+  %iframe{ src: "https://calendar.google.com/calendar/b/1/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=ualberta.ca_jllnjo7p3k6pedrio4ftfah7qg%40group.calendar.google.com&amp;color=%23691426&amp;ctz=America%2FEdmonton", style: "border-width:0", width: "800", height: "600", frameborder: "0", scrolling: "no"}
+%section.sec
+  %h2
+    Sign up as a member!
+  %form
+    .form-group
+      %label.form-label
+        Name
+      %input.form-input{ type: 'text', placeholder: 'Name' }
+      %label.form-label
+        Email
+      %input.form-input{ type: 'email', placeholder: 'Email' }
+      %br
+      %button{ type: 'submit' }
+        Sign Up!
