@@ -12,10 +12,18 @@ body {
 header {
   background-color: $header-color;
   color: white;
+
+  // h1 {
+  //   color: $dracula-red;
+  // }
 }
 
 .btn {
   border: .05rem solid $dracula-cyan;
+}
+
+.btn.btn-primary {
+  // background-color: $dracula-red;
 }
 
 .btn.btn-link.active,
