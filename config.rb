@@ -1,8 +1,8 @@
 # Activate and configure extensions
-# https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
-set :haml, { :format => :html5 }
-activate :livereload
+activate :dotenv, env: '.ENV'
+
+# https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
@@ -43,7 +43,46 @@ page '/*.txt', layout: false
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
-# configure :build do
-#   activate :minify_css
-#   activate :minify_javascript
-# end
+configure :build do
+  activate :minify_css
+  activate :minify_javascript
+  activate :gzip
+  
+end
+
+activate :minify_html
+activate :imageoptim
+
+activate :directory_indexes
+
+
+# S3_Sync
+activate :s3_sync do |s3_sync|
+  s3_sync.bucket                     = ENV['bucket']
+  s3_sync.region                     = ENV['region']    # The AWS region for your bucket.
+  s3_sync.aws_access_key_id          = ENV['aws_access_key_id']
+  s3_sync.aws_secret_access_key      = ENV['aws_secret_access_key']
+  s3_sync.delete                     = false # We delete stray files by default.
+  s3_sync.after_build                = false # We do not chain after the build step by default.
+  s3_sync.prefer_gzip                = true
+  s3_sync.path_style                 = true
+  s3_sync.reduced_redundancy_storage = false
+  s3_sync.acl                        = 'public-read'
+  s3_sync.encryption                 = false
+  s3_sync.prefix                     = ''
+  s3_sync.version_bucket             = false
+  s3_sync.index_document             = 'index.html'
+  s3_sync.error_document             = 'index.html'
+end
+
+# Robots.txt and sitemap.xml
+activate :robots, 
+  rules: [
+    { user_agent: '*', allow: %w[/] }
+  ],
+  sitemap: 'https://uais/sitemap.xml'
+
+  set :url_root, 'https://uais.dev'
+
+activate :search_engine_sitemap
+
