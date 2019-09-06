@@ -10,6 +10,8 @@ title: welcome to my ted talk
     The University of Alberta Undergraduate Artificial Intelligence Society
     is a group of students interested in discussing, learning about, and
     applying Artificial Intelligence techniques of all kinds.
+  %p
+    p.s. This website is still under constructon.
 %section
   = partial 'partials/upcoming'
 %section
@@ -17,25 +19,24 @@ title: welcome to my ted talk
     Meeting Times
   %p
     We meet every Friday from 3-5pm at the Student Innovation Centre, between
-    CCIS and the Biological Sciences building. We also have a reading group
-    that meets from 2-4pm every Thursday in the Student Innovation Centre.
-    We're currently working through the Deep Learning textbook by Ian Goodfellow,
-    Yoshua Bengio, and Aaron Courville.
-%section
-  %h2
-    Events!!1!
-  %iframe{ src: "https://calendar.google.com/calendar/b/1/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=ualberta.ca_jllnjo7p3k6pedrio4ftfah7qg%40group.calendar.google.com&amp;color=%23691426&amp;ctz=America%2FEdmonton", style: "border-width:0", width: "800", height: "600", frameborder: "0", scrolling: "no"}
-%section
-  %h2
-    Sign up as a member!
-  %form
-    .form-group
-      %label.form-label
-        Name
-      %input.form-input{ type: 'text', placeholder: 'Name' }
-      %label.form-label
-        Email
-      %input.form-input{ type: 'email', placeholder: 'Email' }
-      %br
-      %button.btn.btn-primary{ type: 'submit' }
-        Sign Up!
+    CCIS and the Biological Sciences building.
+/
+  %section
+    %h2
+      Events!!1!
+    %iframe{ src: "https://calendar.google.com/calendar/b/1/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=ualberta.ca_jllnjo7p3k6pedrio4ftfah7qg%40group.calendar.google.com&amp;color=%23691426&amp;ctz=America%2FEdmonton", style: "border-width:0", width: "800", height: "600", frameborder: "0", scrolling: "no"}
+/
+  %section
+    %h2
+      Sign up as a member!
+    %form
+      .form-group
+        %label.form-label
+          Name
+        %input.form-input{ type: 'text', placeholder: 'Name' }
+        %label.form-label
+          Email
+        %input.form-input{ type: 'email', placeholder: 'Email' }
+        %br
+        %button.btn.btn-primary{ type: 'submit' }
+          Sign Up!
