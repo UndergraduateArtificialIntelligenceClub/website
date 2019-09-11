@@ -1,0 +1,24 @@
+language: ruby
+sudo: false
+cache: bundler
+before_script:
+  - bundle update
+rvm:
+  - ruby-head
+  - 2.5.1
+  - 2.4.4
+  - 2.3.7
+os:
+- linux
+matrix:
+  fast_finish: true
+  allow_failures:
+    - rvm: ruby-head
+script:
+  - bundle exec rake test
+  - bundle exec rubocop
+cache: bundler
+env: TEST=true
+notifications:
+  slack:
+    secure: C8xb94J4fstzAI7t9GcvKQieKc1k+ECA96ydcxDwBI1fAbupQjz4jafMwnOnD1g9QMe8hlykSNUlCXNCbcA9DZG7COjPZHCY3Icv1+0Dp44bBTDQldR8DPACPMU5Qe+pWoTZViPgJQ7tq2V9TXrGdOnOtkPTwZ9KtZrmNhxW7tM=

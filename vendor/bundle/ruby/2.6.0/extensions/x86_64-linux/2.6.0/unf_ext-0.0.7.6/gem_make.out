@@ -1,0 +1,16 @@
+current directory: /home/giancarlo/Documents/projects/website/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.6/ext/unf_ext
+/usr/bin/ruby -I /usr/lib/ruby/2.6.0 -r ./siteconf20190911-3214-tubv53.rb extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /home/giancarlo/Documents/projects/website/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.6/ext/unf_ext
+make "DESTDIR=" clean
+
+current directory: /home/giancarlo/Documents/projects/website/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.6/ext/unf_ext
+make "DESTDIR="
+compiling unf.cc
+linking shared-object unf_ext.so
+
+current directory: /home/giancarlo/Documents/projects/website/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.6/ext/unf_ext
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 unf_ext.so ./.gem.20190911-3214-cb22sc
