@@ -1,0 +1,52 @@
+---
+title: Regular Member Signup
+---
+
+%h1 Regular Member Signup
+
+Please use your @ualberta email address for registration as a Regular Member of the Undergraduate Artifical Intelligence Society
+
+%form{action: 'https://api.uais.dev/signup', method: 'post'}
+  %input{type: 'hidden', name: 'membership', value: 'regular'}
+  %label
+    Firstname
+  %input{type: 'text', name: 'firstname', placeholder: 'Firstname', required: 'true'}
+  %label
+    Lastname
+  %input{type: 'text', name: 'lastname', placeholder: 'Lastname', required: 'true'}
+  %label
+    Ualberta Email
+  %input{type: 'email', name: 'email', placeholder: 'email@ualberta.ca', required: 'true'}
+  %label
+    What program are you in?
+  %input{type: 'radio', name: 'program', value: 'cs'}
+  %label Computing Science
+  %input{type: 'radio', name: 'program', value: 'ce'}
+  %label Computer Engineering
+  %input{type: 'radio', name: 'program', value: 'math'}
+  %label Mathematics
+  %input{type: 'radio', name: 'program', value: 'stat'}
+  %label Statistics
+  %input{type: 'radio', name: 'program', value: 'psych'}
+  %label Psychology
+  %input{type: 'radio', name: 'program', value: 'other'}
+  %label Other
+  
+  %label
+    What year are you in?
+  %input{type: 'radio', name: 'year', value: '0'}
+  %label 0
+  %input{type: 'radio', name: 'year', value: '0'}
+  %label 1
+  %input{type: 'radio', name: 'year', value: '0'}
+  %label 2
+  %input{type: 'radio', name: 'year', value: '0'}
+  %label 3
+  %input{type: 'radio', name: 'year', value: '0'}
+  %label 4
+  %input{type: 'radio', name: 'year', value: '0'}
+  %label 5
+  %input{type: 'radio', name: 'year', value: '0'}
+  %label 5+
+ 
+  %input{type: 'submit', value: 'Submit'}

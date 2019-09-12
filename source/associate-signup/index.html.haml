@@ -1,0 +1,34 @@
+---
+title: Assosciate Member Signup
+---
+
+%h1
+  Assosciate Member Signup
+
+%form{action: 'https://api.uais.dev/signup', method: 'post'}
+  %label
+    Firstname
+  %input{type: 'text', name: 'firstname', placeholder: 'Firstname', required: 'true'}
+  %label
+    Lastname
+  %input{type: 'text', name: 'lastname', placeholder: 'Lastname', required: 'true'}
+  %label
+    Email
+  %input{type: 'email', name: 'email', placeholder: 'Email', required: 'true'}
+  %label Organization Affiliation
+  %input{type: 'radio', name: 'org', value: 'university'}
+  %label University
+  %input{type: 'radio', name: 'org', value: 'company'}
+  %label Company
+  %input{type: 'radio', name: 'org', value: 'other'}
+  %label Other
+
+  %label
+    Name of Organization
+  %input{type: 'text', name: 'orgname', placeholder: 'Organization Name'}
+
+  %label
+    Position at Organization
+  %input{type: 'text', name: 'position', placeholder: 'Position Title'}
+  
+  %input{type: 'submit', value: 'Submit'}
