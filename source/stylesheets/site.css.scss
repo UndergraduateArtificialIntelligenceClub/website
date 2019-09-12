@@ -8,7 +8,8 @@ $dracula-red: #FF5555;
 
 body {
   width: 100%;
-  background-colour: $section-color-1;
+  background-color: $section-color-1;
+  color: white;
 }
 
 header {
@@ -63,4 +64,19 @@ section {
   // h2 {
   //   color: $dracula-green;
   // }
+}
+
+form {
+  float: left;
+
+  .grp {
+    padding: 0.5rem;
+
+      input.string-input {
+        background-color: rgba(50, 50, 50, .5);
+        color: white;
+        border: none;
+        box-shadow: 0 2px $dracula-green;
+      }
+  }
 }
