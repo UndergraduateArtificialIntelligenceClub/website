@@ -2,16 +2,20 @@
 title: Signup
 ---
 
-%h1 Join the Undergraduate Artificial Intelligence Society!
+= partial "partials/navbar"
 
-%h2 Regular Members:
-Regular Members must be Undergraduate students at the University of Alberta. Please use your @ualberta email address for registration as a regular member. 
+%h1.text-center Join the Undergraduate Artificial Intelligence Society!
 
-%a.btn{href: '/regular-signup'}
-  Join the UAIS
+%h2.text-center Regular Members:
+%p.text-center Regular Members must be Undergraduate students at the University of Alberta. Please use your @ualberta email address for registration as a regular member. 
 
-%h2 Associate Members:
-Associate Members are any member who is not a currently enrolled undergraduate student at the University of Alberta.
+.col-sm-12.col-2.col-mx-auto
+  %a.btn.btn-primary.p-centered{href: '/regular-signup'}
+    Join the UAIS
 
-%a.btn{href: '/associate-signup'}
-  Join the UAIS
+%h2.text-center Associate Members:
+%p.text-center Associate Members are any member who is not a currently enrolled undergraduate student at the University of Alberta.
+
+.col-sm-12.col-2.col-mx-auto
+  %a.btn.btn-primary.p-centered{href: '/associate-signup'}
+    Join the UAIS
