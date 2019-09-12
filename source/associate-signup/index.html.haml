@@ -6,6 +6,7 @@ title: Assosciate Member Signup
   Assosciate Member Signup
 
 %form{action: 'https://api.uais.dev/signup', method: 'post'}
+  %input{type: 'hidden', name: 'membership', value: 'associate'}
   %label
     Firstname
   %input{type: 'text', name: 'firstname', placeholder: 'Firstname', required: 'true'}
