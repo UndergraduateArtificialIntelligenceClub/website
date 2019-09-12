@@ -2,11 +2,17 @@
 title: Success
 ---
 
-%h1
+= partial "partials/navbar"
+
+%h1.text-center
   Welcome to the Undergraduate Artificial Intelligence Society!
 
-%a.btn{href: '/'}
-  Home
+%p.text-center
+  Signup Successful
 
-%a.btn{href: '/signup'}
-  Back to Member Signup
+.form-box
+  %a.btn{href: '/'}
+    Home
+  
+  %a.btn{href: '/signup'}
+    Back to Member Signup
