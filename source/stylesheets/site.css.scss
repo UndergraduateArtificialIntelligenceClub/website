@@ -1,47 +1,48 @@
 @import 'form';
-$section-color-1: #44475A;
-$section-color-2: #6272A4;
-$header-color: #282a36;
-$dracula-cyan: #8BE9FD;
-$dracula-green: #50FA7B;
-$dracula-red: #FF5555;
+@import 'colors';
 
 body {
   width: 100%;
   background-color: $section-color-1;
   color: white;
+
+  & > h1 {
+    margin-top: 10px;
+  }
 }
 
 header {
   background-color: $header-color;
   color: white;
+}
 
-  // h1 {
-  //   color: $dracula-red;
-  // }
+h1, h2 {
+  color: $dracula-purple;
 }
 
 .btn {
   border: .05rem solid $dracula-cyan;
+
+  &.btn-link.active,
+  &.btn-link:active,
+  &.btn-link:focus,
+  &.btn-link:hover {
+    color: cyan;
+  }
+
+  &.btn-link {
+    color: $dracula-cyan;
+    text-shadow: $shadow;
+  }
 }
 
-.btn.btn-primary {
-  // background-color: $dracula-red;
-}
+.navbar {
+  box-shadow: $shadow-strong;
 
-.btn.btn-link.active,
-.btn.btn-link:active,
-.btn.btn-link:focus,
-.btn.btn-link:hover {
-  color: cyan;
-}
-
-.btn.btn-link {
-  color: $dracula-cyan;
-}
-
-.header-title {
-  margin-bottom: 0;
+  .header-title {
+    margin-bottom: 0;
+    color: white;
+  }
 }
 
 section {
@@ -49,34 +50,11 @@ section {
   width: 100%;
   color: white;
 
-  &:nth-child(even) {
-    background-color: $section-color-1;
-  }
-
   &:nth-child(odd) {
     background-color: $section-color-2;
   }
 
   &:last-child {
     padding-bottom: 50px;
-  }
-
-  // h2 {
-  //   color: $dracula-green;
-  // }
-}
-
-form {
-  float: left;
-
-  .grp {
-    padding: 0.5rem;
-
-      input.string-input {
-        background-color: rgba(50, 50, 50, .5);
-        color: white;
-        border: none;
-        box-shadow: 0 2px $dracula-green;
-      }
   }
 }

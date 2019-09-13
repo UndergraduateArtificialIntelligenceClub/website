@@ -5,39 +5,45 @@ title: Assosciate Member Signup
 = partial "partials/navbar"
 
 %h1.text-center
-  Assosciate Member Signup
+  Associate Member Signup
 
 %form{action: 'https://api.uais.dev/signup', method: 'post'}
   .form-box
     %input{type: 'hidden', name: 'membership', value: 'associate'}
-    %label.form-item
-      Firstname
-    %input.form-item{type: 'text', name: 'firstname', placeholder: 'Firstname', required: 'true'}
-    %label.form-item
-      Lastname
-    %input.form-item{type: 'text', name: 'lastname', placeholder: 'Lastname', required: 'true'}
+    .grp
+      %label.form-item
+        First Name
+      %input.form-item{type: 'text', name: 'firstname', placeholder: 'First Name', required: 'true'}
+    .grp
+      %label.form-item
+        Last Name
+      %input.form-item{type: 'text', name: 'lastname', placeholder: 'Last Name', required: 'true'}
+    .grp
+      %label.form-item
+        Email
+      %input.form-item{type: 'email', name: 'email', placeholder: 'example@email.com', required: 'true'}
+    .grp.grp-radio
+      %label.form-item.form-section-title
+        Organization Affiliation
+      %label.form-radio
+        %input.form-item{type: 'radio', name: 'org', value: 'university'}
+        %i.form-icon
+        %label.form-item.radio-label University
+      %label.form-radio
+        %input.form-item{type: 'radio', name: 'org', value: 'company'}
+        %i.form-icon
+        %label.form-item.radio-label Company
+      %label.form-radio
+        %input.form-item{type: 'radio', name: 'org', value: 'other'}
+        %i.form-icon
+        %label.form-item.radio-label Other
+    .grp
+      %label.form-item.form-section-title
+        Name of Organization
+      %input.form-item{type: 'text', name: 'orgname', placeholder: 'Organization Name'}
+    .grp
+      %label.form-item.form-section-title
+        Position at Organization
+      %input.form-item{type: 'text', name: 'position', placeholder: 'Position Title'}
     %br
-    %label.form-item
-      Email
-    %br
-    %input.form-item{type: 'email', name: 'email', placeholder: 'Email', required: 'true'}
-    %label.form-item.form-section-title Organization Affiliation
-    %input.form-item{type: 'radio', name: 'org', value: 'university'}
-    %label.form-item University
-    %br
-    %input.form-item{type: 'radio', name: 'org', value: 'company'}
-    %label.form-item Company
-    %br
-    %input.form-item{type: 'radio', name: 'org', value: 'other'}
-    %label.form-item Other
-    %br
-  
-    %label.form-item
-      Name of Organization
-    %input.form-item{type: 'text', name: 'orgname', placeholder: 'Organization Name'}
-  
-    %label.form-item
-      Position at Organization
-    %input.form-item{type: 'text', name: 'position', placeholder: 'Position Title'}
-    
     %input.form-btn{type: 'submit', value: 'Submit'}

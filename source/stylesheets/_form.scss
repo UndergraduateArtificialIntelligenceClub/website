@@ -1,5 +1,26 @@
+@import 'colors';
+
 .form-item {
 	margin: 10px 3px 10px 3px;
+}
+
+input.form-item {
+	background-color: rgba(40, 40, 40, .5);
+	color: white;
+	border: none;
+
+	&:empty {
+		box-shadow: 0 2px $dracula-cyan;
+	}
+
+	&:focus, &:valid {
+		box-shadow: 0 2px $dracula-green;
+	}
+}
+
+.form-select {
+	color: black;
+	max-width: 400px;
 }
 
 .form-section-title {
@@ -9,18 +30,51 @@
 
 .form-btn {
 	color: white;
-	background-color: darkblue;
+	background-color: #6C12EA;
+	border: 2px solid white;
 	border-radius: 5px;
-	padding: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	cursor: pointer;	
+	padding: .5rem 1rem;
+	margin: 20px auto 0 auto;
+	cursor: pointer;
+	box-shadow: $shadow;
+
+	&:focus {
+		filter: brightness(80%);
+		top: 2px;
+		position: relative;
+		box-shadow: none;
+	}
 }
 
 .form-box {
-	max-width: 400px;
-	border: solid 3px lightgray;
+	background-color: $section-color-2;
+	width: 50%;
+	min-width: 300px;
+	max-width: 600px;
+	border: solid 1px lightgray;
 	border-radius: 10px;
 	margin: 30px auto 30px auto;
 	padding: 50px;
+	box-shadow: $shadow;
+	display: flex;
+	flex-direction: column;
+}
+
+.grp {
+	display: flex;
+	flex-direction: row;
+
+	input {
+		margin-left: auto;
+		margin-right: 0;
+		width: auto;
+
+		&[required=true] {
+			width: 65%;
+		}
+	}
+}
+
+.grp-radio, .grp-select {
+	flex-direction: column;
 }
