@@ -58,6 +58,12 @@ input.form-item {
 	box-shadow: $shadow;
 	display: flex;
 	flex-direction: column;
+
+	&::before {
+		content: '* Required';
+		color: $dracula-red;
+		font-size: 0.7rem;
+	}
 }
 
 .grp {
@@ -77,4 +83,12 @@ input.form-item {
 
 .grp-radio, .grp-select {
 	flex-direction: column;
+}
+
+label.form-radio {
+	cursor: pointer;
+}
+
+sup {
+	color: $dracula-red;
 }

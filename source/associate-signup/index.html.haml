@@ -13,14 +13,20 @@ title: Assosciate Member Signup
     .grp
       %label.form-item
         First Name
+        %sup
+          *
       %input.form-item{type: 'text', name: 'firstname', placeholder: 'First Name', required: 'true'}
     .grp
       %label.form-item
         Last Name
+        %sup
+          *
       %input.form-item{type: 'text', name: 'lastname', placeholder: 'Last Name', required: 'true'}
     .grp
       %label.form-item
         Email
+        %sup
+          *
       %input.form-item{type: 'email', name: 'email', placeholder: 'example@email.com', required: 'true'}
     .grp.grp-radio
       %label.form-item.form-section-title
@@ -28,15 +34,15 @@ title: Assosciate Member Signup
       %label.form-radio
         %input.form-item{type: 'radio', name: 'org', value: 'university'}
         %i.form-icon
-        %label.form-item.radio-label University
+        University
       %label.form-radio
         %input.form-item{type: 'radio', name: 'org', value: 'company'}
         %i.form-icon
-        %label.form-item.radio-label Company
+        Company
       %label.form-radio
         %input.form-item{type: 'radio', name: 'org', value: 'other'}
         %i.form-icon
-        %label.form-item.radio-label Other
+        Other
     .grp
       %label.form-item.form-section-title
         Name of Organization
