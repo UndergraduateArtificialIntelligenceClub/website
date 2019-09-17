@@ -1,0 +1,20 @@
+---
+title: Attendance
+---
+
+= partial "partials/navbar"
+
+%h1.text-center Member Attendance
+
+%p.text-center Please use your email address associated to your membership to be counted.
+
+%form{action: 'https://api.uais.dev/nick_plz_put_something_here', method: 'post'}
+  .form-box
+    .grp
+      %label.form-item
+        Email
+        %sup
+          *
+      %input.form-item{type: 'email', name: 'email', placeholder: 'ccid@ualberta.ca', required: 'true'}
+    %br
+    %input.form-btn{type: 'submit', value: 'Sign In'}
