@@ -1,0 +1,64 @@
+$img-dimension: 100px;
+
+.biography {
+  margin: 40px auto;
+  background-color: $section-color-2;
+  min-height: 300px;
+  width: 70%;
+  border-radius: 14px;
+  padding: 40px 0;
+  box-sizing: content-box;
+
+  h2, h3 {
+    padding: 0 calc(#{$img-dimension} / 2);
+    margin-bottom: .2em;
+  }
+
+  &:nth-child(even) {
+    .pic {
+      float: left;
+      left: -$img-dimension;
+    }
+
+    .description {
+      left: calc(-#{$img-dimension} / 2);
+    }
+  }
+
+  &:nth-child(odd) {
+    .pic {
+      float: right;
+      right: -$img-dimension;
+    }
+
+    .description {
+      right: calc(-#{$img-dimension} / 2);
+    }
+  }
+
+  .info {
+    .pic {
+      width: calc(#{$img-dimension} * 2);
+      height: calc(#{$img-dimension} * 2);
+      border-radius: 50%;
+      position: relative;
+      border: solid 8px $section-color-2;
+      box-sizing: border-box;
+    }
+
+    .description {
+      text-align: justify;
+      position: relative;
+      display: flex;
+      flex-flow: column;
+
+      p {
+        margin: .5rem 0;
+      }
+
+      .blood {
+        color: $dracula-red;
+      }
+    }
+  }
+}

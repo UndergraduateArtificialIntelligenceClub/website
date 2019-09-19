@@ -1,0 +1,28 @@
+- blood_group = ['A', 'B', 'AB', 'O']
+- blood_rh = ['-', '+']
+
+.biography
+  %h2
+    = '%s %s' % [person.name, person.emoji]
+  %h3
+    = person.position
+  .info
+    %img.pic{src: person.img, alt: 'head shot'}
+    .description
+      %p
+        = person.description
+      %a{:href => person.github, :target => 'blank'}
+        %i.fab.fa-github
+        GitHub
+      %p
+        %span
+          %i.fab.fa-slack.green
+          = '@' + person.slack
+      %p.green
+        Blood Type:
+        %span.blood
+          = blood_group[rand(blood_group.length)] + blood_rh[rand(blood_rh.length)]
+      %p.green
+        SIN:
+        %span.white
+          = '%03d %03d %03d' % [rand(1000), rand(1000), rand(1000)]
