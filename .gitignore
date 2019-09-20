@@ -3,5 +3,5 @@
 .DS_Store
 .sass-cache
 build/
-
+source/credentials.json
 .ENV
