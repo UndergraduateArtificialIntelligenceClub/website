@@ -1,0 +1,56 @@
+@import 'colors';
+
+.calendar-frame {
+    width: 100vw;
+    height: 800px;
+
+    .calendar {
+        $height-of-header: 2em;
+        width: 100%;
+        height: 100%;
+        empty-cells: hide;
+
+        #date {
+            height: $height-of-header;
+        }
+
+        tbody {
+            .day {
+                width: calc(100% / 7);
+                height: calc(100% / 5);
+                padding: 0;
+                background-color: rgba(0, 0, 0, 0.2);
+                vertical-align: top;
+                $height_date: 1.5em;
+
+                .date {
+                    height: $height_date;
+                    padding-left: 1em;
+                }
+
+                .event {
+                    height: calc(100% - #{$height_date});
+                    border-radius: 3px;
+                    padding: 1em;
+                    text-shadow: $shadow-strong;
+
+                    &.event0 {
+                        background-color: $dracula-green;
+                    }
+
+                    &.event1 {
+                        background-color: $dracula-red;
+                    }
+
+                    &.event2 {
+                        background-color: $dracula-purple;
+                    }
+                }
+            }
+
+            #daysOfWeek {
+                height: $height-of-header;
+            }
+        }
+    }
+}
