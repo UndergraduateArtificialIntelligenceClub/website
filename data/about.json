@@ -20,7 +20,7 @@
   },
   {
     "name": "Nick Nissen",
-    "emoji": "😎",
+    "emoji": "🦈",
     "img": "https://picsum.photos/201",
     "position": "Treasurer",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -34,6 +34,15 @@
     "position": "VP Internal",
     "description": "Paul Saunders is a second year student in a Computing Science Specialization degree. He favours the data science aspect of AI and ML rather than games, and has been working with data since grade 11. He joined UAIS in its very first year and has since been working hard on explaining that AI probably will not take over the world, and he writes the newsletters for the club. He competes in olympic weightlifting, mountain bike races, and is generally a cool guy. He also tutors two math courses, and so along with Justin he is a great resource for any math or stats troubles you may have.",
     "github": "https://github.com/psaunderualberta",
+    "slack": "P.Saunders"
+  },
+  {
+    "name": "Will Fenton",
+    "emoji": "💦",
+    "img": "https://picsum.photos/222",
+    "position": "Vice President",
+    "description": "Did research with martin muller.",
+    "github": "https://github.com/willfenton",
     "slack": "P.Saunders"
   }
 ]
