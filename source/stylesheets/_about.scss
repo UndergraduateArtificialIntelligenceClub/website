@@ -1,49 +1,53 @@
+@import 'dimensions';
+
 $img-dimension: 100px;
 
 .biography {
+  resize: both;
   margin: 40px auto;
   background-color: $section-color-2;
-  min-height: 300px;
-  width: 70%;
+  max-width: 1000px;
   border-radius: 14px;
   padding: 40px 0;
-  box-sizing: content-box;
 
   h2, h3 {
-    padding: 0 calc(#{$img-dimension} / 2);
+    padding: 0 ($img-dimension / 2);
     margin-bottom: .2em;
   }
 
   &:nth-child(even) {
-    .pic {
+    .info .pic {
       float: left;
       left: -$img-dimension;
     }
 
     .description {
-      left: calc(-#{$img-dimension} / 2);
+      left: -$img-dimension / 2;
     }
   }
 
   &:nth-child(odd) {
-    .pic {
+    .info .pic {
       float: right;
       right: -$img-dimension;
     }
 
     .description {
-      right: calc(-#{$img-dimension} / 2);
+      right: -$img-dimension / 2;
     }
+  }
+
+  .pic {
+    width: $img-dimension * 2;
+    height: $img-dimension * 2;
+    border-radius: 50%;
+    border: solid 8px $section-color-2;
+    box-sizing: border-box;
   }
 
   .info {
     .pic {
-      width: calc(#{$img-dimension} * 2);
-      height: calc(#{$img-dimension} * 2);
-      border-radius: 50%;
       position: relative;
-      border: solid 8px $section-color-2;
-      box-sizing: border-box;
     }
 
     .description {
@@ -63,6 +67,30 @@ $img-dimension: 100px;
   }
 }
 
-.lol {
-  // color: $section-color-1;
+@media only screen and (max-width: $md) {
+  .biography {
+    margin: (20px + $img-dimension) auto;
+    padding: 2rem;
+    border-radius: 0;
+
+    .title {
+      margin-top: -$img-dimension - 40px;
+    }
+
+    h2, h3 {
+      padding: 0;
+    }
+
+    .pic {
+      float: none;
+      position: relative;
+      bottom: 40px + $img-dimension;
+    }
+
+    .info {
+      .description {
+        position: static;
+      }
+    }
+  }
 }

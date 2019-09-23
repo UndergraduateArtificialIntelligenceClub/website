@@ -1,6 +1,7 @@
 @import 'colors';
 @import 'form';
 @import 'about';
+@import 'dimensions';
 
 body {
   width: 100%;
@@ -71,4 +72,8 @@ section {
   &:last-child {
     padding-bottom: 50px;
   }
+}
+
+.disclaimer {
+  color: $dracula-red;
 }

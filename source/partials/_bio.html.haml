@@ -1,17 +1,19 @@
 - blood_group = ['A', 'B', 'AB', 'O']
 - blood_rh = ['-', '+']
 
-.biography
-  %h2
-    = '%s %s' % [person.name, person.emoji]
-  %h3
-    = person.position
+.biography.col-md-12.col-8
+  %img.pic.show-md.p-centered{src: 'images/headshots/' + person.img + '.jpg', alt: 'head shot'}
+  .title
+    %h2
+      = '%s %s' % [person.name, person.emoji]
+    %h3
+      = person.position
   .info
-    %img.pic{src: person.img, alt: 'head shot'}
+    %img.pic.hide-md{src: 'images/headshots/' + person.img + '.jpg', alt: 'head shot'}
     .description
       %p
         = person.description
-      %a{:href => person.github, :target => 'blank'}
+      %a{:href => 'https://github.com/' + person.github, :target => 'blank'}
         %i.fab.fa-github
         GitHub
       %p
