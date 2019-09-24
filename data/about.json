@@ -1,0 +1,51 @@
+{
+  "people": [{
+    "name": "Justin Stevens",
+    "emoji": "👍",
+    "img": "justin",
+    "position": "President",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "github": "musichead42",
+    "slack": "Justin Stevens"
+  }, {
+    "name": "Giancarlo Pernudi Segura",
+    "emoji": "👌",
+    "img": "gino",
+    "position": "General Secretary",
+    "description": "aka gino aka meme lord supreme. Gino is a second year student in the Computer Science Specialization program. He's a hardcore linux (manjaro-i3) fan and vim enthusiast. Currently enrolled in the Canadian Armed Forces Reserves as an Army Communications and Information Systems Specialist (aka radio guy). He also likes long walks on the beach.",
+    "github": "giancarlopernudisegura",
+    "slack": "gino"
+  }, {
+    "name": "Nick Nissen",
+    "emoji": "🦈",
+    "img": "nick",
+    "position": "Treasurer",
+    "description": "Runs his Tesla in vim mode.",
+    "github": "NickNissen",
+    "slack": "Nick"
+  }, {
+    "name": "Paul Saunders",
+    "emoji": "💯",
+    "img": "paul",
+    "position": "VP Internal",
+    "description": "Paul Saunders is a second year student in a Computing Science Specialization degree. He favours the data science aspect of AI and ML rather than games, and has been working with data since grade 11. He joined UAIS in its very first year and has since been working hard on explaining that AI probably will not take over the world, and he writes the newsletters for the club. He competes in olympic weightlifting, mountain bike races, and is generally a cool guy. He also tutors two math courses, and so along with Justin he is a great resource for any math or stats troubles you may have.",
+    "github": "psaunderualberta",
+    "slack": "P.Saunders"
+  }, {
+    "name": "Will Fenton",
+    "emoji": "💦",
+    "img": "will",
+    "position": "Vice President",
+    "description": "Did research with martin muller. Had long hair but not anymore :(",
+    "github": "willfenton",
+    "slack": "Will Fenton"
+  }, {
+    "name": "Peter Friedrich",
+    "emoji": "🤑",
+    "img": "peter",
+    "position": "VP External",
+    "description": "Did research with martin muller. Had long hair but not anymore :(",
+    "github": "PeterFriedrich",
+    "slack": "Peter Friedrich"
+  }]
+}

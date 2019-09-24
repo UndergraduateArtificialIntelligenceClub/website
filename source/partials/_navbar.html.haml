@@ -3,20 +3,8 @@
     = image_tag 'logo.svg', width: '56'
     %h1.header-title
       UAIS
-  .navbar-section
-    %a.btn.btn-link{href: '/signup'}
-      %i.fas.fa-jedi
-      Signup
-    %a.btn.btn-link{ href: 'https://github.com/undergraduateartificialintelligenceclub', target: 'blank'}
-      %i{ class: "fab fa-github" }
-      GitHub
-    %a.btn.btn-link{ href: 'https://albertaundergradai.slack.com', target: 'blank'}
-      %i{ class: "fab fa-slack" }
-      Slack
-    %a.btn.btn-link{href: '/'}
-      %i.fas.fa-igloo
-      Home
-  /
-    %a{ href: 'https://example.com', class: 'btn btn-link' }
-      %i{ class: "fas fa-envelope" }
-      email list
+  = partial(:'partials/navbar_links', :locals => {:classes => 'hide-sm'} )
+%input.toggle.show-md{ :type => 'checkbox'}
+.hamburger.show-md
+  .line
+= partial(:'partials/navbar_links', :locals => {:classes => 'show-sm'} )
