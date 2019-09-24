@@ -1,0 +1,5 @@
+.navbar-section.links{ :class => classes }
+  - data.navbar.links.each do |l|
+    %a.btn.btn-link{ :href => l.link, :target => l.target }
+      %i{ :class => l.icon }
+      = l.text
