@@ -79,7 +79,7 @@ section {
 }
 
 @media only screen and (max-width: $md) {
-  $height-animation: max-height 1s ease-in-out;
+  $height-animation: max-height 300ms ease-in-out;
 
   section {
     padding: 10px 5%;
@@ -103,9 +103,19 @@ section {
     opacity: 0;
     cursor: pointer;
 
-    &:checked + .hamburger + .links {
-      max-height: 1.8rem * 5;
-      transition: $height-animation;
+    &:checked + .hamburger {
+      transform: rotate(-45deg * 5);
+
+      &>.line::before,
+      &>.line::after {
+        top: 0;
+        transform: rotate(-90deg);
+      }
+
+      & + .links {
+        max-height: 1.8rem * 7;
+        transition: $height-animation;
+      }
     }
 
     & + .hamburger {
@@ -119,11 +129,12 @@ section {
       display: flex !important;
       align-items: center;
       justify-content: center;
-
+      transition: transform 300ms linear;
+      
       & > .line {
         position: relative;
         width: 100%;
-        height: 2px;
+        height: 3px;
         display: flex;
         background-color: white;
         align-items: center;
@@ -137,6 +148,7 @@ section {
           position: absolute;
           z-index: 1;
           top: -10px;
+          transition: transform top 200ms linear;
         }
 
         &::after {
