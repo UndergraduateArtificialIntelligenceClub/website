@@ -1,5 +1,10 @@
 {
     "links": [{
+        "text": "Event Attendees",
+        "link": "/attendance",
+        "target": "",
+        "icon": "fas fa-dice-d20"
+    }, {
         "text": "Signup",
         "link": "/signup",
         "target": "",

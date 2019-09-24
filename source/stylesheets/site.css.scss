@@ -81,6 +81,10 @@ section {
 @media only screen and (max-width: $md) {
   $height-animation: max-height 1s ease-in-out;
 
+  section {
+    padding: 10px 5%;
+  }
+
   .links {
     display: flex !important;
     max-height: 0;
@@ -100,7 +104,7 @@ section {
     cursor: pointer;
 
     &:checked + .hamburger + .links {
-      max-height: 1.8 * 4rem;
+      max-height: 1.8rem * 5;
       transition: $height-animation;
     }
 
