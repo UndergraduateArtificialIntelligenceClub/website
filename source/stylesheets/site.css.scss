@@ -65,7 +65,7 @@ section {
   width: 100%;
   color: white;
 
-  &:nth-child(odd) {
+  &:nth-child(even) {
     background-color: $section-color-2;
   }
 
