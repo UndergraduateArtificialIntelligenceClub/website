@@ -31,13 +31,25 @@ h3, h4 {
   color: $dracula-cyan;
 }
 
-a.active, a:active, a:focus {
+a {
   color: $dracula-purple;
-  filter: brightness(90%);
+  
+  &:active, &:focus {
+    color: $dracula-purple;
+    filter: brightness(90%);
+  }
+  
+  &:hover {
+    color: $dracula-purple;
+    filter: brightness(110%);
+  }
 }
 
-a:hover {
-  filter: brightness(110%);
+code {
+  background-color: black;
+  color: rgb(255, 35, 145);
+  border-radius: .15rem;
+  font-size: .90em;
 }
 
 .btn {
