@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'dimensions';
 
 .form-item {
 	margin: 10px 3px 10px 3px;
@@ -48,8 +49,6 @@ input.form-item {
 
 .form-box {
 	background-color: $section-color-2;
-	width: 50%;
-	min-width: 300px;
 	max-width: 600px;
 	border: solid 1px lightgray;
 	border-radius: 10px;
@@ -91,4 +90,12 @@ label.form-radio {
 
 sup {
 	color: $dracula-red;
+}
+
+@media only screen and (max-width: $sm) {
+	.form-box {
+		padding: 20px;
+		border-radius: 0;
+		border: none;
+	}
 }

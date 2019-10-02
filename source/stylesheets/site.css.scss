@@ -3,6 +3,11 @@
 @import 'about';
 @import 'dimensions';
 
+::selection {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 body {
   width: 100%;
   background-color: $section-color-1;

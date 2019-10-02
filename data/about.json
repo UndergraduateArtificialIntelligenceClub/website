@@ -4,7 +4,7 @@
     "emoji": "👍",
     "img": "justin",
     "position": "President",
-    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "description": "Justin is in his third year studying math and computing science after transferring from Harvey Mudd College. He founded the Undergraduate Artificial Intelligence Society in fall 2018 and is the current president. His primary interests are in reinforcement and machine learning, and he enjoys teaching other students about the magic behind AI.",
     "github": "musichead42",
     "slack": "Justin Stevens"
   }, {
@@ -36,7 +36,7 @@
     "emoji": "💦",
     "img": "will",
     "position": "Vice President",
-    "description": "Did research with martin muller. Had long hair but not anymore :(",
+    "description": "Will Fenton is a third year Computing Science student and Vice President of the UAIS. His AI interests include game AI, content generation, and artificial general intelligence. He is currently working on improving AI players for the game of Amazons, under Dr. Martin Müller. He has some knowledge of regression, neural networks, reinforcement learning, and search.",
     "github": "willfenton",
     "slack": "Will Fenton"
   }, {
@@ -44,8 +44,24 @@
     "emoji": "🤑",
     "img": "peter",
     "position": "VP External",
-    "description": "Did research with martin muller. Had long hair but not anymore :(",
+    "description": "Peter Friedrich is an open studies student with a Bsc in Mechanical Engineering from the UofA.  His interests in AI are pretty broad, but he is mostly focusing on data science as a career path.",
     "github": "PeterFriedrich",
     "slack": "Peter Friedrich"
+  }, {
+    "name": "Tinashe Oswell Musariri",
+    "emoji": "🌝",
+    "img": "peter",
+    "position": "Vice President",
+    "description": "Tinashe is a BSc Computing Science Honours student in his second year. He joined the UAIS in it's very first year. He has been interested in Computer Vision in the past and maybe still interested but his focus may change as he gets more experience with AI. He is surprisingly not a gamer and slightly naive when it comes to the AI world, making him a good go to for anyone who is interested in learning about AI from the ground up.",
+    "github": "TinasheOswell",
+    "slack": "Tinashe Oswell"
+  }, {
+    "name": "Jawad Rizvi",
+    "emoji": "🦁",
+    "img": "peter",
+    "position": "Vice President",
+    "description": "Jawad is currently in the 3rd year of his BSc Computing Science Specialization degree. He has various interests including business, software development, data science and game development, and hopes to apply concepts in artificial intelligence to real-world software applications in the near future. He looks forward to working on and leading many different projects alongside the diverse community at the Undergraduate Artificial Intelligence Society.",
+    "github": "jnrizvi",
+    "slack": "Jawad Rizvi"
   }]
 }

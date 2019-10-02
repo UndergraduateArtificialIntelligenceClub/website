@@ -60,6 +60,12 @@ $img-dimension: 100px;
         margin: .5rem 0;
       }
 
+      .slack {
+        background-color: rgba($dracula-purple, .5);
+        border: solid 1px $dracula-purple;
+        border-radius: 3px;
+      }
+
       .blood {
         color: $dracula-red;
       }
