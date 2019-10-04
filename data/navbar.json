@@ -5,6 +5,11 @@
         "target": "",
         "icon": "fas fa-dice-d20"
     }, {
+        "text": "Getting Started",
+        "link": "/getting-started",
+        "target": "",
+        "icon": "fas fa-code"
+    }, {
         "text": "Signup",
         "link": "/signup",
         "target": "",
@@ -20,6 +25,11 @@
         "target": "blank",
         "icon": "fab fa-slack"
     }, {
+        "text": "About",
+        "link": "/about",
+        "target": "",
+        "icon": "fas fa-theater-masks"
+        }, {
         "text": "Home",
         "link": "/",
         "target": "",

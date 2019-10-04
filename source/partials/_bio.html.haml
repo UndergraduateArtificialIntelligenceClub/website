@@ -2,14 +2,14 @@
 - blood_rh = ['-', '+']
 
 .biography.col-md-12.col-8
-  %img.pic.show-md.p-centered{src: 'images/headshots/' + person.img + '.jpg', alt: 'head shot'}
+  %img.pic.show-md.p-centered{src: 'images/headshots/' + person.github + '.jpg', alt: 'head shot'}
   .title
     %h2
       = '%s %s' % [person.name, person.emoji]
     %h3
       = person.position
   .info
-    %img.pic.hide-md{src: '/images/headshots/' + person.img + '.jpg', alt: 'head shot'}
+    %img.pic.hide-md{src: '/images/headshots/' + person.github + '.jpg', alt: 'head shot'}
     .description
       %p
         = person.description

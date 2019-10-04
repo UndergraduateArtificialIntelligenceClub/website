@@ -97,7 +97,7 @@ section {
   color: $dracula-red;
 }
 
-@media only screen and (max-width: $md) {
+@media only screen and (max-width: $lg) {
   $height-animation: max-height 300ms ease-in-out;
 
   section {
