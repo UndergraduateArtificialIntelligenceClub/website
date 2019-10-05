@@ -7,7 +7,7 @@
 - [ ] invite new members to slack via email
 - [ ] subscribe to newsletter button
 - [ ] Constitution
-- [ ] exective bios
+- [x] exective bios
 - [ ] onborading checklist
 - [x] list of basic tutorials
 
