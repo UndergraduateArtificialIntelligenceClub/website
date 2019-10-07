@@ -14,3 +14,4 @@
 ## Dreams
  
 - annonymized voting
+- terminal website (curl)
