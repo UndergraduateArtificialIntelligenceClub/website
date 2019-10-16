@@ -105,7 +105,7 @@ section {
 }
 
 @media only screen and (max-width: $lg) {
-  $height-animation: max-height 300ms ease-in-out;
+  $height-animation: max-height 200ms ease-in-out;
 
   section {
     padding: 10px 5%;
@@ -155,7 +155,7 @@ section {
       display: flex !important;
       align-items: center;
       justify-content: center;
-      transition: transform 300ms linear;
+      transition: transform 200ms linear;
       
       & > .line {
         position: relative;
@@ -174,7 +174,7 @@ section {
           position: absolute;
           z-index: 1;
           top: -10px;
-          transition: transform top 200ms linear;
+          //transition: transform top 150ms linear;
         }
 
         &::after {
