@@ -187,7 +187,7 @@ GEM
     parallel (1.17.0)
     progress (3.5.2)
     public_suffix (3.0.3)
-    rack (2.0.7)
+    rack (2.0.8)
     rake (12.3.2)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
