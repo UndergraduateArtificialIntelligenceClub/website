@@ -3,3 +3,31 @@
 :markdown
   Check out our [EventBrite](https://uais.eventbrite.com/) page to stay up to date with upcoming events.
 /=image_tag 'images/fall2019.png', width: '80%'
+#calendar
+
+:javascript
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarElement = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarElement, {
+      plugins: [
+        'dayGrid',
+        'list',
+        'googleCalendar'
+      ],
+      defaultView: 'dayGridMonth',
+      header: {
+        left: 'prev,today,next',
+        center: 'title',
+        right: 'dayGridMonth,listMonth'
+      },
+      googleCalendarApiKey: '#{ENV["API_KEY"]}',
+      events: 'ualberta.ca_jllnjo7p3k6pedrio4ftfah7qg@group.calendar.google.com',
+      eventClick: function(arg) {
+        // opens events in a popup window
+        window.open(arg.event.url, '_blank', 'width=700,height=500');
+        // prevents current tab from navigating
+        arg.jsEvent.preventDefault();
+      }
+    });
+    calendar.render();
+    });
