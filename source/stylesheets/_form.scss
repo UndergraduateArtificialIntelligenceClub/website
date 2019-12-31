@@ -49,7 +49,7 @@ input.form-item {
 
 .form-box {
 	background-color: $section-color-2;
-	max-width: 600px;
+	max-width: 680px;
 	border: solid 1px lightgray;
 	border-radius: 10px;
 	margin: 30px auto 30px auto;
@@ -75,7 +75,7 @@ input.form-item {
 		width: auto;
 
 		&[required=true] {
-			width: 65%;
+			width: 55%;
 		}
 	}
 }
