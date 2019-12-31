@@ -1,0 +1,49 @@
+---
+title: New Project
+---
+
+= partial 'partials/navbar'
+%section
+  %h2
+    Make a new project!
+  %p
+    :markdown
+      Please fill out the form below.
+      We will review your application and if approved,
+      you will recieve a link to a GitHub repository for your project.
+      You will also have administrative priviledges for that repository and can manage your team.
+%form{action: 'https://api.uais.dev/newproject', method: 'post'}
+  .form-box
+    %input{type: 'hidden', name: 'membership', value: 'associate'}
+    .grp
+      %label.form-item
+        Project Name
+        %sup
+          *
+      %input.form-item{type: 'text', name: 'projectname', placeholder: 'Project Name', required: 'true'}
+    .grp
+      %label.form-item
+        Leader Name
+        %sup
+          *
+      %input.form-item{type: 'text', name: 'leadername', placeholder: 'Leader Name', required: 'true'}
+    .grp
+      %label.form-item
+        Leader GitHub Username
+        %sup
+          *
+      %input.form-item{type: 'text', name: 'leadergithub', placeholder: 'GitHub Username', required: 'true'}
+    .grp
+      %label.form-item
+        Leader Email Address
+        %sup
+          *
+      %input.form-item{type: 'email', name: 'lastname', placeholder: 'example@email.com', required: 'true'}
+    .grp.wide
+      %label.form-item
+        Short Description
+        %sup
+          *
+      %textarea.form-item{spellcheck: 'true', rows: '3', name: 'description', placeholder: 'Type description here...', required: 'true'}
+    %br
+    %input.form-btn{type: 'submit', value: 'Submit'}
