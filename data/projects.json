@@ -1,0 +1,8 @@
+{
+  "projects": [{
+    "name": "UAIS Website",
+    "leaderName": "Nick Nissen & Giancarlo Pernudi Segura",
+    "repo": "website",
+    "description": "This is not an AI powered project but the project for the website itself! If you would like to contribute, check out the README on our repository to find out how."
+  }]
+}
