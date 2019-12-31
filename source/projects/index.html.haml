@@ -3,5 +3,18 @@ title: Projects
 ---
 
 = partial 'partials/navbar'
-%a{ href: '/projects/new' }
+%section
+  %h2
     New Project
+  :markdown
+    If you're interested in starting your own project, submit an application [here](projects/new)!
+- data.projects.projects.each do |p|
+  %section
+    %h2
+      = p.name
+    %h4
+      = p.leaderName
+    %a{href: 'https://github.com/UndergraduateArtificialIntelligenceClub/' + p.repo, target: 'blank'}
+      GitHub
+    %p
+      = p.description
