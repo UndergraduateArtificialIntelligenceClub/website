@@ -5,7 +5,7 @@
 	margin: 10px 3px 10px 3px;
 }
 
-input.form-item {
+input.form-item, textarea.form-item {
 	background-color: rgba(40, 40, 40, .5);
 	color: white;
 	border: none;
@@ -50,6 +50,7 @@ input.form-item {
 .form-box {
 	background-color: $section-color-2;
 	max-width: 680px;
+	width: 95%;
 	border: solid 1px lightgray;
 	border-radius: 10px;
 	margin: 30px auto 30px auto;
@@ -78,6 +79,15 @@ input.form-item {
 			width: 55%;
 		}
 	}
+
+	&.wide {
+		flex-direction: column;
+
+		textarea {
+			resize: vertical;
+			min-height: 1.5rem;
+		}
+	}
 }
 
 .grp-radio, .grp-select {
@@ -95,6 +105,7 @@ sup {
 @media only screen and (max-width: $sm) {
 	.form-box {
 		padding: 20px;
+		width: 100%;
 		border-radius: 0;
 		border: none;
 	}
