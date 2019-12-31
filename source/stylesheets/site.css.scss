@@ -188,8 +188,13 @@ section {
   .navbar {
     flex-direction: column;
 
-    .btn-link {
-      text-align: right;
+    .navbar-section:first-child {
+      box-shadow: $shadow-strong;
+      z-index: 1;
     }
+  }
+
+  a.btn.btn-link {
+    background-color: $header-color * .9;
   }
 }
