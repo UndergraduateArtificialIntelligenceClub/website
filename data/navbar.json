@@ -30,6 +30,11 @@
         "target": "blank",
         "icon": "fab fa-slack"
     }, {
+        "text": "Projects",
+        "link": "/projects",
+        "target": "",
+        "icon": "fas fa-code-branch"
+    }, {
         "text": "About",
         "link": "/about",
         "target": "",
