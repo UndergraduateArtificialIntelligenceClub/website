@@ -12,9 +12,8 @@ title: New Project
       We will review your application and if approved,
       you will recieve a link to a GitHub repository for your project.
       You will also have administrative priviledges for that repository and can manage your team.
-%form{action: 'https://api.uais.dev/newproject', method: 'post'}
+%form{action: 'https://api.uais.dev/projects/new', method: 'post'}
   .form-box
-    %input{type: 'hidden', name: 'membership', value: 'associate'}
     .grp
       %label.form-item
         Project Name
@@ -38,7 +37,7 @@ title: New Project
         Leader Email Address
         %sup
           *
-      %input.form-item{type: 'email', name: 'lastname', placeholder: 'example@email.com', required: 'true'}
+      %input.form-item{type: 'email', name: 'email', placeholder: 'example@email.com', required: 'true'}
     .grp.wide
       %label.form-item
         Short Description
