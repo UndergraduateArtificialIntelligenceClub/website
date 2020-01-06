@@ -260,6 +260,7 @@ DEPENDENCIES
   middleman-robots
   middleman-s3_sync
   middleman-search_engine_sitemap
+  nokogiri (>= 1.10.4)
   tzinfo-data
   wdm (~> 0.1)
 
