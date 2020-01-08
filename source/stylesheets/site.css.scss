@@ -105,6 +105,23 @@ section {
   color: $dracula-red;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  tr:first-child {
+    border-bottom: 1px solid whitesmoke;
+  }
+
+  tr:nth-child(even) {
+    background: #ffffff16;
+  }
+
+  th {
+    text-align: left;
+  }
+}
+
 @media only screen and (max-width: $lg) {
   $height-animation: max-height 200ms ease-in-out;
 
