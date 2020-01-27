@@ -1,4 +1,6 @@
 # UAIS
+[![MIT license](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/UndergraduateArtificialIntelligenceClub/website/blob/master/LICENSE)
+
 If you have any **feature requests**, please **open an issue** with the `enhancement` label.
 If you would like to **contribute**, please **contact** either [@NickNissen](https://github.com/NickNissen) or [@giancarlopernudisegura](https://github.com/giancarlopernudisegura) on [slack](https://albertaundergradai.slack.com) on the `#website` channel.
 
