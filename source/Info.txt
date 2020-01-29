@@ -5,4 +5,3 @@ The University of Alberta Undergraduate Artificial Intelligence Society is a gro
 MEETING TIMES
 
 We meet every Friday from 3-5pm at the Student Innovation Centre, between CCIS and the Biological Sciences building. 
-We also have a reading group that meets from 2-4pm every Thursday in the Student Innovation Centre. We're currently working through the Deep Learning textbook by Ian Goodfellow, Yoshua Bengio, and Aaron Courville
