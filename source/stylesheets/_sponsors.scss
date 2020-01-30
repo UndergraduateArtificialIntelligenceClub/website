@@ -18,13 +18,13 @@ body.spons{
 }
 
 .spons li{
-    float:left;
+    display: inline;
     padding: 15px;
 }
 
-.spons img.simg{  
-    width:118px;
+.spons img.simg{
     height:118px;
+    width: auto;
 }
 
 .spons{ 
@@ -34,7 +34,7 @@ body.spons{
 }
 
 .sponsus{
-    clear: both;
+    margin-top: 40px;
     text-align:center;
     font-size:large;
 }
