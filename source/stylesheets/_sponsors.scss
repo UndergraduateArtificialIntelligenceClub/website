@@ -1,0 +1,62 @@
+@import 'colors';
+
+body.spons{
+    margin: 0px;
+    background-color: $section-color-2;
+}
+
+.spons-head{
+    text-align: center;
+    color: $dracula-purple;
+}
+
+.spons{ 
+    text-align:center;
+    font-size: large;    
+    font-weight: bold;
+    color: $dracula-cyan;
+    list-style-type:none;
+}
+
+.spons li{
+    float:left;
+    padding: 15px;
+}
+
+.spons img{  
+    max-height: 120;
+    width:120px;
+}
+.spons{ 
+    text-align:center;
+    font-size: large;
+    list-style-type:none;
+}
+
+.spons li{
+    float:left;
+    padding: 15px;
+}
+
+.spons img{  
+    max-height: 120;
+    width:120px;
+}
+
+.sponsus{
+    margin: 30px;
+    clear: both;
+    text-align:center;
+    font-size:large;
+}
+
+.sponsus a{
+    color: $dracula-purple;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 15px;
+    background: grey;
+}
+.sponsus a:hover{
+    border-style: inset;
+}
