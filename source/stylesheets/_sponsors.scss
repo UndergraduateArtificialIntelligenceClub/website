@@ -1,7 +1,6 @@
 @import 'colors';
 
 body.spons{
-    margin: 0px;
     background-color: $section-color-2;
 }
 
@@ -23,28 +22,18 @@ body.spons{
     padding: 15px;
 }
 
-.spons img{  
-    max-height: 120;
-    width:120px;
+.spons img.simg{  
+    width:118px;
+    height:118px;
 }
+
 .spons{ 
     text-align:center;
     font-size: large;
     list-style-type:none;
 }
 
-.spons li{
-    float:left;
-    padding: 15px;
-}
-
-.spons img{  
-    max-height: 120;
-    width:120px;
-}
-
 .sponsus{
-    margin: 30px;
     clear: both;
     text-align:center;
     font-size:large;
@@ -55,7 +44,7 @@ body.spons{
     text-decoration: none;
     padding: 8px;
     border-radius: 15px;
-    background: grey;
+    background: darkslateblue;
 }
 .sponsus a:hover{
     border-style: inset;
