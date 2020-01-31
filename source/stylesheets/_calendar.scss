@@ -4,6 +4,10 @@
     background: #4e505a !important;
 }
 
+.fc-unthemed .fc-content, .fc-unthemed .fc-divider, .fc-unthemed .fc-list-heading td, .fc-unthemed .fc-list-view, .fc-unthemed .fc-popover, .fc-unthemed .fc-row, .fc-unthemed tbody, .fc-unthemed td, .fc-unthemed th, .fc-unthemed thead {
+    border-color: #4e505aee !important;
+}
+
 .fc-unthemed .fc-list-item:hover td {
     background: #f5f5f51f !important;
 }
@@ -14,4 +18,8 @@
 
 .fc-day, .fc-scroller, .fc-list-empty {
     background: #262834 !important;
+}
+
+.fc th {
+    font-weight: 500;
 }

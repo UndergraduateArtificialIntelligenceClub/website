@@ -97,10 +97,6 @@ section {
   &:nth-child(even) {
     background-color: $section-color-2;
   }
-
-  &:last-child {
-    padding-bottom: 50px;
-  }
 }
 
 .disclaimer {
