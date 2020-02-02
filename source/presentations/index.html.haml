@@ -1,0 +1,20 @@
+---
+title: Presentations
+---
+
+= partial 'partials/navbar'
+%section
+  %h1
+    Presentations
+  %p
+    put info of page here
+- data.presentations.info.each do |p|
+  %section
+    %h2
+      = p.title
+    %h4
+      = p.name
+    %a{href: p.link, target: 'blank'}
+      Link to presentation
+    %p
+      = p.description
