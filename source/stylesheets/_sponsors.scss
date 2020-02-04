@@ -11,12 +11,14 @@
 
 .spons { 
   text-align: center;
-  display: center;
-  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 
   img.simg {
     height: 120px;
     width: auto;
+    padding: 10px;
   }
 }
 
