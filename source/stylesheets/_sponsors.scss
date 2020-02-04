@@ -1,0 +1,28 @@
+@import 'colors';
+
+.sponsor {
+  background-color: $section-color-2;
+}
+
+.spons-head {
+  text-align: center;
+  color: $dracula-purple;
+}
+
+.spons { 
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  img.simg {
+    height: 120px;
+    width: auto;
+    padding: 10px;
+  }
+}
+
+.sponsus {
+  margin-top: 40px;
+  text-align: center;
+}

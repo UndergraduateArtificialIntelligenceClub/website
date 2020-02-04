@@ -1,0 +1,11 @@
+.sponsor
+  %h1.spons-head
+    Sponsor
+  .spons
+    - data.sponsors.sponsors.each do |sponsor|
+      %a{href: sponsor.link}
+        %img.simg{src: '/images/sponsors/' + sponsor.img}
+/
+  .sponsus
+    %a.btn.btn-primary{href: "/"}
+      Sponsor Us Here!
