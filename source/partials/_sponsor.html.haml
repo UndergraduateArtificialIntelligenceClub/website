@@ -1,10 +1,11 @@
 .sponsor
-	%h1.spons-head
-		Sponsor
-	
-	.spons
-		%a{href: "https://flawlessinbound.ca/"}
-			%img.simg(src="/images/flawless-inbound-logo-full.png")
-	.sponsus
-		%a.btn.btn-primary{href: "/"}
-			Sponsor Us Here!
+  %h1.spons-head
+    Sponsor
+  .spons
+    - data.sponsors.sponsors.each do |sponsor|
+      %a{href: sponsor.link}
+        %img.simg{src: sponsor.img}
+/
+  .sponsus
+    %a.btn.btn-primary{href: "/"}
+      Sponsor Us Here!
