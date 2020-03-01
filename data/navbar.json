@@ -1,14 +1,19 @@
 {
     "links": [{
-        "text": "Event Attendees",
-        "link": "/attendance",
+        "text": "Presentations",
+        "link": "/presentations",
         "target": "",
-        "icon": "fas fa-dice-d20"
+        "icon": "fas fa-file-powerpoint"
     }, {
         "text": "Getting Started",
         "link": "/getting-started",
         "target": "",
         "icon": "fas fa-code"
+    }, {
+        "text": "Event Attendees",
+        "link": "/attendance",
+        "target": "",
+        "icon": "fas fa-dice-d20"
     }, {
         "text": "Signup",
         "link": "/signup",
