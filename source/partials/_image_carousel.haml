@@ -3,4 +3,7 @@
 %p
   Here are some images from our past events!
 .carousel
-  %img{src: '/images/events/0.jpg'}
+  - path = "/images/events/"
+  - Dir.foreach("source" + path) do |file|
+    - if file != "." && file != ".."
+      %img{src: path + file}
