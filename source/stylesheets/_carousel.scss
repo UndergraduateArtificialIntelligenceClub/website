@@ -1,0 +1,13 @@
+@import 'dimensions';
+
+.carousel img {
+    height: 24rem;
+    object-fit: contain;
+    padding: 10px;
+}
+
+@media only screen and (max-width: $sm) {
+    .carousel img {
+        height: 16rem;
+    }
+}
