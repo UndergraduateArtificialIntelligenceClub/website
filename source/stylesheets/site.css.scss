@@ -214,6 +214,6 @@ table.table {
   }
 
   a.btn.btn-link {
-    background-color: $header-color * .9;
+    background-color: darken($header-color, 90);
   }
 }
