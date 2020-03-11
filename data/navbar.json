@@ -34,10 +34,5 @@
         "link": "/about",
         "target": "",
         "icon": "fas fa-theater-masks"
-        }, {
-        "text": "Home",
-        "link": "/",
-        "target": "",
-        "icon": "fas fa-igloo"
     }]
 }
