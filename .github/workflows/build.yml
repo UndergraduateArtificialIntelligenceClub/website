@@ -24,7 +24,8 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Switch to build branch
-      run: git checkout -b build
+    - run: git checkout -b build
+
     - name: Build website
     - run: |
         gem install middleman
