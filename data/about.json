@@ -3,7 +3,7 @@
     "name": "Giancarlo Pernudi Segura",
     "emoji": "👌",
     "position": "President",
-    "description": "Also known as gino, Giancarlo is a second year student in the Computer Science Specialization program. He's a hardcore linux (manjaro-i3) fan and vim enthusiast. Currently enrolled in the Canadian Armed Forces Reserves as an Army Communications and Information Systems Specialist. Besides his official responsibilities, he also maintains the club website, and github organization. He has also made all club graphic design objects such as logo's and posters. He likes watching sunsets and long walks on the beach.",
+    "description": "Also known as gino, Giancarlo is a third year student in the Computer Science Specialization program. He's a hardcore linux (manjaro-i3) fan and vim enthusiast. Currently enrolled in the Canadian Armed Forces Reserves as an Army Communications and Information Systems Specialist. Besides his official responsibilities, he also maintains the club website, and github organization. He has also made all club graphic design objects such as logo's and posters. He likes watching sunsets and long walks on the beach.",
     "github": "giancarlopernudisegura",
     "slack": "gino"
   },
@@ -11,7 +11,7 @@
     "name": "Will Fenton",
     "emoji": "💦",
     "position": "Vice President",
-    "description": "Will Fenton is a third year Computing Science student and Vice President of the UAIS. His AI interests include game AI, content generation, and artificial general intelligence. He is currently working on improving AI players for the game of Amazons, under Dr. Martin Müller. He has some knowledge of regression, neural networks, reinforcement learning, and search.",
+    "description": "Will Fenton is a fourth year Computing Science student and Vice President of the UAIS. His AI interests include game AI, content generation, and artificial general intelligence. He is currently working on improving AI players for the game of Amazons, under Dr. Martin Müller. He has some knowledge of regression, neural networks, reinforcement learning, and search.",
     "github": "willfenton",
     "slack": "Will Fenton"
   },
@@ -19,7 +19,7 @@
     "name": "Della Amira Humanita",
     "emoji": "🥺",
     "position": "Vice President",
-    "description": "Della is a third-year computing science student with broad interests in software development, psychology and game design. She is particularly interested in applications that aid people in learning. To recharge, she likes to knit and bake little snacks.",
+    "description": "Della is a third year computing science student with broad interests in software development, psychology and game design. She is particularly interested in applications that aid people in learning. To recharge, she likes to knit and bake little snacks.",
     "github": "humnita",
     "slack": "Della"
   }, {
@@ -33,14 +33,14 @@
     "name": "Paul Saunders",
     "emoji": "💯",
     "position": "General Secretary",
-    "description": "Paul Saunders is a second year student in a Computing Science Specialization degree. He favours the data science aspect of AI and ML rather than games, and has been working with data since grade 11. He joined UAIS in its very first year and has since been working hard on explaining that AI probably will not take over the world, and he writes the newsletters for the club. He competes in olympic weightlifting, mountain bike races, and is generally a cool guy. He also tutors two math courses, and so along with Justin he is a great resource for any math or stats troubles you may have.",
+    "description": "Paul Saunders is a third year student in a Computing Science Specialization degree. He favours the data science aspect of AI and ML rather than games, and has been working with data since grade 11. He joined UAIS in its very first year and has since been working hard on explaining that AI probably will not take over the world, and he writes the newsletters for the club. He competes in olympic weightlifting, mountain bike races, and is generally a cool guy. He also tutors two math courses, and so along with Justin he is a great resource for any math or stats troubles you may have.",
     "github": "psaunderualberta",
     "slack": "P.Saunders"
   }, {
     "name": "Justin Stevens",
     "emoji": "🔢",
     "position": "VP External, Founder",
-    "description": "Justin is in his third year studying math and computing science after transferring from Harvey Mudd College. He founded the Undergraduate Artificial Intelligence Society in fall 2018 and is the current president. His primary interests are in reinforcement and machine learning, and he enjoys teaching other students about the magic behind AI.",
+    "description": "Justin is in his fourth year studying math and computing science after transferring from Harvey Mudd College. He founded the Undergraduate Artificial Intelligence Society in fall 2018 and is the current VP external. His primary interests are in reinforcement and machine learning, and he enjoys teaching other students about the magic behind AI.",
     "github": "musichead42",
     "slack": "Justin Stevens"
   }, {
