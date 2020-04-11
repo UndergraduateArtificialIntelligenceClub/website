@@ -1,18 +1,27 @@
 {
   "people": [{
-    "name": "Justin Stevens",
-    "emoji": "🔢",
-    "position": "President",
-    "description": "Justin is in his third year studying math and computing science after transferring from Harvey Mudd College. He founded the Undergraduate Artificial Intelligence Society in fall 2018 and is the current president. His primary interests are in reinforcement and machine learning, and he enjoys teaching other students about the magic behind AI.",
-    "github": "musichead42",
-    "slack": "Justin Stevens"
-  }, {
     "name": "Giancarlo Pernudi Segura",
     "emoji": "👌",
-    "position": "General Secretary",
-    "description": "Also known as gino, Giancarlo is a second year student in the Computer Science Specialization program. He's a hardcore linux (manjaro-i3) fan and vim enthusiast. Currently enrolled in the Canadian Armed Forces Reserves as an Army Communications and Information Systems Specialist. As the society's General Secretary, he takes notes from the minutes and keeps tracks of ongoing projects. Besides his official responsibilities, he also maintains the club website, github repository and membership list. He has also made all club graphic design objects such as logo's and posters. He likes watching sunsets and long walks on the beach.",
+    "position": "President",
+    "description": "Also known as gino, Giancarlo is a second year student in the Computer Science Specialization program. He's a hardcore linux (manjaro-i3) fan and vim enthusiast. Currently enrolled in the Canadian Armed Forces Reserves as an Army Communications and Information Systems Specialist. Besides his official responsibilities, he also maintains the club website, and github organization. He has also made all club graphic design objects such as logo's and posters. He likes watching sunsets and long walks on the beach.",
     "github": "giancarlopernudisegura",
     "slack": "gino"
+  },
+  {
+    "name": "Will Fenton",
+    "emoji": "💦",
+    "position": "Vice President",
+    "description": "Will Fenton is a third year Computing Science student and Vice President of the UAIS. His AI interests include game AI, content generation, and artificial general intelligence. He is currently working on improving AI players for the game of Amazons, under Dr. Martin Müller. He has some knowledge of regression, neural networks, reinforcement learning, and search.",
+    "github": "willfenton",
+    "slack": "Will Fenton"
+  },
+  {
+    "name": "Della Amira Humanita",
+    "emoji": "🥺",
+    "position": "Vice President",
+    "description": "Della is a third-year computing science student with broad interests in software development, psychology and game design. She is particularly interested in applications that aid people in learning. To recharge, she likes to knit and bake little snacks.",
+    "github": "humnita",
+    "slack": "Della"
   }, {
     "name": "Nick Nissen",
     "emoji": "🦈",
@@ -23,37 +32,23 @@
   }, {
     "name": "Paul Saunders",
     "emoji": "💯",
-    "position": "VP Internal",
+    "position": "General Secretary",
     "description": "Paul Saunders is a second year student in a Computing Science Specialization degree. He favours the data science aspect of AI and ML rather than games, and has been working with data since grade 11. He joined UAIS in its very first year and has since been working hard on explaining that AI probably will not take over the world, and he writes the newsletters for the club. He competes in olympic weightlifting, mountain bike races, and is generally a cool guy. He also tutors two math courses, and so along with Justin he is a great resource for any math or stats troubles you may have.",
     "github": "psaunderualberta",
     "slack": "P.Saunders"
   }, {
-    "name": "Will Fenton",
-    "emoji": "💦",
-    "position": "Vice President",
-    "description": "Will Fenton is a third year Computing Science student and Vice President of the UAIS. His AI interests include game AI, content generation, and artificial general intelligence. He is currently working on improving AI players for the game of Amazons, under Dr. Martin Müller. He has some knowledge of regression, neural networks, reinforcement learning, and search.",
-    "github": "willfenton",
-    "slack": "Will Fenton"
+    "name": "Justin Stevens",
+    "emoji": "🔢",
+    "position": "VP External, Founder",
+    "description": "Justin is in his third year studying math and computing science after transferring from Harvey Mudd College. He founded the Undergraduate Artificial Intelligence Society in fall 2018 and is the current president. His primary interests are in reinforcement and machine learning, and he enjoys teaching other students about the magic behind AI.",
+    "github": "musichead42",
+    "slack": "Justin Stevens"
   }, {
-    "name": "Peter Friedrich",
-    "emoji": "🤑",
-    "position": "VP External",
-    "description": "Peter Friedrich is an open studies student with a Bsc in Mechanical Engineering from the UofA.  His interests in AI are pretty broad, but he is mostly focusing on data science as a career path.",
-    "github": "PeterFriedrich",
-    "slack": "Peter Friedrich"
-  }, {
-    "name": "Tinashe Oswell Musariri",
-    "emoji": "🌝",
-    "position": "Vice President",
-    "description": "Tinashe is a BSc Computing Science Honours student in his second year. He joined the UAIS in it's very first year. He has been interested in Computer Vision in the past and maybe still interested but his focus may change as he gets more experience with AI. He is surprisingly not a gamer and slightly naive when it comes to the AI world, making him a good go to for anyone who is interested in learning about AI from the ground up.",
-    "github": "TinasheOswell",
-    "slack": "Tinashe Oswell"
-  }, {
-    "name": "Jawad Rizvi",
-    "emoji": "🦁",
-    "position": "Vice President",
-    "description": "Jawad is currently in the 3rd year of his BSc Computing Science Specialization degree. He has various interests including business, software development, data science and game development, and hopes to apply concepts in artificial intelligence to real-world software applications in the near future. He looks forward to working on and leading many different projects alongside the diverse community at the Undergraduate Artificial Intelligence Society.",
-    "github": "jnrizvi",
-    "slack": "Jawad Rizvi"
+    "name": "Dylan Hanna",
+    "emoji": "😤",
+    "position": "VP Internal",
+    "description": "Dylan Hanna is a second year student double majoring in Psychology and Computing Science. When it comes to AI he’s mainly interested in AI in gaming, but he is also interested in AI in therapy. Dylan is a beginner to AI who’s using it to beat and break games, so he’s a great resource if you’re also learning about AI from the ground up. In his spare time, he’s a skateboarder, photographer, filmmaker, gamer, and long-distance runner, so overall he’s a pretty cool guy.",
+    "github": "apklps",
+    "slack": "Dylan Hanna"
   }]
 }
