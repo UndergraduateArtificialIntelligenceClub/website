@@ -61,6 +61,10 @@ presentations:
   link: https://www.youtube.com/watch?v=u1tYLqSAkZA&feature=youtu.be
   description: Workshop for those who are new to Python or looking for some special.
     tips.
+- title: Python Environments
+  name: Paul Saunders & Giancarlo Pernudi Segura
+  link: https://www.youtube.com/watch?v=spfOM0EMj78&list=PLG7WqhOYbVgl7DYgEH73AIXt1_Y7bkoBz
+  description: Online videos showing a basic introduction to python environments.
 etc:
 - title: Compiled r/MachineLearning Links
   link: https://www.reddit.com/r/MachineLearning/wiki/index
