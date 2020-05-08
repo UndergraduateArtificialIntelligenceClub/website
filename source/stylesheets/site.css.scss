@@ -112,7 +112,7 @@ table.table {
   border-collapse: collapse;
 
   tr:first-child {
-    border-bottom: 1px solid whitesmoke;
+    border-bottom: .5px solid whitesmoke;
   }
 
   tr:nth-child(even) {
@@ -121,11 +121,16 @@ table.table {
 
   th {
     text-align: left;
+    border: none;
   }
 
   td {
     border: none;
   }
+}
+
+.block {
+  display: block;
 }
 
 @media only screen and (max-width: $lg) {
