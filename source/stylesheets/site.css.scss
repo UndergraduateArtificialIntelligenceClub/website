@@ -6,6 +6,8 @@
 @import 'sponsors';
 @import 'carousel';
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 ::selection {
   color: black;
   background-color: white;
@@ -87,6 +89,7 @@ code {
     margin-bottom: 0;
     float: right;
     color: white;
+    font-family: 'Roboto Slab';
   }
 }
 
