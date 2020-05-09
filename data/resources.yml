@@ -1,0 +1,74 @@
+classes:
+- name: Intelligent Systems
+  number: CMPUT 366
+  days: MWF
+  time: 11:00-11:50
+- name: Reinforcement Learning
+  number: CMPUT 397
+  days: MWF
+  time: 1:00-1:50
+- name: Search Simulation and Knowledge
+  number: CMPUT 455
+  days: TR
+  time: 2:00-3:20
+- name: Machine Learning
+  number: CMPUT 466
+  days: TR
+  time: 11:00-12:20
+- name: Game AI
+  number: CMPUT 296
+  days: MWF
+  time: 11:00-11:50
+- name: Basics of ML
+  number: CMPUT 296
+  days: TR
+  time: 2:00-3:20
+lectures:
+  general:
+    - title: Machine Learning with Andrew Ng, Stanford University
+      link: https://www.youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)
+      desc: Universally recommended machine learning lectures by Andrew Ng, for beginner and intermediate level machine learning.
+    - title: Elements of AI
+      link: https://course.elementsofai.com/
+      desc: Free online course made by the University of Helsinki and Reaktor.
+  rl:
+    - title: Reinforcement Learning with David Silver
+      link: https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ
+      desc: Older but popular lecture series by lead DeepMind researcher David Silver at King’s College London.  Follows along with the first edition of Introduction to RL by Sutton and Barto.
+  deep:
+    - title: Deep Learning and Reinforcement Learning Summer School 2018
+      link: http://videolectures.net/DLRLsummerschool2018_toronto/
+      desc: These are the lecture videos from the 2018 DLRL summer school, held by CIFAR, Amii, and the Vector Institute in Toronto.  The DLRL summer school is pretty competitive, but the lectures actually vary from introductory to advanced.  Links to the slides are also included on the video pages.
+    - title: Advanced Deep Learning and Reinforcement Learning with DeepMind
+      link: https://www.youtube.com/playlist?list=PLqYmG7hTraZDNJre23vqCGIVpfZ_K2RZs
+      desc: A brand new lecture series (2018) done at UCL by a bunch of DeepMind staff.
+presentations:
+- title: Welcome to UAIS
+  name: Justin Stevens
+  link: https://numbertheoryguydotcom.files.wordpress.com/2018/12/Welcome-to-Undergraduate-Artificial-Intelligence-Society.pdf
+  description: Introduction of the club and various subfields of AI.
+- title: Image Classifiers
+  name: Justin Stevens
+  link: https://numbertheoryguydotcom.files.wordpress.com/2019/04/graddescent2-1.pdf
+  description: Introduction to image classifiers using the MNIST dataset, using tensorflow
+    with Keras, and gradient descent.
+- title: Alpha Go
+  name: Martin Müller
+  link: https://webdocs.cs.ualberta.ca/~mmueller/ps/2020-Ugrad-AI-group.pdf
+  description: Presentation from Dr.Müller talking about Alpha Go.
+- title: Python Workshop
+  name: Giancarlo Pernudi Segura
+  link: https://www.youtube.com/watch?v=u1tYLqSAkZA&feature=youtu.be
+  description: Workshop for those who are new to Python or looking for some special.
+    tips.
+- title: Python Environments
+  name: Paul Saunders & Giancarlo Pernudi Segura
+  link: https://www.youtube.com/watch?v=spfOM0EMj78&list=PLG7WqhOYbVgl7DYgEH73AIXt1_Y7bkoBz
+  description: Online videos showing a basic introduction to python environments.
+etc:
+- title: Compiled r/MachineLearning Links
+  link: https://www.reddit.com/r/MachineLearning/wiki/index
+  desc: This is a compilation of links created by the Machine Learning subreddit on reddit, containing various free resources
+- title: r/artificial
+  link: https://www.reddit.com/r/artificial/
+  desc:
