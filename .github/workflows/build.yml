@@ -28,7 +28,7 @@ jobs:
 
     - name: Build website
       run: |
-        gem install middleman
+        sudo gem install middleman
         bundle install
         middleman build
 
