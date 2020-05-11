@@ -30,8 +30,8 @@ jobs:
       run: |
         sudo gem install bundler
         sudo gem install middleman
-        sudo chmod -R +777 /var/lib/gems/
         bundle install
+        sudo chmod -R +777 /var/lib/gems/2.5.0/gems/middleman-robots-1.3.5/
 
     - name: Build website
       run: |
