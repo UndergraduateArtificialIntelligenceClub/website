@@ -29,17 +29,15 @@ jobs:
     - name: Setup Ruby
       run: |
         sudo gem install bundler
-        echo "got here"
         sudo gem install middleman
-        echo "installed midddleman"
         bundle install
 
     - name: Build website
       run: |
-        middleman build
+        bundle exec middleman build
 
     - name: Upload website
-      run: middleman s3
+      run: bundle exec middleman s3
 
     - name: Update website
       run: echo 'invalidate'
