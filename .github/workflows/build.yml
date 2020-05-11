@@ -30,6 +30,7 @@ jobs:
       run: |
         sudo gem install bundler
         sudo gem install middleman
+        sudo chmod -R +777 /var/lib/gems/
         bundle install
 
     - name: Build website
