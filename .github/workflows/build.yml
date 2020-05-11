@@ -26,10 +26,14 @@ jobs:
     - name: Switch to build branch
       run: git checkout -b build
 
-    - name: Build website
+    - name: Setup Ruby
       run: |
+        sudo gem install bundler
         sudo gem install middleman
         bundle install
+
+    - name: Build website
+      run: |
         middleman build
 
     - name: Upload website
