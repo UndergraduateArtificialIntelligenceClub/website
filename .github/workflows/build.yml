@@ -29,7 +29,9 @@ jobs:
     - name: Setup Ruby
       run: |
         sudo gem install bundler
+        echo "got here"
         sudo gem install middleman
+        echo "installed midddleman"
         bundle install
 
     - name: Build website
