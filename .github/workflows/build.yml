@@ -6,7 +6,7 @@ name: Compile Website
 # events but only for the master branch
 on:
   push:
-    branches: [ master, test ]
+    branches: [ master, build-action ]
   pull_request:
     branches: [ master ]
 
@@ -31,3 +31,9 @@ jobs:
         gem install middleman
         bundle install
         middleman build
+
+    - name: Upload website
+      run: middleman s3
+
+    - name: Update website
+      run: echo 'invalidate'
