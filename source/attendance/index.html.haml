@@ -1,12 +1,17 @@
 ---
 title: Attendance
+event: meeting1
 ---
 
 = partial "partials/navbar"
 
 %h1.text-center UAIS Event Attendance
 
-%p.text-center If you are a registered member then please use your email address associated to your membership, otherwise please sign-in with any email address you like.
+%p.text-center
+  If you are a registered member then please use your email
+  address associated to your membership, otherwise please sign-in with any
+  email address you like. We won't send you newsletters but might send material
+  from the event.
 
 %form{action: 'https://api.uais.dev/attendance', method: 'post'}
   .form-box
@@ -17,6 +22,5 @@ title: Attendance
           *
       %input.form-item{type: 'email', name: 'email', placeholder: 'email', required: 'true'}
     %br
+    %input{type: 'hidden', name: 'event', value: current_page.data.event}
     %input.form-btn{type: 'submit', value: 'Sign In'}
-
-
