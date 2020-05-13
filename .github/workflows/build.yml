@@ -6,7 +6,7 @@ name: Compile Website
 # events but only for the master branch
 on:
   push:
-    branches: [ master, build-action ]
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
