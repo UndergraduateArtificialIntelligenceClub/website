@@ -1,0 +1,55 @@
+{
+	"nav": [{
+		"text": "Presentations",
+		"link": "/presentations",
+		"target": "",
+		"icon": ["fas", "file-powerpoint"]
+	}, {
+		"text": "Getting Started",
+		"link": "/getting-started",
+		"target": "",
+		"icon": ["fas", "code"]
+	}, {
+		"text": "Event Attendees",
+		"link": "/attendance",
+		"target": "",
+		"icon": ["fas", "dice-d20"]
+	}, {
+		"text": "Signup",
+		"link": "/signup",
+		"target": "",
+		"icon": ["fas", "jedi"]
+	}, {
+		"text": "GitHub",
+		"link": "https://github.com/undergraduateartificialintelligenceclub",
+		"target": "blank",
+		"icon": ["fab", "github"]
+	}, {
+		"text": "Slack",
+		"link": "https://albertaundergradai.slack.com",
+		"target": "blank",
+		"icon": ["fab", "slack"]
+	}, {
+		"text": "About",
+		"link": "/about",
+		"target": "",
+		"icon": ["fas", "theater-masks"]
+	}],
+	"socials": [
+		{
+			"text": "Twitter",
+			"link": "",
+			"icon": ["fab", "twitter"]
+		},
+		{
+			"text": "LinkedIn",
+			"link": "",
+			"icon": ["fab", "linkedin"]
+		},
+		{
+			"text": "Eventbrite",
+			"link": "",
+			"icon": ["fas", "calendar"]
+		}
+	]
+}

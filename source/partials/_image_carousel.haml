@@ -1,9 +1,0 @@
-%h2
-  Event Images
-%p
-  Here are some images from our past events!
-.carousel
-  - path = "/images/events/"
-  - Dir.foreach("source" + path) do |file|
-    - if file != "." && file != ".."
-      %img{src: path + file}
