@@ -21,6 +21,14 @@ div
 		|	We're currently working through the Deep Learning textbook by Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
 </template>
 
+<style lang="sass">
+.fc a
+	color: #fff
+
+.fc .fc-daygrid-day.fc-day-today
+	background-color: #fff3
+</style>
+
 <script lang="ts">
 import Carousel from '~/components/Carousel.vue'
 import Calendar from '~/components/Calendar.vue'
