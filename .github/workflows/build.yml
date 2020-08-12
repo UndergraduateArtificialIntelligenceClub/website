@@ -31,7 +31,7 @@ jobs:
 
     - run: npm ci
 
-    - run: npm run build
+    - run: npm run generate
 
     - name: Upload website
       uses: shallwefotball/s3-upload-action@master
