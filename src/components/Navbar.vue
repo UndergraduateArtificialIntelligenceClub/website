@@ -27,7 +27,7 @@ nav.navbar
 	max-height: unset
 </style>
 
-<script lang="ts">
+<script >
 import NavbarLink from './NavbarLink.vue'
 import links from '~/assets/data/links.json'
 

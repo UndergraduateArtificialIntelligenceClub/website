@@ -14,7 +14,7 @@ div
 		p {{ presentation.desc }}
 </template>
 
-<script lang="ts">
+<script >
 export default {
 	head: {
 		title: 'Presentations'

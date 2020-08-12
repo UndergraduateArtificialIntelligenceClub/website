@@ -8,7 +8,7 @@ section.section
 	FullCalendar(:options='options')
 </template>
 
-<script lang="ts">
+<script >
 import FullCalendar from '@fullcalendar/vue'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import listPlugin from '@fullcalendar/list'

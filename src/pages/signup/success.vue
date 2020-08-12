@@ -6,7 +6,7 @@ section.section
 	a.is-block(href='/signup') Back To Member Signup
 </template>
 
-<script lang="ts">
+<script >
 export default {
 	head: {
 		title: 'Success'

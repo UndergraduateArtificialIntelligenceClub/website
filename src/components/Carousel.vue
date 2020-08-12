@@ -35,7 +35,7 @@ section.section
 			color: #ccc
 </style>
 
-<script lang="ts">
+<script >
 import { VueAgile } from 'vue-agile'
 import load from '~/assets/images/events'
 

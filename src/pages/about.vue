@@ -42,7 +42,7 @@ div
 		color: $white-ter
 </style>
 
-<script lang="ts">
+<script >
 import execs from '~/assets/data/about.json'
 import Headshot from '~/components/Headshot.vue'
 

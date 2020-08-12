@@ -33,7 +33,7 @@ div
 	justfy-content: center
 </style>
 
-<script lang="ts">
+<script >
 export default {
 	head: {
 		title: 'Event Attendees'

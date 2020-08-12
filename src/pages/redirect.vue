@@ -4,7 +4,7 @@ section.section
 	a(:href='link') click here
 </template>
 
-<script lang="ts">
+<script >
 export default {
 	head: {
 		title: 'Redirecting'

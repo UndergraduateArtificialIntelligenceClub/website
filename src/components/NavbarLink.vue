@@ -8,7 +8,7 @@ a.navbar-item(
 	span {{ link.text }}
 </template>
 
-<script lang="ts">
+<script >
 export default {
 	name: 'NavbarLink',
 	props: ['link']

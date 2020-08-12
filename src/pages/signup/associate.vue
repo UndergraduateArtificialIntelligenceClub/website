@@ -5,7 +5,7 @@ div
 		p
 			| Please use your @ualberta email address for registration as a Regular Member of the Undergraduate Artifical Intelligence Society
 		form(
-			action='https://api.uais.dev/attendance'
+			action='https://api.uais.dev/signup/mysql_stuff'
 			method='post'
 		)
 			br
@@ -107,7 +107,7 @@ div
 		margin: 0
 </style>
 
-<script lang="ts">
+<script >
 import Lbl from '~/components/Label.vue'
 
 export default {

@@ -18,7 +18,7 @@ div
 				a.button.is-info(href='/signup/associate') Join the UAIS
 </template>
 
-<script lang="ts">
+<script >
 export default {
 	head: {
 		title: 'Signup'

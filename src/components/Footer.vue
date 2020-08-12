@@ -24,7 +24,7 @@ h5
 	margin-bottom: .25em
 </style>
 
-<script lang="ts">
+<script >
 import links from '~/assets/data/links.json'
 
 export default {

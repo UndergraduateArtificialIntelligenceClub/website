@@ -50,7 +50,7 @@ div
 	margin-bottom: 0
 </style>
 
-<script lang="ts">
+<script >
 import gettingStarted from '~/assets/data/getting-started.md'
 import datasets from '~/assets/data/datasets.md'
 
