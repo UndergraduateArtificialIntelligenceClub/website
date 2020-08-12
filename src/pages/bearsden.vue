@@ -1,7 +1,7 @@
 <template lang="pug">
 section.section
 	| If you aren't redirected, 
-	a(href='https://uais.eventbrite.com/') click here
+	a(:href='link') click here
 </template>
 
 <script lang="ts">
@@ -9,13 +9,13 @@ export default {
 	head: {
 		title: 'Redirecting'
 	},
-	methods: {
-		redirect: function() {
-			window.location = "https://alberta.campuslabs.ca/engage/organization/albertaundergradai"
+	data() {
+		return {
+			link: "https://alberta.campuslabs.ca/engage/organization/albertaundergradai"
 		}
 	},
-	mounted: function() {
-		this.redirect()
+	fetch({ params, redirect }) {
+		redirect(301, this.data().link)
 	}
 }
 </script>
