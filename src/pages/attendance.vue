@@ -36,7 +36,7 @@ div
 <script lang="ts">
 export default {
 	head: {
-		title: 'Presentations'
+		title: 'Event Attendees'
 	}
 }
 </script>
