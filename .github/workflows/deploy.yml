@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Compile Website
+name: Deploy Website
 
 # Controls when the action will run. Triggers the workflow on push or pull request 
 # events but only for the master branch
@@ -34,7 +34,7 @@ jobs:
     - run: npm run generate
 
     - name: Upload website
-      uses: shallwefotball/s3-upload-action@master
+      uses: shallwefootball/s3-upload-action@master
       with:
         aws_key_id: ${{ secrets.aws_access_key_id }}
         aws_secret_access_key: ${{ secrets.aws_secret_access_key }}
