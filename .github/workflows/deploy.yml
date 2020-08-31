@@ -40,6 +40,7 @@ jobs:
         aws_secret_access_key: ${{ secrets.aws_secret_access_key }}
         aws_bucket: ${{ secrets.bucket }}
         source_dir: 'dist'
+        destination_dir: ''
 
     - name: invalidate
       uses: chetan/invalidate-cloudfront-action@v1.2
