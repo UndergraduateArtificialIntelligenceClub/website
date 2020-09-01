@@ -1,13 +1,20 @@
 <template lang="pug">
 div
 	section.section
-		h1.title UAIS Event Attendance
+		h1.title UAIS Membership Signup
 		p
-			| Please use your @ualberta email address for registration as a Regular Member of the Undergraduate Artifical Intelligence Society
+			| Please use your
+			span.has-text-info=' @ualberta '
+			| email address for registration as a Regular Member of the Undergraduate Artifical Intelligence Society
 		form(
 			action='https://api.uais.dev/signup/mysql_stuff'
 			method='post'
 		)
+			input(
+				type='hidden'
+				name='membership'
+				value='regular'
+			)
 			br
 			Lbl(
 				text='First Name'
