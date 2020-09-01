@@ -11,7 +11,7 @@ export default {
 	},
 	data() {
 		return {
-			link: "https://alberta.campuslabs.ca/engage/organization/albertaundergradai"
+			link: "https://alberta.campuslabs.ca/engage/organization/uais"
 		}
 	},
 	fetch({ params, redirect }) {
