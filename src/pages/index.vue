@@ -15,10 +15,9 @@ div
 	section.section
 		h2.title Meeting Times
 		p
-		|	We meet bi-weekly Friday from 3:30-5:00pm at the Student Innovation Centre, between
-		|	CCIS and the Biological Sciences building.
-		|	We also have a reading group that meets from 1-2pm every Monday in the Student Innovation Centre.
-		|	We're currently working through the Deep Learning textbook by Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+		|	This year, we will be meeting on
+		a(href="https://gather.town/uYObQTFYMhktnM7j/uais")=" Gather "
+		|	between 2-6pm. Come join us anytime within that timeframe.
 </template>
 
 <style lang="sass">
