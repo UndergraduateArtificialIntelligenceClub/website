@@ -38,18 +38,23 @@
 	"socials": [
 		{
 			"text": "Twitter",
-			"link": "",
+			"link": "https://twitter.com/uais_uofa",
 			"icon": ["fab", "twitter"]
 		},
 		{
 			"text": "LinkedIn",
-			"link": "",
+			"link": "https://www.linkedin.com/company/undergraduate-artificial-intelligence-society/",
 			"icon": ["fab", "linkedin"]
 		},
 		{
 			"text": "Eventbrite",
-			"link": "",
+			"link": "https://uais.eventbrite.ca",
 			"icon": ["fas", "calendar"]
+		},
+		{
+			"text": "YouTube",
+			"link": "https://www.youtube.com/channel/UCUHf-X4nGh9JjQyYHd3Zd8A",
+			"icon":	["fab", "youtube"]
 		}
 	]
 }
