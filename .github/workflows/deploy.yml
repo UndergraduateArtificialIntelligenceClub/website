@@ -31,9 +31,7 @@ jobs:
 
     - run: npm ci
 
-    - run: |
-      export value=${{ secrets.API_KEY }}
-      echo google_calendar=$value > .env
+    - run: echo google_calendar=${{ secrets.API_KEY }} > .env
 
     - run: npm run generate
 
