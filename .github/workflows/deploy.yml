@@ -31,8 +31,6 @@ jobs:
 
     - run: npm ci
 
-    - run: export API_KEY=${{ secrets.API_KEY }}
-
     - run: npm run generate
 
     - name: Upload website
