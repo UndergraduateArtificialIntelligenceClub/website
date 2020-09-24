@@ -21,7 +21,8 @@ export default {
 	components: true,
 	buildModules: [
 		'@nuxt/typescript-build',
-		['@nuxtjs/imagemin', { enableInDev: true }]
+		['@nuxtjs/imagemin', { enableInDev: true }],
+		'@nuxtjs/dotenv'
 	],
 	modules: [
 		'nuxt-fontawesome',
@@ -52,6 +53,6 @@ export default {
 		dir: 'assets/data'
 	},
 	publicRuntimeConfig: {
-		calendar: process.env.API_KEY
+		calendar: process.env.google_calendar
 	}
 }
