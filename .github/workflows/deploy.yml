@@ -32,8 +32,8 @@ jobs:
     - run: npm ci
 
     - run: |
-      export value=${{ secrets.aws_secret_access_key }}
-      echo "google_calendar=$value" > .env
+      export value=${{ secrets.API_KEY }}
+      echo google_calendar=$value > .env
 
     - run: npm run generate
 
