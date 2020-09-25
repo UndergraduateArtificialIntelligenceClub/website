@@ -8,6 +8,14 @@ section.section
 	FullCalendar(:options='options')
 </template>
 
+<style lang="sass">
+.fc .fc-list-sticky .fc-list-day > *
+	background: unset
+
+.fc .fc-list-event:hover td
+	background-color: #f5f5f528
+</style>
+
 <script >
 import FullCalendar from '@fullcalendar/vue'
 import dayGridPlugin from '@fullcalendar/daygrid'
