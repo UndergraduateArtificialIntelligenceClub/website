@@ -22,7 +22,14 @@ export default {
 	buildModules: [
 		'@nuxt/typescript-build',
 		['@nuxtjs/imagemin', { enableInDev: true }],
-		'@nuxtjs/dotenv'
+		'@nuxtjs/dotenv',
+		['@aceforth/nuxt-optimized-images', {
+			optimizeImages: true,
+			optimizeImagesInDev: true,
+			mozjpeg: {
+				quality: 99
+			}
+		}]
 	],
 	modules: [
 		'nuxt-fontawesome',
