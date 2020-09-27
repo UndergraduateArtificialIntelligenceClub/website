@@ -25,7 +25,10 @@ export default {
 		'@nuxtjs/dotenv',
 		['@aceforth/nuxt-optimized-images', {
 			optimizeImages: true,
-			optimizeImagesInDev: true
+			optimizeImagesInDev: true,
+			mozjpeg: {
+				quality: 99
+			}
 		}]
 	],
 	modules: [

@@ -1,6 +1,6 @@
 const images = []
 for (let i = 0; i <= 11; i++) {
-	let img = require(`./${i}.jpg?resize&size=800`)
+	let img = require(`./${i}.jpg?resize&size=1000`)
 	images.push(img)
 }
 
