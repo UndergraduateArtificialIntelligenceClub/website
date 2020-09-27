@@ -29,7 +29,8 @@ export default {
 			mozjpeg: {
 				quality: 99
 			}
-		}]
+		}],
+		'nuxt-compress'
 	],
 	modules: [
 		'nuxt-fontawesome',
