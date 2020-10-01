@@ -13,7 +13,8 @@ export default {
 		],
 		link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-			{ hid: 'image', name: 'image', property: 'og:image', content: '/link-preview.png'}
+			{ hid: 'image', name: 'image', property: 'og:image', content: '/link-preview.png' },
+			{ name: 'title', property: 'og:title', content: 'Undergraduate Artificial Intelligence Society' }
 		]
 	},
 	styleResources: {
