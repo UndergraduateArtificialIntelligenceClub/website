@@ -9,12 +9,12 @@ export default {
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-			{ hid: 'description', name: 'description', property: 'og:description', content: desc }
-		],
-		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+			{ hid: 'description', name: 'description', property: 'og:description', content: desc },
 			{ hid: 'image', name: 'image', property: 'og:image', content: '/link-preview.png' },
 			{ name: 'title', property: 'og:title', content: 'Undergraduate Artificial Intelligence Society' }
+		],
+		link: [
+			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
 		]
 	},
 	styleResources: {
