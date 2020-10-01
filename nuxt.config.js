@@ -12,7 +12,8 @@ export default {
 			{ hid: 'description', name: 'description', property: 'og:description', content: desc }
 		],
 		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+			{ hid: 'image', name: 'image', property: 'og:image', content: '/link-preview.png'}
 		]
 	},
 	styleResources: {
