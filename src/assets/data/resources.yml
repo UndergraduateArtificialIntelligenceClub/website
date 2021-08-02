@@ -65,6 +65,10 @@ presentations:
   name: Paul Saunders & Giancarlo Pernudi Segura
   link: https://www.youtube.com/watch?v=spfOM0EMj78&list=PLG7WqhOYbVgl7DYgEH73AIXt1_Y7bkoBz
   desc: Online videos showing a basic introduction to python environments.
+- title: Advanced Architectures - AIMSS AI course
+  name: Giancarlo Pernudi Segura
+  link: https://www.aimss.ca/course-resources#comp-kmoddck7
+  desc: An overview of CNNs, RNNs, NLP, RL & and their applications in medicine.
 etc:
 - title: Compiled r/MachineLearning Links
   link: https://www.reddit.com/r/MachineLearning/wiki/index
