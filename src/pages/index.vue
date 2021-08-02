@@ -10,14 +10,15 @@ div
 		|	You can check 
 		a(href='/constitution.pdf') our constitution
 		|.
-	Carousel
-	Calendar
 	section.section
 		h2.title Meeting Times
 		p
-		|	This year, we will be meeting on
-		a(href="https://gather.town/uYObQTFYMhktnM7j/uais")=" Gather "
-		|	between 2-6pm. Come join us anytime within that timeframe.
+		|	We're still assessing how we'll hold meetings for this upcoming semester.
+		|	If we can gather safely in person and the SIC is open, we'll hold
+		|	meetings there once again. Otherwise, we'll hold meetings online likely
+		|	on our discord.
+	Carousel
+	Calendar
 </template>
 
 <style lang="sass">
