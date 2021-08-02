@@ -24,8 +24,11 @@
 		"@nuxtjs/dotenv": "^1.4.1",
 		"nuxt": "^2.15.7",
 		"nuxt-fontawesome": "^0.4.0",
+		"responsive-loader": "^2.1.1",
+		"sharp": "^0.26.1",
 		"sync-request": "^6.1.0",
-		"vue-agile": "^1.1.3"
+		"vue-agile": "^1.1.3",
+		"webp-loader": "^0.6.0"
 	},
 	"devDependencies": {
 		"@nuxt/content": "^1.14.0",

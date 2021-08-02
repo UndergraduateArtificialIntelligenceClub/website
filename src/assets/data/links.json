@@ -37,6 +37,11 @@
 	}],
 	"socials": [
 		{
+			"text": "Discord",
+			"link": "https://discord.gg/KapmJxs",
+			"icon": ["fab", "discord"]
+		},
+		{
 			"text": "Twitter",
 			"link": "https://twitter.com/uais_uofa",
 			"icon": ["fab", "twitter"]
