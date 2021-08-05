@@ -15,7 +15,7 @@ div
 				.tag.is-info
 					span.icon
 						fa(:icon='["fab", "slack"]')
-					span @{{ exec.slack }}
+					span {{ exec.slack }}
 				p
 					span.has-text-success Blood Type: 
 					span.has-text-danger {{ randomBloodType() }}
