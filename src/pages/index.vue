@@ -13,10 +13,8 @@ div
 	section.section
 		h2.title Meeting Times
 		p
-		|	We're still assessing how we'll hold meetings for this upcoming semester.
-		|	If we can gather safely in person and the SIC is open, we'll hold
-		|	meetings there once again. Otherwise, we'll hold meetings online likely
-		|	on our discord.
+		|	We're planning on holding meetings every week in the SIC on tuesdays @ 16:00 once we get access.
+		|	Please refer to the calendar below to see if we're having a meeting on a specific week.
 	Carousel
 	Calendar
 </template>
