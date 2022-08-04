@@ -16,7 +16,7 @@ div
 			thead
 				tr
 					th Course Name
-					th course Number
+					th Course Number
 					th Days and Time
 			tbody
 				tr(v-for='course in courses')

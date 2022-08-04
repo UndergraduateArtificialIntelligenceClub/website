@@ -1,28 +1,52 @@
 classes:
-- name: Intelligent Systems
-  number: CMPUT 366
-  days: MWF
-  time: 11:00-11:50
-- name: Reinforcement Learning
-  number: CMPUT 397
-  days: MWF
-  time: 1:00-1:50
-- name: Search Simulation and Knowledge
-  number: CMPUT 455
-  days: TR
-  time: 2:00-3:20
-- name: Machine Learning
-  number: CMPUT 466
-  days: TR
+- name: Introduction to Data Science
+  number: CMPUT 191
+  days: TH
+  time: 14:00-15:20
+- name: Ethics of Data Science and Artificial Intelligence
+  number: CMPUT 200
+  days: TH
   time: 11:00-12:20
-- name: Game AI
-  number: CMPUT 296
+- name: Game Artificial Intelligence
+  number: CMPUT 256
   days: MWF
   time: 11:00-11:50
-- name: Basics of ML
-  number: CMPUT 296
-  days: TR
-  time: 2:00-3:20
+- name: Introduction to Artificial Intelligence
+  number: CMPUT 261
+  days: TH
+  time: 9:30-10:50
+- name: Basics of Machine Learning
+  number: CMPUT 267
+  days: TH
+  time: 12:30-13:50
+- name: Games, Puzzles, Algorithms
+  number: CMPUT 355
+  days: TH
+  time: 9:30-10:50
+- name: Introduction to Reinforcement Learning
+  number: CMPUT 365
+  days: MFW
+  time: 13:00-13:50
+- name: Search and Planning in Artificial Intelligence
+  number: CMPUT 366
+  days: TH
+  time: 14:00-15:20
+- name: Intermediate Machine Learning
+  number: CMPUT 367
+  days: TH
+  time: 15:30-16:50
+- name: Search, Knowledge and Simulation
+  number: CMPUT 455
+  days: TH
+  time: 14:00-15:20
+- name: Machine Learning
+  number: CMPUT 463
+  days: TH
+  time: 12:30-13:50
+- name: Artificial Intelligence Capstone
+  number: CMPUT 469
+  days: TH
+  time: 11:00-12:20
 lectures:
   general:
     - title: Machine Learning with Andrew Ng, Stanford University
