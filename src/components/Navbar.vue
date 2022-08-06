@@ -3,7 +3,7 @@ nav.navbar
 	.navbar-brand
 		a(href='/').navbar-item
 			img.image.is-48x48(src='~/assets/images/logo.svg', width='56')
-			h3.is-size-3 UAIS
+			h3.is-size-3.px-1 UAIS
 		a.navbar-burger.burger(
 			role='button'
 			aria-label: 'menu'

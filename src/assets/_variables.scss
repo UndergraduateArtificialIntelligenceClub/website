@@ -37,6 +37,7 @@ $text: #fff;
 $text-light: lighten($text, 10);
 $text-strong: darken($text, 5);
 
+$box-padding: 1.5rem;
 $box-color: $text;
 $box-background-color: $grey-dark;
 $box-shadow: none;

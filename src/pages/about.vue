@@ -33,7 +33,9 @@ div
 @import '~assets/_variables.scss'
 
 .box .tag
-	margin-right: 1rem
+	margin-top: 1rem
+	margin-bottom: 1rem
+	margin-right: .5rem
 
 	&:last-of-type
 		margin-right: 0
