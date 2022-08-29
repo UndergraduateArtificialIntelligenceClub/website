@@ -11,7 +11,7 @@ export default {
 	},
 	data() {
 		return {
-			link: "https://uais.eventbrite.com/"
+			link: "https://forms.gle/BkdkzrS5HQzHXWqWA"
 		}
 	},
 	fetch({ params, redirect }) {
