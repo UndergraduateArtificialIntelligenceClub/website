@@ -7,14 +7,17 @@ div
 		|	is a group of students interested in discussing, learning about, and
 		|	applying Artificial Intelligence techniques of all kinds.
 		|	We welcome all students regardless of field of study or AI knowledge.
-		|	You can check 
+		|	You can check
 		a(href='/constitution.pdf') our constitution
 		|.
 	section.section
 		h2.title Meeting Times
 		p
-		|	We're planning on holding meetings every week in the SIC on tuesdays @ 16:00 once we get access.
-		|	Please refer to the calendar below to see if we're having a meeting on a specific week.
+		|	We hold meetings every week on
+		strong Fridays @ 4:00 PM
+		| in the Student Innovation Center (SIC), starting Steptember 9th 2022.
+		| It's in the connection between CCIS and Biological Sciences. Please refer
+		| to the calendar below to see what we have planned for that day.
 	Carousel
 	Calendar
 </template>
