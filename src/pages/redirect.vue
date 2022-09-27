@@ -11,7 +11,7 @@ export default {
 	},
 	data() {
 		return {
-			link: "https://forms.gle/BkdkzrS5HQzHXWqWA"
+			link: "https://docs.google.com/forms/d/e/1FAIpQLSfAz_H8DCimG7Vb-ciArqd3QkKVsVH-k4v_k_CV8FHkeTNZrg/viewform"
 		}
 	},
 	fetch({ params, redirect }) {
