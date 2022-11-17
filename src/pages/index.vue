@@ -1,13 +1,19 @@
 <template lang="pug">
 div
 	section.section
+		h2.title.is-1.has-text-primary Hex Tournmanent
+		p
+		|	Head over to our{{' '}}
+		a(href='/hex') Hex Tournament page
+		|	for more info.
+	section.section
 		h2.title Basic Information
 		p
 		|	The University of Alberta Undergraduate Artificial Intelligence Society
 		|	is a group of students interested in discussing, learning about, and
 		|	applying Artificial Intelligence techniques of all kinds.
 		|	We welcome all students regardless of field of study or AI knowledge.
-		|	You can check
+		|	You can check{{' '}}
 		a(href='/constitution.pdf') our constitution
 		|.
 	section.section
