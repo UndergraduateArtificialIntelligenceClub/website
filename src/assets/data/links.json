@@ -1,5 +1,10 @@
 {
 	"nav": [{
+		"text": "Hex Tournament",
+		"link": "/hex",
+		"target": "",
+		"icon": ["fas", "trophy"]
+	}, {
 		"text": "Presentations",
 		"link": "/presentations",
 		"target": "",

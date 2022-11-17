@@ -100,3 +100,11 @@ etc:
 - title: r/artificial
   link: https://www.reddit.com/r/artificial/
   desc:
+hex_tournament:
+  main_links:
+    - title: GitHub Repository
+      link: https://github.com/UndergraduateArtificialIntelligenceClub/UAIS-2022-Hex-Bot
+    - title: Information & Work Sessions
+      link: https://docs.google.com/forms/d/e/1FAIpQLSe0wDnZNkZs8djlhG1a9imCP8jvQtRmsZBGRaa6oHyhZ2pjfQ/viewform
+    - title: Slides
+      link: https://docs.google.com/presentation/d/1LCZ4jU4W67eS0c5BVVPo26LmeYuLQSIlK0sUElfl9nE/edit#slide=id.p
