@@ -7,6 +7,8 @@ div
 			ul
 				li(v-for='main_link in hex_tournament.main_links')
 					a.is-block(:href='main_link.link') {{ main_link.title }}
+		h2.subtitle Poster
+		img(:src='require(`@/assets/images/poster.png`)')
 </template>
 
 <script >
