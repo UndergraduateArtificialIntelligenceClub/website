@@ -20,6 +20,7 @@ div
 			p
 				strong
 					i.has-text-primary We have access to GPUs!
+			img(:src='require(`@/assets/images/poster.png`)')
 		h2.subtitle Runtime Restrictions
 		.content
 			ul
@@ -39,9 +40,11 @@ div
 						li External layers in a model are okay, but must be cited.
 	section.section
 		h2.title.is-2 Sponsored by
-		p Thank you to our sponsors for supporting the Hex Tournament!
-		div
-			img(:src='require(`@/assets/images/sponsors/${sponsor.logo}`)' :alt='sponsor.name' v-for='sponsor in sponsors')
+		.content
+			p Thank you to our sponsors for supporting the Hex Tournament!
+		h3.title.is-3.has-text-warning Gold Sponsors
+		#sponors
+			img(:src='require(`@/assets/images/sponsors/${sponsor.logo}`)' :alt='sponsor.name' v-for='sponsor in sponsors.gold')
 	section.section
 		h2.title.is-2 Tiers
 		p
@@ -56,13 +59,11 @@ div
 				li(v-for='prize in hex_tournament.prizes')
 					strong {{ prize.title }}
 					p.has-text-success {{ prize.desc }}
-		h2.subtitle Poster
-		img(:src='require(`@/assets/images/poster.png`)')
 </template>
 
 <style lang="sass" scoped>
 // images that contain ratio with height of 100px and shadow white
-img
+#sponsors img
 	height: 100px
 	width: auto
 	margin-block: 1rem
@@ -79,7 +80,7 @@ export default {
 		console.log(sponsors)
 		return {
 			hex_tournament: resources.hex_tournament,
-			sponsors: sponsors.sponsors
+			sponsors: sponsors
 		}
 	}
 }
