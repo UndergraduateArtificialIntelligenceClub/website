@@ -29,7 +29,7 @@
 		"nuxt-compress": "^3.0.0",
 		"nuxt-fontawesome": "^0.4.0",
 		"responsive-loader": "^2.1.1",
-		"sharp": "^0.26.1",
+		"sharp": "^0.30.5",
 		"sync-request": "^6.1.0",
 		"vue-agile": "^1.1.3",
 		"webp-loader": "^0.6.0"
