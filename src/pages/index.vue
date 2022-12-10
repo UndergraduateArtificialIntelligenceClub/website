@@ -21,9 +21,9 @@ div
 		p
 		|	We hold meetings every week on
 		strong Fridays @ 4:00 PM
-		| in the Student Innovation Center (SIC), starting Steptember 9th 2022.
-		| It's in the connection between CCIS and Biological Sciences. Please refer
-		| to the calendar below to see what we have planned for that day.
+		|	in the Student Innovation Center (SIC), starting Steptember 9th 2022.
+		|	It's in the connection between CCIS and Biological Sciences. Please refer
+		|	to the calendar below to see what we have planned for that day.
 	Carousel
 	Calendar
 </template>
