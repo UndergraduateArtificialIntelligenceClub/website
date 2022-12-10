@@ -6,6 +6,7 @@ div
 		|	Head over to our{{' '}}
 		a(href='/hex') Hex Tournament page
 		|	for more info.
+		img(:src='require(`@/assets/images/poster.png`)')
 	section.section
 		h2.title Basic Information
 		p

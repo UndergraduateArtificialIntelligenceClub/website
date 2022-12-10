@@ -56,6 +56,8 @@ div
 				li(v-for='prize in hex_tournament.prizes')
 					strong {{ prize.title }}
 					p.has-text-success {{ prize.desc }}
+		h2.subtitle Poster
+		img(:src='require(`@/assets/images/poster.png`)')
 </template>
 
 <style lang="sass" scoped>
