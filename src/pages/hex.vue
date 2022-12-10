@@ -43,8 +43,7 @@ div
 		.content
 			p Thank you to our sponsors for supporting the Hex Tournament!
 		h3.title.is-3.has-text-warning Gold Sponsors
-		#sponors
-			img(:src='require(`@/assets/images/sponsors/${sponsor.logo}`)' :alt='sponsor.name' v-for='sponsor in sponsors.gold')
+		Sponsor(:sponsor='sponsor' v-for='sponsor in sponsors.gold' v-bind:key=`sponsor.name`)
 	section.section
 		h2.title.is-2 Tiers
 		p
@@ -61,18 +60,13 @@ div
 					p.has-text-success {{ prize.desc }}
 </template>
 
-<style lang="sass" scoped>
-// images that contain ratio with height of 100px and shadow white
-#sponsors img
-	height: 100px
-	width: auto
-	margin-block: 1rem
-</style>
-
 <script>
 export default {
 	head: {
 		title: 'Hex Tournament'
+	},
+	components: {
+		Sponsor: () => import('@/components/Sponsor.vue')
 	},
 	async asyncData({ $content, params }) {
 		const resources = await $content(params.slug || 'resources').fetch()

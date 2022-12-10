@@ -1,0 +1,33 @@
+<template lang="pug">
+div
+	img(:src='require(`@/assets/images/sponsors/${sponsor.logo}`)' :alt='sponsor.name')
+	a.is-size-3(:href='sponsor.link', target='_blank', rel='noopener noreferrer')
+		span.icon
+			fa(:icon='openIcon')
+		span.ml-4 {{ sponsor.name }}
+</template>
+
+<style lang="sass" scoped>
+a
+	display: flex
+	height: fit-content
+	width: fit-content
+	align-items: center
+
+img
+	height: 100px
+	width: auto
+	margin-block: 1rem
+</style>
+
+<script >
+export default {
+	name: 'Sponsor',
+	props: ['sponsor'],
+	data() {
+		return {
+			openIcon: ['fas', 'link']
+		}
+	}
+}
+</script>
