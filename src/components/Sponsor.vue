@@ -16,7 +16,9 @@ a
 
 img
 	height: 100px
-	width: auto
+	width: 100%
+	object-fit: contain
+	object-position: left
 	margin-block: 1rem
 </style>
 
