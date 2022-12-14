@@ -1,13 +1,13 @@
-<template lang="pug">
+<template lang='pug'>
 div
-	img(:src='`/images/sponsors/${sponsor.logo}`' :alt='sponsor.name')
+	img(:src='`/images/sponsors/${sponsor.logo}?format=webp`' :alt='sponsor.name', loading='lazy')
 	a.is-size-3(:href='sponsor.link', target='_blank', rel='noopener noreferrer')
 		span.icon
 			i(:class='openIcon')
 		span.ml-4 {{ sponsor.name }}
 </template>
 
-<style lang="sass" scoped>
+<style lang='sass' scoped>
 a
 	display: flex
 	height: fit-content

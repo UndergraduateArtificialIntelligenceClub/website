@@ -3,7 +3,7 @@ section.section
 		h2.title Event Images
 		p Some images from our past events!
 		Flicking(:options='main', :plugins="plugins")
-			img.panel(:src='image', v-for='(image, index) in images', :key='index')
+			img.panel(:src='image', v-for='(image, index) in images', :key='index', loading="lazy")
 </template>
 
 <style lang="sass">
@@ -19,7 +19,7 @@ import Flicking from '@egjs/vue3-flicking'
 import { AutoPlay } from '@egjs/flicking-plugins'
 
 const images = [...Array(13).keys()]
-	.map((i) => `/images/events/${i}.jpg`)
+	.map((i) => `/images/events/${i}.jpg?format=webp`)
 
 export default {
 	name: 'Carousel',

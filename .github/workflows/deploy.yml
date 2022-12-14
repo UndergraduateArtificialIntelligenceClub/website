@@ -32,7 +32,7 @@ jobs:
 
     - run: npm ci
 
-    - run: npm run generate
+    - run: npm run build
       env:
         PUBLIC_GOOGLE_CALENDAR: ${{ secrets.API_KEY }}
 

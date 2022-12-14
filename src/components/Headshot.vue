@@ -1,6 +1,6 @@
 <template lang="pug">
 figure.image.is-128x128
-	img.is-rounded(:src='`/images/headshots/` + imgFile + `.jpg`')
+	img.is-rounded(:src='`/images/headshots/` + imgFile + `.jpg?format=webp`', :alt='alt', loading='lazy')
 </template>
 
 <style lang="sass" scoped>
@@ -13,6 +13,6 @@ img
 <script lang="ts" >
 export default {
 	name: 'Headshot',
-	props: ['imgFile']
+	props: ['imgFile', 'alt']
 }
 </script>

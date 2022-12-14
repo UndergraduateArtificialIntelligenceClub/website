@@ -26,7 +26,7 @@ const randomSIN = () => `${rand3Digits()} ${rand3Digits()} ${rand3Digits()}`
 		<div class="box">
 			<article class="media">
 				{index % 2 === 1 && <figure class="media-left">
-					<Headshot imgFile={exec.github}></Headshot>
+					<Headshot imgFile={exec.github} alt={exec.name}></Headshot>
 				</figure>}
 				<div class="media-content">
 					<h2 class="title has-text-primary">{ exec.name } { exec.emoji }</h2>
@@ -52,7 +52,7 @@ const randomSIN = () => `${rand3Digits()} ${rand3Digits()} ${rand3Digits()}`
 					</p>
 				</div>
 				{index % 2 === 0 && <figure class="media-right">
-					<Headshot imgFile={exec.github}></Headshot>
+					<Headshot imgFile={exec.github} alt={exec.name}></Headshot>
 				</figure>}
 			</article>
 		</div>

@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Default.astro'
+import { Image } from '@astrojs/image/components'
 import Sponsor from '@components/Sponsor.vue'
 import { hex_tournament } from '@data/resources.json'
 import sponsors from '@data/sponsors.json'
@@ -35,7 +36,13 @@ import sponsors from '@data/sponsors.json'
 					<i class="has-text-primary">We have access to GPUs!</i>
 				</strong>
 			</p>
-			<img src="/images/poster.png" />
+			<Image
+				src="/images/poster.png"
+				alt="Computer Hex Tournament Poster"
+				width={673}
+				height={871}
+				format="webp"
+			/>
 		</div>
 		<h2 class="subtitle">Runtime Restrictions</h2>
 		<div class="content">
