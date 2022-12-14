@@ -1,5 +1,6 @@
 import { astroImageTools } from 'astro-imagetools'
 import compress from 'astro-compress'
+import compressor from 'astro-compressor'
 import { defineConfig } from 'astro/config'
 import image from '@astrojs/image'
 import purgecss from 'astro-purgecss'
@@ -17,6 +18,7 @@ export default defineConfig({
     sitemap(),
     purgecss({ safelist: [/^.fc/, '#calendar'] }),
     compress(),
+    compressor()
   ],
   site: "https://uais.dev",
   output: 'static'
