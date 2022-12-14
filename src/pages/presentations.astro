@@ -1,0 +1,24 @@
+---
+import Layout from '@layouts/Default.astro'
+import resources from '@data/resources.json'
+
+const presentations = resources.presentations
+---
+
+<Layout title='Presentations'>
+<>
+	<section class="section">
+		<h1 class="title">Presentations</h1>
+		<p>This is a collection of presentations from UAIS members and invited speakers.
+			You can also check out our <a href="https://www.youtube.com/channel/UCUHf-X4nGh9JjQyYHd3Zd8A">YouTube Channel </a>for some recorded presentations.</p>
+	</section>
+	{presentations.map(presentation =>
+		<section class="section">
+			<h1 class="title">{presentation.title}</h1>
+			<h2 class="subtitle">{presentation.name}</h2>
+			<a class="is-block" href={presentation.link}>Link to presentation</a>
+			<p>{presentation.desc}</p>
+		</section>
+	)}
+</>
+</Layout>

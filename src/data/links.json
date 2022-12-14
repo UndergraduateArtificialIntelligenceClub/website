@@ -1,0 +1,79 @@
+{
+	"nav": [
+		{
+			"text": "Hex Tournament",
+			"link": "/hex",
+			"target": "",
+			"icon": "fa-solid fa-trophy"
+		},
+		{
+			"text": "Presentations",
+			"link": "/presentations",
+			"target": "",
+			"icon": "fa-solid fa-file-powerpoint"
+		},
+		{
+			"text": "Getting Started",
+			"link": "/getting-started",
+			"target": "",
+			"icon": "fa-solid fa-code"
+		},
+		{
+			"text": "Event Attendees",
+			"link": "/attendance",
+			"target": "",
+			"icon": "fa-solid fa-dice-d20"
+		},
+		{
+			"text": "Signup",
+			"link": "/signup",
+			"target": "",
+			"icon": "fa-solid fa-jedi"
+		},
+		{
+			"text": "GitHub",
+			"link": "https://github.com/undergraduateartificialintelligenceclub",
+			"target": "blank",
+			"icon": "fa-brands fa-github"
+		},
+		{
+			"text": "Slack",
+			"link": "https://albertaundergradai.slack.com",
+			"target": "blank",
+			"icon": "fa-brands fa-slack"
+		},
+		{
+			"text": "About",
+			"link": "/about",
+			"target": "",
+			"icon": "fa-solid fa-theater-masks"
+		}
+	],
+	"socials": [
+		{
+			"text": "Discord",
+			"link": "https://discord.gg/KapmJxs",
+			"icon": "fa-brands fa-discord"
+		},
+		{
+			"text": "Twitter",
+			"link": "https://twitter.com/uais_uofa",
+			"icon": "fa-brands fa-twitter"
+		},
+		{
+			"text": "LinkedIn",
+			"link": "https://www.linkedin.com/company/undergraduate-artificial-intelligence-society/",
+			"icon": "fa-brands fa-linkedin"
+		},
+		{
+			"text": "Eventbrite",
+			"link": "https://uais.eventbrite.ca",
+			"icon": "fa-solid fa-calendar"
+		},
+		{
+			"text": "YouTube",
+			"link": "https://www.youtube.com/@uais",
+			"icon": "fa-brands fa-youtube"
+		}
+	]
+}

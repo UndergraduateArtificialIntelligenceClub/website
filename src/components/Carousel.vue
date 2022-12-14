@@ -2,57 +2,38 @@
 section.section
 		h2.title Event Images
 		p Some images from our past events!
-		agile(:options='main')
-			.slide(v-for='(image, index) in images', :key='index')
-				img(:src='image')
-			template(slot='prevButton')
-				fa(:icon='["fas", "chevron-left"]')
-			template(slot='nextButton')
-				fa(:icon='["fas", "chevron-right"]')
+		Flicking(:options='main', :plugins="plugins")
+			img.panel(:src='image', v-for='(image, index) in images', :key='index', loading="lazy")
 </template>
 
 <style lang="sass">
-.agile
-	width: 80%
-	margin: auto
+@import url("@egjs/vue3-flicking/dist/flicking.css")
 
-	&__actions
-		position: absolute
-		width: 100%
-		top: 0
-		height: 100%
-
-	&__nav-button
-		background: transparent
-		border: none
-		color: #fff
-		cursor: pointer
-		font-size: 2rem
-		transition-duration: 300ms
-		filter: drop-shadow(0 0 .2rem #000)
-
-		&:hover
-			color: #ccc
+.panel
+	object-fit: contain
+	box-shadow: none
 </style>
 
-<script >
-import { VueAgile } from 'vue-agile'
-import load from '~/assets/images/events'
+<script lang='ts'>
+import Flicking from '@egjs/vue3-flicking'
+import { AutoPlay } from '@egjs/flicking-plugins'
+
+const images = [...Array(13).keys()]
+	.map((i) => `/images/events/${i}.jpg?format=webp`)
 
 export default {
 	name: 'Carousel',
 	components: {
-		agile: VueAgile
+		Flicking
 	},
 	data() {
 		return {
 			main: {
-				dots: false,
-				slidesToShow: 1,
-				autoplay: true,
-				infinite: true
+				align: 'prev',
+				circular: true,
 			},
-			images: load()
+			plugins: [new AutoPlay()],
+			images
 		}
 	}
 }

@@ -17,7 +17,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [18.x]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -32,4 +32,4 @@ jobs:
 
     - run: npm ci
 
-    - run: npm run generate
+    - run: npm run build

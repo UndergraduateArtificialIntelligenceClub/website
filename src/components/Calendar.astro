@@ -1,0 +1,43 @@
+<section class="section">
+	<h2 class="title">Upcoming Events</h2>
+	<p>
+		Checkout our <a href="https://uais.eventbrite.com/">EventBrite</a> page
+		to stay up to date with upcoming events.
+	</p>
+	<div id="calendar"></div>
+</section>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" integrity="sha256-5veQuRbWaECuYxwap/IOE/DAwNxgm4ikX7nrgsqYp88=" crossorigin="anonymous">
+<style lang="sass" is:global>
+/*! purgecss start ignore */
+.fc .fc-list-sticky .fc-list-day > *
+	background: unset !important
+
+.fc .fc-daygrid-day.fc-day-today
+	background-color: hsla(0, 0%, 100%, .2) !important
+
+.fc .fc-list-event:hover td
+	background-color: #f5f5f528 !important
+
+#calendar a
+	color: white !important
+/*! purgecss end ignore */
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js" integrity="sha256-7PzqE1MyWa/IV5vZumk1CVO6OQbaJE4ns7vmxuUP/7g=" crossorigin="anonymous"></script>
+<script defer>
+const calendarEl = document.getElementById('calendar')
+const calendar = new FullCalendar.Calendar(calendarEl, {
+	googleCalendarApiKey: import.meta.env.PUBLIC_GOOGLE_CALENDAR,
+	initialView: 'dayGridMonth',
+	headerToolbar: {
+		left: 'prev,today,next',
+		center: 'title',
+		right: 'dayGridMonth,listYear'
+	},
+	eventSources: [{
+		googleCalendarId: 'ualberta.ca_jllnjo7p3k6pedrio4ftfah7qg@group.calendar.google.com',
+	}]
+})
+calendar.render()
+</script>

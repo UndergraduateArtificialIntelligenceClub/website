@@ -1,0 +1,101 @@
+---
+import Layout from '@layouts/Default.astro'
+import { Image } from '@astrojs/image/components'
+import Sponsor from '@components/Sponsor.vue'
+import { hex_tournament } from '@data/resources.json'
+import sponsors from '@data/sponsors.json'
+---
+
+<Layout title='Hex Tournament'>
+<>
+	<section class="section">
+		<h1 class="title is-1">Fall 2022 Hex Tournament</h1>
+		<h2 class="subtitle">Important Links</h2>
+		<div class="content">
+			<ul>
+				{hex_tournament.main_links.map(mainLink =>
+					<li>
+						<a class="is-block" href={mainLink.link}>{mainLink.title}</a>
+					</li>
+				)}
+			</ul>
+		</div>
+		<h2 class="subtitle">General Information</h2>
+		<div class="content">
+			<p>
+			What is a Computer Hex Bot? Any computer program that is designed to
+			play the board game Hex on the computer. Participants (individually
+			or in teams) will build a computer program capable of playing Hex,
+			subject to some constraints below. This bot can use any method of
+			playing you want. It can perform search, use big neural networks, or
+			incorporate human-determined rules. Bots must communicate with the
+			terminal via a pre-defined set of inputs & outputs.
+			</p>
+			<p>
+				<strong>
+					<i class="has-text-primary">We have access to GPUs!</i>
+				</strong>
+			</p>
+			<Image
+				src="/images/poster.png"
+				alt="Computer Hex Tournament Poster"
+				width={673}
+				height={871}
+				format="webp"
+			/>
+		</div>
+		<h2 class="subtitle">Runtime Restrictions</h2>
+		<div class="content">
+			<ul>
+				<li>Single Threaded, able to run on a lab machine.<ul>
+						<li>Excessive memory usage will result in termination of program & a loss</li>
+					</ul>
+				</li>
+				<li>Returns 'best move' in 1.5 minutes or less.</li>
+				<li>Make sure you test on the lab machines!</li>
+			</ul>
+		</div>
+		<h2 class="subtitle">Development restrictions</h2>
+		<div class="content">
+			<ul>
+				<li>Train using 100 AWS servers? Go for it!</li>
+				<li>Build + Train a GPT clone? Why not!</li>
+				<li>Highly optimized MCTS written in C? Good luck!</li>
+				<li>RESTRICTION: Use of externally produced models is not allowed.<ul>
+						<li>External layers in a model are okay, but must be cited.</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section class="section">
+		<h2 class="title is-2">Sponsored by</h2>
+		<div class="content">
+			<p>Thank you to our sponsors for supporting the Hex Tournament!</p>
+		</div>
+		<h3 class="title is-3 has-text-warning">Gold Sponsors</h3>
+		{sponsors.gold.map(sponsor =>
+			<Sponsor sponsor={sponsor} />
+		)}
+	</section>
+	<section class="section">
+		<h2 class="title is-2">Tiers</h2>
+		<p></p> There are two tiers. The first one is for 1st and 2nd years, and the
+		second one is for 3rd+ years. This is to help eliminate the
+		advantage upper-year students have in taking higher-level courses.
+	</section>
+	<section class="section">
+		<h2 class="title is-2">Prizes</h2>
+		<div class="content">
+			<p>These are the prizes for each tier.</p>
+			<ul>
+				{hex_tournament.prizes.map(prize =>
+					<li><strong>{ prize.title }</strong>
+						<p class="has-text-success">{ prize.desc }</p>
+					</li>
+				)}
+			</ul>
+		</div>
+	</section>
+</>
+</Layout>

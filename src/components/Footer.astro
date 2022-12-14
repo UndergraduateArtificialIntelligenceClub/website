@@ -1,0 +1,39 @@
+---
+import links from '@data/links.json'
+
+const siteLinks = links.nav
+	.concat({ text: 'Home', link: '/', icon: '', target: '' })
+	.reverse()
+const socials = links.socials
+---
+
+<div class="footer">
+	<div class="columns">
+		<div class="column is-4 is-offset-2">
+			<h5 class="is-size-5">Site Links</h5>
+			{siteLinks
+				.filter(siteLink => siteLink.link.startsWith('/'))
+				.map(siteLink =>
+					<a class="is-block" href={siteLink.link}>
+						{ siteLink.text }
+					</a>
+				)}
+		</div>
+		<div class="column is-4 is-offset-2">
+			<h5 class="is-size-5">Social Media</h5>
+			{socials.map(social =>
+				<a class="is-block" href={social.link}>
+					<span class="icon has-text-info">
+						<i class={social.icon}></i>
+					</span>
+					<span>{ social.text }</span>
+				</a>
+			)}
+		</div>
+	</div>
+</div>
+
+<style lang="sass">
+h5
+	margin-bottom: .25em
+</style>

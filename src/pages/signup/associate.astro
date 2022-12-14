@@ -1,0 +1,77 @@
+---
+import Layout from '@layouts/Default.astro'
+import Label from '@components/Label.vue'
+---
+
+<Layout title='Associate Member Signup'>
+<section class="section">
+	<h1 class="title">UAIS Membership Signup</h1>
+	<form action="https://api.uais.dev/signup/mysql_stuff" method="post">
+		<input type="hidden" name="membership" value="associate" />
+		<br />
+		<Label text="First Name" required />
+		<div class="field has-addons">
+			<div class="control has-icons-left">
+				<input class="input" type="text" name="firstname" placeholder="First Name" required="true" /><span class="icon is-left">
+					<i class="fa-solid fa-user"></i>
+				</span></div>
+		</div>
+		<Label text="Last Name" required />
+		<div class="field has-addons">
+			<div class="control has-icons-left">
+				<input class="input" type="text" name="lastname" placeholder="Last Name" required="true" /><span class="icon is-left">
+					<i class="fa-solid fa-user"></i>
+				</span></div>
+		</div>
+		<Label text="Email Name" required />
+		<div class="field has-addons">
+			<div class="control has-icons-left">
+				<input class="input" type="email" name="email" placeholder="ccid@ualbert.ca" required="true" /><span class="icon is-left">
+					<i class="fa-solid fa-envelope"></i>
+				</span></div>
+		</div>
+		<div class="field">
+			<Label text="Organization Affiliation" />
+			<div class="control">
+				<label class="radio">
+					<input type="radio" name="org" value="university" />
+					University
+				</label>
+				<label class="radio">
+					<input type="radio" name="org" value="company" />
+					Company
+				</label>
+				<label class="radio">
+					<input type="radio" name="org" value="program" />
+					Other
+				</label>
+			</div>
+		</div>
+		<Label text="Name of Organization" />
+		<div class="field has-addons">
+			<div class="control">
+				<input class="input" type="text" name="orgname" placeholder="Organization Name" />
+			</div>
+		</div>
+		<Label text="Position at Organization" />
+		<div class="field has-addons">
+			<div class="control">
+				<input class="input" type="text" name="position" placeholder="Position Title" />
+			</div>
+		</div>
+		<div class="field">
+			<div class="control">
+				<input class="button is-info" type="submit" value="Submit" />
+			</div>
+		</div>
+	</form>
+</section>
+</Layout>
+
+<style lang="sass" scoped>
+.radio
+	display: block
+	width: max-content
+	& + &
+		margin: 0
+</style>

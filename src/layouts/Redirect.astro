@@ -1,0 +1,30 @@
+---
+import about from '@data/about.json'
+
+export interface Props {
+	link: string;
+}
+
+const { link } = Astro.props;
+const { description } = about;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Redirecting...</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="title" property="og:title" content="UAIS" />
+		<meta name="description" property="og:description" content={description}>
+		<meta name="image" property="og:image" content="/images/logo.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<script define:vars={{ link }}>
+			window.location.replace(link)
+		</script>
+	</head>
+	<body>
+	<p>If you aren't redirected, <a href={link}>click here</a></p>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+{
+  "description": "The University of Alberta Undergraduate Artificial Intelligence Society is a group of students interested in discussing, learning about, and applying Artificial Intelligence techniques of all kinds.",
+  "people": [
+    {
+      "name": "Paul Saunders",
+      "emoji": "💯",
+      "position": "President",
+      "description": "Paul Saunders is a fourth year student in a Computing Science Specialization degree. He favours the data science aspect of AI and ML rather than games, and has been working with data since grade 11. He joined UAIS in its very first year and has since been working hard on explaining that AI probably will not take over the world, and he writes the newsletters for the club. He competes in olympic weightlifting, mountain bike races, and is generally a cool guy. He also tutors two math courses, and so along with Justin he is a great resource for any math or stats troubles you may have.",
+      "github": "psaunderualberta",
+      "slack": "P.Saunders"
+    },
+    {
+      "name": "Giancarlo Pernudi Segura",
+      "emoji": "👌",
+      "position": "Vice President",
+      "description": "Also known as gino, Giancarlo is a fourth year student in the Computer Science Specialization program. He's a hardcore linux and vim enthusiast. Currently enrolled in the Canadian Armed Forces Reserves as an Army Communications and Information Systems Specialist. Besides his official responsibilities, he also maintains the club website, and github organization. His focus is member learning and he enables that by creating and teaching workshops available to all members. He has also made all club graphic design objects such as logo's and posters. He likes watching sunsets and long walks on the beach.",
+      "github": "giancarlopernudisegura",
+      "slack": "gino"
+    },
+    {
+      "name": "Justin Valentine",
+      "emoji": "😎",
+      "position": "Treasurer",
+      "description": "Justin is a fourth year math and computer science student interested in robotic motion planning and differential geometry. When he is not studying he likes to run, row and rock climb. By studying AI he hopes to be spared by Roko's Basilisk.",
+      "github": "JustinValentine",
+      "slack": "Justin Valentine"
+    },
+    {
+      "name": "Akemi Izuko",
+      "emoji": "♥ ",
+      "position": "General Secretary",
+      "description": "Akemi is a 3rd year cs student passionate about making machines do the work for him. When he isn't bathing in the warm glow of an LCD, he's breathless on one of Edmonton's biking trails. Uses Arch btw",
+      "github": "Aizuko",
+      "slack": "Akemi Izuko"
+    },
+    {
+      "name": "Saakshi Joshi",
+      "emoji": "😏",
+      "position": "VP External",
+      "description": "Saakshi is a third-year Computing Science student who is always up for spontaneous adventures and new experiences. Harboring feelings of affection towards (baby) animals, Saakshi would like to spend her days wandering the streets feeding birds, kittens, and the like.",
+      "github": "cinnamonhater",
+      "slack": "Saakshi Joshi"
+    },
+    {
+      "name": "Pratham Arora",
+      "emoji": "🦆",
+      "position": "VP Internal",
+      "description": "Pratham is currently a 3rd year student at UofA persuing Specialization in Computing science. He really enjoys watching Football ( It's not called soccer ...) And F1.",
+      "github": "PrathamArora20",
+      "slack": "Pratham Arora"
+    },
+    {
+      "name": "Justin Stevens",
+      "emoji": "🔢",
+      "position": "Founder",
+      "description": "Justin is currently doing a Master's at the University of Alberta. He founded the Undergraduate Artificial Intelligence Society in fall 2018 and but then decided to betray us. His primary interests are in reinforcement and machine learning, and he enjoys teaching other students about the magic behind AI. His areas of research are heuristic search for video games and program synthesis.",
+      "github": "musichead42",
+      "slack": "Justin Stevens"
+    }
+  ]
+}

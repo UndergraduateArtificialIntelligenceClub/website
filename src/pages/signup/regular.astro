@@ -1,0 +1,107 @@
+---
+import Layout from '@layouts/Default.astro'
+import Label from '@components/Label.vue'
+---
+
+<Layout title='Regular Member Signup'>
+<section class="section">
+	<h1 class="title">UAIS Membership Signup</h1>
+	<p>
+		Please use your<span class="has-text-info"> @ualberta </span>email
+		address for registration as a Regular Member of the Undergraduate
+		Artifical Intelligence Society.
+	</p>
+	<form action="https://api.uais.dev/signup/mysql_stuff" method="post">
+		<input type="hidden" name="membership" value="regular" />
+		<br />
+		<Label text="First Name" required />
+		<div class="field has-addons">
+			<div class="control has-icons-left">
+				<input class="input" type="text" name="firstname" placeholder="First Name" required />
+				<span class="icon is-left">
+					<i class="fa-solid fa-user"></i>
+				</span>
+			</div>
+		</div>
+		<Label text="Last Name" required />
+		<div class="field has-addons">
+			<div class="control has-icons-left">
+				<input class="input" type="text" name="lastname" placeholder="Last Name" required />
+				<span class="icon is-left">
+					<i class="fa-solid fa-user"></i>
+				</span>
+			</div>
+		</div>
+		<Label text="Email Name" required />
+		<div class="field has-addons">
+			<div class="control has-icons-left">
+				<input class="input" type="email" name="email" placeholder="ccid@ualbert.ca" required />
+				<span class="icon is-left">
+					<i class="fa-solid fa-envelope"></i>
+				</span>
+			</div>
+		</div>
+		<div class="field">
+			<Label text="What program are you in?" />
+			<div class="control">
+				<label class="radio">
+					<input type="radio" name="program" value="cs" />
+					Computer Science
+				</label>
+				<label class="radio">
+					<input type="radio" name="program" value="ce" />
+					Computer Engineering
+				</label>
+				<label class="radio">
+					<input type="radio" name="program" value="math" />
+					Mathematics
+				</label>
+				<label class="radio">
+					<input type="radio" name="program" value="stat" />
+					Statistics
+				</label>
+				<label class="radio">
+					<input type="radio" name="program" value="psych" />
+					Psychology
+				</label>
+				<label class="radio">
+					<input type="radio" name="program" value="other" />
+					Other
+				</label>
+			</div>
+		</div>
+		<div class="field">
+			<Label text="What year are you in?" />
+			<div class="control has-icons-left">
+				<div class="select">
+					<select name="year">
+						<option value="" selected>Choose an option</option>
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5+">5+</option>
+					</select>
+				</div>
+				<div class="icon is-left">
+					<i class="fa-solid fa-calendar-check"></i>
+				</div>
+			</div>
+		</div>
+		<div class="field">
+			<div class="control">
+				<input class="button is-info" type="submit" value="Submit" />
+			</div>
+		</div>
+	</form>
+</section>
+</Layout>
+
+<style lang="sass" scoped>
+.radio
+	display: block
+	width: max-content
+	& + &
+		margin: 0
+</style>

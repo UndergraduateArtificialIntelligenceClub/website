@@ -1,0 +1,76 @@
+---
+import Layout from '@layouts/Default.astro'
+import { people } from '@data/about.json'
+import Headshot from '@components/Headshot.vue'
+
+const randomBloodType = () => {
+	const bloodGroup = ['A', 'B', 'AB', 'O']
+	const bloodRh = ['-', '+']
+
+	const randomGroup = bloodGroup[Math.floor(Math.random() * bloodGroup.length)]
+	const randomRh = bloodRh[Math.floor(Math.random() * bloodRh.length)]
+	return randomGroup + randomRh
+}
+
+const rand3Digits = () => {
+	const randNum = Math.floor(Math.random() * 1000)
+	return String(randNum).padStart(3, '0')
+}
+
+const randomSIN = () => `${rand3Digits()} ${rand3Digits()} ${rand3Digits()}`
+---
+
+<Layout title='About'>
+<>
+	{people.map((exec, index) =>
+		<div class="box">
+			<article class="media">
+				{index % 2 === 1 && <figure class="media-left">
+					<Headshot imgFile={exec.github} alt={exec.name}></Headshot>
+				</figure>}
+				<div class="media-content">
+					<h2 class="title has-text-primary">{ exec.name } { exec.emoji }</h2>
+					<h3 class="subtitle is-3 has-text-info">{ exec.position }</h3>
+					<p>{ exec.description }</p>
+					<div class="tag is-info"><span class="icon">
+							<i class="fa-brands fa-github"></i>
+						</span><a href="https://github.com/ + exec.github">{ exec.github }</a></div>
+					<div class="tag is-info"><span class="icon">
+							<i class="fa-brands fa-slack"></i>
+						</span><span>{ exec.slack }</span></div>
+					<p>
+						<span class="has-text-success">Blood Type: </span>
+						<span class="has-text-danger">{ randomBloodType() }</span>
+					</p>
+					<p>
+						<span class="has-text-success">SIN: </span>
+						<span>{ randomSIN() }</span>
+					</p>
+					<p>
+						<span class="has-text-success">Credit Card PIN: </span>
+						<span>{ rand3Digits() }</span>
+					</p>
+				</div>
+				{index % 2 === 0 && <figure class="media-right">
+					<Headshot imgFile={exec.github} alt={exec.name}></Headshot>
+				</figure>}
+			</article>
+		</div>
+	)}
+</>
+</Layout>
+
+<style lang="sass">
+@import '../styles/_variables'
+
+.box .tag
+	margin-top: 1rem
+	margin-bottom: 1rem
+	margin-right: .5rem
+
+	&:last-of-type
+		margin-right: 0
+
+	a
+		color: $white-ter
+</style>
