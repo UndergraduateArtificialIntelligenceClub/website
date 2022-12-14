@@ -1,0 +1,198 @@
+{
+	"courses": [
+		{
+			"name": "Introduction to Data Science",
+			"number": "CMPUT 191",
+			"days": "TH",
+			"time": "14:00-15:20"
+		},
+		{
+			"name": "Ethics of Data Science and Artificial Intelligence",
+			"number": "CMPUT 200",
+			"days": "TH",
+			"time": "11:00-12:20"
+		},
+		{
+			"name": "Game Artificial Intelligence",
+			"number": "CMPUT 256",
+			"days": "MWF",
+			"time": "11:00-11:50"
+		},
+		{
+			"name": "Introduction to Artificial Intelligence",
+			"number": "CMPUT 261",
+			"days": "TH",
+			"time": "9:30-10:50"
+		},
+		{
+			"name": "Basics of Machine Learning",
+			"number": "CMPUT 267",
+			"days": "TH",
+			"time": "12:30-13:50"
+		},
+		{
+			"name": "Games, Puzzles, Algorithms",
+			"number": "CMPUT 355",
+			"days": "TH",
+			"time": "9:30-10:50"
+		},
+		{
+			"name": "Introduction to Reinforcement Learning",
+			"number": "CMPUT 365",
+			"days": "MFW",
+			"time": "13:00-13:50"
+		},
+		{
+			"name": "Search and Planning in Artificial Intelligence",
+			"number": "CMPUT 366",
+			"days": "TH",
+			"time": "14:00-15:20"
+		},
+		{
+			"name": "Intermediate Machine Learning",
+			"number": "CMPUT 367",
+			"days": "TH",
+			"time": "15:30-16:50"
+		},
+		{
+			"name": "Search, Knowledge and Simulation",
+			"number": "CMPUT 455",
+			"days": "TH",
+			"time": "14:00-15:20"
+		},
+		{
+			"name": "Machine Learning",
+			"number": "CMPUT 463",
+			"days": "TH",
+			"time": "12:30-13:50"
+		},
+		{
+			"name": "Artificial Intelligence Capstone",
+			"number": "CMPUT 469",
+			"days": "TH",
+			"time": "11:00-12:20"
+		}
+	],
+	"lectures": [
+		{
+			"title": "General Machine Learning",
+			"content": [
+				{
+					"title": "Machine Learning with Andrew Ng, Stanford University",
+					"link": "https://www.youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)",
+					"desc": "Universally recommended machine learning lectures by Andrew Ng, for beginner and intermediate level machine learning."
+				},
+				{
+					"title": "Elements of AI",
+					"link": "https://course.elementsofai.com/",
+					"desc": "Free online course made by the University of Helsinki and Reaktor."
+				}
+			]
+		},
+		{
+			"title": "Reinforcement Learning",
+			"content": [
+				{
+					"title": "Reinforcement Learning with David Silver",
+					"link": "https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ",
+					"desc": "Older but popular lecture series by lead DeepMind researcher David Silver at King’s College London.  Follows along with the first edition of Introduction to RL by Sutton and Barto."
+				}
+			]
+		},
+		{
+			"title": "Deep Learning",
+			"content": [
+				{
+					"title": "Deep Learning and Reinforcement Learning Summer School 2018",
+					"link": "http://videolectures.net/DLRLsummerschool2018_toronto/",
+					"desc": "These are the lecture videos from the 2018 DLRL summer school, held by CIFAR, Amii, and the Vector Institute in Toronto.  The DLRL summer school is pretty competitive, but the lectures actually vary from introductory to advanced.  Links to the slides are also included on the video pages."
+				},
+				{
+					"title": "Advanced Deep Learning and Reinforcement Learning with DeepMind",
+					"link": "https://www.youtube.com/playlist?list=PLqYmG7hTraZDNJre23vqCGIVpfZ_K2RZs",
+					"desc": "A brand new lecture series (2018) done at UCL by a bunch of DeepMind staff."
+				}
+			]
+		}
+	],
+	"presentations": [
+		{
+			"title": "Welcome to UAIS",
+			"name": "Justin Stevens",
+			"link": "https://numbertheoryguydotcom.files.wordpress.com/2018/12/Welcome-to-Undergraduate-Artificial-Intelligence-Society.pdf",
+			"desc": "Introduction of the club and various subfields of AI."
+		},
+		{
+			"title": "Image Classifiers",
+			"name": "Justin Stevens",
+			"link": "https://numbertheoryguydotcom.files.wordpress.com/2019/04/graddescent2-1.pdf",
+			"desc": "Introduction to image classifiers using the MNIST dataset, using tensorflow with Keras, and gradient descent."
+		},
+		{
+			"title": "Alpha Go",
+			"name": "Martin Müller",
+			"link": "https://webdocs.cs.ualberta.ca/~mmueller/ps/2020-Ugrad-AI-group.pdf",
+			"desc": "Presentation from Dr.Müller talking about Alpha Go."
+		},
+		{
+			"title": "Python Workshop",
+			"name": "Giancarlo Pernudi Segura",
+			"link": "https://www.youtube.com/watch?v=u1tYLqSAkZA&feature=youtu.be",
+			"desc": "Workshop for those who are new to Python or looking for some special. tips."
+		},
+		{
+			"title": "Python Environments",
+			"name": "Paul Saunders & Giancarlo Pernudi Segura",
+			"link": "https://www.youtube.com/watch?v=spfOM0EMj78&list=PLG7WqhOYbVgl7DYgEH73AIXt1_Y7bkoBz",
+			"desc": "Online videos showing a basic introduction to python environments."
+		},
+		{
+			"title": "Advanced Architectures - AIMSS AI course",
+			"name": "Giancarlo Pernudi Segura",
+			"link": "https://www.aimss.ca/course-resources#comp-kmoddck7",
+			"desc": "An overview of CNNs, RNNs, NLP, RL & and their applications in medicine."
+		}
+	],
+	"etc": [
+		{
+			"title": "Compiled r/MachineLearning Links",
+			"link": "https://www.reddit.com/r/MachineLearning/wiki/index",
+			"desc": "This is a compilation of links created by the Machine Learning subreddit on reddit, containing various free resources"
+		},
+		{
+			"title": "r/artificial",
+			"link": "https://www.reddit.com/r/artificial/",
+			"desc": null
+		}
+	],
+	"hex_tournament": {
+		"main_links": [
+			{
+				"title": "GitHub Repository",
+				"link": "https://github.com/UndergraduateArtificialIntelligenceClub/UAIS-2022-Hex-Bot"
+			},
+			{
+				"title": "Information & Work Sessions",
+				"link": "https://docs.google.com/forms/d/e/1FAIpQLSe0wDnZNkZs8djlhG1a9imCP8jvQtRmsZBGRaa6oHyhZ2pjfQ/viewform"
+			},
+			{
+				"title": "Slides",
+				"link": "https://docs.google.com/presentation/d/1LCZ4jU4W67eS0c5BVVPo26LmeYuLQSIlK0sUElfl9nE/edit#slide=id.p"
+			}
+		],
+		"prizes": [
+			{
+				"title": "1st Place",
+				"desc": "$100+"
+			},
+			{
+				"title": "2nd Place",
+				"desc": "$50+"
+			},
+			{
+				"title": "3rd Place",
+				"desc": "$25+"
+			}
+		]
+	}
+}

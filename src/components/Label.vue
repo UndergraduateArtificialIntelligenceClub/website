@@ -3,7 +3,7 @@ label.label {{ text }}
 	span.has-text-danger(v-if='required')=' *'
 </template>
 
-<script >
+<script lang='ts'>
 export default {
 	name: 'Lbl',
 	props: [

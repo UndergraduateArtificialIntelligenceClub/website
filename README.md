@@ -2,7 +2,7 @@
 [![MIT license](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/UndergraduateArtificialIntelligenceClub/website/blob/master/LICENSE)
 [![Webiste](https://img.shields.io/website?down_color=red&down_message=down&up_color=green&up_message=up&url=https%3A%2F%2Fuais.dev)](https://uais.dev/)
 [![Compile Website](https://github.com/UndergraduateArtificialIntelligenceClub/website/workflows/Deploy%20Website/badge.svg)](https://github.com/UndergraduateArtificialIntelligenceClub/website/actions)
-[![Node Version](https://img.shields.io/node/v/nuxt)](https://nodejs.org/en/download/)
+[![Node Version](https://img.shields.io/node/v/astro)](https://nodejs.org/en/download/)
 [![Pull Requests Closed](https://img.shields.io/github/issues-pr-closed/UndergraduateArtificialIntelligenceClub/website)](https://github.com/UndergraduateArtificialIntelligenceClub/website/pulls)
 
 If you have any **feature requests**, please **open an issue** with the `enhancement` label.

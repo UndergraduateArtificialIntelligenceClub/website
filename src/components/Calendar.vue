@@ -16,8 +16,8 @@ section.section
 	background-color: #f5f5f528
 </style>
 
-<script >
-import FullCalendar from '@fullcalendar/vue'
+<script lang='ts'>
+import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import listPlugin from '@fullcalendar/list'
 import googlePlugin from '@fullcalendar/google-calendar'
@@ -35,7 +35,7 @@ export default {
 					listPlugin,
 					googlePlugin
 				],
-				googleCalendarApiKey: this.$config.calendar,
+				googleCalendarApiKey: import.meta.env.PUBLIC_GOOGLE_CALENDAR,
 				initialView: 'dayGridMonth',
 				headerToolbar: {
 					left: 'prev,today,next',
@@ -50,7 +50,7 @@ export default {
 		}
 	},
 	methods: {
-		handleEventClick: function(arg) {
+		handleEventClick: function(arg: { event: { url: string | URL | undefined; }; jsEvent: { preventDefault: () => void; }; }) {
 			window.open(arg.event.url, '_blank')
 			arg.jsEvent.preventDefault()
 		}

@@ -1,0 +1,71 @@
+---
+import Layout from '@layouts/Default.astro'
+import * as gettingStarted from '@data/getting-started.md'
+import * as datasets from '@data/datasets.md'
+import { courses, lectures, etc as misc } from '@data/resources.json'
+---
+
+<Layout title='Getting Started'>
+<>
+	<section class="section">
+		<h1 class="title">Get Started</h1>
+		<h4 class="subtitle">Here are some useful resources to get started in Machine Learning</h4>
+		<div class="content" set:html={gettingStarted.compiledContent()}>
+		</div>
+	</section>
+	<section class="section">
+		<h1 class="title">Datasets</h1>
+		<h4 class="subtitle">These are some free datasets to use</h4>
+		<div class="content" set:html={datasets.compiledContent()}>
+		</div>
+	</section>
+	<section class="section">
+		<h1 class="title"> University of Alberta Courses</h1>
+		<table class="table is-fullwidth is-striped">
+			<thead>
+				<tr>
+					<th>Course Name</th>
+					<th>Course Number</th>
+					<th>Days and Time</th>
+				</tr>
+			</thead>
+			<tbody>
+				{courses.map(course =>
+					<tr>
+						<td>{course.name}</td>
+						<td>{course.number}</td>
+						<td>{course.days} {course.time}</td>
+					</tr>
+				)}
+			</tbody>
+		</table>
+	</section>
+	<section class="section">
+		<h1 class="title">Popular Lectures</h1>
+		{lectures.map(({ title, content }) => (<>
+			<h2 class="subtitle is-spaced">{title}</h2>
+			{content.map(({ title, desc, link }) =>
+				<p>
+					<a class="is-block" href={link}>{ title }</a>
+					{ desc }
+				</p>
+			)}
+		</>))}
+	</section>
+	<section class="section">
+		<h1 class="title">Miscellaneous</h1>
+		{misc.map(etc =>
+			<p>
+				<a class="is-block" href={etc.link}>{ etc.title }</a>
+				{ etc.desc }
+			</p>
+		)}
+	</section>
+</>
+</Layout>
+
+<style lang="sass">
+.subtitle.is-spaced
+	margin-top: 1.25rem
+	margin-bottom: 0
+</style>

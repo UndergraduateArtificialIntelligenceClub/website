@@ -34,7 +34,7 @@ jobs:
 
     - run: npm run generate
       env:
-        google_calendar: ${{ secrets.API_KEY }}
+        PUBLIC_GOOGLE_CALENDAR: ${{ secrets.API_KEY }}
 
     - name: Upload website
       uses: shallwefootball/s3-upload-action@master

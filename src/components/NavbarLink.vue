@@ -4,11 +4,11 @@ a.navbar-item(
 	:href='link.link'
 )
 	span.icon.has-text-info
-		fa(:icon='link.icon')
+		i(:class='link.icon')
 	span {{ link.text }}
 </template>
 
-<script >
+<script lang="ts" >
 export default {
 	name: 'NavbarLink',
 	props: ['link']

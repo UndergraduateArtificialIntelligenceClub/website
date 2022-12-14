@@ -1,9 +1,16 @@
 <template lang="pug">
 figure.image.is-128x128
-	img.is-rounded(:src='require(`@/assets/images/headshots/${imgFile}.jpg?resize&size=300`)')
+	img.is-rounded(:src='`/images/headshots/` + imgFile + `.jpg`')
 </template>
 
-<script >
+<style lang="sass" scoped>
+img
+	width: 100%
+	height: 100%
+	object-fit: cover
+</style>
+
+<script lang="ts" >
 export default {
 	name: 'Headshot',
 	props: ['imgFile']
