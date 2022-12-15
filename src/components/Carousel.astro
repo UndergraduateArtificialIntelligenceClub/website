@@ -1,38 +1,46 @@
 ---
-import { Picture } from '@astrojs/image/components'
-import Flicking from '@egjs/vue3-flicking'
-import type { FlickingOptions, Plugin } from '@egjs/vue3-flicking'
-import { AutoPlay } from '@egjs/flicking-plugins'
-
-const main: Partial<FlickingOptions> = {
-	align: 'prev',
-	circular: true,
-}
-const plugins: Plugin[] = [new AutoPlay()]
-const images = await Astro.glob('/public/images/events/*.jpg')
+import { Image } from '@astrojs/image/components'
+const images = (await Astro.glob('/public/images/events/*.jpg'))
+	.map(i => i.default)
 ---
 
-<section class='section'></section>
+<section class='section'>
 		<h2 class='title'>Event Images</h2>
 		<p>Some images from our past events!</p>
-		<Flicking options={main} plugins={plugins} />
-			{images.map((image, i) => <Picture
-				key={i}
-				src={image}
-				alt={`Event Image #${i}`}
-				sizes='(min-width: 1024px) 673px, 100vw'
-				widths={[673]}
-				aspectRatio={1}
-				fit='contain'
-				class='panel'
-				format='webp'
-				loading='lazy'
-			/>)}
+		<div id='flick' class='flicking-viewport'>
+			<div class='flicking-camera'>
+				{images.map((image, i) =>
+					<Image
+						key={i}
+						src={image.src}
+						alt={`Event Image #${i}`}
+						width={673}
+						aspectRatio={ image.width / image.height }
+						class='panel'
+						format='webp'
+						loading='lazy'
+					/>
+				)}
+			</div>
+		</div>
+</section>
 
 <style lang='sass'>
-@import url('@egjs/vue3-flicking/dist/flicking.css')
+@import url('@egjs/flicking/dist/flicking.css')
 
 .panel
 	object-fit: contain
 	box-shadow: none
 </style>
+
+<script>
+import Flicking from '@egjs/flicking'
+import { AutoPlay } from '@egjs/flicking-plugins'
+
+const flicking = new Flicking('#flick', {
+	renderOnlyVisible: true,
+	circular: true,
+	align: 'prev'
+})
+flicking.addPlugins(new AutoPlay())
+</script>

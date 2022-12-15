@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^1.0.0",
+    "@egjs/flicking": "^4.10.4",
     "@egjs/flicking-plugins": "^4.5.0",
-    "@egjs/vue3-flicking": "^4.10.4",
     "astro": "^1.6.14",
     "vue": "^3.2.45"
   },
