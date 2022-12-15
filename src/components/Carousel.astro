@@ -2,6 +2,7 @@
 import { Image } from '@astrojs/image/components'
 const images = (await Astro.glob('/public/images/events/*.jpg'))
 	.map(i => i.default)
+const dimension = 675;
 ---
 
 <section class='section'>
@@ -14,19 +15,24 @@ const images = (await Astro.glob('/public/images/events/*.jpg'))
 						key={i}
 						src={image.src}
 						alt={`Event Image #${i}`}
-						width={673}
-						aspectRatio={ image.width / image.height }
+						width={dimension}
+						height={dimension}
+						fit='contain'
 						class='panel'
 						format='webp'
 						loading='lazy'
+						background='rgba(0, 0, 0, 0)'
 					/>
 				)}
 			</div>
 		</div>
 </section>
 
-<style lang='sass'>
+<style lang='sass' define:vars={{ dimension: `${dimension}px` }} >
 @import url('@egjs/flicking/dist/flicking.css')
+
+#flick
+	height: var(--dimension)
 
 .panel
 	object-fit: contain
