@@ -9,9 +9,10 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" integrity="sha256-5veQuRbWaECuYxwap/IOE/DAwNxgm4ikX7nrgsqYp88=" crossorigin="anonymous">
 <style lang="sass" is:global>
+@import '../styles/_variables.sass'
 /*! purgecss start ignore */
 .fc .fc-list-sticky .fc-list-day > *
-	background: unset !important
+	background: $grey !important
 
 .fc .fc-daygrid-day.fc-day-today
 	background-color: hsla(0, 0%, 100%, .2) !important
