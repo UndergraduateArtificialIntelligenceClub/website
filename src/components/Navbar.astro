@@ -1,0 +1,33 @@
+---
+import NavbarLink from './NavbarLink.vue'
+import { nav } from '@data/links.json'
+---
+
+<nav class="navbar">
+	<div class="navbar-brand">
+		<a class="navbar-item" href="/">
+			<img class="image is-48x48" src="/images/logo.svg" alt="UAIS Logo" width="56">
+			<h3 class="is-size-3 px-1">UAIS</h3>
+		</a>
+		<a class="navbar-burger burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+			{[...Array(3).keys()].map(_ => <span aria-hidden></span>)}
+		</a>
+	</div>
+	<div class="navbar-menu" id="navbarMenu">
+		<div class="navbar-end">
+			{nav.map(link => <NavbarLink key={link.text} link={link} />)}
+		</div>
+	</div>
+</nav>
+
+<style lang="sass" scoped>
+.navbar-item img
+	max-height: unset
+</style>
+
+<script defer>
+document.querySelector('.navbar-burger').addEventListener('click', () => {
+	document.querySelector('.navbar-burger').classList.toggle('is-active')
+	document.querySelector('.navbar-menu').classList.toggle('is-active')
+})
+</script>

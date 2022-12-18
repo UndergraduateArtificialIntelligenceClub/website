@@ -37,10 +37,10 @@
 			"icon": "fa-brands fa-github"
 		},
 		{
-			"text": "Slack",
-			"link": "https://albertaundergradai.slack.com",
+			"text": "Discord",
+			"link": "https://discord.gg/KapmJxs",
 			"target": "blank",
-			"icon": "fa-brands fa-slack"
+			"icon": "fa-brands fa-discord"
 		},
 		{
 			"text": "About",
@@ -54,6 +54,11 @@
 			"text": "Discord",
 			"link": "https://discord.gg/KapmJxs",
 			"icon": "fa-brands fa-discord"
+		},
+		{
+			"text": "Slack",
+			"link": "https://albertaundergradai.slack.com",
+			"icon": "fa-brands fa-slack"
 		},
 		{
 			"text": "Twitter",
