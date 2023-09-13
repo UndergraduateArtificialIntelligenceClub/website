@@ -20,11 +20,11 @@
       ],
       "@data/*": [
         "src/data/*"
+      ],
+      "@images/*": [
+        "src/images/*"
       ]
     },
-    "jsx": "preserve",
-    "types": [
-      "@astrojs/image/client"
-    ]
+    "jsx": "preserve"
   }
 }

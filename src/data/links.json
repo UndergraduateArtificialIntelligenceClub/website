@@ -1,12 +1,6 @@
 {
 	"nav": [
 		{
-			"text": "Hex Tournament",
-			"link": "/hex",
-			"target": "",
-			"icon": "fa-solid fa-trophy"
-		},
-		{
 			"text": "Presentations",
 			"link": "/presentations",
 			"target": "",

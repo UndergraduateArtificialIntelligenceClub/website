@@ -1,6 +1,6 @@
 ---
-import { Image } from '@astrojs/image/components'
-const images = (await Astro.glob('/public/images/events/*.jpg'))
+import { Image } from 'astro:assets'
+const images = (await Astro.glob('/src/images/events/*.jpg'))
 	.map(i => i.default)
 const dimension = 675;
 ---
@@ -12,8 +12,7 @@ const dimension = 675;
 			<div class='flicking-camera'>
 				{images.map((image, i) =>
 					<Image
-						key={i}
-						src={image.src}
+						src={image}
 						alt={`Event Image #${i}`}
 						width={dimension}
 						height={dimension}
