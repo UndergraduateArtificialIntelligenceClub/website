@@ -44,13 +44,14 @@
       "slack": "Pratham Arora"
     },
     {
-"name": "Aarush Bhat",
+      "name": "Aarush Bhat",
       "position": "VP Tech",
       "description": "Pratham is currently a 3rd year student at UofA persuing Specialization in Computing science. He really enjoys watching Football ( It's not called soccer ...) And F1.",
       "github": "aarushb",
       "slack": "Pratham Arora"
     },
-    "name": "Yong Lee",
+    {
+      "name": "Yong Lee",
       "position": "VP Media",
       "description": "Yong is working towards a BSc in Computer Engineering, specializing in Software, at the University of Alberta. In 2018, he earned a Diploma in Petroleum Engineering Technology from SAIT. Afterward, he worked as a petroleum laboratory analyst for Bureau Veritas at the Canadian Natural Resources Limited (CNRL) Horizon Oil Sands for 3+ years. Yong is part of Dr. Kwon’s research team at U of A, serving as a Dean’s Research Awards student. The project they are working on focuses on "Advancing and Validating a Deep Learning-Enabled Tool for Winter Roadway Condition Monitoring.",
       "github": "gjftns7220",
