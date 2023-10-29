@@ -7,38 +7,11 @@ import Calendar from '@components/Calendar.astro'
 
 <Layout title='Homepage'>
 <>
-	<section class="section">
-		<h2 class="title is-1 has-text-primary">Introduction Meeting</h2>
-		<br />
-		<Image
-			src="/images/poster.png"
-			alt="Introduction Meeting Poster"
-			width={673}
-			height={871}
-			format="webp"
-		/>
-	</section>
-	<section class="section">
-		<h2 class="title is-1">Rocket League</h2>
-		<p>
-			We are starting a project to build our own machine learning rocket
-			league bot using the same framework of Nexto!
-		</p>
-		<p>
-			For those who haven't heard of it, Rocket League is basically soccer
-			with cars if all the cars had rockets attached to their rear bumpers.
-			It allows for some incredibly complex gameplay that lends itself
-			perfectly to a machine learning scenario.
-		</p>
-		<p>
-			Due to our limited time & computing resources, we likely won't be
-			able to build a bot on the level of Nexto as its trained for 250k
-			hours. Instead, we will likely take a supervised learning approach
-			using data from <a href="http://ballchasing.com" target="_blank" rel="noopener noreferrer">ballchasing.com</a>.
-			Of course, if everyone working on it wants to use RL then we can
-			absolutely do that!
-		</p>
-	</section>
+<astro>
+  <section style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+    <img src="/images/logo.svg" alt="UAIS Logo" style="max-width: 80%; height: auto;">
+    <h1 style="color: white;">Undergraduate Artificial Intelligence Society</h1>
+  </section>	
 	<section class="section">
 		<h2 class="title">Basic Information</h2>
 		<p></p> The University of Alberta Undergraduate Artificial Intelligence Society
@@ -46,13 +19,6 @@ import Calendar from '@components/Calendar.astro'
 		applying Artificial Intelligence techniques of all kinds.
 		We welcome all students regardless of field of study or AI knowledge.
 		You can check <a href="/constitution.pdf">our constitution</a>.
-	</section>
-	<section class="section">
-		<h2 class="title">Meeting Times</h2>
-		<p> We hold meetings every week on <strong>Fridays @ 5:00 PM</strong> in
-		the Student Innovation Center (SIC) in room 120, starting January 20th 2023.
-		It's in the connection between CCIS and Biological Sciences. Please refer
-		to the calendar below to see what we have planned for that day. </p>
 	</section>
 	<Carousel />
 	<Calendar />
