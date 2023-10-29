@@ -2,45 +2,58 @@
   "description": "The University of Alberta Undergraduate Artificial Intelligence Society is a group of students interested in discussing, learning about, and applying Artificial Intelligence techniques of all kinds.",
   "people": [
     {
-      "name": "Paul Saunders",
+      "name": "Mira Pat",
       "position": "President",
-      "description": "Paul Saunders is a fourth year student in a Computing Science Specialization degree. He favours the data science aspect of AI and ML rather than games, and has been working with data since grade 11. He joined UAIS in its very first year and has since been working hard on explaining that AI probably will not take over the world, and he writes the newsletters for the club. He competes in olympic weightlifting, mountain bike races, and is generally a cool guy. He also tutors two math courses, and so along with Justin he is a great resource for any math or stats troubles you may have.",
-      "github": "psaunderualberta",
+      "description": "Mira Patel is a fourth year student in the Computing Science Specialization in Software Practice degree. She has been recognized by the University of Alberta for her Leadership in Computing Science. In the past she has been involved in Undergraduate Research in the area of privacy, fairness and bias in Machine Learning algorithms. Additionally, she has grown her interest and exposure towards Machine Learning following her participation in numerous programs hosted by the Alberta Machine Intelligence Institute (Amii) including: AI Career Accelerator, Work Integrated Learning Opportunity, AI Governance Education and the Kickstart programs. ",
+      "github": "mirap12",
       "slack": "P.Saunders"
     },
     {
-      "name": "Giancarlo Pernudi Segura",
+      "name": "Siddhartha Chitrakar",
       "position": "Vice President",
-      "description": "Also known as gino, Giancarlo is a fourth year student in the Computer Science Specialization program. He's a hardcore linux and vim enthusiast. Currently enrolled in the Canadian Armed Forces Reserves as an Army Communications and Information Systems Specialist. Besides his official responsibilities, he also maintains the club website, and github organization. His focus is member learning and he enables that by creating and teaching workshops available to all members. He has also made all club graphic design objects such as logo's and posters. He likes watching sunsets and long walks on the beach.",
-      "github": "giancarlopernudisegura",
+      "description": "Siddhartha (Sidd) is in 3rd year studying an honours applied mathematics degree at the University of Alberta. He is passionate about the field of artificial intelligence, particularly, the theoretical aspect. He also tutors/intructs  mathematics, statistics and swimming lessons. Sidd likes to do outdoor activities in his spare time, like running and rock climbing!",
+      "github": "SiddCode",
       "slack": "gino"
     },
     {
-      "name": "Justin Valentine",
+      "name": "Jacob Winch",
       "position": "Treasurer",
-      "description": "Justin is a fourth year math and computer science student interested in robotic motion planning and differential geometry. When he is not studying he likes to run, row and rock climb. By studying AI he hopes to be spared by Roko's Basilisk.",
-      "github": "JustinValentine",
+      "description": "Jacob is currently in his third year specializing in statistics. Interested in sports analytics, data science, and machine learning. He is currently leading the NHL Panic Index project. When he is not studying he likes to read, play hockey and play ball hockey.",
+      "github": "Jacob-Winch",
       "slack": "Justin Valentine"
     },
     {
-      "name": "Akemi Izuko",
+      "name": "Frances Igwe",
       "position": "General Secretary",
       "description": "Akemi is a 3rd year cs student passionate about making machines do the work for him. When he isn't bathing in the warm glow of an LCD, he's breathless on one of Edmonton's biking trails. Uses Arch btw",
       "github": "Aizuko",
       "slack": "Akemi Izuko"
     },
     {
-      "name": "Saakshi Joshi",
+      "name": "Brian Cheng",
       "position": "VP External",
-      "description": "Saakshi is a third-year Computing Science student who is always up for spontaneous adventures and new experiences. Harboring feelings of affection towards (baby) animals, Saakshi would like to spend her days wandering the streets feeding birds, kittens, and the like.",
-      "github": "cinnamonhater",
+      "description": "Brian is a third year Honors Computing Science student passionate in optimization theory and machine learning. He enjoys astrophotography, playing instruments, and all sorts of outdoor activities in his free time",
+      "github": "bc0428",
       "slack": "Saakshi Joshi"
     },
     {
-      "name": "Pratham Arora",
+      "name": "Taranv",
       "position": "VP Internal",
       "description": "Pratham is currently a 3rd year student at UofA persuing Specialization in Computing science. He really enjoys watching Football ( It's not called soccer ...) And F1.",
       "github": "PrathamArora20",
+      "slack": "Pratham Arora"
+    },
+    {
+"name": "Aarush Bhat",
+      "position": "VP Tech",
+      "description": "Pratham is currently a 3rd year student at UofA persuing Specialization in Computing science. He really enjoys watching Football ( It's not called soccer ...) And F1.",
+      "github": "aarushb",
+      "slack": "Pratham Arora"
+    },
+    "name": "Yong Lee",
+      "position": "VP Media",
+      "description": "Yong is working towards a BSc in Computer Engineering, specializing in Software, at the University of Alberta. In 2018, he earned a Diploma in Petroleum Engineering Technology from SAIT. Afterward, he worked as a petroleum laboratory analyst for Bureau Veritas at the Canadian Natural Resources Limited (CNRL) Horizon Oil Sands for 3+ years. Yong is part of Dr. Kwon’s research team at U of A, serving as a Dean’s Research Awards student. The project they are working on focuses on "Advancing and Validating a Deep Learning-Enabled Tool for Winter Roadway Condition Monitoring.",
+      "github": "gjftns7220",
       "slack": "Pratham Arora"
     },
     {
