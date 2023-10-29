@@ -28,7 +28,7 @@ const randomSIN = () => `${rand3Digits()} ${rand3Digits()} ${rand3Digits()}`
 
 <div class="box">
 	<article class="media">
-		{key % 2 === 1 && <figure class="media-left">
+		<figure class="media-left">
 			<Headshot imgFile={github} alt={name}></Headshot>
 		</figure>}
 		<div class="media-content">
@@ -43,7 +43,6 @@ const randomSIN = () => `${rand3Digits()} ${rand3Digits()} ${rand3Digits()}`
 				</span><span>{ slack }</span></div>
 			<p>
 
-		{key % 2 === 0 && <figure class="media-right">
 			<Headshot imgFile={github} alt={name}></Headshot>
 		</figure>}
 	</article>
