@@ -7,7 +7,7 @@ const {
 	position,
 	description,
 	github,
-	slack,
+	discord,
 } = Astro.props
 
 const randomBloodType = () => {
@@ -39,8 +39,8 @@ const randomSIN = () => `${rand3Digits()} ${rand3Digits()} ${rand3Digits()}`
 					<i class="fa-brands fa-github"></i>
 				</span><a href={`https://github.com/${github}`}>{ github }</a></div>
 			<div class="tag is-info"><span class="icon">
-					<i class="fa-brands fa-slack"></i>
-				</span><span>{ slack }</span></div>
+				<i class="fa-brands fa-discord"></i>
+				</span><span>{ discord }</span></div>
 			<p>
 
 
