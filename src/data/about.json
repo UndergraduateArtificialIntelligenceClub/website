@@ -47,9 +47,9 @@
       "name": "Aarush Bhat",
       "position": "VP Tech",
       "description": "Traceback (most recent call last):
-File 'people.py', line 20, in <module>
-AttributeError: module 'bio' has no attribute 'Aarush'
-Aarush is a second-year student at the UofA, studying computer science with a specialization in software engineering. Other than code, he is interested in reading, writing, tabletop rpgs, and pretty much anything else nerdy. When he's not geeking out about technology and working on projects and internships, such as the Discord bot project he's leading as part of the UAIS, and coding, causing errors like the one above, he's probably trying to advocate for accessibility, particularly for high-level STEM subjects, on his personal website [https://inclusionmotto.com]. You'll probably find him listening to a new audiobook, weird, trippy, out-of-this-world music, or practicing mindfulness when it's time to relax and wind down.",
+      File 'people.py', line 20, in <module>
+      AttributeError: module 'bio' has no attribute 'Aarush'
+      Aarush is a second-year student at the UofA, studying computer science with a specialization in software engineering. Other than code, he is interested in reading, writing, tabletop rpgs, and pretty much anything else nerdy. When he's not geeking out about technology and working on projects and internships, such as the Discord bot project he's leading as part of the UAIS, and coding, causing errors like the one above, he's probably trying to advocate for accessibility, particularly for high-level STEM subjects, on his personal website [https://inclusionmotto.com]. You'll probably find him listening to a new audiobook, weird, trippy, out-of-this-world music, or practicing mindfulness when it's time to relax and wind down.",
       "github": "aarushb",
       "discord": "magnumhurricane"
     },
