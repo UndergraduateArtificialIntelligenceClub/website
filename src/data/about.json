@@ -6,63 +6,72 @@
       "position": "President",
       "description": "Mira Patel is a fourth year student in the Computing Science Specialization in Software Practice degree. She has been recognized by the University of Alberta for her Leadership in Computing Science. In the past she has been involved in Undergraduate Research in the area of privacy, fairness and bias in Machine Learning algorithms. Additionally, she has grown her interest and exposure towards Machine Learning following her participation in numerous programs hosted by the Alberta Machine Intelligence Institute (Amii) including: AI Career Accelerator, Work Integrated Learning Opportunity, AI Governance Education and the Kickstart programs. ",
       "github": "mirap12",
-      "discord": "mira_p1"
+      "discord": "mira_p1",
+      "linkedin":"mira-"
     },
     {
       "name": "Siddhartha Chitrakar",
       "position": "Vice President",
       "description": "Siddhartha (Sidd) is in third year studying an honours applied mathematics degree at the University of Alberta. He is passionate about the field of artificial intelligence, particularly, the theoretical aspect. He also tutors/intructs  mathematics, statistics and swimming lessons. Sidd likes to do outdoor activities in his spare time, like running and rock climbing!",
       "github": "SiddCode",
-      "discord": "sidd_03"
+      "discord": "sidd_03",
+      "linkedin":"siddhartha-chitrakar"
     },
     {
       "name": "Jacob Winch",
       "position": "Treasurer",
       "description": "Jacob is currently in his third year specializing in statistics. Interested in sports analytics, data science, and machine learning. He is currently leading the NHL Panic Index project. When he is not studying he likes to read, play hockey and play ball hockey.",
       "github": "Jacob-Winch",
-      "discord": ".jwinch"
+      "discord": ".jwinch",
+      "linkedin":"jacob-winch"
     },
     {
       "name": "Frances Igwe",
       "position": "General Secretary",
       "description": "Frances is a fourth year computer science student. She is interested in Artificial Intelligence and its various applications. During her free time, she loves to read and enjoys swimming.",
       "github": "IEfrances",
-      "discord": "Frances#1119"
+      "discord": "Frances#1119",
+      "linkedin":"frances-i-384014229"
     },
     {
       "name": "Brian Cheng",
       "position": "VP External",
       "description": "Brian is a third year Honors Computing Science student passionate in optimization theory and machine learning. He enjoys astrophotography, playing instruments, and all sorts of outdoor activities in his free time",
       "github": "bc0428",
-      "discord": "bc0428"
+      "discord": "bc0428",
+      "linkedin":"bc0428"
     },
     {
       "name": "Taran Purewal",
       "position": "VP Internal",
       "description": "Taran Purewal is a third year computing science student at the University of Alberta. Loves to learn and teach in equal measure and is always happy to help those beginning their first steps into the world of Artificial Intelligence. Beyond his work with the UAIS he also volunteers with Blood Canada, the Edmonton Food Bank, Fundraising For Animals, and a variety of miscellaneous events. Happy to be of aid to all.",
       "github": "tsp01",
-      "discord": "flashfire50"
+      "discord": "flashfire50",
+      "linkedin":"taranveer-purewal-9a073524b"
     },
     {
       "name": "Aarush Bhat",
       "position": "VP Tech",
       "description": "Aarush is a second-year student at the UofA, studying computer science with a specialization in software engineering. Other than code, he is interested in reading, writing, tabletop rpgs, and pretty much anything else nerdy. When he's not geeking out about technology and working on projects and internships, such as the Discord bot project he's leading as part of the UAIS, and coding, causing errors like the one above, he's probably trying to advocate for accessibility, particularly for high-level STEM subjects, on his personal website [https://inclusionmotto.com]. You'll probably find him listening to a new audiobook, weird, trippy, out-of-this-world music, or practicing mindfulness when it's time to relax and wind down.",
       "github": "aarushb",
-      "discord": "magnumhurricane"
+      "discord": "magnumhurricane",
+      "linkedin":"aarush-bhat-642331192"
     },
     {
       "name": "Yong Lee",
       "position": "VP Media",
       "description": "Yong is working towards a BSc in Computer Engineering, specializing in Software, at the University of Alberta. In 2018, he earned a Diploma in Petroleum Engineering Technology from SAIT. Afterward, he worked as a petroleum laboratory analyst for Bureau Veritas at the Canadian Natural Resources Limited (CNRL) Horizon Oil Sands for 3+ years. Yong is part of Dr. Kwon's research team at U of A, serving as a Dean's Research Awards student. The project they are working on focuses on 'Advancing and Validating a Deep Learning-Enabled Tool for Winter Roadway Condition Monitoring.'",
       "github": "gjftns7220",
-      "discord": "gjftns7220"
+      "discord": "gjftns7220",
+      "linkedin":"yong-lee-"
     },
     {
       "name": "Justin Stevens",
       "position": "Founder",
       "description": "Justin co-founded the Undergraduate AI Society in 2018 to be an inclusive, diverse community for undergraduate students to discuss artificial intelligence at the University of Alberta. Justin works as a Machine Learning Educator at the Alberta Machine Intelligence Institute, developing and delivering courses on AI for many different audiences. Justin earned his M.Sc. in Computing Science from the University of Alberta focusing on applications of AI to games and explainable AI. Justin is happy to discuss AI and offer mentorship to undergraduates that are interested! Feel free to reach out to him via LinkedIn or on Discord.",
       "github": "justinstevens42",
-      "discord": "heyguysjustinhere"
+      "discord": "heyguysjustinhere",
+      "linkedin":"justinstevens42"
     }
   ]
 }
