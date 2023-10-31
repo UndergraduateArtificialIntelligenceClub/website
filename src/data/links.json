@@ -37,8 +37,8 @@
 			"icon": "fa-brands fa-discord"
 		},
 		{
-			"text": "About",
-			"link": "/about",
+			"text": "Team",
+			"link": "/team",
 			"target": "",
 			"icon": "fa-solid fa-theater-masks"
 		}
