@@ -2,76 +2,86 @@
 	"courses": [
 		{
 			"name": "Introduction to Data Science",
-			"number": "CMPUT 191",
-			"days": "TH",
-			"time": "14:00-15:20"
+			"number": "CMPUT 191"
+		},
+		{
+			"name": "Introduction to Principles and Techniques of Data Science",
+			"number": "CMPUT 195"
 		},
 		{
 			"name": "Ethics of Data Science and Artificial Intelligence",
-			"number": "CMPUT 200",
-			"days": "TH",
-			"time": "11:00-12:20"
+			"number": "CMPUT 200"
 		},
 		{
 			"name": "Game Artificial Intelligence",
-			"number": "CMPUT 256",
-			"days": "MWF",
-			"time": "11:00-11:50"
+			"number": "CMPUT 256"
 		},
 		{
 			"name": "Introduction to Artificial Intelligence",
-			"number": "CMPUT 261",
-			"days": "TH",
-			"time": "9:30-10:50"
+			"number": "CMPUT 261"
 		},
 		{
 			"name": "Basics of Machine Learning",
-			"number": "CMPUT 267",
-			"days": "TH",
-			"time": "12:30-13:50"
+			"number": "CMPUT 267"
 		},
 		{
 			"name": "Games, Puzzles, Algorithms",
-			"number": "CMPUT 355",
-			"days": "TH",
-			"time": "9:30-10:50"
+			"number": "CMPUT 355"
 		},
 		{
 			"name": "Introduction to Reinforcement Learning",
-			"number": "CMPUT 365",
-			"days": "MFW",
-			"time": "13:00-13:50"
+			"number": "CMPUT 365"
 		},
 		{
 			"name": "Search and Planning in Artificial Intelligence",
-			"number": "CMPUT 366",
-			"days": "TH",
-			"time": "14:00-15:20"
+			"number": "CMPUT 366"
 		},
 		{
 			"name": "Intermediate Machine Learning",
-			"number": "CMPUT 367",
-			"days": "TH",
-			"time": "15:30-16:50"
+			"number": "CMPUT 367"
 		},
 		{
 			"name": "Search, Knowledge and Simulation",
-			"number": "CMPUT 455",
-			"days": "TH",
-			"time": "14:00-15:20"
+			"number": "CMPUT 455"
+
 		},
 		{
 			"name": "Machine Learning",
-			"number": "CMPUT 463",
-			"days": "TH",
-			"time": "12:30-13:50"
+			"number": "CMPUT 466"
 		},
 		{
 			"name": "Artificial Intelligence Capstone",
-			"number": "CMPUT 469",
-			"days": "TH",
-			"time": "11:00-12:20"
+			"number": "CMPUT 469"
+		},
+		{
+			"name": "Probabilistic Graphical Models",
+			"number": "CMPUT 463"
+		},
+		{
+			"name": "Introduction to Natural Language Processing",
+			"number": "CMPUT 461"
+		},
+		{
+			"name": "Visual Recognition",
+			"number": "CMPUT 328"
+		},
+		{
+			"name": "Computer Vision",
+			"number": "CMPUT 428"
+		},
+		{
+			"name": "Ethics and Artificial Intelligence",
+			"number": "PHIL 385"
+		},
+		{
+			"name": "Statistical Methods for Learning and Data Mining",
+			"number": "STAT 441"
+		},
+		{
+			"name": "Visual Recognition",
+			"number": "CMPUT 328"
 		}
+
 	],
 	"lectures": [
 		{
