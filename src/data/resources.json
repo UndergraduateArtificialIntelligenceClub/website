@@ -89,14 +89,20 @@
 			"content": [
 				{
 					"title": "Machine Learning with Andrew Ng, Stanford University",
-					"link": "https://www.youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)",
+					"link": "https://www.youtube.com/watch?v=jGwO_UgTS7I&list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU",
 					"desc": "Universally recommended machine learning lectures by Andrew Ng, for beginner and intermediate level machine learning."
 				},
 				{
 					"title": "Elements of AI",
 					"link": "https://course.elementsofai.com/",
 					"desc": "Free online course made by the University of Helsinki and Reaktor."
+				},
+				{
+					"title": "Neural Networks: Zero to Hero with Andrej Karpathy",
+					"link": "https://www.youtube.com/watch?v=VMj-3S1tku0&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ",
+					"desc": "A comprehensive educational resource that guides viewers from the basics of neural networks to more advanced concepts, showcasing practical examples and intuitive explanations. The series is known for its clear, engaging teaching style, making complex topics accessible to beginners and those looking to deepen their understanding of deep learning."
 				}
+
 			]
 		},
 		{
@@ -116,11 +122,6 @@
 					"title": "Deep Learning and Reinforcement Learning Summer School 2018",
 					"link": "http://videolectures.net/DLRLsummerschool2018_toronto/",
 					"desc": "These are the lecture videos from the 2018 DLRL summer school, held by CIFAR, Amii, and the Vector Institute in Toronto.  The DLRL summer school is pretty competitive, but the lectures actually vary from introductory to advanced.  Links to the slides are also included on the video pages."
-				},
-				{
-					"title": "Advanced Deep Learning and Reinforcement Learning with DeepMind",
-					"link": "https://www.youtube.com/playlist?list=PLqYmG7hTraZDNJre23vqCGIVpfZ_K2RZs",
-					"desc": "A brand new lecture series (2018) done at UCL by a bunch of DeepMind staff."
 				}
 			]
 		}
