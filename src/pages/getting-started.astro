@@ -2,6 +2,7 @@
 import Layout from '@layouts/Default.astro'
 import * as gettingStarted from '@data/getting-started.md'
 import * as datasets from '@data/datasets.md'
+import * as courses from '@data/courses.md'
 import { courses, lectures, etc as misc } from '@data/resources.json'
 ---
 
@@ -11,6 +12,12 @@ import { courses, lectures, etc as misc } from '@data/resources.json'
 		<h1 class="title">Get Started</h1>
 		<h4 class="subtitle">Here are some useful resources to get started in Machine Learning</h4>
 		<div class="content" set:html={gettingStarted.compiledContent()}>
+		</div>
+	</section>
+	<section class="section">
+		<h1 class="title">Online Courses</h1>
+		<h4 class="subtitle">These are some introductory AI courses to get started</h4>
+		<div class="content" set:html={courses.compiledContent()}>
 		</div>
 	</section>
 	<section class="section">
