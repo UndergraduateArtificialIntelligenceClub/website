@@ -1,0 +1,4 @@
++ Here are some awesome introductory courses to get started in AI:
+	+ [AI For Everyone](https://www.coursera.org/learn/ai-for-everyone)
+	+ [Hugging Face's Courses](https://huggingface.co/learn)
+	+ [Machine Learning Specialization](https://www.coursera.org/specializations/machine-learning-introduction?utm_medium=sem&utm_source=gg&utm_campaign=B2C_NAMER_machine-learning-introduction_stanford_FTCOF_specializations_country-US-country-CA&campaignid=685340575&adgroupid=146515176429&device=c&keyword=&matchtype=&network=g&devicemodel=&adposition=&creativeid=650958766230&hide_mobile_promo&gclid=Cj0KCQiA1rSsBhDHARIsANB4EJaUFceX2bdjmHTOGEqzGD2q8LmlvluNnYt25CTVx-2g1ia81KAbYeMaAsibEALw_wcB)
