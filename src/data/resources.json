@@ -127,6 +127,24 @@
 	],
 	"presentations": [
 		{
+			"title": "Data Cleaning Workshop",
+			"name": "Jacob Winch",
+			"link": "https://colab.research.google.com/drive/1nqyQoPrI4j5zNk1wZDOHWn9igIgSeIZj",
+			"desc": "A Google Colab notebook going over data cleaning in Python with Pandas, Matplotlib, and Seaborn."
+		},
+		{
+			"title": "scikit-learn Workshop",
+			"name": "Taran Purewal",
+			"link": "https://colab.research.google.com/drive/1t86MEw9lGtnNGfLHsroqkqS-q332PWK7?usp=sharing",
+			"desc": "A Google Colab notebook going over an intro to machine learning using scikit-learn."
+		},
+		{
+			"title": "UAIS Projects and AltaML Showcase",
+			"name": "UAIS Project Teams and Deanna Brousseau and Sevi Zhou from AltaML",
+			"link": "https://colab.research.google.com/drive/1t86MEw9lGtnNGfLHsroqkqS-q332PWK7?usp=sharing",
+			"desc": "A showcase of projects that the UAIS was working on in November 2023. Also an introduction to AltaML."
+		},
+		{
 			"title": "Welcome to UAIS",
 			"name": "Justin Stevens",
 			"link": "https://numbertheoryguydotcom.files.wordpress.com/2018/12/Welcome-to-Undergraduate-Artificial-Intelligence-Society.pdf",
