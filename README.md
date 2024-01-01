@@ -6,7 +6,7 @@
 [![Pull Requests Closed](https://img.shields.io/github/issues-pr-closed/UndergraduateArtificialIntelligenceClub/website)](https://github.com/UndergraduateArtificialIntelligenceClub/website/pulls)
 
 If you have any **feature requests**, please **open an issue** with the `enhancement` label.
-If you would like to **contribute**, please **contact** either [@NickNissen](https://github.com/NickNissen) or [@giancarlopernudisegura](https://github.com/giancarlopernudisegura) on [slack](https://albertaundergradai.slack.com) on the `#website` channel.
+If you would like to **contribute**, please **contact** either [@aarushb](https://github.com/aarushb), [@giancarlopernudisegura](https://github.com/giancarlopernudisegura) or [@Jacob-Winch](https://github.com/Jacob-Winch) on [Discord](https://discord.com/invite/KapmJxs) on the `#website` channel.
 
 ## Development Environment Setup
 The website is made with [Nuxt.js](https://nuxtjs.org/), a static site generator based on [Vue](https://vuejs.org/).
