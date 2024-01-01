@@ -1,15 +1,6 @@
-+ [Google Dataset Search](https://datasetsearch.research.google.com/)
-+ From hands-on ML by Geron:
-	+ Open Repos
-		+ [UC Irvine ML Repo](http://archive.ics.uci.edu/ml/)
-		+ [Kaggle datasets](https://www.kaggle.com/datasets)
-		+ [AWS datasets](http://aws.amazon.com/fr/datasets/)
-	+ Meta portals
-		+ [Data Portals](http://dataportals.org/search)
-		+ [OpenDataMonitor](http://opendatamonitor.eu/)
-		+ [Quandl](http://quandl.com/)
-	+ Others
-		+ [Wikipedia](https://goo.gl/SJHN2k)
-		+ [Quora](http://goo.gl/zDR78y)
-		+ [Subreddit](https://www.reddit.com/r/datasets)
-+ [Wikipedia main one](https://en.wikipedia.org/wiki/List_of_datasets_for_machine-learning_research)
++ [AI For Everyone](https://www.coursera.org/learn/ai-for-everyone)
+    + The "AI for Everyone" course on Coursera is a non-technical program that educates participants about AI, its potential applications, and its societal impacts, helping non-technical professionals understand and strategize around AI technologies.
++ [Machine Learning Specialization](https://www.coursera.org/specializations/machine-learning-introduction)
+    + The Machine Learning Specialization on Coursera, crafted by Andrew Ng, is a foundational program for beginners that teaches foundational AI concepts through a visual approach, followed by coding and mathematics. It's expanded into three courses and is designed to be approachable for those with no prior math or rigorous coding background, making core curriculum more accessible​
++ [Hugging Face Natural Language Processing Course](https://huggingface.co/learn/nlp-course/chapter1/1)
+    + Hugging Face's NLP course is designed to provide a comprehensive understanding of natural language processing using the latest tools and techniques. It's geared towards practitioners looking to apply NLP in real-world scenarios, offering hands-on experience with cutting-edge models and libraries.
