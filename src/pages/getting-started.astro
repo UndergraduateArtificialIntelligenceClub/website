@@ -2,6 +2,7 @@
 import Layout from '@layouts/Default.astro'
 import * as gettingStarted from '@data/getting-started.md'
 import * as datasets from '@data/datasets.md'
+import * as online_courses from '@data/online_courses.md'
 import { courses, lectures, etc as misc } from '@data/resources.json'
 ---
 
@@ -11,6 +12,12 @@ import { courses, lectures, etc as misc } from '@data/resources.json'
 		<h1 class="title">Get Started</h1>
 		<h4 class="subtitle">Here are some useful resources to get started in Machine Learning</h4>
 		<div class="content" set:html={gettingStarted.compiledContent()}>
+		</div>
+	</section>
+	<section class="section">
+		<h1 class="title">Online Courses</h1>
+		<h4 class="subtitle">These are some introductory online courses to get you started</h4>
+		<div class="content" set:html={online_courses.compiledContent()}>
 		</div>
 	</section>
 	<section class="section">
@@ -26,7 +33,6 @@ import { courses, lectures, etc as misc } from '@data/resources.json'
 				<tr>
 					<th>Course Name</th>
 					<th>Course Number</th>
-					<th>Days and Time</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -34,7 +40,6 @@ import { courses, lectures, etc as misc } from '@data/resources.json'
 					<tr>
 						<td>{course.name}</td>
 						<td>{course.number}</td>
-						<td>{course.days} {course.time}</td>
 					</tr>
 				)}
 			</tbody>
