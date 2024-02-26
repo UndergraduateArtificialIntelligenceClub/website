@@ -72,33 +72,27 @@ We tested the following 7 models:
 - [**ProsusAI/finbert**](https://huggingface.co/ProsusAI/finbert)
 - [**finiteautomata/bertweet-base-sentiment-analysis**](https://huggingface.co/finiteautomata/bertweet-base-sentiment-analysis)
 
-<img src="../../src/images/NHL_Positivity_events/model1.png" width="800" height="800" alt="matrix1" title="matrix1" />
+![matrix1](../../src/images/NHL_Positivity_events/model1.png)
+**Figure 1.1:** *A confusion matrix of the [cardiffnlp/twitter-roberta-base-sentiment-latest](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest) model’s predicted labels against our labels. The model obtained an accuracy score of 79.2%.*
 
-**Figure 1.1:** *A confusion matrix of the [**cardiffnlp/twitter-roberta-base-sentiment-latest**](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest) model’s predicted labels against our labels. The model obtained an accuracy score of 79.2%.*
+![matrix2](../../src/images/NHL_Positivity_events/model2.png)
+**Figure 1.2:** *A confusion matrix of the [Distilbert-base-uncased-finetuned-sst-2-english](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english) model’s predicted labels against our labels. The model obtained an accuracy score of 59.4%.*
 
-<img src="../../src/images/NHL_Positivity_events/model2.png" width="800" height="800" alt="matrix2" title="matrix2" />
+![matrix3](../../src/images/NHL_Positivity_events/model3.png)
+**Figure 1.3:** *A confusion matrix of the [lxyuan/distilbert-base-multilingual-cased-sentiments-student](https://huggingface.co/lxyuan/distilbert-base-multilingual-cased-sentiments-student) model’s predicted labels against our labels. The model obtained an accuracy score of 56.8%.*
 
-**Figure 1.2:** *A confusion matrix of the [**Distilbert-base-uncased-finetuned-sst-2-english**](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english) model’s predicted labels against our labels. The model obtained an accuracy score of 59.4%.*
+![matrix4](../../src/images/NHL_Positivity_events/model4.png)
+**Figure 1.4:** *A confusion matrix of the [cardiffnlp/twitter-xlm-roberta-base-sentiment](https://huggingface.co/cardiffnlp/twitter-xlm-roberta-base-sentiment) model’s predicted labels against our labels. The model obtained an accuracy score of 69.8%.*
 
-<img src="../../src/images/NHL_Positivity_events/model3.png" width="800" height="800" alt="matrix3" title="matrix3" />
+![matrix5](../../src/images/NHL_Positivity_events/model5.png)
+**Figure 1.5:** *A confusion matrix of the [mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis](https://huggingface.co/mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis) model’s predicted labels against our labels. The model obtained an accuracy score of 37.0%.*
 
-**Figure 1.3:** *A confusion matrix of the [**lxyuan/distilbert-base-multilingual-cased-sentiments-student**](https://huggingface.co/lxyuan/distilbert-base-multilingual-cased-sentiments-student) model’s predicted labels against our labels. The model obtained an accuracy score of 56.8%.*
+![matrix6](../../src/images/NHL_Positivity_events/model6.png)
+**Figure 1.6:** *A confusion matrix of the [ProsusAI/finbert](https://huggingface.co/ProsusAI/finbert) model’s predicted labels against our labels. The model obtained an accuracy score of 37.5%.*
 
-<img src="../../src/images/NHL_Positivity_events/model4.png" width="800" height="800" alt="matrix4" title="matrix4" />
+![matrix7](../../src/images/NHL_Positivity_events/model7.png)
+**Figure 1.7:** *A confusion matrix of the [finiteautomata/bertweet-base-sentiment-analysis](https://huggingface.co/finiteautomata/bertweet-base-sentiment-analysis) model’s predicted labels against our labels. The model obtained an accuracy score of 70.3%.*
 
-**Figure 1.4:** *A confusion matrix of the [**cardiffnlp/twitter-xlm-roberta-base-sentiment**](https://huggingface.co/cardiffnlp/twitter-xlm-roberta-base-sentiment) model’s predicted labels against our labels. The model obtained an accuracy score of 69.8%.*
-
-<img src="../../src/images/NHL_Positivity_events/model5.png" width="800" height="800" alt="matrix5" title="matrix5" />
-
-**Figure 1.5:** *A confusion matrix of the [**mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis**](https://huggingface.co/mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis) model’s predicted labels against our labels. The model obtained an accuracy score of 37.0%.*
-
-<img src="../../src/images/NHL_Positivity_events/model6.png" width="800" height="800" alt="matrix6" title="matrix6" />
-
-**Figure 1.6:** *A confusion matrix of the [**ProsusAI/finbert**](https://huggingface.co/ProsusAI/finbert) model’s predicted labels against our labels. The model obtained an accuracy score of 37.5%.*
-
-<img src="../../src/images/NHL_Positivity_events/model7.png" width="800" height="800" alt="matrix7" title="matrix7" />
-
-**Figure 1.7:** *A confusion matrix of the [**finiteautomata/bertweet-base-sentiment-analysis**](https://huggingface.co/finiteautomata/bertweet-base-sentiment-analysis) model’s predicted labels against our labels. The model obtained an accuracy score of 70.3%.*
 
 ## Manual Process of Labelling Data
 
