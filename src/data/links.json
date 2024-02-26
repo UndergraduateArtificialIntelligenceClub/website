@@ -13,6 +13,12 @@
 			"icon": "fa-solid fa-code"
 		},
 		{
+			"text": "Projects",
+			"link": "/projects",
+			"target": "",
+			"icon": "fa-solid fa-wrench"
+		},
+		{
 			"text": "Event Attendees",
 			"link": "/attendance",
 			"target": "",
