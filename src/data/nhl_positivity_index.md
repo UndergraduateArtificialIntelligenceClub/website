@@ -14,10 +14,9 @@ The NHL Positivity Index was created by the Undergraduate Artificial Intelligenc
 - Alexander Bradley, Computer Engineering Student | [Linkedin](https://www.linkedin.com/in/alexander-bradl3y/)
 - Arden Monaghan, Computer Science Student | [Linkedin](https://www.linkedin.com/in/arden-monaghan-574959243/)
 - Yukesh Subedi, Computer Science Student | [Linkedin](https://www.linkedin.com/in/yukesh-subedi-392872218/)
-- Taran Purewal, Computer Science Student | [Linkedin](https://www.linkedin.com/in/tpurewal/)
 - William Luo, Electrical Nano-Engineering Student | [Linkedin](https://www.linkedin.com/in/william-luo-5a477421b/)
 
-We would like to extend a gracious thank you to the Student Innovation Centre at the University of Alberta for providing the team a place to work every week.
+We would like to extend a gracious thank you to the Student Innovation Centre at the University of Alberta for providing the team a place to work every week. Also, we would like to thank Taran Purewal for keeping the team organized. 
 
 ## The Data
 
@@ -115,4 +114,4 @@ Nguyen, D. Q., Vu, T., & Nguyen, A. T. (2020). BERTweet: A pre-trained language 
 
 ## Codebase 
 
-The codebase for the NHL Positivity index can be found [here](https://github.com/UndergraduateArtificialIntelligenceClub/NHL-Positivity-Index.) 
+The codebase for the NHL Positivity index can be found [here](https://github.com/UndergraduateArtificialIntelligenceClub/NHL-Positivity-Index) 
