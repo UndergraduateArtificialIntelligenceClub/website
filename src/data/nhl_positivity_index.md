@@ -39,7 +39,7 @@ For the data used in the dashboard, we first collect all the comments in relevan
 The positivity score for team j, $PS(T_{j})$, is defined as:
 
 $$
-PS(T_j) = \frac{1}{n_j} \sum_{i=1}^{n_j} L(x_{ij}) \cdot (S(x_{ij}) + 1)
+PS(T_j) = \frac{1}{n_j} \sum_{i=1}^{n_j} L(x_{ij}) \cdot (\max(S(x_{ij}), 0) + 1)
 $$
 
 Where:
