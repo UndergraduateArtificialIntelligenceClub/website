@@ -28,7 +28,7 @@ With the hopes of improving the accuracy of [**cardiffnlp/twitter-roberta-base-s
 
 ## Fine-tuning the Model
 
-With the help of Hugging Face's PEFT: Parameter-Efficient Fine-Tuning library we were able to effectively fine-tune [**cardiffnlp/twitter-roberta-base-sentiment-latest**](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest). We further fine-tuned the RoBERTa-bas model that was trained on ~124M tweets from January 2018 to December 2021 and was fine-tuned on sentiment analysis, in order to better fit our specific task of classifying hockey related comments. After fine-tuning, our Adapter model for [**cardiffnlp/twitter-roberta-base-sentiment-latest**](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest), [Chelberta](https://huggingface.co/UAlbertaUAIS/Chelberta) achieved an accuracy score of 81.2% improving from the base model of 79.2% on our testing dataset mentioned above. The confusion matrix for our model, [Chelberta](https://huggingface.co/UAlbertaUAIS/Chelberta), can be found below.
+With the help of Hugging Face's PEFT: Parameter-Efficient Fine-Tuning library we were able to effectively fine-tune [**cardiffnlp/twitter-roberta-base-sentiment-latest**](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest). We further fine-tuned the RoBERTa-base model that was trained on ~124M tweets from January 2018 to December 2021 and was fine-tuned on sentiment analysis, in order to better fit our specific task of classifying hockey related comments. After fine-tuning, our Adapter model for [**cardiffnlp/twitter-roberta-base-sentiment-latest**](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest), [Chelberta](https://huggingface.co/UAlbertaUAIS/Chelberta) achieved an accuracy score of 81.2% improving from the base model of 79.2% on our testing dataset mentioned above. The confusion matrix for our model, [Chelberta](https://huggingface.co/UAlbertaUAIS/Chelberta), can be found below.
 
 ## Data Labelling Process
 
@@ -39,7 +39,7 @@ For the data used in the dashboard, we first collect all the comments in relevan
 The positivity score for team j, $PS(T_{j})$, is defined as:
 
 $$
-PS(T_j) = \frac{1}{n_j} \sum_{i=1}^{n_j} L(x_{ij}) \cdot (S(x_{ij}) + 1)
+PS(T_j) = \frac{1}{n_j} \sum_{i=1}^{n_j} L(x_{ij}) \cdot (\max(S(x_{ij}), 0) + 1)
 $$
 
 Where:
@@ -63,7 +63,7 @@ L(x_{ij}) =
 $$
 
 
-We added + 1 to every score to avoid multiplying by 0. We also took the average positivity score so we can compare positivity scores from different periods. We are mapping 0.25 for neutral comments so we still include neutral comments and to balance the distribution of negative and postivite comments.
+We added + 1 to every score to avoid multiplying by 0. We also took the average positivity score so we can compare positivity scores from different periods. We are mapping 0.25 for neutral comments so we still include neutral comments and to balance the distribution of negative and positive comments. If the score of a comment is negative, we set the score to 1 since it is like only 1 person agrees with that comment.
 
 ## Evaluation of different models
 
