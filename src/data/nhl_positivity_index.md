@@ -63,7 +63,7 @@ L(x_{ij}) =
 $$
 
 
-We added + 1 to every score to avoid multiplying by 0. We also took the average positivity score so we can compare positivity scores from different periods. We are mapping 0.25 for neutral comments so we still include neutral comments and to balance the distribution of negative and postivite comments.
+We added + 1 to every score to avoid multiplying by 0. We also took the average positivity score so we can compare positivity scores from different periods. We are mapping 0.25 for neutral comments so we still include neutral comments and to balance the distribution of negative and positive comments. If the score of a comment is negative, we set the score to 1 since it is like only 1 person agrees with that comment.
 
 ## Evaluation of different models
 
