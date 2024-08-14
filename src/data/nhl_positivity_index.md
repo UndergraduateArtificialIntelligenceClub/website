@@ -1,9 +1,9 @@
 <h1 style="text-align: center;">NHL Positivity Index</h1>
 
 ![Current Dashboard](../../public/images/NHL_Positivity_Index/draft_24_dashboard.png "Current Dashboard: 2024 NHL Draft")
+**Note:** *This particular dashboard only considers fan sentiment regarding the 2024 NHL Draft. It was constructed by analyzing comments on posts with players drafted or draft relevant words in the title of posts on each team's subreddit. We only considered posts one day before the draft on June 27th, 2024 to July 4th a week after the draft concluded.*
 
-
-We were inspired by the engaging and insightful ["Panic Index"](https://www.youtube.com/playlist?list=PL4KmQCGTJmgz9urZusFDiGC9Bzh2S67gM) series by YouTuber Shannon Skanes, also known as the Hockey Guy, where he ranks NHL teams based on their perceived level of panic at key moments throughout the season. Intrigued by this unique perspective on team performance, we wondered: Could we quantify the underlying sentiment of NHL fanbases in a similar vein? Thus, the NHL Positivity Index was born. Our project aims to quantitatively assess how positive or negative an NHL fanbase feels over a given period using artificial intelligence techniques. Specifically, we leverage natural language processing and sentiment analysis to analyze fan discussions and media commentary. By dissecting the tone and mood from Reddit, we seek to provide a comprehensive measure of fanbase sentiment.
+We were inspired by the engaging and insightful ["Panic Index"](https://www.youtube.com/playlist?list=PL4KmQCGTJmgz9urZusFDiGC9Bzh2S67gM) series by YouTuber Shannon Skanes, also known as the Hockey Guy, where he ranks NHL teams based on their perceived level of panic at key moments throughout the season. Intrigued by this unique perspective on team performance, we wondered: Could we quantify the underlying sentiment of NHL fanbases in a similar vein? Thus, the NHL Positivity Index was born. Our project aims to quantitatively assess how positive or negative an NHL fanbase feels over a given period using artificial intelligence techniques. Specifically, we leverage an AI technique called natural language processing and sentiment analysis to analyze fan discussions. By dissecting the tone and mood from Reddit, we seek to provide a comprehensive measure of fanbase sentiment.
 
 ## The Team
 
