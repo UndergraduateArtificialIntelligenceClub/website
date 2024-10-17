@@ -1,13 +1,13 @@
 ---
 import Layout from '@layouts/Default.astro'
-import * as nhl_positivity_index from '@data/nhl_positivity_index.md'
-
+import Katex from '@components/Katex.astro'
+import { Content } from '@data/nhl_positivity_index.mdx'
 ---
 
 <Layout title='NHL Positivity Index'>
 	<section class="section">
-    <link href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" rel="stylesheet">
-		<div class="content" set:html={nhl_positivity_index.compiledContent()}>
-		</div>
-	</section>
+       	<Katex>
+           	<Content />
+        </Katex>
+      </section>
 </Layout>
