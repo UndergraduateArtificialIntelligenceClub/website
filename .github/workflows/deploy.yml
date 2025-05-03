@@ -1,5 +1,6 @@
+
 # This is a basic workflow to help you get started with Actions
-# Updated based on recommendations
+# Updated based on recommendations and fixing action download issue
 
 name: Deploy Website
 
@@ -7,7 +8,7 @@ name: Deploy Website
 # events but only for the master branch
 on:
   push:
-    branches: [ master ] # Or use 'main' if that's your default branch
+    branches: [ master ] # Keeping master branch as requested
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -18,51 +19,48 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x] # You can add other versions here if needed, e.g., [18.x, 20.x]
+        node-version: [18.x] # Node version for your Astro project
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    # Updated to v4 for latest features and security
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # Sets up Node.js environment
-    # Updated to v4 to support the 'cache' input and get latest features/fixes
+    # Sets up Node.js environment for Astro/Bulma build
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm' # This input is now valid with v4
+        cache: 'npm' # Caching npm dependencies
 
-    # Installs dependencies using the lockfile for consistency
+    # Installs dependencies using the lockfile (important for Astro/JS projects)
     - name: Install dependencies
       run: npm ci
 
-    # Runs the build script defined in your package.json
+    # Runs the build script defined in your package.json (e.g., 'astro build')
     - name: Build project
-      run: npm run build
+      run: npm run build # Ensure this command matches your Astro project setup
       env:
         # Ensure API_KEY secret is correctly named in your repo settings
         PUBLIC_GOOGLE_CALENDAR: ${{ secrets.API_KEY }}
-        # Add any other build-time environment variables here if needed
-        # CI: true # Often useful for React/Vue/etc. build processes
+        # Add any other build-time environment variables needed by Astro here
+        # CI: true # Often useful for build processes
 
-    # Uploads the built artifact to S3
-    # Updated from @master to a specific tag for stability (v1.3.3 is a recent tag)
+    # Uploads the built artifact (likely 'dist' for Astro) to S3
     - name: Upload website to S3
-      uses: shallwefootball/s3-upload-action@v1.3.3
+      uses: shallwefootball/s3-upload-action@v1.3.3 # Using a specific stable tag
       with:
         aws_key_id: ${{ secrets.aws_access_key_id }}
         aws_secret_access_key: ${{ secrets.aws_secret_access_key }}
         aws_bucket: ${{ secrets.bucket }}
-        source_dir: 'dist' # Make sure 'dist' is your actual build output directory
+        source_dir: 'dist' # Default Astro build output directory, verify this matches yours
         destination_dir: '' # Uploads to the root of the bucket
 
     # Invalidates CloudFront cache to serve the new version
-    # Updated from v1.2 to v2.7 (a more recent version)
+    # Changed from @v2.7 to @v2 to resolve download info error and use latest v2 release
     - name: Invalidate CloudFront distribution
-      uses: chetan/invalidate-cloudfront-action@v2.7
+      uses: chetan/invalidate-cloudfront-action@v2
       env:
         DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
         PATHS: '/*' # Invalidates everything; adjust if needed for performance
