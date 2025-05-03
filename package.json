@@ -11,22 +11,23 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.2.3",
     "@astrojs/sitemap": "^1.0.0",
     "@egjs/flicking": "^4.10.4",
     "@egjs/flicking-plugins": "^4.5.0",
-    "astro": "^3.6.4",
-    "rehype-katex": "^6.0.0",
-    "remark-math": "^5.0.0",
+    "astro": "^5.6.1",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
     "vue": "^3.2.45"
   },
   "devDependencies": {
-    "@astrojs/vue": "^3.0.0",
+    "@astrojs/vue": "^5.0.9",
     "@fortawesome/vue-fontawesome": "^3.0.2",
     "@types/node": "^18.11.13",
     "astro-compress": "^2.0.15",
     "astro-compressor": "^0.4.0",
     "astro-imagetools": "^0.9.0",
-    "astro-purgecss": "^3.1.0",
+    "astro-purgecss": "^5.2.2",
     "autoprefixer": "^10.4.13",
     "bulma": "^0.9.4",
     "cssnano": "^5.1.14",

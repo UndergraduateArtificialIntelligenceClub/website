@@ -197,7 +197,7 @@
 		{
 			"title": "  NHL Positivity Index",
 			"name": "Jacob Winch, Tanmay Munjal, Heiby Lau,  Alexander Bradley, Arden Monaghan, Yukesh Subedi, and William Luo",
-			"link": "https://uais.dev/projects/nhl-positivity-index",
+			"link": "/projects/nhl-positivity-index",
 			"desc": "The NHL Positivity Index project aims to quantitatively assess how positive or negative an NHL fanbase feels over a given period using artificial intelligence.",
 			"emoji":"🏒"
 		}
