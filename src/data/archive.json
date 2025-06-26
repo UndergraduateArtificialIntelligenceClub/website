@@ -1,0 +1,67 @@
+{
+  "2023-2024": [
+    {
+      "name": "Taran Purewal",
+      "position": "President",
+      "github": "tsp01",
+      "discord": "flashfire50",
+      "linkedin":"taranveer-purewal-9a073524b"
+    },
+    {
+      "name": "Jacob Winch",
+      "position": "Vice President",
+      "github": "Jacob-Winch",
+      "discord": ".jwinch",
+      "linkedin":"jacob-winch"
+    },
+    {
+      "name": "Yong Lee",
+      "position": "Vice President",
+      "github": "gjftns7220",
+      "discord": "gjftns7220",
+      "linkedin":"yong-lee-"
+    },
+    {
+      "name": "Arden Monaghan",
+      "position": "Secretary",
+      "github": "ardenmonaghan",
+      "discord": "bigriceman",
+      "linkedin":"arden-monaghan-574959243"
+    },
+    {
+      "name": "Hamidat Bello",
+      "position": "VP Internal",
+      "github": "hamidatb",
+      "discord": "heyitsh",
+      "linkedin":"hamidatbello"
+    },
+    {
+      "name": "Manav Joshi",
+      "position": "VP External",
+      "github": "mnkjoshi",
+      "discord": "man4v",
+      "linkedin":"mnkjoshi"
+    },
+    {
+      "name": "Affan Nazir",
+      "position": "Treasurer",
+      "github": "MuhammadAffanNazir",
+      "discord": "m.affan.nazir",
+      "linkedin":"affan-nazir"
+    },
+    {
+      "name": "Aarush Bhat",
+      "position": "VP Technology",
+      "github": "aarushb",
+      "discord": "magnumhurricane",
+      "linkedin":"aarushdev"
+    },
+    {
+      "name": "Bertina Jeyakumar",
+      "position": "VP Media",
+      "github": "bertina3107",
+      "discord": "lilly_bertina",
+      "linkedin":"bertina-jeyakumar"
+    }
+  ]
+}
