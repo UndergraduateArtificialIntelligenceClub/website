@@ -11,6 +11,7 @@ const {
 	linkedin,
 } = Astro.props
 
+// The functions for random data are not used, but we'll leave them to not break anything unexpected.
 const randomBloodType = () => {
 	const bloodGroup = ['A', 'B', 'AB', 'O']
 	const bloodRh = ['-', '+']
@@ -35,7 +36,10 @@ const randomSIN = () => `${rand3Digits()} ${rand3Digits()} ${rand3Digits()}`
 		<div class="media-content">
 			<h2 class="title has-text-primary">{ name }</h2>
 			<h3 class="subtitle is-3 has-text-info">{ position }</h3>
-			<p>{ description }</p>
+			
+			{/* --- MODIFIED --- This paragraph will only be rendered if a description exists */}
+			{description && <p>{ description }</p>}
+
 			<div class="tag is-info"><span class="icon">
 					<i class="fa-brands fa-github"></i>
 				</span><a href={`https://github.com/${github}`}>{ github }</a></div>
@@ -45,10 +49,7 @@ const randomSIN = () => `${rand3Digits()} ${rand3Digits()} ${rand3Digits()}`
 			<div class="tag is-info"><span class="icon">
 					<i class="fa-brands fa-linkedin"></i>
 				</span><a href={`https://linkedin.com/in/${linkedin}`}>{ linkedin }</a></div>
-
-
-
-		</figure>
+		</div>
 	</article>
 </div>
 
@@ -65,4 +66,9 @@ const randomSIN = () => `${rand3Digits()} ${rand3Digits()} ${rand3Digits()}`
 
 	a
 		color: $white-ter
+
+// --- NEW --- Add a little space above the tags if there is no description
+.media-content p + .tag
+	margin-top: 1rem
+
 </style>

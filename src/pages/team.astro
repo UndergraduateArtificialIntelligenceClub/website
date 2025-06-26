@@ -2,15 +2,66 @@
 import Layout from '@layouts/Default.astro'
 import AboutCard from '@components/TeamCard.astro'
 import { people } from '@data/team.json'
+import archive from '@data/archive.json'
+
+const archiveYears = Object.keys(archive).reverse();
 ---
 
 <Layout title='About'>
 <>
+	{/* This is the existing section for the current team. No changes here. */}
 	{people.map((exec, index) =>
 		<AboutCard
 			key={index}
 			{...exec}
 		/>
 	)}
+
+	{/* --- This is the entire new archive section --- */}
+	<section class="section">
+		<h2 class="title has-text-centered">Past Executives</h2>
+
+		{archiveYears.map(year => (
+			<details class="archive-year">
+				<summary class="title is-4">{year}</summary>
+				<div class="archive-content">
+					{archive[year].map((exec, index) => (
+						<AboutCard
+							key={`${year}-${index}`}
+							name={exec.name}
+							position={exec.position}
+							github={exec.github}
+							discord={exec.discord}
+							linkedin={exec.linkedin}
+						/>
+					))}
+				</div>
+			</details>
+		))}
+	</section>
 </>
 </Layout>
+
+<style lang="sass">
+.archive-year
+	border: 1px solid #4a4a4a // A subtle border
+	border-radius: 6px
+	padding: 1.25rem
+	margin-top: 1.5rem
+	background-color: #363636 // A slightly different background
+
+	summary
+		cursor: pointer
+		color: #fff // Make the year title white
+		&::marker // Style the dropdown arrow
+			color: #3498db
+
+.archive-year[open] > summary
+	margin-bottom: 1rem // Add space when the section is open
+
+// Hide the box shadow on the cards within the archive to make it cleaner
+.archive-content .box
+	box-shadow: none
+	margin-bottom: 1rem
+
+</style>
