@@ -1,55 +1,109 @@
 ---
-import NavbarLink from './NavbarLink.vue'
 import { nav } from '@data/links.json'
-
 const currentPathname = Astro.url.pathname;
 ---
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
 	<div class="navbar-brand">
 		<a class="navbar-item" href="/">
-			<img class="image is-48x48" src="/images/logo.svg" alt="UAIS Logo" width="56">
-			<span class="is-size-3 px-1 has-text-white has-text-weight-bold">UAIS</span>
+			<img src="/images/logo.svg" alt="UAIS Logo" width="48" height="48">
+			<span class="is-size-4 px-2 has-text-white has-text-weight-bold">UAIS</span>
 		</a>
-		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+		<button class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
 			<span aria-hidden="true"></span>
 			<span aria-hidden="true"></span>
 			<span aria-hidden="true"></span>
-		</a>
+		</button>
 	</div>
+
 	<div id="navbarMenu" class="navbar-menu">
-		<div class="navbar-end">
+		<ul class="navbar-end" role="menubar">
 			{nav.map(item => {
+				// --- Case 1: The item is a DROPDOWN ---
 				if (item.submenu) {
 					const isDropdownActive = item.submenu.some(sublink => sublink.link === currentPathname);
 					return (
-						<div class:list={["navbar-item", "has-dropdown", "is-hoverable", { "is-active": isDropdownActive }]}>
-							<a class="navbar-link">
-								{ item.icon && <span class="icon has-text-info"><i class={item.icon}></i></span> }
+						<li class:list={['navbar-item', 'has-dropdown', 'is-hoverable', { 'is-active': isDropdownActive }]} role="none">
+							<a
+								class="navbar-link"
+								role="menuitem"
+								aria-haspopup="true"
+								aria-expanded="false"
+							>
+								{item.icon && <span class="icon has-text-info"><i class={item.icon}></i></span>}
 								<span>{item.text}</span>
 							</a>
-							<div class="navbar-dropdown is-boxed">
-								{item.submenu.map(sublink => (
-									<NavbarLink client:visible link={sublink} currentPathname={currentPathname} />
-								))}
-							</div>
-						</div>
+							<ul class="navbar-dropdown is-boxed" role="menu">
+								{item.submenu.map(sublink => {
+									const isActive = currentPathname === sublink.link;
+									return (
+										<li role="none">
+											<a
+												href={sublink.link}
+												target={sublink.target || null}
+												class:list={['navbar-item', { 'is-active': isActive }]}
+												role="menuitem"
+												aria-current={isActive ? 'page' : false}
+											>
+												{sublink.icon && <span class="icon has-text-info"><i class={sublink.icon}></i></span>}
+												<span>{sublink.text}</span>
+											</a>
+										</li>
+									);
+								})}
+							</ul>
+						</li>
 					);
-				} else {
-					return <NavbarLink client:visible link={item} currentPathname={currentPathname} />;
+				}
+				// --- Case 2: The item is a REGULAR LINK ---
+				else {
+					const isActive = currentPathname === item.link;
+					return (
+						<li class="navbar-item" role="none">
+							<a
+								href={item.link}
+								target={item.target || null}
+								class:list={[{ 'is-active': isActive }]}
+								role="menuitem"
+								aria-current={isActive ? 'page' : false}
+							>
+								{item.icon && <span class="icon has-text-info"><i class={item.icon}></i></span>}
+								<span>{item.text}</span>
+							</a>
+						</li>
+					);
 				}
 			})}
-		</div>
+		</ul>
 	</div>
 </nav>
+
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const burger = document.querySelector('.navbar-burger');
-		const menu = document.querySelector('.navbar-menu');
-		if (burger && menu) {
-			burger.addEventListener('click', () => {
-				burger.classList.toggle('is-active');
-				menu.classList.toggle('is-active');
-			});
-		}
-	});
+document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.navbar-burger');
+    const menu = document.querySelector('.navbar-menu');
+
+    if (burger && menu) {
+        burger.addEventListener('click', () => {
+            const isActive = burger.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
+            burger.setAttribute('aria-expanded', String(isActive));
+        });
+    }
+
+    // Add keyboard and mobile tap support for dropdowns
+    const dropdowns = document.querySelectorAll('.navbar-item.has-dropdown');
+    dropdowns.forEach(dropdown => {
+        const trigger = dropdown.querySelector('.navbar-link');
+        if (trigger) {
+            trigger.addEventListener('click', (event) => {
+                // Only prevent default on touch devices to allow hover on desktop
+                if (window.innerWidth < 1024) {
+                    event.preventDefault();
+                    const isActive = dropdown.classList.toggle('is-active');
+                    trigger.setAttribute('aria-expanded', String(isActive));
+                }
+            });
+        }
+    });
+});
 </script>
