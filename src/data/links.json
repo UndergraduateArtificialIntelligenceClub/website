@@ -17,8 +17,14 @@
 			"icon": "fa-solid fa-wrench",
 			"submenu": [
 				{
+					"text": "All Projects",
+					"link": "/projects",
+					"target": "",
+					"icon": "fa-solid fa-diagram-project"
+				},
+				{
 					"text": "NHL Positivity Index",
-					"link": "/projects/nhl-positivity-index",
+					"link": "/projeccts/nhl-positivity-index",
 					"target": "",
 					"icon": "fa-solid fa-hockey-puck"
 				}

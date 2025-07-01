@@ -2,46 +2,49 @@
 import NavbarLink from './NavbarLink.vue'
 import { nav } from '@data/links.json'
 
+// Get the current URL's path to determine the active link
 const currentPathname = Astro.url.pathname;
 ---
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
 	<div class="navbar-brand">
 		<a class="navbar-item" href="/">
 			<img class="image is-48x48" src="/images/logo.svg" alt="UAIS Logo" width="56">
-			<h3 class="is-size-3 px-1">UAIS</h3>
+			<h3 class="is-size-3 px-1 has-text-white">UAIS</h3>
 		</a>
-		<a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+
+		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
 			<span aria-hidden="true"></span>
 			<span aria-hidden="true"></span>
 			<span aria-hidden="true"></span>
 		</a>
 	</div>
 
-	<div class="navbar-menu" id="navbarMenu">
+	<div id="navbarMenu" class="navbar-menu">
 		<div class="navbar-end">
-			{nav.map(link => {
-				// Check if the link item has a submenu
-				if (link.submenu) {
-					// Check if the current page URL is one of the submenu links
-					const isDropdownActive = link.submenu.some(sublink => sublink.link === currentPathname);
-
+			{nav.map(item => {
+				// --- Case 1: The item is a DROPDOWN ---
+				if (item.submenu) {
+					// The whole dropdown is "active" if one of its children is the current page
+					const isDropdownActive = item.submenu.some(sublink => sublink.link === currentPathname);
 					return (
 						<div class:list={["navbar-item", "has-dropdown", "is-hoverable", { "is-active": isDropdownActive }]}>
 							<a class="navbar-link">
-								<span class="icon has-text-info"><i class={link.icon}></i></span>
-								<span>{link.text}</span>
+								{ item.icon && <span class="icon has-text-info"><i class={item.icon}></i></span> }
+								<span>{item.text}</span>
 							</a>
-							<div class="navbar-dropdown">
-								{link.submenu.map(sublink => (
-									<NavbarLink client:load link={sublink} currentPathname={currentPathname} />
+
+							<div class="navbar-dropdown is-boxed">
+								{item.submenu.map(sublink => (
+									<NavbarLink client:visible link={sublink} currentPathname={currentPathname} />
 								))}
 							</div>
 						</div>
-					)
-				} else {
-					// Render a normal link
-					return <NavbarLink client:load link={link} currentPathname={currentPathname} />
+					);
+				}
+				// --- Case 2: The item is a REGULAR LINK ---
+				else {
+					return <NavbarLink client:visible link={item} currentPathname={currentPathname} />;
 				}
 			})}
 		</div>
@@ -49,26 +52,31 @@ const currentPathname = Astro.url.pathname;
 </nav>
 
 <style lang="sass" scoped>
+/* These styles must use TABS for indentation */
 .navbar-item img
-	// The line below MUST be indented with a TAB
 	max-height: unset
 
-// Make the parent dropdown link also appear active when a child is active
+// When a dropdown item is active, also highlight the parent "Projects" link
 .navbar-item.has-dropdown.is-active > .navbar-link
-	// The two lines below MUST be indented with a TAB
-	color: hsl(0, 0%, 96%)
-	background-color: transparent
+	color: hsl(204, 86%, 53%) // Bulma's $info color
+
+// Fix for navbar dropdown on dark background
+.navbar-dropdown
+	border-top-width: 0
 
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-	const burger = document.querySelector('.navbar-burger');
-	if (burger) {
-		burger.addEventListener('click', () => {
-			burger.classList.toggle('is-active');
-			document.querySelector('#navbarMenu')?.classList.toggle('is-active');
-		});
-	}
-});
+	// Standard JavaScript for the Bulma burger menu
+	document.addEventListener('DOMContentLoaded', () => {
+		const burger = document.querySelector('.navbar-burger');
+		const menu = document.querySelector('.navbar-menu');
+
+		if (burger && menu) {
+			burger.addEventListener('click', () => {
+				burger.classList.toggle('is-active');
+				menu.classList.toggle('is-active');
+			});
+		}
+	});
 </script>

@@ -1,9 +1,8 @@
 <template>
   <a
-    class="navbar-item"
-    :class="{ 'is-active': isActive }"
-    :target="link.target"
+    :class="['navbar-item', { 'is-active': isActive }]"
     :href="link.link"
+    :target="link.target || null"
     :aria-current="isActive ? 'page' : null"
   >
     <span v-if="link.icon" class="icon has-text-info">
@@ -21,8 +20,8 @@ const props = defineProps({
   currentPathname: String,
 });
 
+// The link is active if its path exactly matches the current page's path.
 const isActive = computed(() => {
-  // Check for exact match, but handle the homepage case ('/' vs '')
-  return props.link.link === props.currentPathname || (props.link.link === '/' && props.currentPathname === '');
+  return props.link && props.link.link === props.currentPathname;
 });
 </script>
