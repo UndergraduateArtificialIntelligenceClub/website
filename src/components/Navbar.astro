@@ -17,10 +17,11 @@ const currentPathname = Astro.url.pathname;
 
 	<div id="navbarMenu" class="navbar-menu">
 		<div class="navbar-end">
-			<!-- Note: We are not using a <ul> here, as Bulma styles direct children of navbar-end -->
+			<!-- We are using a simple structure that Bulma can style -->
 			{nav.map(item => {
 				// --- Case 1: The item is a DROPDOWN ---
 				if (item.submenu) {
+					// A dropdown is active if one of its children is the current page
 					const isDropdownActive = item.submenu.some(sublink => sublink.link === currentPathname);
 					return (
 						<div class:list={["navbar-item", "has-dropdown", "is-hoverable", { "is-active": isDropdownActive }]}>
@@ -30,9 +31,9 @@ const currentPathname = Astro.url.pathname;
 							</a>
 							<div class="navbar-dropdown is-boxed">
 								{item.submenu.map(sublink => {
-									const isActive = currentPathname === sublink.link;
+									const isLinkActive = currentPathname === sublink.link;
 									return (
-										<a href={sublink.link} target={sublink.target || null} class:list={['navbar-item', { 'is-active': isActive }]} aria-current={isActive ? 'page' : false}>
+										<a href={sublink.link} target={sublink.target || null} class:list={['navbar-item', { 'is-active': isLinkActive }]} aria-current={isLinkActive ? 'page' : false}>
 											{sublink.icon && <span class="icon"><i class={sublink.icon}></i></span>}
 											<span>{sublink.text}</span>
 										</a>
@@ -44,9 +45,9 @@ const currentPathname = Astro.url.pathname;
 				}
 				// --- Case 2: The item is a REGULAR LINK ---
 				else {
-					const isActive = currentPathname === item.link;
+					const isLinkActive = currentPathname === item.link || (item.link === '/' && currentPathname.endsWith('/'));
 					return (
-						<a href={item.link} target={item.target || null} class:list={['navbar-item', { 'is-active': isActive }]} aria-current={isActive ? 'page' : false}>
+						<a href={item.link} target={item.target || null} class:list={['navbar-item', { 'is-active': isLinkActive }]} aria-current={isLinkActive ? 'page' : false}>
 							{item.icon && <span class="icon"><i class={item.icon}></i></span>}
 							<span>{item.text}</span>
 						</a>
@@ -57,8 +58,17 @@ const currentPathname = Astro.url.pathname;
 	</div>
 </nav>
 
+<style is:global>
+	/* This style ensures that the active dropdown link gets the correct text color */
+	.navbar-item.has-dropdown.is-active > .navbar-link {
+		color: hsl(0, 0%, 96%) !important; /* Bulma's $white-ter */
+		background-color: transparent !important;
+	}
+</style>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Burger menu logic ---
     const burger = document.querySelector('.navbar-burger');
     const menu = document.querySelector('.navbar-menu');
     if (burger && menu) {
@@ -69,26 +79,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Accessible Dropdown logic ---
     const dropdowns = document.querySelectorAll('.navbar-item.has-dropdown');
     dropdowns.forEach(dropdown => {
         const trigger = dropdown.querySelector('.navbar-link');
         if (trigger) {
-            trigger.addEventListener('click', (event) => {
+            const toggleDropdown = (event) => {
                 event.preventDefault();
                 const parentDropdown = event.currentTarget.closest('.has-dropdown');
-                // Only toggle on mobile/touch, allow hover on desktop
-                if (window.innerWidth < 1024) {
-                    const isActive = parentDropdown.classList.toggle('is-active');
-                    event.currentTarget.setAttribute('aria-expanded', String(isActive));
-                }
-            });
-             // Add keyboard support for dropdowns
+                const isActive = parentDropdown.classList.toggle('is-active');
+                event.currentTarget.setAttribute('aria-expanded', String(isActive));
+            }
+            // Toggle on click for all devices
+            trigger.addEventListener('click', toggleDropdown);
+            // Toggle with keyboard
             trigger.addEventListener('keydown', (event) => {
-                if(event.key === 'Enter' || event.key === ' '){
-                    event.preventDefault();
-                    const parentDropdown = event.currentTarget.closest('.has-dropdown');
-                    const isActive = parentDropdown.classList.toggle('is-active');
-                    event.currentTarget.setAttribute('aria-expanded', String(isActive));
+                if(event.key === 'Enter' || event.key === ' ') {
+                    toggleDropdown(event);
                 }
             });
         }
