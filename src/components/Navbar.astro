@@ -21,7 +21,7 @@ const currentPathname = Astro.url.pathname;
 	<div class="navbar-menu" id="navbarMenu">
 		<div class="navbar-end">
 			{nav.map(link => {
-				// --- NEW LOGIC: Check if the link item has a submenu ---
+				// Check if the link item has a submenu
 				if (link.submenu) {
 					// Check if the current page URL is one of the submenu links
 					const isDropdownActive = link.submenu.some(sublink => sublink.link === currentPathname);
@@ -40,7 +40,7 @@ const currentPathname = Astro.url.pathname;
 						</div>
 					)
 				} else {
-					// --- OLD LOGIC: Render a normal link ---
+					// Render a normal link
 					return <NavbarLink client:load link={link} currentPathname={currentPathname} />
 				}
 			})}
@@ -50,12 +50,14 @@ const currentPathname = Astro.url.pathname;
 
 <style lang="sass" scoped>
 .navbar-item img
+	// The line below MUST be indented with a TAB
 	max-height: unset
 
 // Make the parent dropdown link also appear active when a child is active
 .navbar-item.has-dropdown.is-active > .navbar-link
-  color: hsl(0, 0%, 96%) // Bulma's $white
-  background-color: transparent
+	// The two lines below MUST be indented with a TAB
+	color: hsl(0, 0%, 96%)
+	background-color: transparent
 
 </style>
 
