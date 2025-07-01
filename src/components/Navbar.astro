@@ -16,34 +16,24 @@ const currentPathname = Astro.url.pathname;
 	</div>
 
 	<div id="navbarMenu" class="navbar-menu">
-		<ul class="navbar-end" role="menubar">
+		<ul class="navbar-end">
 			{nav.map(item => {
-				// --- Case 1: The item is a DROPDOWN ---
+				// --- Case 1: The item is a DROPDOWN (a nested list) ---
 				if (item.submenu) {
 					const isDropdownActive = item.submenu.some(sublink => sublink.link === currentPathname);
 					return (
-						<li class:list={['navbar-item', 'has-dropdown', 'is-hoverable', { 'is-active': isDropdownActive }]} role="none">
-							<a
-								class="navbar-link"
-								role="menuitem"
-								aria-haspopup="true"
-								aria-expanded="false"
-							>
+						<li class:list={["navbar-item", "has-dropdown", "is-hoverable", { "is-active": isDropdownActive }]}>
+							{/* This link acts as the button to toggle the submenu */}
+							<a class="navbar-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 								{item.icon && <span class="icon has-text-info"><i class={item.icon}></i></span>}
 								<span>{item.text}</span>
 							</a>
-							<ul class="navbar-dropdown is-boxed" role="menu">
+							<ul class="navbar-dropdown is-boxed">
 								{item.submenu.map(sublink => {
 									const isActive = currentPathname === sublink.link;
 									return (
-										<li role="none">
-											<a
-												href={sublink.link}
-												target={sublink.target || null}
-												class:list={['navbar-item', { 'is-active': isActive }]}
-												role="menuitem"
-												aria-current={isActive ? 'page' : false}
-											>
+										<li>
+											<a href={sublink.link} target={sublink.target || null} class:list={['navbar-item', { 'is-active': isActive }]} aria-current={isActive ? 'page' : false}>
 												{sublink.icon && <span class="icon has-text-info"><i class={sublink.icon}></i></span>}
 												<span>{sublink.text}</span>
 											</a>
@@ -58,14 +48,8 @@ const currentPathname = Astro.url.pathname;
 				else {
 					const isActive = currentPathname === item.link;
 					return (
-						<li class="navbar-item" role="none">
-							<a
-								href={item.link}
-								target={item.target || null}
-								class:list={[{ 'is-active': isActive }]}
-								role="menuitem"
-								aria-current={isActive ? 'page' : false}
-							>
+						<li class:list={["navbar-item", { "is-active": isActive }]}>
+							<a href={item.link} target={item.target || null} aria-current={isActive ? 'page' : false}>
 								{item.icon && <span class="icon has-text-info"><i class={item.icon}></i></span>}
 								<span>{item.text}</span>
 							</a>
@@ -79,9 +63,9 @@ const currentPathname = Astro.url.pathname;
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Burger menu logic ---
     const burger = document.querySelector('.navbar-burger');
     const menu = document.querySelector('.navbar-menu');
-
     if (burger && menu) {
         burger.addEventListener('click', () => {
             const isActive = burger.classList.toggle('is-active');
@@ -90,18 +74,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add keyboard and mobile tap support for dropdowns
+    // --- Accessible Dropdown logic ---
     const dropdowns = document.querySelectorAll('.navbar-item.has-dropdown');
     dropdowns.forEach(dropdown => {
         const trigger = dropdown.querySelector('.navbar-link');
         if (trigger) {
             trigger.addEventListener('click', (event) => {
-                // Only prevent default on touch devices to allow hover on desktop
-                if (window.innerWidth < 1024) {
-                    event.preventDefault();
-                    const isActive = dropdown.classList.toggle('is-active');
-                    trigger.setAttribute('aria-expanded', String(isActive));
-                }
+                event.preventDefault(); // Always prevent navigation
+                const parentDropdown = event.currentTarget.closest('.has-dropdown');
+                const isActive = parentDropdown.classList.toggle('is-active');
+                event.currentTarget.setAttribute('aria-expanded', String(isActive));
             });
         }
     });
