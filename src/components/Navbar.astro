@@ -1,21 +1,49 @@
 ---
 import NavbarLink from './NavbarLink.vue'
 import { nav } from '@data/links.json'
+
+const currentPathname = Astro.url.pathname;
 ---
 
-<nav class="navbar">
+<nav class="navbar" role="navigation" aria-label="main navigation">
 	<div class="navbar-brand">
 		<a class="navbar-item" href="/">
 			<img class="image is-48x48" src="/images/logo.svg" alt="UAIS Logo" width="56">
 			<h3 class="is-size-3 px-1">UAIS</h3>
 		</a>
-		<a class="navbar-burger burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
-			{[...Array(3).keys()].map(_ => <span aria-hidden="true"></span>)}
+		<a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
 		</a>
 	</div>
+
 	<div class="navbar-menu" id="navbarMenu">
 		<div class="navbar-end">
-			{nav.map(link => <NavbarLink key={link.text} link={link} />)}
+			{nav.map(link => {
+				// --- NEW LOGIC: Check if the link item has a submenu ---
+				if (link.submenu) {
+					// Check if the current page URL is one of the submenu links
+					const isDropdownActive = link.submenu.some(sublink => sublink.link === currentPathname);
+
+					return (
+						<div class:list={["navbar-item", "has-dropdown", "is-hoverable", { "is-active": isDropdownActive }]}>
+							<a class="navbar-link">
+								<span class="icon has-text-info"><i class={link.icon}></i></span>
+								<span>{link.text}</span>
+							</a>
+							<div class="navbar-dropdown">
+								{link.submenu.map(sublink => (
+									<NavbarLink client:load link={sublink} currentPathname={currentPathname} />
+								))}
+							</div>
+						</div>
+					)
+				} else {
+					// --- OLD LOGIC: Render a normal link ---
+					return <NavbarLink client:load link={link} currentPathname={currentPathname} />
+				}
+			})}
 		</div>
 	</div>
 </nav>
@@ -23,11 +51,22 @@ import { nav } from '@data/links.json'
 <style lang="sass" scoped>
 .navbar-item img
 	max-height: unset
+
+// Make the parent dropdown link also appear active when a child is active
+.navbar-item.has-dropdown.is-active > .navbar-link
+  color: hsl(0, 0%, 96%) // Bulma's $white
+  background-color: transparent
+
 </style>
 
-<script defer>
-document.querySelector('.navbar-burger').addEventListener('click', () => {
-	document.querySelector('.navbar-burger').classList.toggle('is-active')
-	document.querySelector('.navbar-menu').classList.toggle('is-active')
-})
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+	const burger = document.querySelector('.navbar-burger');
+	if (burger) {
+		burger.addEventListener('click', () => {
+			burger.classList.toggle('is-active');
+			document.querySelector('#navbarMenu')?.classList.toggle('is-active');
+		});
+	}
+});
 </script>

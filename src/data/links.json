@@ -14,9 +14,15 @@
 		},
 		{
 			"text": "Projects",
-			"link": "/projects",
-			"target": "",
-			"icon": "fa-solid fa-wrench"
+			"icon": "fa-solid fa-wrench",
+			"submenu": [
+				{
+					"text": "NHL Positivity Index",
+					"link": "/projects/nhl-positivity-index",
+					"target": "",
+					"icon": "fa-solid fa-hockey-puck"
+				}
+			]
 		},
 		{
 			"text": "Event Attendees",

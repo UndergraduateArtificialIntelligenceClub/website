@@ -1,16 +1,28 @@
-<template lang="pug">
-a.navbar-item(
-	:target='link.target',
-	:href='link.link'
-)
-	span.icon.has-text-info
-		i(:class='link.icon')
-	span {{ link.text }}
+<template>
+  <a
+    class="navbar-item"
+    :class="{ 'is-active': isActive }"
+    :target="link.target"
+    :href="link.link"
+    :aria-current="isActive ? 'page' : null"
+  >
+    <span v-if="link.icon" class="icon has-text-info">
+      <i :class="link.icon"></i>
+    </span>
+    <span>{{ link.text }}</span>
+  </a>
 </template>
 
-<script lang="ts" >
-export default {
-	name: 'NavbarLink',
-	props: ['link']
-}
+<script setup>
+import { computed } from 'vue';
+
+const props = defineProps({
+  link: Object,
+  currentPathname: String,
+});
+
+const isActive = computed(() => {
+  // Check for exact match, but handle the homepage case ('/' vs '')
+  return props.link.link === props.currentPathname || (props.link.link === '/' && props.currentPathname === '');
+});
 </script>
