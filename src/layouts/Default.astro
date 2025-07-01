@@ -3,6 +3,13 @@ import Navbar from '@components/Navbar.astro'
 import Footer from '@components/Footer.astro'
 import about from '@data/team.json'
 
+// --- THIS IS THE CRITICAL CHANGE ---
+// We now import the main stylesheet directly into the page script.
+// Astro will process this file and automatically add it to the <head> of every page.
+// This is the most reliable way to ensure global styles are loaded.
+import '../styles/main.sass'
+
+
 export interface Props {
 	title: string;
 }
@@ -32,6 +39,7 @@ const { description } = about;
 		<Footer />
 	</body>
 </html>
-<style lang="sass" is:global>
-@import '../styles/main.sass'
-</style>
+<!-- 
+	The <style> block that was here has been removed.
+	The styles are now handled by the import at the top of the file.
+-->
