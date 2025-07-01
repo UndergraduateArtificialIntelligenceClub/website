@@ -2,30 +2,24 @@
 import NavbarLink from './NavbarLink.vue'
 import { nav } from '@data/links.json'
 
-// Get the current URL's path to determine the active link
 const currentPathname = Astro.url.pathname;
 ---
-
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
 	<div class="navbar-brand">
 		<a class="navbar-item" href="/">
 			<img class="image is-48x48" src="/images/logo.svg" alt="UAIS Logo" width="56">
-			<h3 class="is-size-3 px-1 has-text-white">UAIS</h3>
+			<span class="is-size-3 px-1 has-text-white has-text-weight-bold">UAIS</span>
 		</a>
-
 		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
 			<span aria-hidden="true"></span>
 			<span aria-hidden="true"></span>
 			<span aria-hidden="true"></span>
 		</a>
 	</div>
-
 	<div id="navbarMenu" class="navbar-menu">
 		<div class="navbar-end">
 			{nav.map(item => {
-				// --- Case 1: The item is a DROPDOWN ---
 				if (item.submenu) {
-					// The whole dropdown is "active" if one of its children is the current page
 					const isDropdownActive = item.submenu.some(sublink => sublink.link === currentPathname);
 					return (
 						<div class:list={["navbar-item", "has-dropdown", "is-hoverable", { "is-active": isDropdownActive }]}>
@@ -33,7 +27,6 @@ const currentPathname = Astro.url.pathname;
 								{ item.icon && <span class="icon has-text-info"><i class={item.icon}></i></span> }
 								<span>{item.text}</span>
 							</a>
-
 							<div class="navbar-dropdown is-boxed">
 								{item.submenu.map(sublink => (
 									<NavbarLink client:visible link={sublink} currentPathname={currentPathname} />
@@ -41,37 +34,17 @@ const currentPathname = Astro.url.pathname;
 							</div>
 						</div>
 					);
-				}
-				// --- Case 2: The item is a REGULAR LINK ---
-				else {
+				} else {
 					return <NavbarLink client:visible link={item} currentPathname={currentPathname} />;
 				}
 			})}
 		</div>
 	</div>
 </nav>
-
-<style lang="sass" scoped>
-/* These styles must use TABS for indentation */
-.navbar-item img
-	max-height: unset
-
-// When a dropdown item is active, also highlight the parent "Projects" link
-.navbar-item.has-dropdown.is-active > .navbar-link
-	color: hsl(204, 86%, 53%) // Bulma's $info color
-
-// Fix for navbar dropdown on dark background
-.navbar-dropdown
-	border-top-width: 0
-
-</style>
-
 <script>
-	// Standard JavaScript for the Bulma burger menu
 	document.addEventListener('DOMContentLoaded', () => {
 		const burger = document.querySelector('.navbar-burger');
 		const menu = document.querySelector('.navbar-menu');
-
 		if (burger && menu) {
 			burger.addEventListener('click', () => {
 				burger.classList.toggle('is-active');

@@ -15,7 +15,12 @@ export default defineConfig({
     vue(),
     astroImageTools,
     sitemap(),
-    purgecss({ safelist: [/^.fc/, '#calendar'] }),
+    // --- MODIFIED ---
+    // We are giving PurgeCSS a "safelist" of classes to NEVER remove.
+    // This regular expression /^navbar/ tells it to keep all classes that start with "navbar".
+    purgecss({ 
+        safelist: [/^navbar/, 'is-active', 'has-dropdown', 'is-hoverable', 'is-boxed', 'burger'] 
+    }),
     compress(),
     compressor(),
     mdx({

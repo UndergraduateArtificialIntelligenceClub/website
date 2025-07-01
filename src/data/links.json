@@ -1,91 +1,27 @@
 {
 	"nav": [
-		{
-			"text": "Presentations",
-			"link": "/presentations",
-			"target": "",
-			"icon": "fa-solid fa-file-powerpoint"
-		},
-		{
-			"text": "Getting Started",
-			"link": "/getting-started",
-			"target": "",
-			"icon": "fa-solid fa-code"
-		},
+		{ "text": "Team", "link": "/team", "icon": "fa-solid fa-theater-masks" },
+		{ "text": "Getting Started", "link": "/getting-started", "icon": "fa-solid fa-code" },
 		{
 			"text": "Projects",
 			"icon": "fa-solid fa-wrench",
 			"submenu": [
-				{
-					"text": "All Projects",
-					"link": "/projects",
-					"target": "",
-					"icon": "fa-solid fa-diagram-project"
-				},
-				{
-					"text": "NHL Positivity Index",
-					"link": "/projeccts/nhl-positivity-index",
-					"target": "",
-					"icon": "fa-solid fa-hockey-puck"
-				}
+				{ "text": "All Projects", "link": "/projects", "icon": "fa-solid fa-diagram-project" },
+				{ "text": "NHL Positivity Index", "link": "/projects/nhl-positivity-index", "icon": "fa-solid fa-hockey-puck" }
 			]
 		},
+		{ "text": "Presentations", "link": "/presentations", "icon": "fa-solid fa-file-powerpoint" },
 		{
-			"text": "Event Attendees",
-			"link": "/attendance",
-			"target": "",
-			"icon": "fa-solid fa-dice-d20"
+			"text": "Socials",
+			"icon": "fa-solid fa-star-of-life",
+			"submenu": [
+				{ "text": "Discord", "link": "https://discord.gg/KapmJxs", "target": "blank", "icon": "fa-brands fa-discord" },
+				{ "text": "LinkedIn", "link": "https://www.linkedin.com/company/undergraduate-artificial-intelligence-society/", "target": "blank", "icon": "fa-brands fa-linkedin" },
+				{ "text": "GitHub", "link": "https://github.com/undergraduateartificialintelligenceclub", "target": "blank", "icon": "fa-brands fa-github" },
+				{ "text": "YouTube", "link": "https://www.youtube.com/@uais", "target": "blank", "icon": "fa-brands fa-youtube" },
+				{ "text": "Eventbrite", "link": "https://uais.eventbrite.ca", "target": "blank", "icon": "fa-solid fa-calendar" }
+			]
 		},
-		{
-			"text": "Signup",
-			"link": "/signup",
-			"target": "",
-			"icon": "fa-solid fa-jedi"
-		},
-		{
-			"text": "GitHub",
-			"link": "https://github.com/undergraduateartificialintelligenceclub",
-			"target": "blank",
-			"icon": "fa-brands fa-github"
-		},
-		{
-			"text": "Discord",
-			"link": "https://discord.gg/KapmJxs",
-			"target": "blank",
-			"icon": "fa-brands fa-discord"
-		},
-		{
-			"text": "Team",
-			"link": "/team",
-			"target": "",
-			"icon": "fa-solid fa-theater-masks"
-		}
-	],
-	"socials": [
-		{
-			"text": "Discord",
-			"link": "https://discord.gg/KapmJxs",
-			"icon": "fa-brands fa-discord"
-		},
-		{
-			"text": "Linktree",
-			"link": "https://linktr.ee/uais_ualberta",
-			"icon": "fa-solid fa-star-of-life"
-		},
-		{
-			"text": "LinkedIn",
-			"link": "https://www.linkedin.com/company/undergraduate-artificial-intelligence-society/",
-			"icon": "fa-brands fa-linkedin"
-		},
-		{
-			"text": "Eventbrite",
-			"link": "https://uais.eventbrite.ca",
-			"icon": "fa-solid fa-calendar"
-		},
-		{
-			"text": "YouTube",
-			"link": "https://www.youtube.com/@uais",
-			"icon": "fa-brands fa-youtube"
-		}
+		{ "text": "Signup", "link": "/signup", "target": "", "icon": "fa-solid fa-jedi" }
 	]
 }
