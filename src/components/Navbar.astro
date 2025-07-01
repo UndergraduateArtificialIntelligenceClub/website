@@ -16,54 +16,49 @@ const currentPathname = Astro.url.pathname;
 	</div>
 
 	<div id="navbarMenu" class="navbar-menu">
-		<ul class="navbar-end">
+		<div class="navbar-end">
+			<!-- Note: We are not using a <ul> here, as Bulma styles direct children of navbar-end -->
 			{nav.map(item => {
-				// --- Case 1: The item is a DROPDOWN (a nested list) ---
+				// --- Case 1: The item is a DROPDOWN ---
 				if (item.submenu) {
 					const isDropdownActive = item.submenu.some(sublink => sublink.link === currentPathname);
 					return (
-						<li class:list={["navbar-item", "has-dropdown", "is-hoverable", { "is-active": isDropdownActive }]}>
-							{/* This link acts as the button to toggle the submenu */}
-							<a class="navbar-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-								{item.icon && <span class="icon has-text-info"><i class={item.icon}></i></span>}
+						<div class:list={["navbar-item", "has-dropdown", "is-hoverable", { "is-active": isDropdownActive }]}>
+							<a class="navbar-link" role="button" aria-haspopup="true" aria-expanded="false">
+								{item.icon && <span class="icon"><i class={item.icon}></i></span>}
 								<span>{item.text}</span>
 							</a>
-							<ul class="navbar-dropdown is-boxed">
+							<div class="navbar-dropdown is-boxed">
 								{item.submenu.map(sublink => {
 									const isActive = currentPathname === sublink.link;
 									return (
-										<li>
-											<a href={sublink.link} target={sublink.target || null} class:list={['navbar-item', { 'is-active': isActive }]} aria-current={isActive ? 'page' : false}>
-												{sublink.icon && <span class="icon has-text-info"><i class={sublink.icon}></i></span>}
-												<span>{sublink.text}</span>
-											</a>
-										</li>
+										<a href={sublink.link} target={sublink.target || null} class:list={['navbar-item', { 'is-active': isActive }]} aria-current={isActive ? 'page' : false}>
+											{sublink.icon && <span class="icon"><i class={sublink.icon}></i></span>}
+											<span>{sublink.text}</span>
+										</a>
 									);
 								})}
-							</ul>
-						</li>
+							</div>
+						</div>
 					);
 				}
 				// --- Case 2: The item is a REGULAR LINK ---
 				else {
 					const isActive = currentPathname === item.link;
 					return (
-						<li class:list={["navbar-item", { "is-active": isActive }]}>
-							<a href={item.link} target={item.target || null} aria-current={isActive ? 'page' : false}>
-								{item.icon && <span class="icon has-text-info"><i class={item.icon}></i></span>}
-								<span>{item.text}</span>
-							</a>
-						</li>
+						<a href={item.link} target={item.target || null} class:list={['navbar-item', { 'is-active': isActive }]} aria-current={isActive ? 'page' : false}>
+							{item.icon && <span class="icon"><i class={item.icon}></i></span>}
+							<span>{item.text}</span>
+						</a>
 					);
 				}
 			})}
-		</ul>
+		</div>
 	</div>
 </nav>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Burger menu logic ---
     const burger = document.querySelector('.navbar-burger');
     const menu = document.querySelector('.navbar-menu');
     if (burger && menu) {
@@ -74,16 +69,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Accessible Dropdown logic ---
     const dropdowns = document.querySelectorAll('.navbar-item.has-dropdown');
     dropdowns.forEach(dropdown => {
         const trigger = dropdown.querySelector('.navbar-link');
         if (trigger) {
             trigger.addEventListener('click', (event) => {
-                event.preventDefault(); // Always prevent navigation
+                event.preventDefault();
                 const parentDropdown = event.currentTarget.closest('.has-dropdown');
-                const isActive = parentDropdown.classList.toggle('is-active');
-                event.currentTarget.setAttribute('aria-expanded', String(isActive));
+                // Only toggle on mobile/touch, allow hover on desktop
+                if (window.innerWidth < 1024) {
+                    const isActive = parentDropdown.classList.toggle('is-active');
+                    event.currentTarget.setAttribute('aria-expanded', String(isActive));
+                }
+            });
+             // Add keyboard support for dropdowns
+            trigger.addEventListener('keydown', (event) => {
+                if(event.key === 'Enter' || event.key === ' '){
+                    event.preventDefault();
+                    const parentDropdown = event.currentTarget.closest('.has-dropdown');
+                    const isActive = parentDropdown.classList.toggle('is-active');
+                    event.currentTarget.setAttribute('aria-expanded', String(isActive));
+                }
             });
         }
     });
