@@ -1,8 +1,10 @@
 ---
 import { nav } from '@data/links.json'
-const currentPathname = Astro.url.pathname;
-// A reliable check for the homepage, works even with trailing slashes.
-const isHomePage = currentPathname === '/' || currentPathname.endsWith('/index.html');
+
+// --- FIX for 'Current Page' Bug ---
+// This function removes trailing slashes, making path comparison reliable.
+const normalizePath = (path) => (path.length > 1 && path.endsWith('/')) ? path.slice(0, -1) : path;
+const currentPathname = normalizePath(Astro.url.pathname);
 ---
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
 	<div class="navbar-brand">
@@ -22,7 +24,7 @@ const isHomePage = currentPathname === '/' || currentPathname.endsWith('/index.h
 			{nav.map(item => {
 				if (item.submenu) {
 					// --- ACCESSIBLE DROPDOWN ---
-					const isDropdownActive = item.submenu.some(sublink => sublink.link === currentPathname);
+					const isDropdownActive = item.submenu.some(sublink => currentPathname === sublink.link);
 					return (
 						<li class:list={["navbar-item", "has-dropdown", { "is-active": isDropdownActive }]}>
 							<a class="navbar-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -46,7 +48,7 @@ const isHomePage = currentPathname === '/' || currentPathname.endsWith('/index.h
 					);
 				} else {
 					// --- ACCESSIBLE REGULAR LINK ---
-					const isLinkActive = (item.link === '/') ? isHomePage : (currentPathname === item.link);
+					const isLinkActive = currentPathname === item.link;
 					return (
 						<li class="navbar-item">
 							<a href={item.link} target={item.target || null} class:list={[{ 'is-active': isLinkActive }]} aria-current={isLinkActive ? 'page' : false}>
@@ -62,27 +64,28 @@ const isHomePage = currentPathname === '/' || currentPathname.endsWith('/index.h
 </nav>
 
 <style is:global>
-	/* --- THE CRITICAL CSS FIX --- */
-	/* 1. By default, hide dropdowns within a list structure */
-	.navbar-item.has-dropdown:not(.is-active) .navbar-dropdown {
+	/* Hides the dropdown content by default */
+	.navbar-item.has-dropdown:not(.is-hoverable) .navbar-dropdown {
 		display: none;
 	}
-
-	/* 2. On desktop, show on hover */
+	/* Shows the dropdown content when its parent has the is-active class */
+	.navbar-item.has-dropdown.is-active .navbar-dropdown {
+		display: block;
+	}
+	/* On desktop, show dropdown on hover as well */
 	@media screen and (min-width: 1024px) {
+		.navbar-item.has-dropdown:hover {
+			background-color: transparent !important;
+		}
 		.navbar-item.has-dropdown:hover .navbar-dropdown {
 			display: block;
 		}
-	}
-
-	/* 3. On mobile, show when the parent is-active (toggled by JS) */
-	.navbar-item.has-dropdown.is-active .navbar-dropdown {
-		display: block;
 	}
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Burger menu script
     const burger = document.querySelector('.navbar-burger');
     const menu = document.querySelector('.navbar-menu');
     if (burger && menu) {
@@ -93,27 +96,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Accessible dropdown script
     const dropdowns = document.querySelectorAll('.navbar-item.has-dropdown');
     dropdowns.forEach(dropdown => {
-        const trigger = dropdown.querySelector('.navbar-link');
+        const trigger = dropdown.querySelector('a.navbar-link');
         if (trigger) {
             trigger.addEventListener('click', (event) => {
-                // This function handles click/tap on mobile to toggle the menu
-                if (window.innerWidth < 1024) {
-                    event.preventDefault();
-                    const parentLi = event.currentTarget.closest('.has-dropdown');
-                    const isActive = parentLi.classList.toggle('is-active');
-                    event.currentTarget.setAttribute('aria-expanded', String(isActive));
-                }
-            });
-            trigger.addEventListener('keydown', (event) => {
-                 // This function handles keyboard activation
-                if(event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    const parentLi = event.currentTarget.closest('.has-dropdown');
-                    const isActive = parentLi.classList.toggle('is-active');
-                    event.currentTarget.setAttribute('aria-expanded', String(isActive));
-                }
+                // --- FIX for 'Jump to Top' Bug ---
+                // This now runs unconditionally to stop the browser from following the "#" link.
+                event.preventDefault(); 
+                
+                const parentLi = event.currentTarget.closest('.has-dropdown');
+                const isActive = parentLi.classList.toggle('is-active');
+                event.currentTarget.setAttribute('aria-expanded', String(isActive));
             });
         }
     });
