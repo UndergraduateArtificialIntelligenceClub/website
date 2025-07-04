@@ -1,20 +1,39 @@
 ---
 import Layout from '@layouts/Default.astro'
-import resources from '@data/resources.json'
+// Reads from our correctly named projects.json file
+import data from '@data/projects.json'
 
-const projects = resources.projects
+const projects = data.projects
 ---
 
 <Layout title='Projects'>
-    <div style="height: 90vh;">
-   	{projects.map(project =>
-		<section class="section">
-			<h1 class="title">{project.emoji}{project.title}</h1>
-			<h4 class="subtitle">{project.name}</h4>
-			<a href={project.link}>Link to project page!</a>
-			<p>{project.desc}</p>
-		</section>
-	)}
-    </div>
-</Layout>
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">Our Projects</h1>
+      <p class="subtitle has-text-centered">
+        Here are some of the cool things we're working on.
+      </p>
 
+      {projects.map(project => (
+        <div class="box">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <h2 class="title">{project.emoji} {project.title}</h2>
+                <h4 class="subtitle">{project.name}</h4>
+                <p>{project.desc}</p>
+                <a href={project.link} class="button is-info">
+                  <span>View Project Details</span>
+                  <span class="icon is-small">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      ))}
+
+    </div>
+  </section>
+</Layout>

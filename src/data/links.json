@@ -1,5 +1,6 @@
 {
 	"nav": [
+		{ "text": "Home", "link": "/", "icon": "fa-solid fa-house" },
 		{ "text": "Team", "link": "/team", "icon": "fa-solid fa-theater-masks" },
 		{ "text": "Getting Started", "link": "/getting-started", "icon": "fa-solid fa-code" },
 		{

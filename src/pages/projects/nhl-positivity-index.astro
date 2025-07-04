@@ -1,13 +1,16 @@
 ---
+// 1. Import the main layout
 import Layout from '@layouts/Default.astro'
-import Katex from '@components/Katex.astro'
+
+// 2. Import the content from your MDX file
 import { Content } from '@data/nhl_positivity_index.mdx'
 ---
 
-<Layout title='NHL Positivity Index'>
-	<section class="section">
-       	<Katex>
-           	<Content />
-        </Katex>
-      </section>
+<!-- 3. Wrap the content in the layout -->
+<Layout title='NHL Positivity Index Project'>
+  <section class="section">
+    <div class="content">
+      <Content />
+    </div>
+  </section>
 </Layout>
