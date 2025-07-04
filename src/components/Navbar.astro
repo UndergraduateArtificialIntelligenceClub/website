@@ -1,8 +1,6 @@
 ---
 import { nav } from '@data/links.json'
 
-// --- FIX for 'Current Page' Bug ---
-// This function removes trailing slashes, making path comparison reliable.
 const normalizePath = (path) => (path.length > 1 && path.endsWith('/')) ? path.slice(0, -1) : path;
 const currentPathname = normalizePath(Astro.url.pathname);
 ---
@@ -24,8 +22,9 @@ const currentPathname = normalizePath(Astro.url.pathname);
 			{nav.map(item => {
 				if (item.submenu) {
 					// --- ACCESSIBLE DROPDOWN ---
-					const isDropdownActive = item.submenu.some(sublink => currentPathname === sublink.link);
+					const isDropdownActive = item.submenu.some(sublink => normalizePath(sublink.link) === currentPathname);
 					return (
+						// REMOVED: 'is-hoverable'. This makes the dropdown click-only.
 						<li class:list={["navbar-item", "has-dropdown", { "is-active": isDropdownActive }]}>
 							<a class="navbar-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 								{item.icon && <span class="icon"><i class={item.icon}></i></span>}
@@ -33,7 +32,7 @@ const currentPathname = normalizePath(Astro.url.pathname);
 							</a>
 							<ul class="navbar-dropdown is-boxed">
 								{item.submenu.map(sublink => {
-									const isLinkActive = currentPathname === sublink.link;
+									const isLinkActive = normalizePath(sublink.link) === currentPathname;
 									return (
 										<li>
 											<a href={sublink.link} target={sublink.target || null} class:list={['navbar-item', { 'is-active': isLinkActive }]} aria-current={isLinkActive ? 'page' : false}>
@@ -64,22 +63,15 @@ const currentPathname = normalizePath(Astro.url.pathname);
 </nav>
 
 <style is:global>
-	/* Hides the dropdown content by default */
-	.navbar-item.has-dropdown:not(.is-hoverable) .navbar-dropdown {
+	/* --- SIMPLIFIED CSS --- */
+	/* 1. By default, hide dropdowns */
+	.navbar-item.has-dropdown:not(.is-active) .navbar-dropdown {
 		display: none;
 	}
-	/* Shows the dropdown content when its parent has the is-active class */
+
+	/* 2. On mobile AND desktop, show when the parent is-active (toggled by JS) */
 	.navbar-item.has-dropdown.is-active .navbar-dropdown {
 		display: block;
-	}
-	/* On desktop, show dropdown on hover as well */
-	@media screen and (min-width: 1024px) {
-		.navbar-item.has-dropdown:hover {
-			background-color: transparent !important;
-		}
-		.navbar-item.has-dropdown:hover .navbar-dropdown {
-			display: block;
-		}
 	}
 </style>
 
@@ -96,16 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Accessible dropdown script
+    // Accessible dropdown script (now works for all devices)
     const dropdowns = document.querySelectorAll('.navbar-item.has-dropdown');
     dropdowns.forEach(dropdown => {
         const trigger = dropdown.querySelector('a.navbar-link');
         if (trigger) {
             trigger.addEventListener('click', (event) => {
-                // --- FIX for 'Jump to Top' Bug ---
-                // This now runs unconditionally to stop the browser from following the "#" link.
                 event.preventDefault(); 
-                
                 const parentLi = event.currentTarget.closest('.has-dropdown');
                 const isActive = parentLi.classList.toggle('is-active');
                 event.currentTarget.setAttribute('aria-expanded', String(isActive));
