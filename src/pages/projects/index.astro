@@ -1,6 +1,5 @@
 ---
 import Layout from '@layouts/Default.astro'
-// Reads from our correctly named projects.json file
 import data from '@data/projects.json'
 
 const projects = data.projects
@@ -11,7 +10,7 @@ const projects = data.projects
     <div class="container">
       <h1 class="title has-text-centered">Our Projects</h1>
       <p class="subtitle has-text-centered">
-        Here are some of the cool things we're working on.
+        Here are some of the cool things we're working on. 🚀
       </p>
 
       {projects.map(project => (
@@ -22,12 +21,15 @@ const projects = data.projects
                 <h2 class="title">{project.emoji} {project.title}</h2>
                 <h4 class="subtitle">{project.name}</h4>
                 <p>{project.desc}</p>
-                <a href={project.link} class="button is-info">
+                
+                <!-- THIS IS THE CORRECTED AND SMARTER LINK -->
+                <a href={`/projects/${project.slug}`} class="button is-info">
                   <span>View Project Details</span>
                   <span class="icon is-small">
                     <i class="fa-solid fa-arrow-right"></i>
                   </span>
                 </a>
+
               </div>
             </div>
           </article>
