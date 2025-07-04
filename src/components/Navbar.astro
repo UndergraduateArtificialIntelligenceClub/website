@@ -22,11 +22,17 @@ const currentPathname = normalizePath(Astro.url.pathname);
 			{nav.map(item => {
 				if (item.submenu) {
 					// --- ACCESSIBLE DROPDOWN ---
-					const isDropdownActive = item.submenu.some(sublink => normalizePath(sublink.link) === currentPathname);
+					// This detects if a child link is active, to highlight the parent.
+					const isCurrentSection = item.submenu.some(sublink => normalizePath(sublink.link) === currentPathname);
 					return (
-						// REMOVED: 'is-hoverable'. This makes the dropdown click-only.
-						<li class:list={["navbar-item", "has-dropdown", { "is-active": isDropdownActive }]}>
-							<a class="navbar-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+						<li class="navbar-item has-dropdown">
+							<a
+								class:list={["navbar-link", { "is-active": isCurrentSection }]}
+								href="#"
+								role="button"
+								aria-haspopup="true"
+								aria-expanded="false"
+							>
 								{item.icon && <span class="icon"><i class={item.icon}></i></span>}
 								<span>{item.text}</span>
 							</a>
@@ -63,15 +69,19 @@ const currentPathname = normalizePath(Astro.url.pathname);
 </nav>
 
 <style is:global>
-	/* --- SIMPLIFIED CSS --- */
-	/* 1. By default, hide dropdowns */
-	.navbar-item.has-dropdown:not(.is-active) .navbar-dropdown {
+	/* Hides the dropdown content by default */
+	.navbar-item.has-dropdown:not(.is-open) .navbar-dropdown {
 		display: none;
 	}
-
-	/* 2. On mobile AND desktop, show when the parent is-active (toggled by JS) */
-	.navbar-item.has-dropdown.is-active .navbar-dropdown {
+	/* Shows dropdown when parent has the is-open class (from JS) */
+	.navbar-item.has-dropdown.is-open .navbar-dropdown {
 		display: block;
+	}
+	/* On desktop, also show on hover */
+	@media screen and (min-width: 1024px) {
+		.navbar-item.has-dropdown:hover .navbar-dropdown {
+			display: block;
+		}
 	}
 </style>
 
@@ -88,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Accessible dropdown script (now works for all devices)
+    // Accessible dropdown script
     const dropdowns = document.querySelectorAll('.navbar-item.has-dropdown');
     dropdowns.forEach(dropdown => {
         const trigger = dropdown.querySelector('a.navbar-link');
@@ -96,8 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
             trigger.addEventListener('click', (event) => {
                 event.preventDefault(); 
                 const parentLi = event.currentTarget.closest('.has-dropdown');
-                const isActive = parentLi.classList.toggle('is-active');
-                event.currentTarget.setAttribute('aria-expanded', String(isActive));
+                // We now toggle a dedicated 'is-open' class for state
+                const isOpen = parentLi.classList.toggle('is-open');
+                event.currentTarget.setAttribute('aria-expanded', String(isOpen));
             });
         }
     });
