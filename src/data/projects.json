@@ -3,7 +3,7 @@
     {
       "title": "NHL Positivity Index",
       "name": "Using NLP and sentiment analysis to quantify the sentiment of NHL fanbases.",
-      "link": "/nhl-positivity-index",
+      "slug": "/nhl-positivity-index",
       "desc": "This project aims to quantitatively assess how positive or negative an NHL fanbase feels over a given period using natural language processing and sentiment analysis to analyze fan discussions on Reddit.",
       "emoji": "🏒"
     }
