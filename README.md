@@ -6,7 +6,7 @@
 [![Pull Requests Closed](https://img.shields.io/github/issues-pr-closed/UndergraduateArtificialIntelligenceClub/website)](https://github.com/UndergraduateArtificialIntelligenceClub/website/pulls)
 
 If you have any **feature requests**, please **open an issue** with the `enhancement` label.
-If you would like to **contribute**, please **contact** either [@aarushb](https://github.com/aarushb), or [@Jacob-Winch](https://github.com/Jacob-Winch) on [Discord](https://discord.com/invite/KapmJxs) on the `#website` channel.
+If you would like to **contribute**, please **contact** either [@aarushb](https://github.com/aarushb), or [@usaid4071](https://github.com/Usaidahmed10) on [Discord](https://discord.com/invite/KapmJxs) on the `#website` channel.
 
 ## Development Environment Setup
 The website is made with [Astro](https://astro.build/), a static site generator. Some components are still written with [Vue](https://vuejs.org/).
