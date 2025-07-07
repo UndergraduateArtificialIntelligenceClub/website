@@ -1,0 +1,32 @@
+---
+import Layout from '@layouts/Default.astro'
+import data from '@data/interviews.json'
+
+const series = data.series
+---
+<Layout title="Interviews">
+  <section class="section">
+    <div class="container">
+      {series.map(s => (
+        <>
+          <h1 class="title is-2 has-text-centered">{s.name}</h1>
+          <p class="subtitle is-5 has-text-centered">{s.description}</p>
+          <div class="columns is-multiline is-centered">
+            {s.interviews.map(interview => (
+              <div class="column is-three-quarters">
+                <div class="box">
+                  <h3 class="title is-4">{interview.interviewee}</h3>
+                  <h4 class="subtitle is-6">{interview.title}</h4>
+                  <p>{interview.summary}</p>
+                  <a href={`/interviews/${interview.slug}`} class="button is-info is-outlined mt-4">
+                    <span>Read Full Interview</span>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      ))}
+    </div>
+  </section>
+</Layout>
