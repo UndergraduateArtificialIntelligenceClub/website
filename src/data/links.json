@@ -1,8 +1,7 @@
 {
 	"nav": [
 		{ "text": "Home", "link": "/", "icon": "fa-solid fa-house" },
-		{ "text": "Team", "link": "/team", "icon": "fa-solid fa-theater-masks" },
-		{ "text": "Getting Started", "link": "/getting-started", "icon": "fa-solid fa-code" },
+		{ "text": "Team", "link": "/team", "icon": "fa-solid fa-users" },
 		{
 			"text": "Projects",
 			"icon": "fa-solid fa-wrench",
@@ -11,7 +10,19 @@
 				{ "text": "NHL Positivity Index", "link": "/projects/nhl-positivity-index", "icon": "fa-solid fa-hockey-puck" }
 			]
 		},
-		{ "text": "Presentations", "link": "/presentations", "icon": "fa-solid fa-file-powerpoint" },
+		{
+			"text": "Interviews",
+			"icon": "fa-solid fa-microphone-lines",
+			"submenu": [
+				{ "text": "All Interviews", "link": "/interviews", "icon": "fa-solid fa-list-ul" },
+				{ "text": "Adam Delgado (Career Highlights)", "link": "/interviews/adam-delgado", "icon": "fa-solid fa-user" },
+				{ "text": "Shibhansh Dohare (Career Highlights)", "link": "/interviews/shibhansh-dohare", "icon": "fa-solid fa-user" },
+				{ "text": "Paul Saunders (Career Highlights)", "link": "/interviews/paul-saunders", "icon": "fa-solid fa-user" },
+				{ "text": "Kenneth Dwyer (Career Highlights)", "link": "/interviews/kenneth-dwyer", "icon": "fa-solid fa-user" },
+				{ "text": "David O'Connell (Career Highlights)", "link": "/interviews/david-oconnell", "icon": "fa-solid fa-user" }
+			]
+		},
+		{ "text": "Getting Started", "link": "/getting-started", "icon": "fa-solid fa-book" },
 		{
 			"text": "Socials",
 			"icon": "fa-solid fa-star-of-life",
@@ -23,6 +34,6 @@
 				{ "text": "Eventbrite", "link": "https://uais.eventbrite.ca", "target": "blank", "icon": "fa-solid fa-calendar" }
 			]
 		},
-		{ "text": "Signup", "link": "/signup", "target": "", "icon": "fa-solid fa-jedi" }
+		{ "text": "Signup", "link": "/signup", "target": "", "icon": "fa-solid fa-user-plus" }
 	]
 }
