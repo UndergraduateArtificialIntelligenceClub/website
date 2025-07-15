@@ -77,12 +77,14 @@ const currentPathname = normalizePath(Astro.url.pathname);
 	.navbar-item.has-dropdown.is-open .navbar-dropdown {
 		display: block;
 	}
-	/* On desktop, also show on hover */
-	@media screen and (min-width: 1024px) {
-		.navbar-item.has-dropdown:hover .navbar-dropdown {
-			display: block;
-		}
-	}
+	/*
+	 * The CSS rule that showed the dropdown on hover has been removed.
+	 * This prevents a conflict with the JavaScript click-to-open functionality.
+	 * Now, the dropdowns will *only* open and close on a click, which provides 
+	 * a more consistent and predictable experience for all users (mouse, 
+	 * keyboard, and touch). Your ARIA implementation and script logic 
+	 * for click-toggling is excellent and has been preserved.
+	 */
 </style>
 
 <script>
