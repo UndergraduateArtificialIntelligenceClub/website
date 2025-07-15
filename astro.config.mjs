@@ -1,3 +1,5 @@
+// --- File: astro.config.mjs ---
+
 import { astroImageTools } from 'astro-imagetools'
 import compress from 'astro-compress'
 import compressor from 'astro-compressor'
@@ -16,10 +18,11 @@ export default defineConfig({
     astroImageTools,
     sitemap(),
     // --- MODIFIED ---
-    // We are giving PurgeCSS a "safelist" of classes to NEVER remove.
-    // This regular expression /^navbar/ tells it to keep all classes that start with "navbar".
+    // We are adding 'is-open' to the safelist. This tells PurgeCSS to NEVER remove
+    // this class, which is essential because it's added dynamically by our JavaScript
+    // to show the submenus. Without this, PurgeCSS removes the CSS for it.
     purgecss({ 
-        safelist: [/^navbar/, 'is-active', 'has-dropdown', 'is-hoverable', 'is-boxed', 'burger'] 
+        safelist: [/^navbar/, 'is-active', 'has-dropdown', 'is-hoverable', 'is-boxed', 'burger', 'is-open'] 
     }),
     compress(),
     compressor(),

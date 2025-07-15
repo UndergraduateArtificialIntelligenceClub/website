@@ -1,4 +1,5 @@
 ---
+// --- File: Navbar.astro.txt ---
 import { nav } from '@data/links.json'
 
 const normalizePath = (path) => (path.length > 1 && path.endsWith('/')) ? path.slice(0, -1) : path;
@@ -77,19 +78,19 @@ const currentPathname = normalizePath(Astro.url.pathname);
 	.navbar-item.has-dropdown.is-open .navbar-dropdown {
 		display: block;
 	}
+	/* On desktop, also show on hover - REMOVED to prevent conflict with click logic */
 	/*
-	 * The CSS rule that showed the dropdown on hover has been removed.
-	 * This prevents a conflict with the JavaScript click-to-open functionality.
-	 * Now, the dropdowns will *only* open and close on a click, which provides 
-	 * a more consistent and predictable experience for all users (mouse, 
-	 * keyboard, and touch). Your ARIA implementation and script logic 
-	 * for click-toggling is excellent and has been preserved.
-	 */
+	@media screen and (min-width: 1024px) {
+		.navbar-item.has-dropdown:hover .navbar-dropdown {
+			display: block;
+		}
+	}
+	*/
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // Burger menu script
+    // --- Burger menu script ---
     const burger = document.querySelector('.navbar-burger');
     const menu = document.querySelector('.navbar-menu');
     if (burger && menu) {
@@ -100,18 +101,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Accessible dropdown script
+    // --- Accessible dropdown script ---
     const dropdowns = document.querySelectorAll('.navbar-item.has-dropdown');
+    
     dropdowns.forEach(dropdown => {
         const trigger = dropdown.querySelector('a.navbar-link');
         if (trigger) {
             trigger.addEventListener('click', (event) => {
                 event.preventDefault(); 
                 const parentLi = event.currentTarget.closest('.has-dropdown');
-                // We now toggle a dedicated 'is-open' class for state
-                const isOpen = parentLi.classList.toggle('is-open');
-                event.currentTarget.setAttribute('aria-expanded', String(isOpen));
+                const wasOpen = parentLi.classList.contains('is-open');
+
+                // First, close all other dropdowns
+                closeAllDropdowns();
+
+                // If the dropdown we clicked wasn't open, open it.
+                if (!wasOpen) {
+                    parentLi.classList.add('is-open');
+                    trigger.setAttribute('aria-expanded', 'true');
+                }
             });
+        }
+    });
+
+    // --- Function to close all dropdowns ---
+    function closeAllDropdowns() {
+        dropdowns.forEach(dropdown => {
+            if (dropdown.classList.contains('is-open')) {
+                dropdown.classList.remove('is-open');
+                const trigger = dropdown.querySelector('a.navbar-link');
+                if (trigger) {
+                    trigger.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+    }
+
+    // --- Add a click listener to the whole document to close dropdowns ---
+    document.addEventListener('click', (event) => {
+        // If the click was not inside a dropdown, close them all.
+        if (!event.target.closest('.has-dropdown')) {
+            closeAllDropdowns();
         }
     });
 });
