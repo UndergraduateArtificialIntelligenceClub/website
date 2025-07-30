@@ -1,56 +1,105 @@
 ---
 import Layout from '@layouts/Default.astro'
-import { Image } from 'astro:assets'
-import Carousel from '@components/Carousel.astro'
 import Calendar from '@components/Calendar.astro'
 ---
 
-<Layout title='Homepage'>
-<>
-<astro>
-  <section style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-    <img src="/images/logo.svg" alt="UAIS Logo" style="max-width: 48%; height: auto; max-height: 50%;">
-    <h1 class = "title" style="color: white;">Undergraduate Artificial Intelligence Society</h1>
-  </section>	
-	<section class="section">
-		<h2 class="title">Description</h2>
-		<p></p> The University of Alberta Undergraduate Artificial Intelligence Society
-		is a group of students interested in discussing, learning about, and
-		applying Artificial Intelligence techniques of all kinds.
-		We welcome all students regardless of field of study or AI knowledge.
-		You can check <a href="/constitution.pdf">our constitution</a>.
+<Layout title='Homepage | UAIS'>
+	<!-- Section 1: Hero Section -->
+	<section class="hero is-primary is-medium">
+		<div class="hero-body">
+			<div class="container has-text-centered">
+				<figure class="image is-128x128 is-inline-block">
+					<img src="/images/logo.svg" alt="UAIS Logo">
+				</figure>
+				<h1 class="title is-1">
+					Undergraduate Artificial Intelligence Society
+				</h1>
+				<h2 class="subtitle is-3">
+					Exploring the frontiers of AI at the University of Alberta.
+				</h2>
+			</div>
+		</div>
 	</section>
-	
-	<!-- We will fill in the current projects section when we are working on some new projects -->
-	<!-- <section class="section">
-		<h2 class="title">Current Projects</h2>
-		<h3 class="title">NHL Positivity Index Project</h3>
-		<p>Inspired by youtuber, Shannon Skanes AKA 'The Hockey Guy' and his intriguing 'NHL Panic Index' video series, 
-		the Undergraduate Artificial Intelligence Society is working on the NHL Positivity Index Project. 
-		Our mission is to explore the depths of NHL fandom by harnessing the emerging capabilities of Natural Language Processing (NLP).
-		By continuously gathering a vast array of sentiments from NHL team's subreddits, 
-		we are striving to develop a methodology to quantify the positivity tied to each NHL team in a given time period. 
-		As this project unfolds, we hope to capture the dynamic emotions coursing through the hockey season, offering a novel, 
-		data-driven lens onto the passionate dialogues of fans.</p>
-		<br/>
-		<p>If you would like to join the team message Jacob Winch on discord</p>
-		<br/>
-		<p>We meet every Friday in the Student Innovation Center in CCIS from 4:00pm - 6:00pm!</p>
-		<br/>
-		<h3 class="title">Discord Bot Project</h3>
-		<p> In this project, we’ll learn how to build a bot for Discord using the discord.py Python library. 
-		The bot will initially be able to handle requests and automate various tasks such as keeping track of members and 
-		assigning roles, taking suggestions/feedback from club members, and other features that the team comes up with during 
-		brainstorming sessions. We’ll then further enhance these features and add more functionality such as suggesting learning 
-		resources and opportunities to people based on their level of expertise by integrating AI functionality into the bot, using 
-		tools such as GPT.</p>
-		<br/>
-		<p>If you would like to join the team message Aarush Bhat on discord</p>
-		<br/>
-		<p>We meet every Friday in the Student Innovation Center in CCIS from 4:00pm - 5:00pm!</p>
-	</section> -->
-	
-	<Carousel />
-	<Calendar />
-</>
+
+	<!-- Section 2: About Section -->
+	<section class="section">
+		<div class="container">
+			<div class="columns is-centered">
+				<div class="column is-three-quarters has-text-centered">
+					<h2 class="title is-2">Who We Are</h2>
+					<p class="is-size-5">
+						The UAIS is a vibrant community of students dedicated to discussing, learning about, and building with Artificial Intelligence. We welcome all students regardless of faculty, year, or AI knowledge. Our goal is to create a space where curiosity thrives and innovative ideas come to life. We are all about 'AI for Good' here 😊, so if you are eager to dive right in, mildly curious, unsure of AI and it's effects on our lives, or all of the above, come say hello! 🚀
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 3: Explore Our Society -->
+	<section class="section has-background-light">
+		<div class="container">
+			<h2 class="title is-2 has-text-centered">Explore UAIS</h2>
+			<div class="columns is-centered mt-5">
+				<!-- Card 1: Projects -->
+				<div class="column is-one-third">
+					<div class="box has-text-centered">
+						<span class="icon is-large has-text-info">
+							<i class="fa-solid fa-wrench fa-3x"></i>
+						</span>
+						<h3 class="title is-4 mt-4">View Our Projects</h3>
+						<p>See the hands-on work our members are doing, from sentiment analysis in sports to advanced AI applications.</p>
+						<a href="/projects" class="button is-info mt-4">Browse Projects</a>
+					</div>
+				</div>
+				<!-- Card 2: Team -->
+				<div class="column is-one-third">
+					<div class="box has-text-centered">
+						<span class="icon is-large has-text-success">
+							<i class="fa-solid fa-users fa-3x"></i>
+						</span>
+						<h3 class="title is-4 mt-4">Meet the Team</h3>
+						<p>Get to know the passionate executives crazy enough about AI to bring you uais' offerings by organizing events, workshops, and projects for the society.</p>
+						<a href="/team" class="button is-success mt-4">The Execs</a>
+					</div>
+				</div>
+				<!-- Card 3: Constitution -->
+				<div class="column is-one-third">
+					<div class="box has-text-centered">
+						<span class="icon is-large has-text-warning">
+							<i class="fa-solid fa-scroll fa-3x"></i>
+						</span>
+						<h3 class="title is-4 mt-4">Our Constitution</h3>
+						<p>Read the official governing document that outlines our mission, structure, and commitment to the student community.</p>
+						<a href="/constitution.pdf" class="button is-warning mt-4" target="_blank">Read Document</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 4: Get Involved (Call to Action) -->
+	<section class="section">
+		<div class="container has-text-centered">
+			<h2 class="title is-2">Ready to Get Involved?</h2>
+			<p class="subtitle">Join our community, participate in events, start building, or just drop by to say hello! 😊</p>
+			<div class="buttons is-centered are-large">
+				<a href="/rubric" class="button is-primary">
+					<span class="icon"><i class="fa-solid fa-table-list"></i></span>
+					<span>Join the Club (View Rubric)</span>
+				</a>
+				<a href="/discord" class="button is-link">
+					<span class="icon"><i class="fa-brands fa-discord"></i></span>
+					<span>Join our Discord</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 5: Calendar -->
+	<section class="section has-background-light">
+		<div class="container">
+			<h2 class="title is-2 has-text-centered">What's On</h2>
+			<Calendar />
+		</div>
+	</section>
 </Layout>
