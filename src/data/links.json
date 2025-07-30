@@ -34,6 +34,6 @@
 				{ "text": "Eventbrite", "link": "https://uais.eventbrite.ca", "target": "blank", "icon": "fa-solid fa-calendar" }
 			]
 		},
-		{ "text": "Signup", "link": "/signup", "target": "", "icon": "fa-solid fa-user-plus" }
+		{ "text": "Rubric", "link": "/rubric", "target": "", "icon": "fa-solid fa-table-list" }
 	]
 }
