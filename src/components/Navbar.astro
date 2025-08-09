@@ -37,7 +37,7 @@ const currentPathname = normalizePath(Astro.url.pathname);
 								{item.icon && <span class="icon"><i class={item.icon}></i></span>}
 								<span>{item.text}</span>
 							</a>
-							<ul class="navbar-dropdown is-boxed">
+							<ul class="navbar-dropdown">
 								{item.submenu.map(sublink => {
 									const isLinkActive = normalizePath(sublink.link) === currentPathname;
 									return (
