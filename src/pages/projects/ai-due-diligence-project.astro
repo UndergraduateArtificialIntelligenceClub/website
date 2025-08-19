@@ -1,0 +1,16 @@
+---
+// 1. Import the main layout
+import Layout from '@layouts/Default.astro'
+
+// 2. Import the content from your MDX file
+import { Content } from '@data/ai-due-diligence-project.mdx'
+---
+
+<!-- 3. Wrap the content in the layout -->
+<Layout title='AI Due Diligence Project'>
+  <section class="section">
+    <div class="content">
+      <Content />
+    </div>
+  </section>
+</Layout>
