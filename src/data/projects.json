@@ -6,6 +6,13 @@
       "slug": "nhl-positivity-index",
       "desc": "This project aims to quantitatively assess how positive or negative an NHL fanbase feels over a given period using natural language processing and sentiment analysis to analyze fan discussions on Reddit.",
       "emoji": "🏒"
+    },
+    {
+      "title": "AI Due Diligence Project",
+      "name": "UAIS x University of Alberta Innovation Fund (UA Fund)",
+      "slug": "ai-due-diligence-project",
+      "desc": "Partnering with the UA Innovation Fund, members gain real-world experience by conducting AI due diligence on startups, evaluating their technical and business viability for investment.",
+      "emoji": "💼"
     }
   ]
 }
