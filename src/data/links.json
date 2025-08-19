@@ -7,7 +7,8 @@
 			"icon": "fa-solid fa-wrench",
 			"submenu": [
 				{ "text": "All Projects", "link": "/projects", "icon": "fa-solid fa-diagram-project" },
-				{ "text": "NHL Positivity Index", "link": "/projects/nhl-positivity-index", "icon": "fa-solid fa-hockey-puck" }
+				{ "text": "NHL Positivity Index", "link": "/projects/nhl-positivity-index", "icon": "fa-solid fa-hockey-puck" },
+				{ "text": "AI Due Diligence Project", "link": "/projects/ai-due-diligence-project", "icon": "fa-solid fa-briefcase" }
 			]
 		},
 		{
