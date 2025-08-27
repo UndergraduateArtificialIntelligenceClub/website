@@ -47,16 +47,17 @@ jobs:
         # Add any other build-time environment variables needed by Astro here
         # CI: true # Often useful for build processes
 
-    # Uploads the built artifact (likely 'dist' for Astro) to S3
-    - name: Upload website to S3
-      uses: shallwefootball/s3-upload-action@v1.3.3 # Using a specific stable tag
+    # Syncs the dist directory with the S3 bucket, deleting old files
+    - name: Sync website to S3
+      uses: jakejarvis/s3-sync-action@master
       with:
-        aws_key_id: ${{ secrets.aws_access_key_id }}
-        aws_secret_access_key: ${{ secrets.aws_secret_access_key }}
-        aws_bucket: ${{ secrets.bucket }}
-        source_dir: 'dist' # Default Astro build output directory, verify this matches yours
-        destination_dir: '' # Uploads to the root of the bucket
-
+        args: --acl public-read --follow-symlinks --delete
+      env:
+        AWS_S3_BUCKET: ${{ secrets.bucket }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key_id }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_access_key }}
+        AWS_REGION: ${{ secrets.region }}   # Make sure this secret is set in your repo
+        SOURCE_DIR: 'dist'
     # Invalidates CloudFront cache to serve the new version
     # Changed from @v2.7 to @v2 to resolve download info error and use latest v2 release
     - name: Invalidate CloudFront distribution
