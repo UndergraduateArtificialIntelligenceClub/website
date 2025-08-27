@@ -30,11 +30,12 @@
 			"submenu": [
 				{ "text": "Discord", "link": "https://discord.gg/KapmJxs", "target": "blank", "icon": "fa-brands fa-discord" },
 				{ "text": "LinkedIn", "link": "https://www.linkedin.com/company/undergraduate-artificial-intelligence-society/", "target": "blank", "icon": "fa-brands fa-linkedin" },
+				{ "text": "Instagram", "link": "https://www.instagram.com/uais.ualberta/", "target": "blank", "icon": "fa-brands fa-instagram" },
 				{ "text": "GitHub", "link": "https://github.com/undergraduateartificialintelligenceclub", "target": "blank", "icon": "fa-brands fa-github" },
 				{ "text": "YouTube", "link": "https://www.youtube.com/@uais", "target": "blank", "icon": "fa-brands fa-youtube" },
 				{ "text": "Eventbrite", "link": "https://uais.eventbrite.ca", "target": "blank", "icon": "fa-solid fa-calendar" }
 			]
 		},
-		{ "text": "Rubric", "link": "/rubric", "target": "", "icon": "fa-solid fa-table-list" }
+		{ "text": "Club Rubric", "link": "/rubric", "target": "blank", "icon": "fa-solid fa-table-list" }
 	]
 }
