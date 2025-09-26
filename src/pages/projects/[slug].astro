@@ -1,0 +1,60 @@
+---
+import Layout from '@layouts/Default.astro';
+import data from '@data/projects.json';
+
+// This function tells Astro which pages to generate based on our JSON file
+export async function getStaticPaths() {
+  return data.projects.map(project => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+// Astro gives us the full project object for the current page
+const { project } = Astro.props;
+
+// We dynamically import the correct MDX content based on the slug
+const { Content } = await import(`../../data/projects/${project.slug}.mdx`);
+---
+
+<Layout title={`Project: ${project.title}`}>
+  <section class="section">
+    <div class="container content">
+      <!-- The MDX content will be rendered here, starting with its H1 title -->
+      <Content />
+
+      <!-- This section is automatically added to every project page -->
+      {project.leads && project.leads.length > 0 && (
+        <div class="box mt-6">
+          <h3 class="title is-5">Project Lead{project.leads.length > 1 ? 's' : ''}</h3>
+          <!-- Loop through each lead for the project -->
+          {project.leads.map(lead => (
+            <div class="mb-4">
+              <p class="is-size-5 has-text-weight-semibold mb-2">{lead.name}</p>
+              <div class="tags">
+                {lead.email && (
+                  <a href={`mailto:${lead.email}`} class="tag is-medium is-dark">
+                    <span class="icon mr-1"><i class="fa-solid fa-envelope"></i></span>
+                    Email
+                  </a>
+                )}
+                {lead.discord && (
+                  <span class="tag is-medium is-info">
+                    <span class="icon mr-1"><i class="fa-brands fa-discord"></i></span>
+                    {lead.discord}
+                  </span>
+                )}
+                {lead.github && (
+                  <a href={`https://github.com/${lead.github}`} class="tag is-medium is-black" target="_blank" rel="noopener noreferrer">
+                    <span class="icon mr-1"><i class="fa-brands fa-github"></i></span>
+                    GitHub
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>
