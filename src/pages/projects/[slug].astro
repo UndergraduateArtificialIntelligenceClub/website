@@ -11,18 +11,25 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 
-// --- THIS IS THE FIX ---
-// 1. We use an absolute path from the project root (`/src/...`).
-// This is the most stable way to tell the build tool where to look.
+// --- THIS IS THE ROBUST FIX ---
+
+// 1. Find all possible MDX files using an absolute path from the project root.
 const allProjectMdxFiles = import.meta.glob('/src/data/projects/*.mdx', { eager: true });
 
-// 2. We construct the corresponding absolute path for the key we need.
-const mdxPath = `/src/data/projects/${project.slug}.mdx`;
+// 2. Instead of guessing the full path, we search for the key that ENDS with our slug.
+//    This is much more reliable than trying to construct the exact path.
+const matchingPath = Object.keys(allProjectMdxFiles)
+  .find(path => path.endsWith(`${project.slug}.mdx`));
 
-// 3. We look up the module using the reliable absolute path.
-const mdxModule = allProjectMdxFiles[mdxPath];
+// 3. Add a safety check. If no matching file was found, throw a clear error.
+if (!matchingPath) {
+  throw new Error(`Could not find MDX file for slug: ${project.slug}`);
+}
 
-// 4. This will now work because mdxModule will be correctly found.
+// 4. Look up the module using the guaranteed correct key we just found.
+const mdxModule = allProjectMdxFiles[matchingPath];
+
+// 5. This will now work because mdxModule is guaranteed to be the correct object.
 const { Content } = mdxModule;
 ---
 
