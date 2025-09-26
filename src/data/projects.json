@@ -8,11 +8,46 @@
       "emoji": "🏒"
     },
     {
-      "title": "AI Due Diligence Project",
+      "title": "AI Due Diligence Investment Analysis",
       "name": "UAIS x University of Alberta Innovation Fund (UA Fund)",
       "slug": "ai-due-diligence-project",
       "desc": "Partnering with the UA Innovation Fund, members gain real-world experience by conducting AI due diligence on startups, evaluating their technical and business viability for investment.",
       "emoji": "💼"
+    },
+    {
+      "title": "RAG-Based Chatbot for Lecture Notes",
+      "name": "Beginner-friendly project on Retrieval-Augmented Generation.",
+      "slug": "rag-chatbot-lecture-notes",
+      "desc": "Build a personal AI study assistant. This chatbot processes uploaded lecture notes (PDFs) and uses a Large Language Model to answer questions, generate summaries, and provide explanations.",
+      "emoji": "🤖"
+    },
+    {
+      "title": "PalmPilot 2.0: Gesture Controlled Laptop Automation",
+      "name": "Intermediate project focused on computer vision and automation.",
+      "slug": "palmpilot-gesture-control",
+      "desc": "Control your laptop using hand gestures! This project uses a webcam and computer vision to map real-time gestures to system commands like adjusting volume, switching tabs, or locking the screen.",
+      "emoji": "🖐️"
+    },
+    {
+      "title": "Crypto Adoption Forecasting with AI",
+      "name": "Intermediate project combining economics and data science.",
+      "slug": "crypto-forecasting",
+      "desc": "Explore the link between macroeconomic stressors (inflation, interest rates) and cryptocurrency adoption. Combine economic indicators with blockchain data to forecast trends and visualize connections.",
+      "emoji": "📈"
+    },
+    {
+      "title": "Speech-Based Alzheimer AI Screening Tool",
+      "name": "Advanced project in healthcare and Natural Language Processing.",
+      "slug": "alzheimer-ai-screening-tool",
+      "desc": "Develop an accessible app that uses a fine-tuned BERT model to estimate Alzheimer's prediction scores from short speech samples. Based on published research from the project lead.",
+      "emoji": "🧠"
+    },
+    {
+      "title": "ClubMate AI: Open-Source Assistant",
+      "name": "Intermediate project building agentic AI systems for student clubs.",
+      "slug": "clubmate-ai-assistant",
+      "desc": "Create a Discord bot to automate administrative tasks for student clubs. Using LangChain and the Model Context Protocol, it will integrate with tools like Google Calendar, Sheets, and Notion.",
+      "emoji": "🛠️"
     }
   ]
 }
