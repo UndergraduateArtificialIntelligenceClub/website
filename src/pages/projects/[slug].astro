@@ -1,9 +1,7 @@
 ---
 import Layout from '@layouts/Default.astro';
-// This static import correctly uses the '@data' alias
 import data from '@data/projects.json';
 
-// This function tells Astro which pages to generate based on our JSON file
 export async function getStaticPaths() {
   return data.projects.map(project => ({
     params: { slug: project.slug },
@@ -11,12 +9,18 @@ export async function getStaticPaths() {
   }));
 }
 
-// Astro gives us the full project object for the current page
 const { project } = Astro.props;
 
 // --- THIS IS THE FIX ---
-// We are now using the robust '@data' alias instead of a fragile relative path.
-const { Content } = await import(`@data/projects/${project.slug}.mdx`);
+// We use import.meta.glob to find all possible MDX files at build time.
+// This is the most robust way to handle dynamic imports in Astro.
+const allProjectMdxFiles = await import.meta.glob('../../data/projects/*.mdx');
+
+// We then construct the exact path to the file we need for this specific page.
+const mdxPath = `../../data/projects/${project.slug}.mdx`;
+
+// We find our specific MDX file in the list and get its Content component.
+const { Content } = await allProjectMdxFiles[mdxPath]();
 ---
 
 <Layout title={`Project: ${project.title}`}>
