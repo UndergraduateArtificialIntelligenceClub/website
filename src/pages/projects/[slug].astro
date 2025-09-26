@@ -12,21 +12,24 @@ export async function getStaticPaths() {
 const { project } = Astro.props;
 
 // --- THIS IS THE FIX ---
-// We use import.meta.glob to find all possible MDX files at build time.
-// This is the most robust way to handle dynamic imports in Astro.
-const allProjectMdxFiles = await import.meta.glob('../../data/projects/*.mdx');
+// 1. We use `import.meta.glob` with `{ eager: true }`.
+// This loads all MDX modules directly and returns them as objects, not functions.
+const allProjectMdxFiles = import.meta.glob('../../data/projects/*.mdx', { eager: true });
 
-// We then construct the exact path to the file we need for this specific page.
+// 2. We construct the exact path to the file we need.
 const mdxPath = `../../data/projects/${project.slug}.mdx`;
 
-// We find our specific MDX file in the list and get its Content component.
-const { Content } = await allProjectMdxFiles[mdxPath]();
+// 3. We directly access the module object from our map.
+const mdxModule = allProjectMdxFiles[mdxPath];
+
+// 4. We destructure the `Content` component from the module object. No function call `()` is needed.
+const { Content } = mdxModule;
 ---
 
 <Layout title={`Project: ${project.title}`}>
   <section class="section">
     <div class="container content">
-      <!-- The MDX content will be rendered here, starting with its H1 title -->
+      <!-- The MDX content will be rendered here -->
       <Content />
 
       <!-- This section is automatically added to every project page -->
