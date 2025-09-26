@@ -5,49 +5,71 @@
       "name": "Using NLP and sentiment analysis to quantify the sentiment of NHL fanbases.",
       "slug": "nhl-positivity-index",
       "desc": "This project aims to quantitatively assess how positive or negative an NHL fanbase feels over a given period using natural language processing and sentiment analysis to analyze fan discussions on Reddit.",
-      "emoji": "🏒"
+      "emoji": "🏒",
+      "leads": [
+        { "name": "Jacob Winch" }
+      ]
     },
     {
       "title": "AI Due Diligence Investment Analysis",
       "name": "UAIS x University of Alberta Innovation Fund (UA Fund)",
       "slug": "ai-due-diligence-project",
       "desc": "Partnering with the UA Innovation Fund, members gain real-world experience by conducting AI due diligence on startups, evaluating their technical and business viability for investment.",
-      "emoji": "💼"
+      "emoji": "💼",
+      "leads": [
+        { "name": "Andrew Obwocha", "email": "aobwocha@ualberta.ca", "discord": "andrewo.47_08863", "github": "AndrewObwocha" }
+      ]
     },
     {
       "title": "RAG-Based Chatbot for Lecture Notes",
       "name": "Beginner-friendly project on Retrieval-Augmented Generation.",
       "slug": "rag-chatbot-lecture-notes",
       "desc": "Build a personal AI study assistant. This chatbot processes uploaded lecture notes (PDFs) and uses a Large Language Model to answer questions, generate summaries, and provide explanations.",
-      "emoji": "🤖"
+      "emoji": "🤖",
+      "leads": [
+        { "name": "Usaid Ahmed", "email": "usaid1@ualberta.ca", "discord": "usaid4071", "github": "Usaidahmed10" }
+      ]
     },
     {
-      "title": "PalmPilot 2.0: Gesture Controlled Laptop Automation",
+      "title": "Hand Gesture Controlled Laptop Automation",
       "name": "Intermediate project focused on computer vision and automation.",
       "slug": "palmpilot-gesture-control",
       "desc": "Control your laptop using hand gestures! This project uses a webcam and computer vision to map real-time gestures to system commands like adjusting volume, switching tabs, or locking the screen.",
-      "emoji": "🖐️"
+      "emoji": "🖐️",
+      "leads": [
+        { "name": "Aarush Bhat", "email": "aarush@ualberta.ca", "discord": "magnumhurricane", "github": "aarushb" }
+      ]
     },
     {
       "title": "Crypto Adoption Forecasting with AI",
       "name": "Intermediate project combining economics and data science.",
       "slug": "crypto-forecasting",
       "desc": "Explore the link between macroeconomic stressors (inflation, interest rates) and cryptocurrency adoption. Combine economic indicators with blockchain data to forecast trends and visualize connections.",
-      "emoji": "📈"
+      "emoji": "📈",
+      "leads": [
+        { "name": "Viktoria Lysenko", "email": "vlysenko@ualberta.ca", "discord": "viktoria1", "github": "viktorialysenko" },
+        { "name": "Arnav Sachdeva", "email": "sachdev3@ualberta.ca", "discord": "arnav._.sachdeva", "github": "arnavsachdeva594" }
+      ]
     },
     {
       "title": "Speech-Based Alzheimer AI Screening Tool",
       "name": "Advanced project in healthcare and Natural Language Processing.",
       "slug": "alzheimer-ai-screening-tool",
       "desc": "Develop an accessible app that uses a fine-tuned BERT model to estimate Alzheimer's prediction scores from short speech samples. Based on published research from the project lead.",
-      "emoji": "🧠"
+      "emoji": "🧠",
+      "leads": [
+        { "name": "Xuan Khoi Nguyen", "email": "xuankhoi@ualberta.ca", "discord": "khuivagorou", "github": "Khoi-Nguyen-Xuan" }
+      ]
     },
     {
-      "title": "ClubMate AI: Open-Source Assistant",
+      "title": "AutoExec Club Bot",
       "name": "Intermediate project building agentic AI systems for student clubs.",
       "slug": "clubmate-ai-assistant",
       "desc": "Create a Discord bot to automate administrative tasks for student clubs. Using LangChain and the Model Context Protocol, it will integrate with tools like Google Calendar, Sheets, and Notion.",
-      "emoji": "🛠️"
+      "emoji": "🛠️",
+      "leads": [
+        { "name": "Sashreek Addanki", "email": "saddanki@ualberta.ca", "discord": "sashreek", "github": "Sashreek007" }
+      ]
     }
   ]
 }
