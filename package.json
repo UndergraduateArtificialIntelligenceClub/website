@@ -15,7 +15,7 @@
     "@astrojs/sitemap": "^1.0.0",
     "@egjs/flicking": "^4.10.4",
     "@egjs/flicking-plugins": "^4.5.0",
-    "astro": "^5.13.2",
+    "astro": "^5.14.4",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "vue": "^3.2.45"
