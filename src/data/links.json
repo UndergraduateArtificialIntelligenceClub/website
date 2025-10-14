@@ -28,6 +28,7 @@
 				{ "text": "David O'Connell (Career Highlights)", "link": "/interviews/david-oconnell", "icon": "fa-solid fa-user" }
 			]
 		},
+        { "text": "Sponsors", "link": "/sponsors", "icon": "fa-solid fa-handshake-angle" },
 		{ "text": "Getting Started", "link": "/getting-started", "icon": "fa-solid fa-book" },
 		{
 			"text": "Socials",
