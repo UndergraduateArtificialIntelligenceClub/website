@@ -1,20 +1,25 @@
 {
-    "gold": [
+  "sponsorTiers": [
+    {
+      "tierName": "Gold Sponsors",
+      "sponsors": [
         {
-            "name": "AltaML",
-            "link": "https://altaml.com/",
-            "logo": "altaml.webp"
+          "name": "Artificial Agency",
+          "logo": "artificialagency_logo.jpeg",
+          "description": "Artificial Agency is an Edmonton-based AI startup creating a generative behavior engine that brings digital worlds to life. Their technology enables non-player characters (NPCs) and virtual agents to make real-time decisions and adapt dynamically to player actions, transforming how games feel and respond.",
+          "website": "https://www.artificial.agency/",
+          "linkedin": "https://www.linkedin.com/company/artificialagency/",
+          "status": "active"
         },
         {
-            "name": "Solution 105",
-            "link": "https://solution105.com/",
-            "logo": "S105.svg"
-        },
-        {
-            "name": "Bits In Glass",
-            "link": "https://bitsinglass.com/",
-            "logo": "bits.png"
+          "name": "Dura Digital",
+          "logo": "dura_digital_logo.jpeg",
+          "description": "Dura Digital is a technology services firm that supports organizations through digital transformation — offering solutions across AI, data, human-centered design, product engineering, and systems strategy. Their approach uses a “studio + dual-shore” model to blend local and remote capabilities.",
+          "website": "https://www.duradigital.com/",
+          "linkedin": "https://www.linkedin.com/company/dura-digital",
+          "status": "inactive"
         }
-    ]
-
+      ]
+    }
+  ]
 }
