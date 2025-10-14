@@ -1,0 +1,61 @@
+---
+import Layout from '@layouts/Default.astro'
+import data from '@data/sponsors.json'
+
+const sponsorTiers = data.sponsorTiers
+---
+
+<Layout title="Our Sponsors">
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">Our Valued Sponsors</h1>
+      <p class="subtitle has-text-centered">
+        We are incredibly grateful for the support of our sponsors, who help us empower students on their AI journey.
+      </p>
+
+      <!-- Loop through each sponsorship tier (e.g., Gold, Silver) -->
+      {sponsorTiers.map(tier => (
+        <div class="mt-6">
+          <h2 class="title is-2 has-text-centered">{tier.tierName}</h2>
+          <hr>
+          <!-- Filter for active sponsors and then map over them -->
+          {tier.sponsors.filter(sponsor => sponsor.status === 'active').map(sponsor => (
+            <div class="box">
+              <article class="media">
+                <figure class="media-left">
+                  <p class="image is-128x128">
+                    <img src={`/images/sponsors/${sponsor.logo}`} alt={`${sponsor.name} Logo`}>
+                  </p>
+                </figure>
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong class="is-size-4">{sponsor.name}</strong>
+                      <br>
+                      {sponsor.description}
+                    </p>
+                    <div class="buttons">
+                      {sponsor.website && (
+                        <a href={sponsor.website} class="button is-link" target="_blank" rel="noopener noreferrer">
+                          <span class="icon"><i class="fa-solid fa-globe"></i></span>
+                          <span>Website</span>
+                        </a>
+                      )}
+                      {sponsor.linkedin && (
+                        <a href={sponsor.linkedin} class="button is-info" target="_blank" rel="noopener noreferrer">
+                          <span class="icon"><i class="fa-brands fa-linkedin"></i></span>
+                          <span>LinkedIn</span>
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          ))}
+        </div>
+      ))}
+
+    </div>
+  </section>
+</Layout>
