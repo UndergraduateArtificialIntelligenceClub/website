@@ -10,27 +10,7 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-
-// --- THIS IS THE ROBUST FIX ---
-
-// 1. Find all possible MDX files using an absolute path from the project root.
-const allProjectMdxFiles = import.meta.glob('/src/data/projects/*.mdx', { eager: true });
-
-// 2. Instead of guessing the full path, we search for the key that ENDS with our slug.
-//    This is much more reliable than trying to construct the exact path.
-const matchingPath = Object.keys(allProjectMdxFiles)
-  .find(path => path.endsWith(`${project.slug}.mdx`));
-
-// 3. Add a safety check. If no matching file was found, throw a clear error.
-if (!matchingPath) {
-  throw new Error(`Could not find MDX file for slug: ${project.slug}`);
-}
-
-// 4. Look up the module using the guaranteed correct key we just found.
-const mdxModule = allProjectMdxFiles[matchingPath];
-
-// 5. This will now work because mdxModule is guaranteed to be the correct object.
-const { Content } = mdxModule;
+const { Content } = await import(`../../data/projects/${project.slug}.mdx`);
 ---
 
 <Layout title={`Project: ${project.title}`}>
@@ -39,38 +19,35 @@ const { Content } = mdxModule;
       <!-- The MDX content will be rendered here -->
       <Content />
 
-      <!-- This section is automatically added to every project page -->
+      <!-- This section displays the Project Lead(s) -->
       {project.leads && project.leads.length > 0 && (
         <div class="box mt-6">
           <h3 class="title is-5">Project Lead{project.leads.length > 1 ? 's' : ''}</h3>
-          <!-- Loop through each lead for the project -->
           {project.leads.map(lead => (
             <div class="mb-4">
               <p class="is-size-5 has-text-weight-semibold mb-2">{lead.name}</p>
               <div class="tags">
-                {lead.email && (
-                  <a href={`mailto:${lead.email}`} class="tag is-medium is-dark">
-                    <span class="icon mr-1"><i class="fa-solid fa-envelope"></i></span>
-                    Email
-                  </a>
-                )}
-                {lead.discord && (
-                  <span class="tag is-medium is-info">
-                    <span class="icon mr-1"><i class="fa-brands fa-discord"></i></span>
-                    {lead.discord}
-                  </span>
-                )}
-                {lead.github && (
-                  <a href={`https://github.com/${lead.github}`} class="tag is-medium is-black" target="_blank" rel="noopener noreferrer">
-                    <span class="icon mr-1"><i class="fa-brands fa-github"></i></span>
-                    GitHub
-                  </a>
-                )}
+                {lead.email && <a href={`mailto:${lead.email}`} class="tag is-medium is-dark"><span class="icon mr-1"><i class="fa-solid fa-envelope"></i></span>Email</a>}
+                {lead.discord && <span class="tag is-medium is-info"><span class="icon mr-1"><i class="fa-brands fa-discord"></i></span>{lead.discord}</span>}
+                {lead.github && <a href={`https://github.com/${lead.github}`} class="tag is-medium is-black" target="_blank" rel="noopener noreferrer"><span class="icon mr-1"><i class="fa-brands fa-github"></i></span>GitHub</a>}
               </div>
             </div>
           ))}
         </div>
       )}
+
+      <!-- NEW SECTION: This displays the Team Members -->
+      {project.members && project.members.length > 0 && (
+        <div class="box mt-5">
+            <h3 class="title is-5">Team Members</h3>
+            <div class="tags are-medium">
+                {project.members.map(member => (
+                    <span class="tag is-light">{member.name}</span>
+                ))}
+            </div>
+        </div>
+      )}
+
     </div>
   </section>
 </Layout>
