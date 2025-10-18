@@ -8,6 +8,14 @@
       "emoji": "🏒",
       "leads": [
         { "name": "Jacob Winch" }
+      ],
+      "members": [
+        { "name": "Tanmay Munjal" },
+        { "name": "Heiby Lau" },
+        { "name": "Alexander Bradley" },
+        { "name": "Arden Monaghan" },
+        { "name": "Yukesh Subedi" },
+        { "name": "William Luo" }
       ]
     },
     {
@@ -18,6 +26,13 @@
       "emoji": "💼",
       "leads": [
         { "name": "Andrew Obwocha", "email": "aobwocha@ualberta.ca", "discord": "andrewo.47_08863", "github": "AndrewObwocha" }
+      ],
+      "members": [
+        { "name": "Andy Zhou" },
+        { "name": "Janvi Raulji" },
+        { "name": "Ivan Gesteira Costa Neto" },
+        { "name": "Chloe Mannsberger-Tétreault" },
+        { "name": "Aalpesh Dayal" }
       ]
     },
     {
@@ -28,16 +43,30 @@
       "emoji": "🤖",
       "leads": [
         { "name": "Usaid Ahmed", "email": "usaid1@ualberta.ca", "discord": "usaid4071", "github": "Usaidahmed10" }
+      ],
+      "members": [
+        { "name": "Ayesha Junaid" },
+        { "name": "Jayden Ngo" },
+        { "name": "Lucas Chomey" },
+        { "name": "Amisha Mittal" },
+        { "name": "Waylon Wang" }
       ]
     },
     {
-      "title": "Hand Gesture Controlled Laptop Automation",
+      "title": "PalmPilot 2.0: Hand Gesture Controlled Laptop Automation",
       "name": "Intermediate project focused on computer vision and automation.",
       "slug": "palmpilot-gesture-control",
       "desc": "Control your laptop using hand gestures! This project uses a webcam and computer vision to map real-time gestures to system commands like adjusting volume, switching tabs, or locking the screen.",
       "emoji": "🖐️",
       "leads": [
         { "name": "Aarush Bhat", "email": "aarush@ualberta.ca", "discord": "magnumhurricane", "github": "aarushb" }
+      ],
+      "members": [
+        { "name": "Joel Kamminga" },
+        { "name": "Yingjie Liu" },
+        { "name": "Rehan Shanavas" },
+        { "name": "Judy Zhu" },
+        { "name": "Tina Lin" }
       ]
     },
     {
@@ -49,6 +78,13 @@
       "leads": [
         { "name": "Viktoria Lysenko", "email": "vlysenko@ualberta.ca", "discord": "viktoria1", "github": "viktorialysenko" },
         { "name": "Arnav Sachdeva", "email": "sachdev3@ualberta.ca", "discord": "arnav._.sachdeva", "github": "arnavsachdeva594" }
+      ],
+      "members": [
+        { "name": "Amara Zin" },
+        { "name": "Gloria Mathew" },
+        { "name": "Rohith Lohith" },
+        { "name": "Dominik Vrbanek" },
+        { "name": "Raahim Khan" }
       ]
     },
     {
@@ -59,6 +95,14 @@
       "emoji": "🧠",
       "leads": [
         { "name": "Xuan Khoi Nguyen", "email": "xuankhoi@ualberta.ca", "discord": "khuivagorou", "github": "Khoi-Nguyen-Xuan" }
+      ],
+      "members": [
+        { "name": "Therese Coleongco" },
+        { "name": "Jessu Doroy" },
+        { "name": "Kai Tan" },
+        { "name": "Ayush Roy" },
+        { "name": "Jacob Garber" },
+        { "name": "Elena Jin" }
       ]
     },
     {
@@ -69,6 +113,13 @@
       "emoji": "🛠️",
       "leads": [
         { "name": "Sashreek Addanki", "email": "saddanki@ualberta.ca", "discord": "sashreek", "github": "Sashreek007" }
+      ],
+       "members": [
+        { "name": "RAGHAV SETHI" },
+        { "name": "Francois Christien Lao Coleongco" },
+        { "name": "Lawrence Velilla" },
+        { "name": "Chetan Vig" },
+        { "name": "Daniel Liang" }
       ]
     }
   ]
