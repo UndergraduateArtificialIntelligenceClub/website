@@ -36,15 +36,15 @@ const { Content } = await import(`../../data/projects/${project.slug}.mdx`);
         </div>
       )}
 
-      <!-- NEW SECTION: This displays the Team Members -->
+      <!-- Team members list: displayed as grid visually, as an unordered list to screen reader users.-->
       {project.members && project.members.length > 0 && (
         <div class="box mt-5">
             <h3 class="title is-5">Team Members</h3>
-            <div class="tags are-medium">
+            <ul class="tags are-medium">
                 {project.members.map(member => (
-                    <span class="tag is-light">{member.name}</span>
+                    <li class="tag is-light">{member.name}</li>
                 ))}
-            </div>
+            </ul>
         </div>
       )}
 
