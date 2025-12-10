@@ -1,36 +1,121 @@
-### From what I gather, Dura Digital can be considered an AI technology consultancy company. Typically, who is the point of contact? And how does human behavior play into developing a solution?
+### From what I gather, Dura Digital can be considered an AI technology consultancy company that works with clients. Typically, who is usually the point of contact between Dura Digital and the company? Is it, for example, the owner, a CTO, or a CEO? And how does human behavior—which I saw on your LinkedIn is a huge part of your role—play into such an interaction and how do you develop a solution?
 
-> Kyle Myck: Our engagement model is to make sure the right people are in the right conversation. Often, it'll be Fernando, our CEO, or myself who will initiate conversations. Once we start working with them, our goal is to understand where we can help. Definitely, the human approach for us is really important. Even before AI took hold, we had our Human-Centered Design Studio, which is focused on establishing empathy with the users. We have a lot of processes in place to make sure humans are always front and center.
-
-### Do you normally speak with somebody who's technical or non-technical when it comes to such a consultancy scheme?
-
-> Kyle Myck: Both. It really depends on the client. We work with clients as large as Microsoft—so very large organizations. Of course, within those clients, there's technical folks, strategy people, business people; we work with all of them. Some of our smaller to medium-sized clients often don't have people who are very technical, so we do help fill that gap.
-
-### When you're scoping a project for a new client, are cost and model performance the main factors? Or are there others?
-
-> Kyle Myck: We've been quite intentional on being as technology agnostic as we can. We want to be able to meet clients where they're at. We don't want to have any sort of bias just because that's our experience. That general approach follows its way into AI as well. We try to be really thoughtful in not being too prescriptive, so we don't back an organization into a corner where they're tied to a model that makes it hard to switch.
-
-### It's a very fast-moving scene. What would make you decide between different models or ecosystems?
-
-> Kyle Myck: Some of the other factors are just fit. Large clients often work within an ecosystem already. We wouldn't recommend to Microsoft that they use Google Gemini. We try to tailor the way we approach the problem based on what the organization has access to. If we're starting more greenfield, part of it is just fit. Often we'll leverage Perplexity for search, or Gemini, or OpenAI’s mini models for performance. It's dependent on the use case.
-
-### A lot of companies are rushing to adopt AI without putting the right guardrails in place. Are there risks if a company decides to do it independently just for speed to market?
-
-> Kyle Myck: Yeah, I think there is significant risk. Just as frequently as we see announcements about new models, we see highlights of where there have been issues or AI used in nefarious ways. You have to take a lot of the learnings we've had of creating software over the last few decades and apply those the same way—securing APIs, being thoughtful about access—and not just get excited about the LLM solving something for you.
-
-### How do you approach integrating AI into older legacy systems? Do you usually have to just rip it apart and build it fresh?
-
-> Kyle Myck: It depends on the problem we're trying to solve. Often, even with some legacy applications, there's an API layer that's good enough to support most experiences. It's very infrequent that we have to tear things down all the way to the database level. But that data layer and integration layer are really important for supporting AI solutions.
-
-### For rapid prototyping, do you normally opt for no-code solutions just to get a demo out quickly, or do you code it out?
-
-> Kyle Myck: Our design team is really good at creating prototypes or high-fidelity mockups in Figma. Typically we have some sort of mockup before we start the software development side. We don't often go directly to no-code solutions because our design team is so efficient. However, for automation proof of concepts, we often use **n8n** just to see if the integration and tying agents together work well.
-
-### Without giving away too much, what is a misconception about integrating AI into a company that you think is out there?
-
-> Kyle Myck: I think approaching AI at the "right level" is something we try to do. There are three layers:
-> 1. **The Productivity Layer:** Access to Gemini, Copilots, GPTs. Anyone can use these as a companion.
-> 2. **The Engineering/Agent Layer:** Getting the most out of large LLMs using RAG pipelines, agentic approaches, or Model Context Protocol (MCP).
-> 3. **The Foundation Layer:** Creating bespoke models or training models on something specific.
+> Kyle Myck: Yeah, great question. Our engagement model and how we work with clients is we try to make sure the right people are in the right conversation. So often, you know, it'll be Fernando, our CEO, or myself who will initiate conversations with potential clients. Once we start working with them, our goal is to try to understand where we can help, where we can provide our expertise in the best way, and how our team can support them and what they want to accomplish.
 >
-> A major misconception is that AI is the magic bullet. AI doesn't always solve the problem. Traditional automation is still sometimes much more efficient and predictable than AI. You have to determine if AI really helps the user experience or if it just makes it confusing.
+> Depending on how those initial conversations go, we just try to bring team members together so we can facilitate the right conversation and help our clients move forward to solve the problems that they're looking to solve, or sometimes think about problems or opportunities in a different way.
+>
+> Definitely, the human approach for us is really, really important. There's a lot of debate right now, especially in AI, regarding the human side of it. The optimists might say that AI is going to help create a more human world; the pessimists might say it's going to help create less of a human world. But even before AI kind of took hold of technology in the last couple of years, we had our Human-Centered Design Studio, which is very focused on establishing empathy with the users of the technology that we might be working on and making sure that we're catering to the true needs of the human as opposed to sometimes the perceived needs. So, it's very important to us, and we have a lot of processes in place at Dura Digital that we use to make sure humans are always front and center.
+
+### And what about from the client perspective? Do you normally speak with somebody who's technical or non-technical when it comes to such a consultancy scheme?
+
+> Kyle Myck: Both. It really depends on the client. We work with clients as large as Microsoft—so very large organizations, some of the largest in the world. Of course, within those clients, there's technical folks, strategy people, business people; we work with all of them. Some of our smaller to medium-sized clients often don't have people who are very technical, or sometimes they don't have folks that have a lot of business strategy knowledge, so we do help fill that gap. It's across the board on the client side.
+
+### Okay, that's fantastic to hear.
+
+> Kyle Myck: Yeah, sort of a necessity, I guess, just based on how we engage and how we try to help.
+
+### Yeah, I guess it's very hard to do the technology without the business. They're very coupled. It’s very hard to separate the two; they're always going to play into each other, I'm sure.
+
+> Kyle Myck: Exactly, especially as things evolve. I feel like there's a valid argument that every company is a technology company these days.
+
+### Very valid. Actually, just on that, I saw that Dura Digital isn't necessarily constrained to one technological stack. You mentioned Microsoft right now, but I've seen Google, OpenAI, Anthropic—these are all very different models, very good for different things. So, a question I had is: when you're scoping a project for a new client, the first factors that jump into mind are the cost and model performance for the specific task. Would you like to further explain any of these two? Or is there perhaps even a third, fourth, or fifth factor that doesn't come to mind immediately but is actually really important when you consider what to collaborate on?
+
+> Kyle Myck: Yeah, we've been quite intentional on being as technology agnostic as we can. I'll speak to that generally first, and then I'll talk about it from an AI perspective.
+>
+> Generally, we want to be able to meet clients where they're at and provide the best solution for them, and be able to help a wide variety of clients. So when we think about engaging, we have clients whose technology stack is entirely in the Google ecosystem. We have some that work entirely with Microsoft, some with AWS, and some with hybrids. We want to be able to help them advance regardless of the technology stack that they've chosen, and we want to be able to advise on what fits best. For new clients, we don't want to have any sort of bias on what we're presenting just because that's our experience or that's what we might prefer. We'd rather approach it to understand, to your point, what is the cost and what is the best fit for what they're trying to do.
+>
+> That general approach follows its way into AI as well. I will say, even when we're consulting on AI projects, one of the things we're really conscious of is that I don't think anybody knows what the next three to five years are going to look like.
+
+### True, yeah.
+
+> Kyle Myck: So we also try to be really thoughtful in being too prescriptive on something or creating a solution that is very specific. What I mean by that is we don't want to back an organization or a solution into a corner where they're so tied to a model or an AI offering that it makes it hard to switch. We want to be able to speak to what's the best fit right now, but keep it open in case that needs to adapt as the models change—whether it's Google that starts winning the race, or OpenAI, or new models released that are better for that purpose.
+>
+> I will say it's challenging to try to stay on top of everything as everything advances and moves forward. If we picked one, it would be easier to just stay on top of the releases of that model or that company, but I think that helps push us too.
+
+### Yeah, especially just with how, every day, there seems to be something coming out. Even [Llama 3.2] came out just, I think, this week or last week.
+
+> Kyle Myck: Yeah.
+
+### It's a very fast-moving scene, so I would imagine that in order to try and be technology agnostic, you have to be very, very on top of your game in terms of consuming the news that's coming out. That must be pretty difficult. And what about... what would make you decide? So you said cost and performance; would you say those are the two major things you look at?
+
+> Kyle Myck: Some of the other factors, I think, are just fit. So when we think about these big enterprises, especially the larger clients that we work with, they work within an ecosystem already. For example, we wouldn't recommend to Microsoft that they use Google Gemini or anything from Google Vertex. Similar with our clients that are really embedded with Google; we believe that there are a lot of benefits. You might approach the problem differently based on the technology, but there are a lot of benefits to all of the ecosystems at the moment.
+>
+> We try to tailor—and sometimes we have to tailor—the way we approach the problem based on what the organization has access to. Part of that feeds into cost, right? Like with the big investment that an enterprise might make in Google, they'll get credits or whatever that will help us use those to deliver a solution.
+>
+> If we're starting more greenfield and there hasn't been a decision made, part of it is just fit. So you mentioned that certain models or certain APIs are good for certain things. Often we'll leverage whether it's Perplexity for being able to search the web and create citations, or Gemini, or some of OpenAI’s mini models for performance. It's often dependent on the use case too, and that problem we're trying to solve.
+
+### Okay, that's amazing. So another question I had was actually to do with the mission of Dura Digital. It says, "Data and AI Center of Excellence to establish best practices," and that you're launching such a center. Obviously, we know AI is sometimes susceptible to hallucination, and a lot of companies are actually rushing to adopt AI without necessarily putting all the right guardrails in place. Are there any risks you would say exist if a company decided not to collaborate or to do it independently just for speed to market?
+
+> Kyle Myck: Yeah, I think there is significant risk. I feel like just as frequently as we see the announcements about new models and new releases, we see highlights of where there have been issues, or even AI used in nefarious ways, or solutions rolled out that are susceptible to being tricked.
+>
+> Just recently, there was an example with a bot where the... I think the "cloud vending machine" [glitch] was being tricked and sort of giving away free food or ordering too much, and there was a similar story with voice AI for Taco Bell and McDonald's.
+>
+> So, no, it's something we try to think about a lot. If we were to think about a specific use case and what that might look like, where are the areas where people might try to exploit it, and how do we make sure that those things can't happen? Sometimes that comes down to different layers of the technology stack, too. Because there are a lot of things you can do with grounding and putting guardrails on the LLM or the model interaction, but it's also when you think about the tools or the things that that agent is able to do. A lot of those things can also be secured in a really good way just using traditional software development approaches—you know, securing APIs, being thoughtful about the access that you give the model.
+>
+> That does require not rushing it, as you said. You have to, I think, take a lot of the learnings we've had of creating software over the last few decades and apply those the same way, and not just get excited about the LLM or the model solving something for you and pushing it out for customers to interact with.
+
+### Yeah. Actually, just on this, this is a bit of a tangent just because in my personal life, I particularly use Gemini a lot. And it's something I realized around a month or two months ago... ChatGPT released [SearchGPT/browser integration], and I think Perplexity also has [Pages]. A lot of my friends, particularly not the ones who are studying software engineering or computer science, are really very quick to jump to these browsers. I honestly haven't looked into the specific security risks that come associated with it, but I feel like there's a lot of hesitancy to just jump onto such a browser and give an AI such autonomous control over the data you put into a browser. So I wanted to know if you use [Arc/specialized AI browsers], and why or why not?
+
+> Kyle Myck: Yeah, so in the spirit of trying to understand and learn the tools and play with the things that are released, I have used them. Do I use them for my everyday banking or things like that? I do not.
+>
+> I think one of the interesting things that's happening in AI is that the Googles and Microsofts of the world—so when you think about Chrome and Edge on the browser side—they have a really important reputation to protect the best that they can. So they put a lot of investment, a lot of thought, and a lot of effort into trying to make things as safe and secure as possible.
+>
+> It's these newer organizations, though, that are pushing the boundaries, and they're the ones that are really propelling, especially AI, ahead. OpenAI is a great example of that too. They're willing to take on more risk because there's not as much in jeopardy, right? They don't have this massive enterprise-facing organization like Microsoft does. So I think it's really important that there are these organizations releasing browsers strategically, but it's also helping push things forward, and it'll help push Google Chrome and Microsoft Edge forward. But I would be hesitant to give it all of my information at this point in time, at least.
+
+### Yeah, that's very true. I feel quite similar to that. So, also, I wanted to ask regarding your clients again. When you collaborate with a client and let's say they have a legacy system with very old SQL databases, how do you approach integrating AI into older legacy systems? Do you usually have to just rip it apart and build it fresh, or do you normally have a solution to that?
+
+> Kyle Myck: Yeah, I would say it really depends on the problem we're trying to solve, and so it depends on the use case and the experience we're trying to create. Often, even with some legacy applications, there's an API layer that's good enough to support most experiences. It's very infrequent that we have to tear things down all the way to the database level for an existing application.
+>
+> If there was something we were building from the ground up, again, depending on the use case and the experience we were trying to create with that application or tool, you would approach it differently. But I think that data layer, especially, and that integration layer—so APIs and such—are really important, especially for supporting AI solutions. Even when you think about the tools that you might give an agent access to, you need to be really thoughtful about how you design those access points.
+
+### Okay, that's... to be fair, yes. I think it would depend on the specific situation and varies from client to client. And okay, this one is a bit... I'm not sure if this is personal or this is what you use as your official workflow. But you mentioned—I don't know how to pronounce it, is it "any 8" or n8n, the automation platform? And Perplexity, along with some big cloud providers, in some of your recent projects on your LinkedIn. So I'm curious, for rapid prototyping, when you get a client and you propose a solution, do you normally opt for these no-code solutions just to get a demo out quickly, or do you normally code it out?
+
+> Kyle Myck: Yeah, it's a great question. And again, I'll say it depends, but I'll give you some tangible examples. So, one of our studios is our Human-Centered Design team. The studio lead there is Kate, who is a master in Figma. Our design team is really good at creating prototypes or high-fidelity mockups. Often those are the tools that we use to really understand what the user or the client is looking for. However, that team is really good at using Figma Make as well, so kind of bringing prototypes and things to the next level. So that might be something we use. But typically we have some sort of mockup or prototype before we start what I would consider getting into the software development side.
+>
+> It's not very often that we go directly to those no-code solutions, because again, our design team is really great at creating mockups that we can then build from, and it comes together quite quickly. If we were doing something experimental—which we do, so often we have ideas about how things can potentially work that's more on the edge—we will use some of those tools, whether it's like Replit or something else, just to quickly put something together and test its feasibility. Which is really fun.
+>
+> n8n, we use primarily for automation and orchestration. That's a tool that we often use for automation proof of concepts, just to see if the integration and tying agents together work well and are feasible.
+
+### So you use it predominantly to simulate the logic, but not...
+
+> Kyle Myck: Yeah, so n8n is a great tool for connecting disparate tools. So when you think about the tools that an organization might have in place, but they're not really fully integrated, or connecting an LLM into that process or workflow. So we even use it internally to automate processes like our invoicing and such. It's super helpful at that orchestration layer.
+
+### Okay, that's amazing. Sounds like a real productivity booster for that.
+
+> Kyle Myck: For sure.
+
+### Yeah, so there's one more question actually before we wrap it up. The event next week is going to be called "Building Inside the AI Industry." So just as a teaser for the event: often the external perception is that if you're building something with AI, it's mostly about model training and prompt engineering. But your role revolves around complex strategy and integration. Without giving away too much, what is a misconception about integrating AI into a company that you think is out there?
+
+> Kyle Myck: Yeah, let me know if I don't understand the question correctly or if I can drill deeper. I think that right now, a lot of folks are trying to understand how to think about AI and how to think about AI in the environment that they're in. A lot of times when you go to that conversation, you bring biases just based on experience. So approaching AI at the right level is something that we try to do as much as we can.
+>
+> What I mean by that is that when you think about how AI has already been rolled out to the world, there's almost three layers of it:
+>
+> **The Productivity Layer:** There's the layer at the top—access to Gemini, the Copilots, and the GPTs—where anybody can really interact with those and use them as a companion to help you do things. That's that toolset released to everybody, and you don't need to be technical to use it. Ideally, there's some governance to make sure that people are interacting with it safely, but it provides a lot of productivity and assistance.
+>
+> **The Engineering/Agent Layer:** Now there's that layer below it, which didn't exist as much just a few years ago. This requires a little bit more technical expertise, but the focus is really getting as much as you can out of those large LLMs and using them the right way. So you're going one level lower; you're setting things like grounding, maybe setting up a RAG pipeline, you're creating kind of a more agentic approach. You might have child agents or agents that call other agents, you might be leveraging Model Context Protocol (MCP), but you're using that kind of middle layer. You're not creating new models.
+>
+> **The Foundation Layer:** That's that third level at the bottom where you might be creating bespoke models, you might be training a model on something very specific. You might actually get into doing your own model drift analysis and things like that.
+>
+> So there's almost that core layer, and then there's leveraging the models that exist today—which companies are investing a lot of effort into releasing—and then that top layer is more that consumer layer. So when we go into an organization, we try to consult across those three layers. Often we're helping organizations understand how to use AI at the productivity level. Sometimes we're creating custom solutions for them, leveraging models that exist that we can just pull from and access via APIs. And then sometimes it's thinking more at a core foundational level.
+
+### So there've been solutions where you operated at a very core level where you had to prove it?
+
+> Kyle Myck: Yeah, so I wouldn't say we've created bespoke models, but we've operated at that level with data science teams.
+
+### Oh, wow, okay. That's amazing to hear. And what would you say about companies that... you know, they're less about trying to get the productivity of AI, they're mostly trying to incorporate it because the market is demanding it. So what would you say is a misconception about doing that?
+
+> Kyle Myck: Yeah, we've had those conversations. It's interesting because often the two most common use cases are: on the product side, organizations want to introduce AI so they can have AI in their product, more than they're looking about the value that AI actually brings to the product. And then sometimes at the enterprise level, it's a lot about productivity—how do we scale at a faster rate or increase the productivity of our teams?
+>
+> I think what I would say is: AI doesn't always solve the problem, and AI isn't always necessary to solve the problem. We'll chat about it at the event, but there's been a few use cases where AI was just really bad at being a solution for problems—even when it was document automation or something like that. Traditional automation is still sometimes much more efficient and much more predictable, even compared to guardrails and grounding on AI models. So, I think sometimes because of just the excitement for AI, people believe that it's the magic bullet for problems. And often those problems, people haven't given traditional automation the right attention because it solves their problems just fine.
+
+### Just fine. There's this... because I remember this was actually a conversation we were having with other executives of the club. It was this sort of mentality that right now your product needs AI in order to be considered a competitor. And it was getting to a point where it was getting ridiculous—certain things like a pen having AI. So it's really contextual.
+
+> Kyle Myck: It is, it is for sure. And I think it depends on if you have a foundational product and you're adding an AI feature, versus if you're building a product or trying to make the product AI-native. I think those are two distinct conversations just because of the technology foundation and user experience. Like, how does the human experience your product today? Is AI really going to help it? Or is it going to make it confusing? I think you have to kind of go through that process before making the decision and not just rushing to adding AI so you can talk about it.
+
+### Yeah, that's very true. That's it. So I don't want to take too long because the meeting is about to end. It's been great. I'd love to find out how Dura Digital works and I'm sure the rest of the people will as well. I really appreciate you taking the time and we really can't wait for you guys to come on campus this week.
+
+> Kyle Myck: Yeah, really looking forward to it. Thank you so much.
+
+### Yeah, we're excited. Thanks for the time as well. All right. Have a great rest of your week. Bye bye.
+
+> Kyle Myck: Yours too, see you.
