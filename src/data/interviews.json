@@ -38,6 +38,20 @@
           "title": "Software Developer & AI Practitioner",
           "summary": "David O'Connell shares a traditional software developer's perspective on embracing agentic AI. He covers the importance of fundamentals, code reviews for generated code, and how tools like Perplexity and Technology Radar help him stay on top of a rapidly changing field.",
           "originalFile": "david-oconnell.pdf"
+        }, 
+        {        
+         "slug": "kyle-myck",
+          "interviewee": "Kyle Myck",
+          "title": "Director of Technology at Dura Digital",
+          "summary": "Kyle Myck breaks down the reality of building AI for enterprise. He discusses the 'three layers' of AI adoption, why tech agnosticism is crucial for consultants, and the risks of rushing AI integration without a human-centered approach.",
+          "originalFile": "kyle-myck.pdf"
+        },
+        {
+          "slug": "justin-stevens",
+          "interviewee": "Justin Stevens",
+          "title": "Founder of UAIS & AI Researcher",
+          "summary": "UAIS Founder Justin Stevens returns to discuss AI safety in the era of deepfakes, the ethics of big tech, and the 'fun, learning, money' heuristic for career planning. He reflects on the origins of the club and offers advice on soft skills vs. technical ability.",
+          "originalFile": "justin-stevens.pdf"
         }
       ]
     }
