@@ -21,6 +21,8 @@
 			"icon": "fa-solid fa-microphone-lines",
 			"submenu": [
 				{ "text": "All Interviews", "link": "/interviews", "icon": "fa-solid fa-list-ul" },
+				{ "text": "Kyle Myck (Career Highlights)", "link": "/interviews/kyle-myck", "icon": "fa-solid fa-user" },
+				{ "text": "Justin Stevens (UAIS Founder!) (Career Highlights)", "link": "/interviews/justin-stevens", "icon": "fa-solid fa-user" },
 				{ "text": "Adam Delgado (Career Highlights)", "link": "/interviews/adam-delgado", "icon": "fa-solid fa-user" },
 				{ "text": "Shibhansh Dohare (Career Highlights)", "link": "/interviews/shibhansh-dohare", "icon": "fa-solid fa-user" },
 				{ "text": "Paul Saunders (Career Highlights)", "link": "/interviews/paul-saunders", "icon": "fa-solid fa-user" },
