@@ -21,7 +21,8 @@
                 { "text": "PalmPilot 2.0", "link": "/projects/palmpilot-gesture-control", "icon": "fa-solid fa-hand-sparkles" },
                 { "text": "Crypto Forecasting", "link": "/projects/crypto-forecasting", "icon": "fa-solid fa-chart-line" },
                 { "text": "Alzheimer AI Screening", "link": "/projects/alzheimer-ai-screening-tool", "icon": "fa-solid fa-brain" },
-                { "text": "ClubMate AI", "link": "/projects/clubmate-ai-assistant", "icon": "fa-solid fa-screwdriver-wrench" }
+                { "text": "ClubMate AI", "link": "/projects/clubmate-ai-assistant", "icon": "fa-solid fa-screwdriver-wrench" },
+{ "text": "Discord Anti-Spam Bot", "link": "/projects/discord-anti-spam-bot", "icon": "fa-solid fa-shield-halved" }
 			]
 		},
 		{
