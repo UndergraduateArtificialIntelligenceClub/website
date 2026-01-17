@@ -1,0 +1,66 @@
+---
+import Layout from '@layouts/Default.astro';
+import data from '@data/hackathons.json';
+
+export async function getStaticPaths() {
+  return data.hackathons.map(hackathon => ({
+    params: { slug: hackathon.slug },
+    props: { hackathon },
+  }));
+}
+
+const { hackathon } = Astro.props;
+
+// Robust MDX Import using glob (eager loading)
+const allHackathonContent = import.meta.glob('/src/data/hackathons/*.mdx', { eager: true });
+const matchingPath = Object.keys(allHackathonContent).find(path => path.endsWith(`${hackathon.slug}.mdx`));
+
+if (!matchingPath) {
+  throw new Error(`Could not find MDX file for hackathon slug: ${hackathon.slug}`);
+}
+
+const { Content } = allHackathonContent[matchingPath];
+---
+
+<Layout title={hackathon.title}>
+  <!-- Hero Section with Banner -->
+  <section class="hero is-medium is-link" style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${hackathon.banner}'); background-size: cover; background-position: center;`}>
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">{hackathon.title}</h1>
+        <h2 class="subtitle is-3">{hackathon.date}</h2>
+        <div class="tags are-large is-centered">
+            <span class="tag is-dark"><i class="fa-solid fa-location-dot mr-2"></i> {hackathon.location}</span>
+            <span class="tag is-primary"><i class="fa-solid fa-ticket mr-2"></i> {hackathon.price}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-two-thirds">
+                
+                <!-- Registration CTA Box -->
+                {hackathon.status === 'upcoming' && (
+                    <div class="notification is-warning is-light has-text-centered mb-6">
+                        <h3 class="title is-4">Registration Open!</h3>
+                        <p class="mb-4">Secure your spot via Rubric.</p>
+                        <a href={hackathon.rubricLink} target="_blank" class="button is-dark is-medium">
+                            <strong>Register Now</strong>
+                            <span class="icon ml-2"><i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                )}
+
+                <!-- Main Markdown Content -->
+                <div class="content is-medium">
+                    <Content />
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+</Layout>
