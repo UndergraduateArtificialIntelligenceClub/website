@@ -121,6 +121,18 @@
         { "name": "Chetan Vig" },
         { "name": "Daniel Liang" }
       ]
+    }, 
+{
+      "title": "Discord Anti-Spam & Moderation Bot",
+      "name": "Production-grade hybrid ML/Regex security system deployed on Cybera.",
+      "slug": "discord-anti-spam-bot",
+      "desc": "An intelligent defense system that combines BERT transformer models with regex patterns to process daily messages. Features real-time analysis, automated threat mitigation, and dataset generation for future research.",
+      "emoji": "🛡️",
+      "leads": [
+        { "name": "Aarush Bhat", "email": "aarush@ualberta.ca", "discord": "magnumhurricane", "github": "aarushb" },
+        { "name": "Sashreek Addanki", "email": "saddanki@ualberta.ca", "discord": "sashreek", "github": "Sashreek007" }
+      ],
+      "members": []
     }
   ]
 }
