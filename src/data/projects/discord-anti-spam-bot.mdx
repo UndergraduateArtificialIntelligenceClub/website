@@ -1,0 +1,67 @@
+# Discord Anti-Spam Detection Bot
+- **Difficulty:** Advanced (Machine Learning, Cloud Infrastructure, DevOps)
+- **Status:** Active (Production Deployment
+
+## The Motivation: "With Utmost Pleasure..."
+If you have been on Discord for more than a week, you have seen it. A message pops up in a general channel or your DMs:
+
+> *"With utmost pleasure, I'm giving out my MacBook pro 2025... It is in perfect health... Strictly First come first serve..."*
+
+It’s spam, it’s annoying, and it targets the most vulnerable members of a community. While regex filters catch some of these, scammers evolve. They change fonts, use images, or use social engineering ("I accidentally reported your account!"). We built this bot not just to filter keywords, but to understand **context**.
+
+---
+
+## Part 1: Securing Your Community (What We Learned)
+Before we even talk about our bot, we want to share some things we learned during development. Here are our recommendations:
+
+### 1. The "Welcome" Firewall
+Don't let new users chat immediately.
+*   **Verification:** Set your server to "High" (requires a verified phone/email).
+*   **Rules Screening:** Enable "Membership Screening." Users must explicitly click to accept rules before typing. This breaks many low-effort script bots.
+
+### 2. Native AutoMod is Powerful
+Discord has released great tools recently that many admins overlook:
+*   **Mention Spikes:** You can configure AutoMod to block messages that mention a specific number of unique users (e.g., 5+). This kills "mass ping" attacks instantly.
+*   **The @everyone Risk:** Restrict the ability to mention `@everyone` and `@here` to Admins only.
+
+### 3. Free vs. Nitro
+A common misconception is that you need to pay for security. You don't. While Nitro offers perks like bigger file uploads, the core security suite (AutoMod, Audit Logs, Verification) is entirely free. Our bot is designed to complement these free tools, filling the specific gaps they miss.
+
+---
+
+## Part 2: The Bot Capabilities
+When native tools aren't enough, our bot steps in. It's currently processing messages with **97.8% accuracy**.
+
+### 🤖 Hybrid Detection Pipeline
+We use a "Swiss Cheese" model of defense. If a message gets past one layer, the next one catches it.
+1.  **Regex Layer (The Speed):** Instantly catches known scam patterns (like the MacBook copypasta or "steam nitro" links) with zero latency.
+2.  **ML Layer (The Brains):** If a message passes the regex check, it is analyzed by a **BERT Transformer model** (specifically fine-tuned on spam data). This understands context—it can tell the difference between someone *discussing* a scam and someone *posting* one.
+
+### 📊 Real-Time Analytics Dashboard
+Security shouldn't be a black box. We built a comprehensive `!stats` dashboard that provides transparency into the system's performance:
+*   **Live Session Stats:** Tracks uptime, messages analyzed per hour, and detection rates.
+*   **System Health:** Monitors CPU and RAM usage (optimized to run on just 2GB RAM).
+*   **Accuracy Metrics:** Tracks false positives vs. true positives in real-time.
+
+### 🛡️ Smart Moderation & Permission Hierarchy
+The bot respects the chain of command.
+*   **Role-Based Whitelisting:** We implemented a robust permission system. Admins and Moderators are automatically whitelisted from checks to prevent accidental flags during server maintenance.
+*   **Context-Aware Help:** The `!help` command is dynamic. Regular users see public commands, while Moderators and Admins see advanced diagnostic tools (`!check`, `!dataset_info`) based on their specific role permissions.
+
+### 🚨 False Positive Resolution
+No AI is perfect. If the bot makes a mistake, we made it incredibly easy to fix.
+*   **Reaction Workflow:** A moderator simply reacts with ❌ to the log message.
+*   **Auto-Correction:** The bot immediately restores the message to the channel, unbans/unmutes the user, and updates its internal dataset to learn from the mistake.
+
+---
+
+## Technical Stack & Infrastructure
+*   **Core:** Python 3.12, discord.py (Async/Await for concurrency)
+*   **AI/ML:** PyTorch, Transformers (Hugging Face)
+*   **Data Engineering:** Thread-safe CSV pipelines for dataset generation.
+*   **Hosting:** cloud infrastructure.
+
+## Privacy & Open Source
+We believe you should own your community's data. While this bot logs data to build a training dataset for future research, these logging features are **optional** and can be disabled for privacy.
+
+*Want to see it in action? Join our Discord and check the `#🚫wall-of-shame` channel!*
