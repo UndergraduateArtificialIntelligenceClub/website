@@ -2,6 +2,14 @@
 	"nav": [
 		{ "text": "Home", "link": "/", "icon": "fa-solid fa-house" },
 		{ "text": "Team", "link": "/team", "icon": "fa-solid fa-users" },
+        {
+			"text": "Hackathons",
+			"icon": "fa-solid fa-laptop-code",
+			"submenu": [
+				{ "text": "All Hackathons", "link": "/hackathons", "icon": "fa-solid fa-list" },
+				{ "text": "SillyCon Valley (Feb 2026)", "link": "/hackathons/sillycon-valley", "icon": "fa-solid fa-robot" }
+			]
+		},
 		{
 			"text": "Projects",
 			"icon": "fa-solid fa-wrench",
