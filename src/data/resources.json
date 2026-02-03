@@ -126,6 +126,24 @@
 		}
 	],
 	"presentations": [
+	{
+		"title": "AI for Accessibility: A Technical Journey",
+		"name": "Aarush Bhat",
+		"link": "https://docs.google.com/presentation/d/13DpGZga6Xft2ewYuzVKHwccnVse_B1Rbg3lR2PDHbb0?usp=drive_fs",
+		"desc": "A technical deep dive into the evolution of assistive technology, ranging from early mechanical logic to modern multimodal LLMs. This presentation explores the 'I/O problem' for disabled users, the history of text-to-speech, and the future of agentic systems in accessibility."
+	},
+	{
+		"title": "Intro to Git & GitHub",
+		"name": "UAIS Team",
+		"link": "https://drive.google.com/file/d/1UxRn2q6k_dKcgBr6sLpX2azuwcA9qwvm/view?usp=sharing ",
+		"desc": "A comprehensive workshop covering the fundamentals of version control. Topics include Git's mental model (workspace vs. staging vs. repo), handling merge conflicts, and collaboration workflows using branches and GitHub Pull Requests."
+	},
+	{
+		"title": "Will AI Take My Job?",
+		"name": "Hamidat",
+		"link": "https://drive.google.com/file/d/1cuXJqULo8JzeyvpLoruAoBy94rP35fA-/view?usp=sharing ",
+		"desc": "An analysis of the current AI labor market landscape, featuring data from the ILO and Stanford Digital Economy Lab. Discusses the disproportionate impact on early-career developers, the difference between automation and augmentation, and strategies for career resilience in the AI era."
+	},
 		{
 			"title": "Data Cleaning Workshop",
 			"name": "Jacob Winch",
