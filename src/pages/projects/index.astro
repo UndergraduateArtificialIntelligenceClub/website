@@ -2,18 +2,26 @@
 import Layout from '@layouts/Default.astro'
 import data from '@data/projects.json'
 
-const projects = data.projects
+// Get all years and sort them descending (newest first)
+const years = Object.keys(data).sort().reverse();
+
+// The newest year is "Current", the rest are "Archive"
+const currentYear = years[0];
+const archiveYears = years.slice(1);
 ---
 
 <Layout title='Projects'>
   <section class="section">
     <div class="container">
       <h1 class="title has-text-centered">Our Projects</h1>
-      <p class="subtitle has-text-centered">
+      <p class="subtitle has-text-centered mb-6">
         Here are some of the cool things we're working on. 🚀
       </p>
 
-      {projects.map(project => (
+      <!-- CURRENT YEAR PROJECTS -->
+      <h2 class="title is-3 has-text-centered mb-5">{currentYear} Projects</h2>
+      
+      {data[currentYear].map(project => (
         <div class="box">
           <article class="media">
             <div class="media-content">
@@ -21,21 +29,67 @@ const projects = data.projects
                 <h2 class="title">{project.emoji} {project.title}</h2>
                 <h4 class="subtitle">{project.name}</h4>
                 <p>{project.desc}</p>
-                
-                <!-- THIS IS THE CORRECTED AND SMARTER LINK -->
                 <a href={`/projects/${project.slug}`} class="button is-info">
                   <span>View Project Details</span>
                   <span class="icon is-small">
                     <i class="fa-solid fa-arrow-right"></i>
                   </span>
                 </a>
-
               </div>
             </div>
           </article>
         </div>
       ))}
 
+      <!-- ARCHIVE SECTION -->
+      {archiveYears.length > 0 && (
+        <section class="section px-0 mt-6">
+            <h2 class="title has-text-centered">Past Projects</h2>
+            
+            {archiveYears.map(year => (
+                <details class="archive-year mb-4">
+                    <summary class="title is-4 py-2">{year}</summary>
+                    <div class="archive-content mt-4">
+                        {data[year].map(project => (
+                            <div class="box">
+                                <article class="media">
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <h3 class="title is-5">{project.emoji} {project.title}</h3>
+                                            <p>{project.desc}</p>
+                                            <a href={`/projects/${project.slug}`} class="button is-small is-info is-outlined">
+                                                <span>View Project</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        ))}
+                    </div>
+                </details>
+            ))}
+        </section>
+      )}
+
     </div>
   </section>
 </Layout>
+
+<style lang="sass">
+.archive-year
+    border: 1px solid #4a4a4a
+    border-radius: 6px
+    padding: 1.25rem
+    background-color: #363636
+
+    summary
+        cursor: pointer
+        color: #fff
+        &::marker
+            color: #3498db
+
+.archive-year[open] > summary
+    margin-bottom: 1rem
+    border-bottom: 1px solid #555
+    padding-bottom: 0.5rem
+</style>
