@@ -1,0 +1,33 @@
+# Intelligent Assistant Bot (2024-2025)
+
+- Role: Project Lead & Core Developer
+- Status: Completed / Legacy
+- Difficulty: Intermediate
+- Impact: Reduced moderator workload by **60%**
+
+## The Challenge
+
+As UAIS grew to over 700 members, administrative overhead became a bottleneck. Executives were spending hours manually syncing Google Calendar events with Discord announcements, tracking RSVPs, and answering repetitive technical questions. We needed a solution that could automate the boring stuff (like that python book!) so we could focus on AI.
+
+## The Solution
+
+We built a multifunctional Discord bot using `discord.py` that served as the central nervous system for the club's operations.
+
+### Key Features
+1.  Automated Event Orchestration:
+    *   Deep integration with the **Google Calendar API**.
+    *   Automatically fetched upcoming events and generated formatted Discord announcements with RSVP buttons, creating and assigning custom roles for said events.
+    *   Sent automated reminders to specific roles (e.g., "Event Attendee") 1 hour before start time.
+2.  RAG-Based Technical Support:
+    *   We integrated a **Retrieval-Augmented Generation (RAG)** pipeline using **GPT-4o**.
+    *   The bot could ingest club documentation and resources to answer technical queries from members instantly, reducing the support load on executives.
+3.  Community Engagement:
+    *   Included gamification features like AI-themed trivia and quizzes to keep the server active between events.
+
+## Technical Architecture
+*   Language: Python 3.10+
+*   Framework: `discord.py` (Asynchronous)
+*   AI Engine: OpenAI GPT-4o with vector-based context retrieval
+*   Integrations: Google Workspace APIs (Calendar, Sheets), SQLite for RSVP tracking.
+
+This project laid the technical foundation for the club's future software initiatives, proving that we could build internal tools to solve our own problems.
