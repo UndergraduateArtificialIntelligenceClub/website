@@ -146,7 +146,12 @@
       "leads": [
         { "name": "Aarush Bhat", "email": "aarush@ualberta.ca", "discord": "magnumhurricane", "github": "aarushb" }
       ],
-      "members": []
+      "members": [
+        { "name": "Pavel Kulikov" },
+        { "name": "Gwen Delos Santos" },
+        { "name": "Faique Ahmad" },
+        { "name": "Grace Zhu" }
+      ]
     },
     {
       "title": "AI Due Diligence Investment Analysis",
