@@ -3,23 +3,36 @@ import Layout from '@layouts/Default.astro';
 import data from '@data/projects.json';
 
 export async function getStaticPaths() {
-  return data.projects.map(project => ({
+  // Extract all years (keys) from the data object
+  const years = Object.keys(data);
+  // Flatten all projects from all years into a single array
+  const allProjects = years.flatMap(year => data[year]);
+  
+  return allProjects.map(project => ({
     params: { slug: project.slug },
     props: { project },
   }));
 }
 
 const { project } = Astro.props;
-const { Content } = await import(`../../data/projects/${project.slug}.mdx`);
+
+const allProjectMdxFiles = import.meta.glob('/src/data/projects/*.mdx', { eager: true });
+const matchingPath = Object.keys(allProjectMdxFiles)
+  .find(path => path.endsWith(`${project.slug}.mdx`));
+
+if (!matchingPath) {
+  throw new Error(`Could not find MDX file for slug: ${project.slug}`);
+}
+
+const mdxModule = allProjectMdxFiles[matchingPath];
+const { Content } = mdxModule;
 ---
 
 <Layout title={`Project: ${project.title}`}>
   <section class="section">
     <div class="container content">
-      <!-- The MDX content will be rendered here -->
       <Content />
 
-      <!-- This section displays the Project Lead(s) -->
       {project.leads && project.leads.length > 0 && (
         <div class="box mt-6">
           <h3 class="title is-5">Project Lead{project.leads.length > 1 ? 's' : ''}</h3>
@@ -36,7 +49,6 @@ const { Content } = await import(`../../data/projects/${project.slug}.mdx`);
         </div>
       )}
 
-      <!-- Team members list: displayed as grid visually, as an unordered list to screen reader users.-->
       {project.members && project.members.length > 0 && (
         <div class="box mt-5">
             <h3 class="title is-5">Team Members</h3>
