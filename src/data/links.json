@@ -2,7 +2,8 @@
 	"nav": [
 		{ "text": "Home", "link": "/", "icon": "fa-solid fa-house" },
 		{ "text": "Team", "link": "/team", "icon": "fa-solid fa-users" },
-        {
+		{ "text": "Presentations", "link": "/presentations", "icon": "fa-solid fa-person-chalkboard" },
+		{
 			"text": "Hackathons",
 			"icon": "fa-solid fa-laptop-code",
 			"submenu": [
@@ -17,12 +18,12 @@
 				{ "text": "All Projects", "link": "/projects", "icon": "fa-solid fa-diagram-project" },
 				{ "text": "NHL Positivity Index", "link": "/projects/nhl-positivity-index", "icon": "fa-solid fa-hockey-puck" },
 				{ "text": "AI Due Diligence Project", "link": "/projects/ai-due-diligence-project", "icon": "fa-solid fa-briefcase" },
-                { "text": "RAG Chatbot", "link": "/projects/rag-chatbot-lecture-notes", "icon": "fa-solid fa-robot" },
-                { "text": "PalmPilot 2.0", "link": "/projects/palmpilot-gesture-control", "icon": "fa-solid fa-hand-sparkles" },
-                { "text": "Crypto Forecasting", "link": "/projects/crypto-forecasting", "icon": "fa-solid fa-chart-line" },
-                { "text": "Alzheimer AI Screening", "link": "/projects/alzheimer-ai-screening-tool", "icon": "fa-solid fa-brain" },
-                { "text": "ClubMate AI", "link": "/projects/clubmate-ai-assistant", "icon": "fa-solid fa-screwdriver-wrench" },
-{ "text": "Discord Anti-Spam Bot", "link": "/projects/discord-anti-spam-bot", "icon": "fa-solid fa-shield-halved" }
+				{ "text": "RAG Chatbot", "link": "/projects/rag-chatbot-lecture-notes", "icon": "fa-solid fa-robot" },
+				{ "text": "PalmPilot 2.0", "link": "/projects/palmpilot-gesture-control", "icon": "fa-solid fa-hand-sparkles" },
+				{ "text": "Crypto Forecasting", "link": "/projects/crypto-forecasting", "icon": "fa-solid fa-chart-line" },
+				{ "text": "Alzheimer AI Screening", "link": "/projects/alzheimer-ai-screening-tool", "icon": "fa-solid fa-brain" },
+				{ "text": "ClubMate AI", "link": "/projects/clubmate-ai-assistant", "icon": "fa-solid fa-screwdriver-wrench" },
+				{ "text": "Discord Anti-Spam Bot", "link": "/projects/discord-anti-spam-bot", "icon": "fa-solid fa-shield-halved" }
 			]
 		},
 		{
@@ -39,7 +40,7 @@
 				{ "text": "David O'Connell (Career Highlights)", "link": "/interviews/david-oconnell", "icon": "fa-solid fa-user" }
 			]
 		},
-        { "text": "Sponsors", "link": "/sponsors", "icon": "fa-solid fa-handshake-angle" },
+		{ "text": "Sponsors", "link": "/sponsors", "icon": "fa-solid fa-handshake-angle" },
 		{ "text": "Getting Started", "link": "/getting-started", "icon": "fa-solid fa-book" },
 		{
 			"text": "Socials",
