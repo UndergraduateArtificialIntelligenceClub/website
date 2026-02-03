@@ -1,22 +1,16 @@
 {
-  "projects": [
+  "2025-2026": [
     {
-      "title": "NHL Positivity Index",
-      "name": "Using NLP and sentiment analysis to quantify the sentiment of NHL fanbases.",
-      "slug": "nhl-positivity-index",
-      "desc": "This project aims to quantitatively assess how positive or negative an NHL fanbase feels over a given period using natural language processing and sentiment analysis to analyze fan discussions on Reddit.",
-      "emoji": "🏒",
+      "title": "Discord Anti-Spam & Moderation Bot",
+      "name": "Production-grade hybrid ML/Regex security system deployed on Cybera.",
+      "slug": "discord-anti-spam-bot",
+      "desc": "A smart defense system built to stop the scams we all hate. Combines BERT transformer models with regex to process 1,000+ daily messages, featuring real-time analytics and automated threat mitigation.",
+      "emoji": "🛡️",
       "leads": [
-        { "name": "Jacob Winch" }
+        { "name": "Aarush Bhat", "email": "aarush@ualberta.ca", "discord": "magnumhurricane", "github": "aarushb" },
+        { "name": "Sashreek Addanki", "email": "saddanki@ualberta.ca", "discord": "sashreek", "github": "Sashreek007" }
       ],
-      "members": [
-        { "name": "Tanmay Munjal" },
-        { "name": "Heiby Lau" },
-        { "name": "Alexander Bradley" },
-        { "name": "Arden Monaghan" },
-        { "name": "Yukesh Subedi" },
-        { "name": "William Luo" }
-      ]
+      "members": []
     },
     {
       "title": "AI Due Diligence Investment Analysis",
@@ -122,18 +116,26 @@
         { "name": "Chetan Vig" },
         { "name": "Daniel Liang" }
       ]
-    }, 
+    }
+  ],
+  "2024-2025": [
     {
-      "title": "Discord Anti-Spam & Moderation Bot",
-      "name": "Production-grade hybrid ML/Regex security system.",
-      "slug": "discord-anti-spam-bot",
-      "desc": "An intelligent defense system that combines BERT transformer models with regex patterns to process daily messages. Features real-time analysis, automated threat mitigation, and dataset generation for future research.",
-      "emoji": "🛡️",
+      "title": "NHL Positivity Index",
+      "name": "Using NLP and sentiment analysis to quantify the sentiment of NHL fanbases.",
+      "slug": "nhl-positivity-index",
+      "desc": "This project aims to quantitatively assess how positive or negative an NHL fanbase feels over a given period using natural language processing and sentiment analysis to analyze fan discussions on Reddit.",
+      "emoji": "🏒",
       "leads": [
-        { "name": "Aarush Bhat", "email": "aarush@ualberta.ca", "discord": "magnumhurricane", "github": "aarushb" },
-        { "name": "Sashreek Addanki", "email": "saddanki@ualberta.ca", "discord": "sashreek", "github": "Sashreek007" }
+        { "name": "Jacob Winch" }
       ],
-      "members": []
+      "members": [
+        { "name": "Tanmay Munjal" },
+        { "name": "Heiby Lau" },
+        { "name": "Alexander Bradley" },
+        { "name": "Arden Monaghan" },
+        { "name": "Yukesh Subedi" },
+        { "name": "William Luo" }
+      ]
     }
   ]
 }
