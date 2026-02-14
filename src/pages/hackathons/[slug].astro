@@ -43,18 +43,29 @@ const { Content } = allHackathonContent[matchingPath];
         <div class="columns is-centered">
             <div class="column is-two-thirds">
                 
-                <!-- Registration CTA Box -->
-                {hackathon.status === 'upcoming' && (
-                    <div class="notification is-warning is-light has-text-centered mb-6">
-                        <h3 class="title is-4">Registration Open!</h3>
-                        <p class="mb-4">Secure your spot via Rubric.</p>
-                        <a href={hackathon.rubricLink} target="_blank" class="button is-dark is-medium">
-                            <strong>Register Now</strong>
-                            <span class="icon ml-2"><i class="fa-solid fa-arrow-right"></i></span>
-                        </a>
+<!-- Action Buttons Box -->
+                {(hackathon.status === 'upcoming' || hackathon.devpostLink) && (
+                    <div class="notification is-light has-text-centered mb-6">
+                        <h3 class="title is-4">Event Actions</h3>
+                        <div class="buttons is-centered">
+                            <!-- Rubric Registration (Only if upcoming) -->
+                            {hackathon.status === 'upcoming' && (
+                                <a href={hackathon.rubricLink} target="_blank" rel="noopener noreferrer" class="button is-warning is-medium">
+                                    <strong>Register on Rubric</strong>
+                                    <span class="icon ml-2"><i class="fa-solid fa-ticket"></i></span>
+                                </a>
+                            )}
+                            
+                            <!-- Devpost Link (Always visible if link exists) -->
+                            {hackathon.devpostLink && (
+                                <a href={hackathon.devpostLink} target="_blank" rel="noopener noreferrer" class="button is-link is-medium">
+                                    <strong>View on Devpost</strong>
+                                    <span class="icon ml-2"><i class="fa-solid fa-code"></i></span>
+                                </a>
+                            )}
+                        </div>
                     </div>
                 )}
-
                 <!-- Main Markdown Content -->
                 <div class="content is-medium">
                     <Content />
