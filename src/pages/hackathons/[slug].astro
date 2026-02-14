@@ -43,7 +43,7 @@ const { Content } = allHackathonContent[matchingPath];
         <div class="columns is-centered">
             <div class="column is-two-thirds">
                 
-<!-- Action Buttons Box -->
+                <!-- Event Actions Box (Devpost + Register) -->
                 {(hackathon.status === 'upcoming' || hackathon.devpostLink) && (
                     <div class="notification is-light has-text-centered mb-6">
                         <h3 class="title is-4">Event Actions</h3>
@@ -66,6 +66,7 @@ const { Content } = allHackathonContent[matchingPath];
                         </div>
                     </div>
                 )}
+
                 <!-- Main Markdown Content -->
                 <div class="content is-medium">
                     <Content />
