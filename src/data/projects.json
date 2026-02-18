@@ -6,6 +6,7 @@
       "slug": "discord-anti-spam-bot",
       "desc": "A smart defense system built to stop the scams we all hate. Combines BERT transformer models with regex to process 1,000+ daily messages, featuring real-time analytics and automated threat mitigation.",
       "emoji": "🛡️",
+      "githubLink": "https://github.com/UndergraduateArtificialIntelligenceClub/Spam-Detection-Discord-Bot",
       "leads": [
         { "name": "Aarush Bhat", "email": "aarush@ualberta.ca", "discord": "magnumhurricane", "github": "aarushb" },
         { "name": "Sashreek Addanki", "email": "saddanki@ualberta.ca", "discord": "sashreek", "github": "Sashreek007" }
@@ -19,7 +20,7 @@
       "desc": "Partnering with the UA Innovation Fund, members gain real-world experience by conducting AI due diligence on startups, evaluating their technical and business viability for investment.",
       "emoji": "💼",
       "leads": [
-        { "name": "Andrew Obwocha", "email": "aobwocha@ualberta.ca", "discord": "andrewo.47_08863", "github": "AndrewObwocha" }, 
+        { "name": "Andrew Obwocha", "email": "aobwocha@ualberta.ca", "discord": "andrewo.47_08863", "github": "AndrewObwocha" },
         { "name": "Hamidat Bello (Project Co-Supervisor)", "email": "hamidat@ualberta.ca", "discord": "heyitsh", "github": "hamidatb" }
       ],
       "members": [
@@ -53,6 +54,7 @@
       "slug": "palmpilot-gesture-control",
       "desc": "Control your laptop using hand gestures! This project uses a webcam and computer vision to map real-time gestures to system commands like adjusting volume, switching tabs, or locking the screen.",
       "emoji": "🖐️",
+      "githubLink": "https://github.com/UndergraduateArtificialIntelligenceClub/palm-pilot2.0",
       "leads": [
         { "name": "Aarush Bhat", "email": "aarush@ualberta.ca", "discord": "magnumhurricane", "github": "aarushb" }
       ],
@@ -88,6 +90,7 @@
       "slug": "alzheimer-ai-screening-tool",
       "desc": "Develop an accessible app that uses a fine-tuned BERT model to estimate Alzheimer's prediction scores from short speech samples. Based on published research from the project lead.",
       "emoji": "🧠",
+      "githubLink": "https://github.com/UndergraduateArtificialIntelligenceClub/Alzheimer_Screening_tool",
       "leads": [
         { "name": "Xuan Khoi Nguyen", "email": "xuankhoi@ualberta.ca", "discord": "khuivagorou", "github": "Khoi-Nguyen-Xuan" }
       ],
@@ -106,6 +109,7 @@
       "slug": "clubmate-ai-assistant",
       "desc": "Create a Discord bot to automate administrative tasks for student clubs. Using LangChain and the Model Context Protocol, it will integrate with tools like Google Calendar, Sheets, and Notion.",
       "emoji": "🛠️",
+      "githubLink": "https://github.com/UndergraduateArtificialIntelligenceClub/Clubmate-AI",
       "leads": [
         { "name": "Sashreek Addanki", "email": "saddanki@ualberta.ca", "discord": "sashreek", "github": "Sashreek007" }
       ],
@@ -125,6 +129,7 @@
       "slug": "nhl-positivity-index",
       "desc": "This project aims to quantitatively assess how positive or negative an NHL fanbase feels over a given period using natural language processing and sentiment analysis to analyze fan discussions on Reddit.",
       "emoji": "🏒",
+      "githubLink": "https://github.com/UndergraduateArtificialIntelligenceClub/NHL-Positivity-Index",
       "leads": [
         { "name": "Jacob Winch" }
       ],
@@ -143,6 +148,7 @@
       "slug": "intelligent-assistant-bot",
       "desc": "A multifunctional Discord bot that automated event RSVPs and provided AI-powered technical support using GPT-4o, reducing moderator workload by 60%.",
       "emoji": "🤖",
+      "githubLink": "https://github.com/UndergraduateArtificialIntelligenceClub/uais_chatbot",
       "leads": [
         { "name": "Aarush Bhat", "email": "aarush@ualberta.ca", "discord": "magnumhurricane", "github": "aarushb" }
       ],
