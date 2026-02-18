@@ -4,15 +4,32 @@ import data from '@data/hackathons.json'
 
 const hackathons = data.hackathons
 
-// Helper to determine status
+// Helper: Determine Status
 const getStatus = (startStr, endStr) => {
   const now = new Date();
   const start = new Date(startStr);
   const end = new Date(endStr);
-
   if (now < start) return 'upcoming';
   if (now >= start && now <= end) return 'ongoing';
   return 'past';
+};
+
+// Helper: Format Date Range (e.g., "Feb 13 - 14, 2026")
+const formatDateRange = (startStr, endStr) => {
+  const start = new Date(startStr);
+  const end = new Date(endStr);
+  
+  const options = { month: 'short', day: 'numeric' };
+  const startPart = start.toLocaleDateString('en-US', options);
+  const endPart = end.getDate(); // Just the day number
+  const year = start.getFullYear();
+
+  // If same month: "Feb 13 - 14, 2026"
+  if (start.getMonth() === end.getMonth()) {
+    return `${startPart} - ${endPart}, ${year}`;
+  }
+  // If different months: "Jan 31 - Feb 2, 2026"
+  return `${startPart} - ${end.toLocaleDateString('en-US', options)}, ${year}`;
 };
 ---
 
@@ -26,6 +43,7 @@ const getStatus = (startStr, endStr) => {
 
       {hackathons.map(hackathon => {
         const status = getStatus(hackathon.startDate, hackathon.endDate);
+        const dateString = formatDateRange(hackathon.startDate, hackathon.endDate);
         
         return (
           <div class="box">
@@ -50,7 +68,7 @@ const getStatus = (startStr, endStr) => {
                   <p>
                       <span class="icon-text mr-4">
                           <span class="icon has-text-info"><i class="fa-solid fa-calendar"></i></span>
-                          <span>{hackathon.date}</span>
+                          <span>{dateString}</span>
                       </span>
                       <span class="icon-text">
                           <span class="icon has-text-danger"><i class="fa-solid fa-location-dot"></i></span>
@@ -64,7 +82,7 @@ const getStatus = (startStr, endStr) => {
                         <span>Event Details</span>
                       </a>
                       
-                      {/* Devpost Button (Always visible if link exists) */}
+                      {/* Devpost: ALWAYS show if link exists */}
                       {hackathon.devpostLink && (
                           <a href={hackathon.devpostLink} class="button is-link is-outlined" target="_blank" rel="noopener noreferrer">
                               <span>Devpost</span>
@@ -72,8 +90,8 @@ const getStatus = (startStr, endStr) => {
                           </a>
                       )}
 
-                      {/* Rubric Registration Button (Only if Upcoming) */}
-                      {status === 'upcoming' && (
+                      {/* Rubric: ONLY show if upcoming */}
+                      {status === 'upcoming' && hackathon.rubricLink && (
                           <a href={hackathon.rubricLink} class="button is-warning" target="_blank" rel="noopener noreferrer">
                               <span>Register on Rubric</span>
                               <span class="icon is-small"><i class="fa-solid fa-external-link-alt"></i></span>

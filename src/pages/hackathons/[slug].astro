@@ -28,17 +28,24 @@ const end = new Date(hackathon.endDate);
 let status = 'past';
 if (now < start) status = 'upcoming';
 else if (now >= start && now <= end) status = 'ongoing';
+
+// Format Date Range
+const options = { month: 'short', day: 'numeric' };
+const startPart = start.toLocaleDateString('en-US', options);
+const endPart = end.getDate();
+const year = start.getFullYear();
+const dateString = (start.getMonth() === end.getMonth()) 
+    ? `${startPart} - ${endPart}, ${year}`
+    : `${startPart} - ${end.toLocaleDateString('en-US', options)}, ${year}`;
 ---
 
 <Layout title={hackathon.title}>
-  <!-- Hero Section with Banner -->
   <section class="hero is-medium is-link" style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${hackathon.banner}'); background-size: cover; background-position: center;`}>
     <div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="title is-1">{hackathon.title}</h1>
-        <h2 class="subtitle is-3">{hackathon.date}</h2>
+        <h2 class="subtitle is-3">{dateString}</h2>
         
-        <!-- Status Badge in Hero -->
         <div class="tags are-large is-centered mb-4">
             {status === 'upcoming' && <span class="tag is-success">Upcoming</span>}
             {status === 'ongoing' && <span class="tag is-info"><i class="fa-solid fa-bolt mr-2"></i>Happening Now</span>}
@@ -53,26 +60,25 @@ else if (now >= start && now <= end) status = 'ongoing';
     </div>
   </section>
 
-  <!-- Content Section -->
   <section class="section">
     <div class="container">
         <div class="columns is-centered">
             <div class="column is-two-thirds">
                 
-                <!-- Action Buttons Box -->
+                {/* Action Buttons Box - Shows if Devpost exists OR if event is upcoming */}
                 {(status === 'upcoming' || hackathon.devpostLink) && (
                     <div class="notification is-light has-text-centered mb-6">
                         <h3 class="title is-4">Event Actions</h3>
                         <div class="buttons is-centered">
-                            <!-- Rubric Registration (Only if upcoming) -->
-                            {status === 'upcoming' && (
+                            {/* Rubric Registration: ONLY if upcoming */}
+                            {status === 'upcoming' && hackathon.rubricLink && (
                                 <a href={hackathon.rubricLink} target="_blank" rel="noopener noreferrer" class="button is-warning is-medium">
                                     <strong>Register on Rubric</strong>
                                     <span class="icon ml-2"><i class="fa-solid fa-ticket"></i></span>
                                 </a>
                             )}
                             
-                            <!-- Devpost Link (Always visible if link exists) -->
+                            {/* Devpost Link: ALWAYS visible if link exists */}
                             {hackathon.devpostLink && (
                                 <a href={hackathon.devpostLink} target="_blank" rel="noopener noreferrer" class="button is-link is-medium">
                                     <strong>View on Devpost</strong>
@@ -83,7 +89,6 @@ else if (now >= start && now <= end) status = 'ongoing';
                     </div>
                 )}
 
-                <!-- Main Markdown Content -->
                 <div class="content is-medium">
                     <Content />
                 </div>
