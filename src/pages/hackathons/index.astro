@@ -3,6 +3,13 @@ import Layout from '@layouts/Default.astro'
 import data from '@data/hackathons.json'
 
 const hackathons = data.hackathons
+
+// Helper function to check if an event is upcoming
+const isUpcoming = (endDate) => {
+  const end = new Date(endDate);
+  const now = new Date();
+  return now < end;
+};
 ---
 
 <Layout title='UAIS Hackathons'>
@@ -13,63 +20,70 @@ const hackathons = data.hackathons
         Join us to build, learn, and compete.
       </p>
 
-      {hackathons.map(hackathon => (
-        <div class="box">
-          <article class="media">
-            <figure class="media-left is-hidden-mobile">
-              <p class="image is-128x128">
-                <img src={hackathon.banner} alt={`${hackathon.title} Banner`} style="object-fit: cover; border-radius: 6px;">
-              </p>
-            </figure>
-            <div class="media-content">
-              <div class="content">
-                <div class="level mb-2">
-                    <div class="level-left">
-                        <h2 class="title is-4">{hackathon.title}</h2>
-                    </div>
-                    <div class="level-right">
-                        {hackathon.status === 'upcoming' && <span class="tag is-success is-light">Upcoming</span>}
-                        {hackathon.status === 'past' && <span class="tag is-dark is-light">Past</span>}
-                    </div>
-                </div>
-                <p>
-                    <span class="icon-text mr-4">
-                        <span class="icon has-text-info"><i class="fa-solid fa-calendar"></i></span>
-                        <span>{hackathon.date}</span>
-                    </span>
-                    <span class="icon-text">
-                        <span class="icon has-text-danger"><i class="fa-solid fa-location-dot"></i></span>
-                        <span>{hackathon.location}</span>
-                    </span>
+      {hackathons.map(hackathon => {
+        const active = isUpcoming(hackathon.endDate);
+        
+        return (
+          <div class="box">
+            <article class="media">
+              <figure class="media-left is-hidden-mobile">
+                <p class="image is-128x128">
+                  <img src={hackathon.banner} alt={`${hackathon.title} Banner`} style="object-fit: cover; border-radius: 6px;">
                 </p>
-                <p>{hackathon.summary}</p>
-                
-                <div class="buttons">
-                    <a href={`/hackathons/${hackathon.slug}`} class="button is-primary">
-                      <span>Event Details</span>
-                    </a>
-                    
-                    {/* Devpost Button */}
-                    {hackathon.devpostLink && (
-                        <a href={hackathon.devpostLink} class="button is-link is-outlined" target="_blank" rel="noopener noreferrer">
-                            <span>Devpost</span>
-                            <span class="icon is-small"><i class="fa-solid fa-code"></i></span>
-                        </a>
-                    )}
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <div class="level mb-2">
+                      <div class="level-left">
+                          <h2 class="title is-4">{hackathon.title}</h2>
+                      </div>
+                      <div class="level-right">
+                          {active ? (
+                              <span class="tag is-success is-light">Upcoming</span>
+                          ) : (
+                              <span class="tag is-dark is-light">Past</span>
+                          )}
+                      </div>
+                  </div>
+                  <p>
+                      <span class="icon-text mr-4">
+                          <span class="icon has-text-info"><i class="fa-solid fa-calendar"></i></span>
+                          <span>{hackathon.date}</span>
+                      </span>
+                      <span class="icon-text">
+                          <span class="icon has-text-danger"><i class="fa-solid fa-location-dot"></i></span>
+                          <span>{hackathon.location}</span>
+                      </span>
+                  </p>
+                  <p>{hackathon.summary}</p>
+                  
+                  <div class="buttons">
+                      <a href={`/hackathons/${hackathon.slug}`} class="button is-primary">
+                        <span>Event Details</span>
+                      </a>
+                      
+                      {/* Devpost Button */}
+                      {hackathon.devpostLink && (
+                          <a href={hackathon.devpostLink} class="button is-link is-outlined" target="_blank" rel="noopener noreferrer">
+                              <span>Devpost</span>
+                              <span class="icon is-small"><i class="fa-solid fa-code"></i></span>
+                          </a>
+                      )}
 
-                    {/* Rubric Registration Button */}
-                    {hackathon.status === 'upcoming' && (
-                        <a href={hackathon.rubricLink} class="button is-warning" target="_blank" rel="noopener noreferrer">
-                            <span>Register on Rubric</span>
-                            <span class="icon is-small"><i class="fa-solid fa-external-link-alt"></i></span>
-                        </a>
-                    )}
+                      {/* Rubric Registration Button (Only if Upcoming) */}
+                      {active && (
+                          <a href={hackathon.rubricLink} class="button is-warning" target="_blank" rel="noopener noreferrer">
+                              <span>Register on Rubric</span>
+                              <span class="icon is-small"><i class="fa-solid fa-external-link-alt"></i></span>
+                          </a>
+                      )}
+                  </div>
                 </div>
               </div>
-            </div>
-          </article>
-        </div>
-      ))}
+            </article>
+          </div>
+        );
+      })}
 
     </div>
   </section>

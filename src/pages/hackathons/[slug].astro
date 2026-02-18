@@ -20,6 +20,9 @@ if (!matchingPath) {
 }
 
 const { Content } = allHackathonContent[matchingPath];
+
+// Auto-calculate status
+const isUpcoming = new Date(hackathon.endDate) > new Date();
 ---
 
 <Layout title={hackathon.title}>
@@ -44,12 +47,12 @@ const { Content } = allHackathonContent[matchingPath];
             <div class="column is-two-thirds">
                 
                 <!-- Event Actions Box (Devpost + Register) -->
-                {(hackathon.status === 'upcoming' || hackathon.devpostLink) && (
+                {(isUpcoming || hackathon.devpostLink) && (
                     <div class="notification is-light has-text-centered mb-6">
                         <h3 class="title is-4">Event Actions</h3>
                         <div class="buttons is-centered">
                             <!-- Rubric Registration (Only if upcoming) -->
-                            {hackathon.status === 'upcoming' && (
+                            {isUpcoming && (
                                 <a href={hackathon.rubricLink} target="_blank" rel="noopener noreferrer" class="button is-warning is-medium">
                                     <strong>Register on Rubric</strong>
                                     <span class="icon ml-2"><i class="fa-solid fa-ticket"></i></span>
