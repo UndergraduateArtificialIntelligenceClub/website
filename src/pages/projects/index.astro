@@ -29,12 +29,20 @@ const archiveYears = years.slice(1);
                 <h2 class="title">{project.emoji} {project.title}</h2>
                 <h4 class="subtitle">{project.name}</h4>
                 <p>{project.desc}</p>
-                <a href={`/projects/${project.slug}`} class="button is-info">
-                  <span>View Project Details</span>
-                  <span class="icon is-small">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </span>
-                </a>
+                
+                <div class="buttons">
+                    <a href={`/projects/${project.slug}`} class="button is-info">
+                        <span>View Project Details</span>
+                        <span class="icon is-small"><i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+                    {project.githubLink && (
+                        <a href={project.githubLink} target="_blank" rel="noopener noreferrer" class="button is-dark is-outlined">
+                            <span class="icon"><i class="fa-brands fa-github"></i></span>
+                            <span>Source Code</span>
+                        </a>
+                    )}
+                </div>
+
               </div>
             </div>
           </article>
@@ -57,9 +65,19 @@ const archiveYears = years.slice(1);
                                         <div class="content">
                                             <h3 class="title is-5">{project.emoji} {project.title}</h3>
                                             <p>{project.desc}</p>
-                                            <a href={`/projects/${project.slug}`} class="button is-small is-info is-outlined">
-                                                <span>View Project</span>
-                                            </a>
+                                            
+                                            <div class="buttons is-small">
+                                                <a href={`/projects/${project.slug}`} class="button is-small is-info is-outlined">
+                                                    <span>View Project</span>
+                                                </a>
+                                                {project.githubLink && (
+                                                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" class="button is-small is-dark is-outlined">
+                                                        <span class="icon"><i class="fa-brands fa-github"></i></span>
+                                                        <span>Source</span>
+                                                    </a>
+                                                )}
+                                            </div>
+
                                         </div>
                                     </div>
                                 </article>

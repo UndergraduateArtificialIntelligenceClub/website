@@ -3,9 +3,7 @@ import Layout from '@layouts/Default.astro';
 import data from '@data/projects.json';
 
 export async function getStaticPaths() {
-  // Extract all years (keys) from the data object
   const years = Object.keys(data);
-  // Flatten all projects from all years into a single array
   const allProjects = years.flatMap(year => data[year]);
   
   return allProjects.map(project => ({
@@ -16,6 +14,7 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 
+// Robust MDX loading
 const allProjectMdxFiles = import.meta.glob('/src/data/projects/*.mdx', { eager: true });
 const matchingPath = Object.keys(allProjectMdxFiles)
   .find(path => path.endsWith(`${project.slug}.mdx`));
@@ -31,6 +30,17 @@ const { Content } = mdxModule;
 <Layout title={`Project: ${project.title}`}>
   <section class="section">
     <div class="container content">
+      
+        <!-- GitHub Button (Only shows if link exists) -->
+        {project.githubLink && (
+            <div class="buttons mb-5">
+                <a href={project.githubLink} target="_blank" rel="noopener noreferrer" class="button is-dark">
+                    <span class="icon"><i class="fa-brands fa-github"></i></span>
+                    <span>View Source Code on GitHub</span>
+                </a>
+            </div>
+        )}
+
       <Content />
 
       {project.leads && project.leads.length > 0 && (
