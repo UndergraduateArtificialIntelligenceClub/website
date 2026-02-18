@@ -4,11 +4,11 @@
       "title": "SillyCon Valley Hackathon",
       "slug": "sillycon-valley",
       "date": "Feb 13-14, 2026",
+      "endDate": "2026-02-15", 
       "location": "DICE 8th Floor",
-      "price": "$10/person, team of three register together = $30/team,",
+      "price": "$10/person",
       "rubricLink": "https://campus.hellorubric.com/?eid=47080",
       "devpostLink": "https://sillycon-valley.devpost.com/",
-      "status": "past",
       "banner": "/images/hackathons/sillycon-valley/banner.webp",
       "summary": "Build the silliest, most creative thing you can with AI. No startup grind, just experimenting and fun."
     }
