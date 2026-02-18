@@ -4,11 +4,15 @@ import data from '@data/hackathons.json'
 
 const hackathons = data.hackathons
 
-// Helper function to check if an event is upcoming
-const isUpcoming = (endDate) => {
-  const end = new Date(endDate);
+// Helper to determine status
+const getStatus = (startStr, endStr) => {
   const now = new Date();
-  return now < end;
+  const start = new Date(startStr);
+  const end = new Date(endStr);
+
+  if (now < start) return 'upcoming';
+  if (now >= start && now <= end) return 'ongoing';
+  return 'past';
 };
 ---
 
@@ -21,7 +25,7 @@ const isUpcoming = (endDate) => {
       </p>
 
       {hackathons.map(hackathon => {
-        const active = isUpcoming(hackathon.endDate);
+        const status = getStatus(hackathon.startDate, hackathon.endDate);
         
         return (
           <div class="box">
@@ -38,11 +42,9 @@ const isUpcoming = (endDate) => {
                           <h2 class="title is-4">{hackathon.title}</h2>
                       </div>
                       <div class="level-right">
-                          {active ? (
-                              <span class="tag is-success is-light">Upcoming</span>
-                          ) : (
-                              <span class="tag is-dark is-light">Past</span>
-                          )}
+                          {status === 'upcoming' && <span class="tag is-success is-light">Upcoming</span>}
+                          {status === 'ongoing' && <span class="tag is-info is-light"><span class="icon is-small mr-1"><i class="fa-solid fa-bolt"></i></span>Happening Now</span>}
+                          {status === 'past' && <span class="tag is-dark is-light">Past</span>}
                       </div>
                   </div>
                   <p>
@@ -62,7 +64,7 @@ const isUpcoming = (endDate) => {
                         <span>Event Details</span>
                       </a>
                       
-                      {/* Devpost Button */}
+                      {/* Devpost Button (Always visible if link exists) */}
                       {hackathon.devpostLink && (
                           <a href={hackathon.devpostLink} class="button is-link is-outlined" target="_blank" rel="noopener noreferrer">
                               <span>Devpost</span>
@@ -71,7 +73,7 @@ const isUpcoming = (endDate) => {
                       )}
 
                       {/* Rubric Registration Button (Only if Upcoming) */}
-                      {active && (
+                      {status === 'upcoming' && (
                           <a href={hackathon.rubricLink} class="button is-warning" target="_blank" rel="noopener noreferrer">
                               <span>Register on Rubric</span>
                               <span class="icon is-small"><i class="fa-solid fa-external-link-alt"></i></span>

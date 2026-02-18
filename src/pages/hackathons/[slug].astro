@@ -11,7 +11,6 @@ export async function getStaticPaths() {
 
 const { hackathon } = Astro.props;
 
-// Robust MDX Import using glob (eager loading)
 const allHackathonContent = import.meta.glob('/src/data/hackathons/*.mdx', { eager: true });
 const matchingPath = Object.keys(allHackathonContent).find(path => path.endsWith(`${hackathon.slug}.mdx`));
 
@@ -22,7 +21,13 @@ if (!matchingPath) {
 const { Content } = allHackathonContent[matchingPath];
 
 // Auto-calculate status
-const isUpcoming = new Date(hackathon.endDate) > new Date();
+const now = new Date();
+const start = new Date(hackathon.startDate);
+const end = new Date(hackathon.endDate);
+
+let status = 'past';
+if (now < start) status = 'upcoming';
+else if (now >= start && now <= end) status = 'ongoing';
 ---
 
 <Layout title={hackathon.title}>
@@ -32,7 +37,15 @@ const isUpcoming = new Date(hackathon.endDate) > new Date();
       <div class="container has-text-centered">
         <h1 class="title is-1">{hackathon.title}</h1>
         <h2 class="subtitle is-3">{hackathon.date}</h2>
-        <div class="tags are-large is-centered">
+        
+        <!-- Status Badge in Hero -->
+        <div class="tags are-large is-centered mb-4">
+            {status === 'upcoming' && <span class="tag is-success">Upcoming</span>}
+            {status === 'ongoing' && <span class="tag is-info"><i class="fa-solid fa-bolt mr-2"></i>Happening Now</span>}
+            {status === 'past' && <span class="tag is-dark">Past Event</span>}
+        </div>
+
+        <div class="tags are-medium is-centered">
             <span class="tag is-dark"><i class="fa-solid fa-location-dot mr-2"></i> {hackathon.location}</span>
             <span class="tag is-primary"><i class="fa-solid fa-ticket mr-2"></i> {hackathon.price}</span>
         </div>
@@ -46,13 +59,13 @@ const isUpcoming = new Date(hackathon.endDate) > new Date();
         <div class="columns is-centered">
             <div class="column is-two-thirds">
                 
-                <!-- Event Actions Box (Devpost + Register) -->
-                {(isUpcoming || hackathon.devpostLink) && (
+                <!-- Action Buttons Box -->
+                {(status === 'upcoming' || hackathon.devpostLink) && (
                     <div class="notification is-light has-text-centered mb-6">
                         <h3 class="title is-4">Event Actions</h3>
                         <div class="buttons is-centered">
                             <!-- Rubric Registration (Only if upcoming) -->
-                            {isUpcoming && (
+                            {status === 'upcoming' && (
                                 <a href={hackathon.rubricLink} target="_blank" rel="noopener noreferrer" class="button is-warning is-medium">
                                     <strong>Register on Rubric</strong>
                                     <span class="icon ml-2"><i class="fa-solid fa-ticket"></i></span>
