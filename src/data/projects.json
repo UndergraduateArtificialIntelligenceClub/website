@@ -66,20 +66,18 @@
         { "name": "Tina Lin" }
       ]
     },
-    {
-      "title": "Crypto Adoption Forecasting with AI",
-      "name": "Intermediate project combining economics and data science.",
-      "slug": "crypto-forecasting",
-      "desc": "Explore the link between macroeconomic stressors (inflation, interest rates) and cryptocurrency adoption. Combine economic indicators with blockchain data to forecast trends and visualize connections.",
+{
+      "title": "Economic Drivers of Cryptocurrency Adoption",
+      "name": "Analyzing macroeconomic conditions to understand cryptocurrency adoption.",
+      "slug": "economic-drivers",
+      "desc": "This project investigates whether macroeconomic conditions can predict cryptocurrency adoption by building an Economic Anxiety Index and testing its relationship with on-chain metrics.",
       "emoji": "📈",
-      "leads": [
-        { "name": "Viktoria Lysenko", "email": "vlysenko@ualberta.ca", "discord": "viktoria1", "github": "viktorialysenko" },
-        { "name": "Arnav Sachdeva", "email": "sachdev3@ualberta.ca", "discord": "arnav._.sachdeva", "github": "arnavsachdeva594" }
+      "leads":[
+        { "name": "Viktoria Lysenko", "email": "vlysenko@ualberta.ca", "discord": "viktoria1", "github": "viktorialysenko" }
       ],
-      "members": [
+      "members":[
         { "name": "Amara Zin" },
         { "name": "Gloria Mathew" },
-        { "name": "Rohith Lohith" },
         { "name": "Dominik Vrbanek" },
         { "name": "Raahim Khan" }
       ]
