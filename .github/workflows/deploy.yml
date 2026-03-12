@@ -1,6 +1,5 @@
-
 # This is a basic workflow to help you get started with Actions
-# Updated based on recommendations and fixing action download issue
+# Updated to use native AWS CLI for stable S3 syncing
 
 name: Deploy Website
 
@@ -47,17 +46,15 @@ jobs:
         # Add any other build-time environment variables needed by Astro here
         # CI: true # Often useful for build processes
 
-    # Syncs the dist directory with the S3 bucket, deleting old files
+    # Syncs the dist directory with the S3 bucket using official AWS CLI
     - name: Sync website to S3
-      uses: jakejarvis/s3-sync-action@master
-      with:
-        args: --acl public-read --follow-symlinks --delete
       env:
-        AWS_S3_BUCKET: ${{ secrets.bucket }}
         AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key_id }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_access_key }}
-        AWS_REGION: ${{ secrets.region }}   # Make sure this secret is set in your repo
-        SOURCE_DIR: 'dist'
+        AWS_DEFAULT_REGION: ${{ secrets.region }}
+      run: |
+        aws s3 sync dist s3://${{ secrets.bucket }} --acl public-read --follow-symlinks --delete
+
     # Invalidates CloudFront cache to serve the new version
     # Changed from @v2.7 to @v2 to resolve download info error and use latest v2 release
     - name: Invalidate CloudFront distribution
