@@ -89,7 +89,7 @@ export const team: TeamMember[] = [
     name: "Connor Robinson",
     role: "VP Admin",
     bio: "I'm excited to learn more about AI and how it can be used to help people. I really enjoyed the events UAIS offered and I'm excited for the opportunity to help run the club.",
-    image: "#",
+    image: "/images/headshots/connorRobinson.webp",
     linkedin: "https://www.linkedin.com/in/connor-robinson-627255339/",
     github: "https://github.com/ConRobi",
     discord: "Connorrobinson4067"
@@ -99,7 +99,7 @@ export const team: TeamMember[] = [
     name: "Michael Lee",
     role: "Treasurer",
     bio: "Hello, I'm very excited about working here at UAIS. I hope to learn a lot both about the club and AI as well. I will work to bring more fun events where we all can learn!",
-    image: "#",
+    image: "/images/headshots/michealLee.webp",
     linkedin: "https://www.linkedin.com/in/michael-hanbyeol-lee/",
     github: "https://github.com/Meeko-Michael",
     discord: "gamerzmeeko"
