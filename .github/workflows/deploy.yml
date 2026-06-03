@@ -1,52 +1,35 @@
-# This is a basic workflow to help you get started with Actions
-# Updated to use native AWS CLI for stable S3 syncing
-
 name: Deploy Website
 
-# Controls when the action will run. Triggers the workflow on push
-# events but only for the master branch
 on:
   push:
-    branches: [ master ] # Keeping master branch as requested
+    branches: [ master ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [18.x] # Node version for your Astro project
+        node-version: [20.x]
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # Sets up Node.js environment for Astro/Bulma build
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm' # Caching npm dependencies
+        cache: 'npm'
 
-    # Installs dependencies using the lockfile (important for Astro/JS projects)
     - name: Install dependencies
       run: npm ci
 
-    # Runs the build script defined in your package.json (e.g., 'astro build')
-    - name: Build project
-      run: npm run build # Ensure this command matches your Astro project setup
+    - name: Build Vite app
+      run: npm run build
       env:
-        # Ensure API_KEY secret is correctly named in your repo settings
         PUBLIC_GOOGLE_CALENDAR: ${{ secrets.API_KEY }}
-        # Add any other build-time environment variables needed by Astro here
-        # CI: true # Often useful for build processes
 
-    # Syncs the dist directory with the S3 bucket using official AWS CLI
     - name: Sync website to S3
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key_id }}
@@ -55,13 +38,11 @@ jobs:
       run: |
         aws s3 sync dist s3://${{ secrets.bucket }} --acl public-read --follow-symlinks --delete
 
-    # Invalidates CloudFront cache to serve the new version
-    # Changed from @v2.7 to @v2 to resolve download info error and use latest v2 release
     - name: Invalidate CloudFront distribution
       uses: chetan/invalidate-cloudfront-action@v2
       env:
         DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
-        PATHS: '/*' # Invalidates everything; adjust if needed for performance
-        AWS_REGION: ${{ secrets.region }} # Make sure this secret is set
+        PATHS: '/*'
+        AWS_REGION: ${{ secrets.region }}
         AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key_id }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_access_key }}
