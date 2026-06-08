@@ -36,7 +36,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_access_key }}
         AWS_DEFAULT_REGION: ${{ secrets.region }}
       run: |
-        aws s3 sync dist s3://${{ secrets.bucket }} --acl public-read --follow-symlinks --delete
+        aws s3 sync dist s3://${{ secrets.bucket }} --follow-symlinks --delete
 
     - name: Invalidate CloudFront distribution
       uses: chetan/invalidate-cloudfront-action@v2
