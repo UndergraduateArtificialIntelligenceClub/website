@@ -48,6 +48,28 @@ that exports typed arrays — edit them like a spreadsheet.
 That's it — the new card appears on `/hackathons`, the navbar dropdown, and a
 detail page is generated at the slug URL automatically.
 
+## Marquee photos (home page banner)
+
+The scrolling photo banner on the home page reads from `marqueePhotos.ts`.
+**Always use the optimized copies** in `public/images/marquee/optimized/` —
+the full-res originals can be 5+ MB each and would kill page performance.
+
+### Adding a new marquee photo
+
+1. Drop the image file into `public/images/` (any folder)
+2. Regenerate the optimized WebP copies:
+   ```sh
+   node scripts/optimize-marquee-images.mjs
+   ```
+3. The script resizes every image in `marqueePhotos.ts` to 800px wide,
+   converts to WebP, and writes to `public/images/marquee/optimized/`.
+4. The paths in `marqueePhotos.ts` already point at the optimized folder —
+   just confirm the new file was generated (e.g. `marquee-19.webp`).
+
+> **Why separate optimized copies?** The originals are kept for other uses
+> (project galleries, posters). The marquee only needs small WebP tiles, so
+> we generate dedicated versions rather than loading full-resolution images.
+
 ## Adding the constitution as an external PDF
 
 In `constitution.ts`, set `externalUrl` to a full URL (Google Drive, Notion, etc.).

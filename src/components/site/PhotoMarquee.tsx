@@ -50,16 +50,18 @@ function Row({
         }}
       >
         {tiles.map((src, i) => (
-          <div
-            key={i}
-            className="relative h-40 md:h-48 lg:h-56 w-72 md:w-80 lg:w-96 shrink-0 overflow-hidden transition-[box-shadow] duration-1000 ease-in-out"
-            style={{ boxShadow: `inset 0 0 0 2px ${c}, 0 0 24px -8px ${c}` }}
-          >
+            <div
+              key={i}
+              className="relative h-40 md:h-48 lg:h-56 w-72 md:w-80 lg:w-96 shrink-0 overflow-hidden transition-[box-shadow] duration-1000 ease-in-out"
+              style={{
+                boxShadow: `inset 0 0 0 2px ${c}, 0 0 24px -8px ${c}`,
+                background: `radial-gradient(circle at 30% 30%, hsl(var(--uais-${color}) / 0.2), transparent 70%)`,
+              }}
+            >
             <img
               src={src}
               alt=""
               aria-hidden
-              loading="lazy"
               className="h-full w-full object-cover"
             />
             <div
