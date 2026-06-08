@@ -238,6 +238,7 @@ export const interviews: Interview[] = [
     teaser: "The reality of building AI for enterprise and the risk of rushing integration.",
     bio: "Kyle Myck is the CEO and Managing Partner at Dura Digital, where he leads digital transformation projects with a focus on human-centered design and strategic AI integration.",
     color: "blue",
+    pdf: "/documents/interviews/career-highlights-series/kyle-myck.pdf",
     fullContent: `
 ### From what I gather, Dura Digital can be considered an AI technology consultancy company that works with clients. Typically, who is usually the point of contact between Dura Digital and the company? Is it, for example, the owner, a CTO, or a CEO? And how does human behavior—which I saw on your LinkedIn is a huge part of your role—play into such an interaction and how do you develop a solution?
 
