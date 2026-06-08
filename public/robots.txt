@@ -1,4 +1,2 @@
 User-Agent: *
 Allow: /
-
-Sitemap: https://uais/sitemap-index.xml
