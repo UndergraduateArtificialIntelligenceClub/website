@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* UAIS design system — dark, multi-color metro accents from the brain logo */
+
+@layer base {
+  :root {
+    /* Brand multi-color palette pulled from the logo */
+    --uais-blue: 205 95% 55%;
+    --uais-green: 140 70% 50%;
+    --uais-yellow: 48 100% 58%;
+    --uais-red: 358 82% 58%;
+    --uais-orange: 22 95% 58%;
+    --uais-pink: 330 85% 70%;
+
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 205 95% 55%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 11%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 11%;
+    --muted-foreground: 0 0% 64%;
+
+    --accent: 22 95% 58%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 358 82% 58%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 205 95% 55%;
+
+    --radius: 1rem;
+
+    --gradient-multi: linear-gradient(
+      90deg,
+      hsl(var(--uais-blue)),
+      hsl(var(--uais-green)),
+      hsl(var(--uais-yellow)),
+      hsl(var(--uais-orange)),
+      hsl(var(--uais-red)),
+      hsl(var(--uais-pink))
+    );
+    --gradient-hero: radial-gradient(
+        ellipse at 20% 0%,
+        hsl(var(--uais-blue) / 0.18),
+        transparent 60%
+      ),
+      radial-gradient(ellipse at 80% 20%, hsl(var(--uais-pink) / 0.14), transparent 55%),
+      radial-gradient(ellipse at 50% 100%, hsl(var(--uais-orange) / 0.12), transparent 60%);
+
+    --shadow-glow: 0 0 60px hsl(var(--uais-blue) / 0.25);
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 205 95% 55%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 14%;
+    --sidebar-ring: 205 95% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", system-ui, sans-serif;
+    background-image:
+      radial-gradient(circle at 1px 1px, hsl(0 0% 100% / 0.035) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Space Grotesk", "Inter", sans-serif;
+    letter-spacing: -0.02em;
+  }
+  ::selection {
+    background: hsl(var(--uais-blue) / 0.4);
+    color: white;
+  }
+
+  /* Accessibility: Visible focus indicators */
+  :focus-visible {
+    outline: 2px solid hsl(var(--uais-blue));
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .text-gradient-multi {
+    background: var(--gradient-multi);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .border-gradient-multi {
+    border-image: var(--gradient-multi) 1;
+  }
+  .divider-multi {
+    height: 2px;
+    background: var(--gradient-multi);
+  }
+  .card-surface {
+    @apply bg-card border border-border rounded-2xl transition-all duration-300;
+  }
+  .card-surface:hover {
+    @apply border-foreground/30 shadow-lg shadow-black/20;
+  }
+  .glow-blue { box-shadow: 0 0 0 1px hsl(var(--uais-blue) / 0.4), 0 10px 40px -10px hsl(var(--uais-blue) / 0.3); }
+  .glow-green { box-shadow: 0 0 0 1px hsl(var(--uais-green) / 0.4), 0 10px 40px -10px hsl(var(--uais-green) / 0.3); }
+  .glow-yellow { box-shadow: 0 0 0 1px hsl(var(--uais-yellow) / 0.4), 0 10px 40px -10px hsl(var(--uais-yellow) / 0.3); }
+  .glow-red { box-shadow: 0 0 0 1px hsl(var(--uais-red) / 0.4), 0 10px 40px -10px hsl(var(--uais-red) / 0.3); }
+  .glow-orange { box-shadow: 0 0 0 1px hsl(var(--uais-orange) / 0.4), 0 10px 40px -10px hsl(var(--uais-orange) / 0.3); }
+  .glow-pink { box-shadow: 0 0 0 1px hsl(var(--uais-pink) / 0.4), 0 10px 40px -10px hsl(var(--uais-pink) / 0.3); }
+
+  .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+
+  /* Elegant Global Scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border: 3px solid hsl(var(--background));
+    border-radius: 100px;
+    transition: background 0.3s ease;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+
+  .scrollbar-minimal::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrollbar-minimal::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-minimal::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 10px;
+  }
+  .scrollbar-minimal::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.4);
+  }
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--border)) transparent;
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes pulse-line {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+@keyframes draw {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+.animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+.animate-pulse-line { animation: pulse-line 3s ease-in-out infinite; }

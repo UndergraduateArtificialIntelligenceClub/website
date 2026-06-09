@@ -1,4 +1,13 @@
 {
-  "recommendations": ["astro-build.astro-vscode"],
-  "unwantedRecommendations": []
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-typescript-next",
+    "pflannery.vscode-versionlens"
+  ],
+  "unwantedRecommendations": [
+    "astro-build.astro-vscode"
+  ]
 }
+
