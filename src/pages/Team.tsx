@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { SimplePage } from "@/components/site/PageHeader";
 import { COLORS, team, pastExecs } from "@/data/uais";
 import InitialsAvatar from "@/components/site/Avatar";
-import { Linkedin, Github, Globe, ChevronDown, Info, MessageCircle } from "lucide-react";
+import DiscordIcon from "@/components/site/DiscordIcon";
+import { Linkedin, Github, Globe, ChevronDown, Info, Check } from "lucide-react";
+import { toast } from "sonner";
 import {
   Dialog,
   DialogContent,
@@ -11,7 +14,17 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-const Team = () => (
+const Team = () => {
+  const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
+
+  const copyDiscord = (slug: string, handle: string) => {
+    navigator.clipboard.writeText(handle).catch(() => {});
+    setCopiedSlug(slug);
+    setTimeout(() => setCopiedSlug(null), 1500);
+    toast("Discord handle copied", { description: handle });
+  };
+
+  return (
   <SimplePage
     eyebrow="The Brains"
     title="Our Team."
@@ -65,12 +78,13 @@ const Team = () => (
 
               <div className="mt-6 flex items-center gap-2 pt-4 border-t border-border/50 w-full justify-center">
                 {m.discord && (
-                  <div 
-                    title={`Discord: ${m.discord}`}
-                    className="p-2 rounded-full border border-border hover:border-foreground/40 hover:text-uais-blue hover:bg-background/50 text-muted-foreground transition cursor-help"
+                  <button
+                    title="Copy Discord handle"
+                    className="p-2 rounded-full border border-border hover:border-foreground/40 text-muted-foreground transition cursor-pointer [&:active]:scale-90 [&:active]:bg-background touch-action-manipulation"
+                    onClick={() => copyDiscord(m.slug, m.discord!)}
                   >
-                    <MessageCircle className="h-3.5 w-3.5" />
-                  </div>
+                    {copiedSlug === m.slug ? <Check className="h-3.5 w-3.5 text-green-500" /> : <DiscordIcon className="h-3.5 w-3.5" />}
+                  </button>
                 )}
                 {m.linkedin && (
                   <a href={m.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 rounded-full border border-border hover:border-foreground/40 hover:text-foreground text-muted-foreground transition">
@@ -115,9 +129,16 @@ const Team = () => (
               </div>
               <div className="mt-6 flex flex-wrap justify-center gap-4">
                 {m.discord && (
-                  <div className="flex items-center gap-2 text-sm font-medium text-uais-blue">
-                    <MessageCircle className="h-4 w-4" /> {m.discord}
-                  </div>
+                  <button
+                    className="flex items-center gap-2 text-sm font-medium text-uais-blue hover:underline [&:active]:scale-95 cursor-pointer touch-action-manipulation"
+                    onClick={() => copyDiscord(m.slug, m.discord!)}
+                  >
+                    {copiedSlug === m.slug ? (
+                      <><Check className="h-4 w-4 text-green-500" /> Copied!</>
+                    ) : (
+                      <><DiscordIcon className="h-4 w-4" /> {m.discord}</>
+                    )}
+                  </button>
                 )}
                 {m.linkedin && (
                   <a href={m.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium hover:underline" style={{ color: `hsl(var(--uais-${color}))` }}>
@@ -184,12 +205,13 @@ const Team = () => (
                       </div>
                       <div className="flex gap-1 shrink-0">
                         {m.discord && (
-                          <div 
-                            title={`Discord: ${m.discord}`}
-                            className="p-1.5 rounded-lg text-muted-foreground hover:text-uais-blue hover:bg-background/50 transition cursor-help"
+                          <button
+                            title="Copy Discord handle"
+                            className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-background/50 [&:active]:scale-90 [&:active]:bg-background transition cursor-pointer touch-action-manipulation"
+                            onClick={() => copyDiscord(m.name, m.discord!)}
                           >
-                            <MessageCircle className="h-3.5 w-3.5" />
-                          </div>
+                            {copiedSlug === m.name ? <Check className="h-3.5 w-3.5 text-green-500" /> : <DiscordIcon className="h-3.5 w-3.5" />}
+                          </button>
                         )}
                         {m.linkedin && (
                           <a 
@@ -224,6 +246,7 @@ const Team = () => (
       </div>
     </section>
   </SimplePage>
-);
+  );
+};
 
 export default Team;
