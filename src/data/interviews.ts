@@ -197,6 +197,7 @@ export const interviews: Interview[] = [
     teaser: "Embracing agentic AI while maintaining software engineering fundamentals.",
     bio: "Chief Technology Officer at Artificial Agency with extensive experience in software development and high-level architecture.",
     color: "pink",
+    pdf: "/documents/interviews/career-highlights-series/david-oconnell.pdf",
     fullContent: `
 ### What's one major AI research trend or technology you believe students or researchers should be paying attention to at this moment?
 

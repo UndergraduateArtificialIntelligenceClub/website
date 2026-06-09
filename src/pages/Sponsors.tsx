@@ -65,10 +65,10 @@ const Sponsors = () => (
         partnership packages spanning hackathons, recruiting events, and workshops.
       </p>
       <a
-        href="mailto:sponsors@uais.ca"
+        href="mailto:uais@ualberta.ca"
         className="mt-6 inline-block px-5 py-2.5 rounded-full bg-foreground text-background font-semibold"
       >
-        sponsors@uais.ca
+        uais@ualberta.ca
       </a>
     </div>
   </SimplePage>
