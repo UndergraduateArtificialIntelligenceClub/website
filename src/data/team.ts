@@ -40,7 +40,7 @@ export const team: TeamMember[] = [
     role: "Co-Vice President",
     bio: "UAIS is a really cool opportunity to develop my interest in technology in the age of AI. It exposes anyone to different theoretical domains in the field while balancing practical software development utilizing AI. Can’t wait to see what this 26/27 academic year holds!",
     image: "/images/headshots/AndrewObwocha.jpg",
-    linkedin: "https://www.linkedin.com/in/andrew-obwocha",
+    linkedin: "https://www.linkedin.com/in/andrewobwocha/",
     github: "https://github.com/AndrewObwocha",
     discord: "andrewobwocha"
   },
@@ -50,7 +50,7 @@ export const team: TeamMember[] = [
     role: "VP External",
     bio: "Hello, I'm Rosanna Dovganyuk! I am in my third year of Statistics with a minor in Computing Science and I strive to stay curious – in particular, I love learning about AI, and it is my curiosity that has led me on an exciting journey of research in machine learning, specifically reinforcement learning, at the University of Alberta. As VP External, I look forward to strengthening the UAIS network, fostering a collaborative, learning-focused AI community. Outside of academics, I enjoy running, travelling, and meeting new people!",
     image: "/images/headshots/rosannaDovganyuk.jpg",
-    linkedin: "https://www.linkedin.com/in/rosanna-dovganyuk",
+    linkedin: "https://www.linkedin.com/in/rosanna-dovganyuk-143b82102/",
     github: "https://github.com/rosannadovganyuk3",
     discord: "rosanna_92685"
   },
