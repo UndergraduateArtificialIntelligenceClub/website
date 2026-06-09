@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/uais-logo.png";
-import { Github, Instagram, Linkedin, Youtube, MessageCircle } from "lucide-react";
+import DiscordIcon from "@/components/site/DiscordIcon";
+import { Github, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const links = [
   { label: "Home", to: "/" },
@@ -45,7 +46,7 @@ export const Footer = () => (
         <h4 className="text-sm font-semibold mb-3 text-foreground">Connect</h4>
         <div className="flex gap-2">
           {[
-            { icon: MessageCircle, label: "Discord", href: "https://discord.gg/KapmJxs" },
+            { icon: DiscordIcon, label: "Discord", href: "https://discord.gg/KapmJxs" },
             { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/undergraduate-artificial-intelligence-society/" },
             { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/uais.ualberta/" },
             { icon: Github, label: "GitHub", href: "https://github.com/undergraduateartificialintelligenceclub" },

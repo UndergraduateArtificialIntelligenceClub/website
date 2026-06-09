@@ -1,9 +1,10 @@
 import { SimplePage } from "@/components/site/PageHeader";
 import AccentCard from "@/components/site/AccentCard";
-import { MessageCircle, Linkedin, Instagram, Github, Youtube, Calendar, ArrowUpRight, Shapes } from "lucide-react";
+import DiscordIcon from "@/components/site/DiscordIcon";
+import { Linkedin, Instagram, Github, Youtube, Calendar, ArrowUpRight, Shapes } from "lucide-react";
 
 const socials = [
-  { name: "Discord", color: "blue" as const, icon: MessageCircle, handle: "discord.gg/KapmJxs", href: "https://discord.gg/KapmJxs" },
+  { name: "Discord", color: "blue" as const, icon: DiscordIcon, handle: "discord.gg/KapmJxs", href: "https://discord.gg/KapmJxs" },
   { name: "LinkedIn", color: "green" as const, icon: Linkedin, handle: "UAIS at UofA", href: "https://www.linkedin.com/company/undergraduate-artificial-intelligence-society/" },
   { name: "Instagram", color: "pink" as const, icon: Instagram, handle: "@uais.ualberta", href: "https://www.instagram.com/uais.ualberta/" },
   { name: "GitHub", color: "yellow" as const, icon: Github, handle: "UAIS Club", href: "https://github.com/undergraduateartificialintelligenceclub" },
