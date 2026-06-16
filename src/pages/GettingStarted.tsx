@@ -23,7 +23,7 @@ const steps = [
       "CMPUT 261: Intro to AI",
       "CMPUT 267: Basics of Machine Learning",
       "CMPUT 365/366: RL and Search",
-      "Join the CS Honors or specialization stream",
+      "Join the CS Honors\\Majors with AI option",
     ],
   },
   {
