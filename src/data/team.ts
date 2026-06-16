@@ -48,7 +48,7 @@ export const team: TeamMember[] = [
     slug: "rosanna-dovganyuk",
     name: "Rosanna Dovganyuk",
     role: "VP External",
-    bio: "Hello, I'm Rosanna Dovganyuk! I am in my third year of Statistics with a minor in Computing Science and I strive to stay curious – in particular, I love learning about AI, and it is my curiosity that has led me on an exciting journey of research in machine learning, specifically reinforcement learning, at the University of Alberta. As VP External, I look forward to strengthening the UAIS network, fostering a collaborative, learning-focused AI community. Outside of academics, I enjoy running, travelling, and meeting new people!",
+    bio: "Hello, I'm Rosanna Dovganyuk! I am in my fourth year of Statistics with a minor in Computing Science and I strive to stay curious – in particular, I love learning about AI, and it is my curiosity that has led me on an exciting journey of research in machine learning, specifically reinforcement learning, at the University of Alberta. As VP External, I look forward to strengthening the UAIS network, fostering a collaborative, learning-focused AI community. Outside of academics, I enjoy running, travelling, and meeting new people!",
     image: "/images/headshots/rosannaDovganyuk.jpg",
     linkedin: "https://www.linkedin.com/in/rosanna-dovganyuk-143b82102/",
     github: "https://github.com/rosannadovganyuk3",
