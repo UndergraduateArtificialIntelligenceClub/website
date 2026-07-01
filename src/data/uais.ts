@@ -9,3 +9,4 @@ export * from "./hackathons";
 export * from "./projects";
 export * from "./interviews";
 export * from "./resources";
+export * from "./events";

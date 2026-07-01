@@ -5,6 +5,7 @@ import AccentCard from "@/components/site/AccentCard";
 import logo from "@/assets/uais-logo.png";
 import { ArrowUpRight, Sparkles, Code2, Mic, Trophy, ScrollText } from "lucide-react";
 import PhotoMarquee from "@/components/site/PhotoMarquee";
+import EventsCalendar from "@/components/site/EventsCalendar";
 import { marqueePhotos } from "@/data/marqueePhotos";
 
 const highlights = [
@@ -160,6 +161,9 @@ const Index = () => {
         </div>
       </section>
 
+
+      {/* EVENTS CALENDAR */}
+      <EventsCalendar />
 
       {/* CONSTITUTION CALLOUT */}
       <section className="container pt-12">
