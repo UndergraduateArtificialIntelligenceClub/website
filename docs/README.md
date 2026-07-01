@@ -13,6 +13,7 @@ React components for normal content changes.
 | Hackathons (incl. prizes, food…)   | `src/data/hackathons.ts`           |
 | Projects                           | `src/data/projects.ts`             |
 | Interviews + Q&A transcripts       | `src/data/interviews.ts`           |
+| Events on the homepage calendar    | `src/data/events.ts`               |
 | Constitution / club rubric         | `src/data/constitution.ts`         |
 | Brand accent colors                | `src/data/colors.ts` + `src/index.css` |
 
