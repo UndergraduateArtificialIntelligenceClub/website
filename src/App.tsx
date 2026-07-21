@@ -20,6 +20,7 @@ import ExternalRedirect from "./pages/ExternalRedirect.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 import ScrollToTop from "./components/site/ScrollToTop.tsx";
+import { PodcastProvider } from "./contexts/PodcastContext.tsx";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <PodcastProvider>
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
@@ -55,6 +57,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      </PodcastProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
