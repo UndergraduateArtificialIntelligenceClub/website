@@ -13,6 +13,7 @@ These are the building blocks pages compose from. Edit only when you want a
 | `Avatar`           | Circular avatar with a colored ring (uses initials when no photo).      |
 | `PosterTile`       | Decorative poster background for hackathon cards.                       |
 | `PageHeader` / `SimplePage` | Standard page header layout used by simple content pages.      |
+| `EventsCalendar`   | Homepage calendar grid + sidebar list. Reads from `src/data/events.ts`. |
 
 ## NeuralBackdrop — tweaking the hero animation
 
