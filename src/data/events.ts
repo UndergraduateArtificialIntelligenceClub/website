@@ -1,5 +1,8 @@
 import { type Color } from "./colors";
 
+/** Set to `true` when events are confirmed and the calendar is ready to show publicly. */
+export const eventsEnabled = false;
+
 export type UaisEvent = {
   id: string;
   title: string;

@@ -2,7 +2,7 @@ import { useState, useMemo, useCallback } from "react";
 import { format, isSameMonth, isSameDay, addMonths, subMonths } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
-import { events, type UaisEvent, eventTypeColor } from "@/data/events";
+import { events, eventsEnabled, type UaisEvent, eventTypeColor } from "@/data/events";
 import { cn } from "@/lib/utils";
 
 const semesters = ["Fall 2026", "Winter 2027"] as const;
@@ -80,6 +80,8 @@ export default function EventsCalendar() {
     if (prev < range.start) return;
     setMonth(prev);
   };
+
+  if (!eventsEnabled) return null;
 
   return (
     <section className="container py-16">
