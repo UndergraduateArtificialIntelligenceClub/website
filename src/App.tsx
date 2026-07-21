@@ -20,6 +20,7 @@ import ExternalRedirect from "./pages/ExternalRedirect.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 import ScrollToTop from "./components/site/ScrollToTop.tsx";
+import PodcastPlayer from "./components/site/PodcastPlayer.tsx";
 import { PodcastProvider } from "./contexts/PodcastContext.tsx";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
       <PodcastProvider>
       <BrowserRouter>
         <ScrollToTop />
+        <PodcastPlayer />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/team" element={<Team />} />
