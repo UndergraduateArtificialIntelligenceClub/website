@@ -2,12 +2,19 @@ import { Link, useParams } from "react-router-dom";
 import SiteLayout from "@/components/site/SiteLayout";
 import { interviews } from "@/data/uais";
 import InitialsAvatar from "@/components/site/Avatar";
-import { ArrowLeft } from "lucide-react";
+import VoiceSelector from "@/components/site/VoiceSelector";
+import { ArrowLeft, Headphones, Settings2 } from "lucide-react";
+import { usePodcast } from "@/contexts/PodcastContext";
+import { parseInterviewSegments } from "@/utils/interview-parser";
+import { useState, useRef } from "react";
 
 const InterviewDetail = () => {
   const { slug } = useParams();
   const i = interviews.find((x) => x.slug === slug);
-  
+  const { podcast, startPodcast, stopPodcast } = usePodcast();
+  const [showVoiceSettings, setShowVoiceSettings] = useState(false);
+  const transcriptRef = useRef<HTMLDivElement>(null);
+
   if (!i) {
     return (
       <SiteLayout>
@@ -19,26 +26,31 @@ const InterviewDetail = () => {
     );
   }
 
-  // Simple transcript parser
-  const blocks = i.fullContent
-    .split(/\n\n+/)
-    .map((block) => {
-      const trimmed = block.trim();
-      if (trimmed.startsWith("### ")) {
-        return { type: "prompt", content: trimmed.replace(/^###\s+/, "") };
-      }
-      if (trimmed.startsWith("> ")) {
-        // Remove the blockquote marker from each line and join
-        const content = trimmed
-          .split("\n")
-          .map((line) => line.replace(/^>\s*/, ""))
-          .join("\n")
-          .trim();
-        return { type: "response", content };
-      }
-      return { type: "text", content: trimmed };
-    })
-    .filter((b) => b.content);
+  const segments = parseInterviewSegments(i.fullContent, i.name);
+
+  const podcastActive = podcast?.interviewSlug === slug;
+  const currentActiveIndex = podcastActive ? podcast.currentIndex : -1;
+
+  const handleListen = () => {
+    if (podcast?.interviewSlug === slug) {
+      setShowVoiceSettings(!showVoiceSettings);
+      return;
+    }
+    startPodcast({
+      segments,
+      intervieweeName: i.name,
+      interviewSlug: i.slug,
+      interviewColor: i.color,
+      questionerName: "Interviewer",
+    });
+    setShowVoiceSettings(false);
+  };
+
+  const handleStop = () => {
+    stopPodcast();
+  };
+
+  const colorHsl = `hsl(var(--uais-${i.color}))`;
 
   return (
     <SiteLayout>
@@ -49,15 +61,51 @@ const InterviewDetail = () => {
         <div className="mt-8 flex flex-col md:flex-row items-start md:items-center gap-6">
           <InitialsAvatar name={i.name} color={i.color} size={120} />
           <div>
-            <div className="text-xs mono uppercase tracking-widest" style={{ color: `hsl(var(--uais-${i.color}))` }}>
+            <div className="text-xs mono uppercase tracking-widest" style={{ color: colorHsl }}>
               Interview
             </div>
             <h1 className="mt-2 font-display text-4xl md:text-6xl font-bold leading-[0.95]">{i.name}</h1>
             <div className="mt-2 text-lg text-muted-foreground">{i.title}</div>
           </div>
         </div>
-        <p className="mt-8 text-lg text-muted-foreground max-w-3xl italic">"{i.teaser}"</p>
-        
+
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <button
+            onClick={handleListen}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10"
+            style={{ backgroundColor: colorHsl, color: "white" }}
+          >
+            <Headphones className="h-4 w-4" />
+            {podcast?.interviewSlug === slug ? "Voice Settings" : "Listen"}
+          </button>
+
+          {podcast?.interviewSlug === slug && (
+            <button
+              onClick={handleStop}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold border border-border hover:bg-secondary transition-all"
+            >
+              Stop
+            </button>
+          )}
+
+          <button
+            onClick={() => setShowVoiceSettings(!showVoiceSettings)}
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm border border-border hover:bg-secondary transition-all"
+          >
+            <Settings2 className="h-4 w-4" />
+            Voices
+          </button>
+        </div>
+
+        {showVoiceSettings && (
+          <div className="mt-6 p-6 rounded-2xl border border-border bg-card max-w-2xl">
+            <h3 className="font-display text-lg font-bold mb-4">Voice Settings</h3>
+            <VoiceSelector />
+          </div>
+        )}
+
+        <p className="mt-8 text-lg text-muted-foreground max-w-3xl italic">&ldquo;{i.teaser}&rdquo;</p>
+
         <div className="mt-8 max-w-3xl">
           <p className="text-muted-foreground leading-relaxed">
             {i.bio}
@@ -65,15 +113,12 @@ const InterviewDetail = () => {
         </div>
 
         {i.pdf && (
-          <a 
-            href={i.pdf} 
-            target="_blank" 
+          <a
+            href={i.pdf}
+            target="_blank"
             rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10"
-            style={{ 
-              backgroundColor: `hsl(var(--uais-${i.color}))`,
-              color: 'white'
-            }}
+            style={{ backgroundColor: colorHsl, color: "white" }}
           >
             Download Full Interview (PDF)
           </a>
@@ -82,26 +127,11 @@ const InterviewDetail = () => {
         <div className="mt-10 divider-multi" />
       </section>
 
-      <section className="container py-16 max-w-3xl mx-auto">
+      <section className="container py-16 max-w-3xl mx-auto" ref={transcriptRef}>
         <div className="space-y-12">
-          {blocks.map((block, idx) => {
-            if (block.type === "prompt") {
-              return (
-                <div key={idx} className="relative pl-6">
-                  <div 
-                    className="absolute left-0 top-0 bottom-0 w-1 rounded-full opacity-50"
-                    style={{ backgroundColor: `hsl(var(--uais-${i.color}))` }}
-                  />
-                  <h3 className="font-display text-xl md:text-2xl font-bold text-foreground leading-tight">
-                    {block.content}
-                  </h3>
-                </div>
-              );
-            }
-            
-            // For responses, try to bold the name if it follows the "Name:" pattern
-            const parts = block.content.split(/(: )/);
-            const hasName = parts.length > 1 && parts[0].length < 30; // Heuristic for name prefix
+          {segments.map((seg, idx) => {
+            const isActiveSegment = idx === currentActiveIndex;
+            const dimmed = podcastActive && !isActiveSegment;
 
             const renderInline = (text: string) => {
               const subparts = text.split(/(\*\*.*?\*\*)/g);
@@ -117,21 +147,50 @@ const InterviewDetail = () => {
               });
             };
 
+            const isPrompt = seg.type === "prompt";
+            const activeBar = isActiveSegment ? "opacity-100 scale-y-110" : dimmed ? "opacity-20" : "opacity-40";
+
             return (
-              <div key={idx} className="space-y-4">
-                {block.content.split("\n").map((para, pIdx) => (
-                  <p key={pIdx} className="text-lg text-muted-foreground leading-relaxed">
-                    {pIdx === 0 && hasName ? (
-                      <>
-                        <span className="font-bold text-foreground">{parts[0]}</span>
-                        {parts[1]}
-                        {renderInline(block.content.substring(parts[0].length + parts[1].length).split("\n")[0])}
-                      </>
-                    ) : (
-                      renderInline(para)
-                    )}
-                  </p>
-                ))}
+              <div
+                key={idx}
+                className={`relative pl-6 transition-all duration-500 ${
+                  dimmed ? "opacity-60" : "opacity-100"
+                }`}
+              >
+                <div
+                  className={`absolute left-0 top-0 bottom-0 w-1 rounded-full transition-all duration-700 ${activeBar}`}
+                  style={{
+                    backgroundColor: colorHsl,
+                    boxShadow: isActiveSegment ? `0 0 14px ${colorHsl}` : undefined,
+                  }}
+                />
+                <div className="space-y-3">
+                  {!isPrompt && (
+                    <div className="text-xs mono uppercase tracking-widest" style={{ color: colorHsl }}>
+                      {seg.speakerName}
+                    </div>
+                  )}
+                  {isPrompt ? (
+                    <h3
+                      className={`font-display text-xl md:text-2xl font-bold leading-tight transition-all duration-500 ${
+                        dimmed ? "text-muted-foreground" : "text-foreground"
+                      }`}
+                    >
+                      {renderInline(seg.content)}
+                    </h3>
+                  ) : (
+                    seg.content.split("\n").map((para, pIdx) => (
+                      <p
+                        key={pIdx}
+                        className={`text-lg leading-relaxed transition-all duration-500 ${
+                          dimmed ? "text-muted-foreground" : "text-foreground"
+                        }`}
+                      >
+                        {renderInline(para)}
+                      </p>
+                    ))
+                  )}
+                </div>
               </div>
             );
           })}
