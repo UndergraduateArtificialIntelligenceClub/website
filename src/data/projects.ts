@@ -287,7 +287,7 @@ We believe you should own your community's data. While this bot logs data to bui
     termLength: "Full academic year (Fall 2025 – Winter 2026)",
     source: "https://github.com/UndergraduateArtificialIntelligenceClub/Clubmate-AI",
     lead: { name: "Sashreek Addanki", role: "Project Lead", github: "https://github.com/Sashreek007" },
-    members: ["RAGHAV SETHI", "Francois Christien Lao Coleongco", "Lawrence Velilla", "Chetan Vig", "Daniel Liang"],
+    members: ["RAGHAV SETHI", "Francois Coleongco", "Lawrence Velilla", "Chetan Vig", "Daniel Liang"],
     content: {
       type: "sections",
       items: [
