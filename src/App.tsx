@@ -18,6 +18,8 @@ import Socials from "./pages/Socials.tsx";
 import Attendance from "./pages/Attendance.tsx";
 import ExternalRedirect from "./pages/ExternalRedirect.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import RoadmapPage from "./pages/RoadmapPage.tsx";
+import CoursesPage from "./pages/CoursesPage.tsx";
 
 import ScrollToTop from "./components/site/ScrollToTop.tsx";
 import PodcastPlayer from "./components/site/PodcastPlayer.tsx";
@@ -46,7 +48,10 @@ const App = () => (
           <Route path="/interviews" element={<Interviews />} />
           <Route path="/interviews/:slug" element={<InterviewDetail />} />
           <Route path="/sponsors" element={<Sponsors />} />
-          <Route path="/getting-started" element={<GettingStarted />} />
+          <Route path="/resources" element={<Navigate to="/resources/getting-started" replace />} />
+          <Route path="/resources/getting-started" element={<GettingStarted />} />
+          <Route path="/resources/roadmap" element={<RoadmapPage />} />
+          <Route path="/resources/courses" element={<CoursesPage />} />
           <Route path="/socials" element={<Socials />} />
           <Route path="/attendance" element={<Attendance />} />
           <Route path="/discord" element={<ExternalRedirect to="https://discord.gg/KapmJxs" />} />
