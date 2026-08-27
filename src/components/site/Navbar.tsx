@@ -32,7 +32,7 @@ const NAV: NavItem[] = [
       ...interviews.map((i) => ({ label: i.name, to: `/interviews/${i.slug}` })),
     ],
   },
-  { label: "Getting Started", to: "/getting-started" },
+  { label: "Resources", to: "/resources" },
   { label: "Sponsors", to: "/sponsors" },
   { label: "Socials", to: "/socials" },
 ];

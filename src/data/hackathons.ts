@@ -43,7 +43,7 @@ export const hackathons: Hackathon[] = [
     name: "SillyCon Valley 2026",
     date: "Feb 13–14, 2026",
     location: "DICE 8th Floor, U of A",
-    status: "Upcoming",
+    status: "Past",
     tagline: "Build the silliest, most creative thing you can with AI.",
     description:
       "Our flagship hackathon. SillyCon Valley invites teams to build genuinely useful AI projects with the most ridiculous framing possible. No startup grind, just experimenting and fun. Past winners include an LLM-powered toaster manifesto generator and a CV system that judges your posture as a Victorian aristocrat would.",
