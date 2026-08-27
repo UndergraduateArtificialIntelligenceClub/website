@@ -1,5 +1,4 @@
-import { SimplePage } from "@/components/site/PageHeader";
-import { ArrowRight, ExternalLink, BookOpen, Rocket } from "lucide-react";
+import { ArrowRight, ExternalLink, Rocket } from "lucide-react";
 import {
   roadmapCategories,
   categoryColorMap,
@@ -73,52 +72,35 @@ const ResourceCard = ({ item, color }: { item: RoadmapItem; color: string }) => 
   );
 };
 
-const RoadmapPage = () => (
-  <SimplePage
-    eyebrow="26 curated resources"
-    title="Learning Roadmap"
-    description="A structured path from zero to building production AI systems. Follow each section in order — every resource is free."
-    accent="blue"
-  >
-    <div className="space-y-16">
-      {roadmapCategories.map((category) => (
-        <CategorySection key={category.id} category={category} />
-      ))}
+const RoadmapContent = () => (
+  <div className="space-y-16">
+    {roadmapCategories.map((category) => (
+      <CategorySection key={category.id} category={category} />
+    ))}
 
-      {/* Progress Bar */}
-      <div className="pt-8 border-t border-border/50">
-        <div className="flex items-center justify-between text-sm text-muted-foreground mb-3">
-          <span className="font-medium">Your Progress</span>
-          <span>26 / 26 resources</span>
-        </div>
-        <div className="h-2 rounded-full bg-muted overflow-hidden">
-          <div className="h-full rounded-full bg-gradient-to-r from-uais-blue via-uais-pink to-uais-red w-full transition-all duration-1000" />
+
+    {/* CTA */}
+    <div className="max-w-2xl mx-auto text-center space-y-6">
+      <div className="flex items-center justify-center gap-3">
+        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-uais-yellow/10 border border-uais-yellow/30">
+          <Rocket className="w-6 h-6 text-uais-yellow" />
         </div>
       </div>
-
-      {/* CTA */}
-      <div className="max-w-2xl mx-auto text-center space-y-6">
-        <div className="flex items-center justify-center gap-3">
-          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-uais-yellow/10 border border-uais-yellow/30">
-            <Rocket className="w-6 h-6 text-uais-yellow" />
-          </div>
-        </div>
-        <h3 className="font-display text-2xl font-bold">Ready to begin your journey?</h3>
-        <p className="text-muted-foreground max-w-lg mx-auto">
-          Join our Discord community for support, find study partners, and share your progress along the roadmap.
-        </p>
-        <a
-          href="https://discord.gg/KapmJxs"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background font-semibold hover:bg-foreground/90 transition-colors"
-        >
-          Join Discord
-          <ArrowRight className="h-4 w-4" />
-        </a>
-      </div>
+      <h3 className="font-display text-2xl font-bold">Ready to begin your journey?</h3>
+      <p className="text-muted-foreground max-w-lg mx-auto">
+        Join our Discord community for support, find study partners, and share your progress along the roadmap.
+      </p>
+      <a
+        href="https://discord.gg/KapmJxs"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background font-semibold hover:bg-foreground/90 transition-colors"
+      >
+        Join Discord
+        <ArrowRight className="h-4 w-4" />
+      </a>
     </div>
-  </SimplePage>
+  </div>
 );
 
-export default RoadmapPage;
+export default RoadmapContent;

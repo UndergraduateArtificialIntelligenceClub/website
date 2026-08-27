@@ -13,13 +13,11 @@ import ProjectDetail from "./pages/ProjectDetail.tsx";
 import Interviews from "./pages/Interviews.tsx";
 import InterviewDetail from "./pages/InterviewDetail.tsx";
 import Sponsors from "./pages/Sponsors.tsx";
-import GettingStarted from "./pages/GettingStarted.tsx";
 import Socials from "./pages/Socials.tsx";
 import Attendance from "./pages/Attendance.tsx";
 import ExternalRedirect from "./pages/ExternalRedirect.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import RoadmapPage from "./pages/RoadmapPage.tsx";
-import CoursesPage from "./pages/CoursesPage.tsx";
+import ResourcesPage from "./pages/ResourcesPage.tsx";
 
 import ScrollToTop from "./components/site/ScrollToTop.tsx";
 import PodcastPlayer from "./components/site/PodcastPlayer.tsx";
@@ -48,10 +46,10 @@ const App = () => (
           <Route path="/interviews" element={<Interviews />} />
           <Route path="/interviews/:slug" element={<InterviewDetail />} />
           <Route path="/sponsors" element={<Sponsors />} />
-          <Route path="/resources" element={<Navigate to="/resources/getting-started" replace />} />
-          <Route path="/resources/getting-started" element={<GettingStarted />} />
-          <Route path="/resources/roadmap" element={<RoadmapPage />} />
-          <Route path="/resources/courses" element={<CoursesPage />} />
+          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/resources/getting-started" element={<ResourcesPage />} />
+          <Route path="/resources/roadmap" element={<ResourcesPage />} />
+          <Route path="/resources/courses" element={<ResourcesPage />} />
           <Route path="/socials" element={<Socials />} />
           <Route path="/attendance" element={<Attendance />} />
           <Route path="/discord" element={<ExternalRedirect to="https://discord.gg/KapmJxs" />} />
