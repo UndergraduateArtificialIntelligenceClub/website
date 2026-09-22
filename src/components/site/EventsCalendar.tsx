@@ -36,7 +36,6 @@ function getEventsForDay(date: Date) {
 export default function EventsCalendar() {
   const [semester, setSemester] = useState<string>("Fall 2026");
   const [month, setMonth] = useState<Date>(new Date(2026, 8, 1));
-  const [selectedDay, setSelectedDay] = useState<Date | undefined>(undefined);
 
   const semesterEvents = useMemo(
     () => events.filter((e) => e.semester === semester),
@@ -49,12 +48,8 @@ export default function EventsCalendar() {
   );
 
   const eventsForSelectedDay = useMemo(() => {
-    if (!selectedDay) return eventsInCurrentMonth.slice(0, 3);
-    const dayEvents = getEventsForDay(selectedDay).filter(
-      (e) => e.semester === semester,
-    );
-    return dayEvents.length > 0 ? dayEvents : null;
-  }, [selectedDay, semester, eventsInCurrentMonth]);
+    return eventsInCurrentMonth;
+  }, [eventsInCurrentMonth]);
 
   const hasEventModifier = useCallback(
     (date: Date) => semesterEvents.some((e) => isSameDay(e.date, date)),
@@ -64,7 +59,6 @@ export default function EventsCalendar() {
   const handleSemesterChange = (s: string) => {
     setSemester(s);
     setMonth(semesterRange[s].start);
-    setSelectedDay(undefined);
   };
 
   const goNextMonth = () => {
@@ -142,72 +136,68 @@ export default function EventsCalendar() {
               </button>
             </div>
 
-            <DayPicker
-              month={month}
-              onMonthChange={setMonth}
-              mode="single"
-              selected={selectedDay}
-              onSelect={setSelectedDay}
-              showOutsideDays={false}
-              modifiers={{ hasEvent: hasEventModifier }}
-              modifiersClassNames={{
-                hasEvent: "font-semibold",
-              }}
-              disabled={[
-                { before: semesterRange[semester].start },
-                { after: semesterRange[semester].end },
-              ]}
-              components={{
-                DayContent: (props) => {
-                  const dayEvents = semesterEvents.filter((e) =>
-                    isSameDay(e.date, props.date),
-                  );
-                  return (
-                    <div className="relative flex flex-col items-center justify-end h-full w-full pb-0.5">
-                      <span className="leading-none">{format(props.date, "d")}</span>
-                      {dayEvents.length > 0 && (
-                        <div className="flex flex-col gap-[1.5px] mt-[2px] w-full px-1">
-                          {dayEvents.map((e) => (
-                            <span
-                              key={e.id}
-                              className="w-full h-[2.5px] rounded-sm"
-                              style={{
-                                backgroundColor: `hsl(${colorVar[eventTypeColor[e.type]]})`,
-                              }}
-                            />
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  );
-                },
-              }}
-              className="w-full"
-              classNames={{
-                months: "w-full",
-                month: "w-full",
-                caption: "sr-only",
-                table: "w-full border-collapse",
-                head_row: "flex justify-around mb-1",
-                head_cell:
-                  "w-11 text-xs font-medium text-muted-foreground text-center",
-                row: "flex justify-around my-0.5",
-                cell: cn(
-                  "h-11 w-11 text-sm text-center p-0 relative",
-                  "[&:has([aria-selected])]:bg-accent/20",
-                  "first:[&:has([aria-selected])]:rounded-l-md",
-                  "last:[&:has([aria-selected])]:rounded-r-md",
-                  "focus-within:relative focus-within:z-20",
-                ),
-                day: cn(
-                  "h-11 w-11 p-0 font-normal rounded-full hover:bg-accent/20 transition",
-                  "aria-selected:bg-foreground aria-selected:text-background aria-selected:hover:bg-foreground",
-                  "disabled:opacity-20 disabled:pointer-events-none",
-                ),
-                day_today: "ring-1 ring-border",
-                day_outside: "text-muted-foreground opacity-30",
-              }}
-            />
+<DayPicker
+                month={month}
+                onMonthChange={setMonth}
+                showOutsideDays={false}
+                modifiers={{ hasEvent: hasEventModifier }}
+                modifiersClassNames={{
+                  hasEvent: "font-semibold",
+                }}
+                disabled={[
+                  { before: semesterRange[semester].start },
+                  { after: semesterRange[semester].end },
+                ]}
+                components={{
+                  DayContent: (props) => {
+                    const dayEvents = semesterEvents.filter((e) =>
+                      isSameDay(e.date, props.date),
+                    );
+                    return (
+                      <div className="relative flex flex-col items-center justify-center h-full w-full pb-0.5">
+                        <span className="leading-none">{format(props.date, "d")}</span>
+                        {dayEvents.length > 0 && (
+                          <div className="flex flex-col gap-[1.5px] mt-[2px] w-full px-1">
+                            {dayEvents.map((e) => (
+                              <span
+                                key={e.id}
+                                className="w-full h-[2.5px] rounded-sm"
+                                style={{
+                                  backgroundColor: `hsl(${colorVar[eventTypeColor[e.type]]})`,
+                                }}
+                              />
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  },
+                }}
+                className="w-full"
+                classNames={{
+                  months: "w-full",
+                  month: "w-full",
+                  caption: "sr-only",
+                  table: "w-full border-collapse",
+                  head_row: "flex justify-around mb-1",
+                  head_cell:
+                    "w-11 text-xs font-medium text-muted-foreground text-center",
+                  row: "flex justify-around my-0.5",
+                  cell: cn(
+                    "h-11 w-11 text-sm text-center p-0 relative",
+                    "[&:has([aria-selected])]:bg-transparent",
+                    "first:[&:has([aria-selected])]:rounded-none",
+                    "last:[&:has([aria-selected])]:rounded-none",
+                    "focus-within:relative focus-within:z-20",
+                  ),
+                  day: cn(
+                    "h-11 w-11 p-0 font-normal rounded-none hover:bg-accent/20 transition",
+                    "disabled:opacity-20 disabled:pointer-events-none",
+                  ),
+                  day_today: "text-foreground font-semibold",
+                  day_outside: "text-muted-foreground opacity-30",
+                }}
+              />
 
             <div className="flex flex-wrap gap-x-4 gap-y-2 mt-4 pt-4 border-t border-border">
               {(Object.entries(eventTypeLabel) as [UaisEvent["type"], string][]).map(
@@ -232,18 +222,10 @@ export default function EventsCalendar() {
         {/* Event list */}
         <div className="lg:col-span-2 space-y-4">
           <h3 className="font-display text-lg font-semibold">
-            {selectedDay && eventsForSelectedDay
-              ? format(selectedDay, "MMMM d, yyyy")
-              : `Events in ${format(month, "MMMM")}`}
+            Events in {format(month, "MMMM yyyy")}
           </h3>
 
-          <div className="space-y-3 max-h-[480px] overflow-y-auto scrollbar-minimal pr-1">
-            {eventsForSelectedDay === null && (
-              <p className="text-sm text-muted-foreground">
-                No events on this day.
-              </p>
-            )}
-
+          <div className="space-y-3 max-h-[480px] overflow-y-auto scrollbar-minimal pr-1 pt-1">
             {eventsForSelectedDay?.length === 0 && (
               <p className="text-sm text-muted-foreground">
                 No events scheduled for this month.
@@ -262,8 +244,22 @@ export default function EventsCalendar() {
 }
 
 function EventCard({ event: e }: { event: UaisEvent }) {
+  const glowColor = colorVar[eventTypeColor[e.type]];
+  const hoverShadow = `0 0 0 1px hsl(${glowColor} / 0.4), 0 10px 40px -10px hsl(${glowColor} / 0.3)`;
+
   return (
-    <div className="card-surface p-4 hover:glow-blue transition">
+    <div
+      className="card-surface p-4 transition-all duration-300 hover:-translate-y-1"
+      style={{
+        boxShadow: "none",
+      }}
+      onMouseEnter={(event) => {
+        event.currentTarget.style.boxShadow = hoverShadow;
+      }}
+      onMouseLeave={(event) => {
+        event.currentTarget.style.boxShadow = "none";
+      }}
+    >
       <div className="flex items-start gap-3">
         <span
           className="mt-1.5 shrink-0 inline-block rounded-sm"
