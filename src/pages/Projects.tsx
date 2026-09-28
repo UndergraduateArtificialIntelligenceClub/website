@@ -116,9 +116,8 @@ const Projects = () => {
                 </summary>
                 <div className="px-5 pb-5 space-y-2">
                   {y.items.map((it) => {
-                    const projectSlug = it.name.toLowerCase().replace(/ /g, "-").replace(/[()]/g, "");
-                    const exists = projects.find(p => p.slug === projectSlug);
-                    
+                    const exists = projects.find(p => p.slug === it.slug);
+
                     return (
                       <div key={it.name} className="flex items-center justify-between gap-4 p-3 rounded-xl bg-secondary/50 group/item">
                         <div>
@@ -127,7 +126,7 @@ const Projects = () => {
                         </div>
                         <div className="flex items-center gap-2">
                           {exists && (
-                            <Link to={`/projects/${projectSlug}`} className="p-2 rounded-lg hover:bg-foreground/10 transition" title="View Case Study">
+                            <Link to={`/projects/${it.slug}`} className="p-2 rounded-lg hover:bg-foreground/10 transition" title="View Case Study">
                               <ArrowRight className="h-4 w-4" />
                             </Link>
                           )}
