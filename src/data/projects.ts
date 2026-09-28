@@ -27,9 +27,375 @@ export type Project = {
   gallery?: string[];
   documents?: { title: string; url: string }[];
   isPast?: boolean;
+  year?: string;
 };
 
 export const projects: Project[] = [
+    // ---- 2026-27 projects (new) ----
+  {
+    slug: "nexus-os",
+    name: "Nexus OS",
+    tagline: "An AI-native desktop shell you can talk to and gesture at.",
+    description: "An AI-powered desktop shell that acts as an intelligent layer over Windows, letting users control apps, windows, workspaces, and search through natural language, structured AI tools, and gestures.",
+    tag: "Agentic AI",
+    color: "blue",
+    stack: ["React", "TypeScript", "Rust", "Tauri", "FastAPI", "SQLite", "MediaPipe", "Win32 API"],
+    details: "An AI-powered desktop shell that acts as an intelligent layer over Windows, allowing users to control applications, windows, workspaces, search, and system interactions through natural language, structured AI tools, and gestures. The system combines AI agents, desktop-state awareness, native OS control, information retrieval, and persistent memory rather than functioning as a standalone chatbot.",
+    difficulty: "Intermediate-Advanced",
+    termLength: "Full academic year (Fall 2026 – Winter 2027)",
+    isPast: false,
+    lead: { name: "Raghav Sethi", role: "Project Lead" } /* TODO: swap in actual lead name + links */,
+    members: [],
+    content: {
+      type: "sections",
+      items: [
+        {
+          title: "Description",
+          body: "An AI-powered desktop shell that acts as an intelligent layer over Windows, allowing users to control applications, windows, workspaces, search, and system interactions through natural language, structured AI tools, and gestures. The system combines AI agents, desktop-state awareness, native OS control, information retrieval, and persistent memory rather than functioning as a standalone chatbot."
+        },
+        {
+          title: "Skills Gained",
+          body: `- Agentic AI and LLM tool calling
+- Desktop-state management and systems integration
+- React/TypeScript development
+- Rust and Tauri for native OS control
+- Windows/Win32 APIs, FastAPI, SQLite
+- Computer vision and gesture recognition with MediaPipe
+- Information retrieval and multimodal HCI`
+        },
+        {
+          title: "Technical Details",
+          body: `Built with a layered architecture: React + TypeScript for the desktop UI, Tauri/Rust for native OS and window control, FastAPI/Python for the AI agent, memory and retrieval, and SQLite for persistent state. The AI uses structured tool calling with shared tools for applications, windows, workspaces, search, and memory, supporting both hosted LLMs and local models through Ollama. MediaPipe provides gesture recognition, and Win32 APIs enable native Windows application control.`
+        }
+      ]
+    }
+  },
+  {
+    slug: "multi-agent-soccer-ai",
+    name: "Multi Agent Soccer AI",
+    tagline: "From predator-prey chases to a live 2v2 soccer match.",
+    description: "Trains autonomous AI agents through Multi-Agent Reinforcement Learning, starting with simple predator-prey chases and culminating in a live 2v2 soccer tournament using Unity ML-Agents.",
+    tag: "RL",
+    color: "orange",
+    stack: ["Python", "PyTorch", "PettingZoo", "Stable-Baselines3", "Unity ML-Agents", "Weights & Biases"],
+    details: "This project introduces team members to Multi-Agent Reinforcement Learning (MARL) by training autonomous AI agents to master competitive and cooperative environments. Starting with a simple predator-prey setup, the project culminates in a live 2v2 soccer tournament game using Unity ML-Agents. The system has to learn good behavior purely through trial and error, guided by a reward signal. The environment is non-stationary, meaning agents must adapt their behaviour as teammates and opponents learn as well.",
+    difficulty: "Beginner-Intermediate",
+    termLength: "6 months (Fall 2026 – Winter 2027)",
+    isPast: false,
+    lead: { name: "Dominik Vrbanek", role: "Project Lead" } /* TODO: swap in actual lead name + links */,
+    members: [],
+    content: {
+      type: "sections",
+      items: [
+        {
+          title: "Description",
+          body: "This project introduces team members to Multi-Agent Reinforcement Learning (MARL) by training autonomous AI agents to master competitive and cooperative environments. Starting with a simple predator-prey setup, the project culminates in a live 2v2 soccer tournament game using Unity ML-Agents. The system has to learn good behavior purely through trial and error, guided by a reward signal. The environment is non-stationary, meaning agents must adapt their behaviour as teammates and opponents learn as well."
+        },
+        {
+          title: "Skills Gained",
+          body: `- Reward shaping for reinforcement learning
+- Self-play algorithms and training strategies
+- Experiment tracking with industry-standard RL tools
+- No prior RL experience required`
+        },
+        {
+          title: "Technical Details",
+          body: `Uses Python, PyTorch, PettingZoo, Stable-Baselines3, Weights & Biases, and Unity ML-Agents.`
+        }
+      ]
+    }
+  },
+  {
+    slug: "content-creator-ops-platform",
+    name: "Content Creator Ops Platform",
+    tagline: "Turns long-form video into viral-ready short clips automatically.",
+    description: "A web app that transcribes long-form video, identifies the moments most likely to perform well, and automatically generates clips with captions, hooks, and posting recommendations.",
+    tag: "Agentic AI",
+    color: "green",
+    stack: ["Whisper", "LangChain", "LangGraph", "Chroma", "Pinecone", "ffmpeg", "FastAPI", "React"],
+    details: "This project builds a web app that turns long-form video into viral-ready short clips. The system transcribes raw video, identifies the moments most likely to perform well using proven viral editing patterns, then automatically generates clips with captions, hooks, and posting recommendations, mimicking what real creator editing teams already do by hand.",
+    difficulty: "Beginner-Intermediate",
+    termLength: "6 months (Fall 2026 – Winter 2027)",
+    isPast: false,
+    lead: { name: "Mousa Abuzar", role: "Project Lead" } /* TODO: swap in actual lead name + links */,
+    members: [],
+    content: {
+      type: "sections",
+      items: [
+        {
+          title: "Description",
+          body: "This project builds a web app that turns long-form video into viral-ready short clips. The system transcribes raw video, identifies the moments most likely to perform well using proven viral editing patterns, then automatically generates clips with captions, hooks, and posting recommendations, mimicking what real creator editing teams already do by hand."
+        },
+        {
+          title: "Skills Gained",
+          body: `- Building AI agents and tool-calling pipelines
+- Retrieval-augmented generation (RAG)
+- Multimodal pipelines combining audio, video, and text
+- Transcription APIs and video processing
+- Full-stack web development`
+        },
+        {
+          title: "Technical Details",
+          body: `Built with a pipeline architecture: Whisper handles transcription, LangChain/LangGraph orchestrates the AI agent for moment detection and content generation, and Chroma/Pinecone power a RAG layer that grounds hook and posting recommendations in real viral performance data. ffmpeg handles clip cutting and caption burn-in, with a Python (FastAPI) backend and React frontend delivering the whole system as a web app.`
+        }
+      ]
+    }
+  },
+  {
+    slug: "dataspace",
+    name: "Dataspace",
+    tagline: "Cloud dataset storage guided by a goal-aware multi-agent system.",
+    description: "An AI data analysis tool for storing and analyzing datasets through a multi-agent system that tracks user goals, builds visualizations, and improves data quality.",
+    tag: "Data Science",
+    color: "yellow",
+    stack: ["Python", "React", "TypeScript", "FastAPI", "SQL", "Azure"],
+    details: "Dataspace is an in-development AI data analysis tool. Designed for storing and analyzing datasets through a multi-agent system that tracks goals, builds visualizations and improves data quality. Uploaded datasets will be retrievable from the cloud, editable and analyzable with an orchestrating agent that uses multiple tools and a pipeline that performs analysis with understanding of the user's goals. The system will also support dataset editing.",
+    difficulty: "Intermediate",
+    termLength: "Full academic year (Fall 2026 – Winter 2027)",
+    isPast: false,
+    lead: { name: "Arden", role: "Project Lead" } /* TODO: swap in actual lead name + links */,
+    members: [],
+    content: {
+      type: "sections",
+      items: [
+        {
+          title: "Description",
+          body: "Dataspace is an in-development AI data analysis tool. Designed for storing and analyzing datasets through a multi-agent system that tracks goals, builds visualizations and improves data quality. Uploaded datasets will be retrievable from the cloud, editable and analyzable with an orchestrating agent that uses multiple tools and a pipeline that performs analysis with understanding of the user's goals. The system will also support dataset editing."
+        },
+        {
+          title: "Skills Gained",
+          body: `- Building connected AI agents
+- Full-stack development and cloud deployments
+- Common data analysis techniques
+- Sprint + task based development workflow`
+        },
+        {
+          title: "Technical Details",
+          body: `Built with Python, React (TypeScript), FastAPI, SQL, and Azure.`
+        }
+      ]
+    }
+  },
+  {
+    slug: "root-ai",
+    name: "Root AI: A Node-Based Learning Companion",
+    tagline: "Teach the AI your course material and it tracks what you're forgetting.",
+    description: "A node-based review app where you teach the AI your course material and it tracks what you're forgetting, pulling you back through conversational audio reviews when concepts start slipping.",
+    tag: "LLMs",
+    color: "red",
+    stack: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Gemini API", "Google Cloud TTS"],
+    details: "Root is a node-based review app where you teach the AI your course material and it tracks what you are forgetting. As you work through each concept, Root asks follow-up questions based on what you write or say, stores your thinking, and monitors which concepts are fading over time. When something starts slipping, it pulls you back through a conversational audio review. Team members will work across frontend development, database architecture, and multi-layer AI integration.",
+    difficulty: "Intermediate to Advanced",
+    termLength: "Full academic year (Fall 2026 – Winter 2027)",
+    isPast: false,
+    lead: { name: "Uchenna", role: "Project Lead" } /* TODO: swap in actual lead name + links */,
+    members: [],
+    content: {
+      type: "sections",
+      items: [
+        {
+          title: "Description",
+          body: "Root is a node-based review app where you teach the AI your course material and it tracks what you are forgetting. As you work through each concept, Root asks follow-up questions based on what you write or say, stores your thinking, and monitors which concepts are fading over time. When something starts slipping, it pulls you back through a conversational audio review. Team members will work across frontend development, database architecture, and multi-layer AI integration."
+        },
+        {
+          title: "Skills Gained",
+          body: `- Prompt engineering with large language models
+- Designing and managing complex relational databases
+- Full-stack web development with Next.js and React
+- Building and integrating AI audio pipelines
+- Product design and cross-functional team collaboration`
+        },
+        {
+          title: "Technical Details",
+          body: `Built with Next.js, React, TypeScript, Supabase, PostgreSQL, Gemini API, and Google Cloud TTS.`
+        }
+      ]
+    }
+  },
+  {
+    slug: "wifi-biosensing-sleep-health",
+    name: "Wi-Fi Biosensing for Sleep Health Monitoring",
+    tagline: "Turning ordinary Wi-Fi signals into a contactless sleep sensor.",
+    description: "Uses Wi-Fi Channel State Information captured with ESP32 microcontrollers as a contactless biosensor, estimating respiratory patterns, movement, and sleep-related trends with signal processing and ML.",
+    tag: "Healthcare",
+    color: "pink",
+    stack: ["ESP32", "Python", "NumPy", "SciPy", "Signal Processing", "Machine Learning"],
+    details: "This project demonstrates how Wi-Fi signals can be used as a contactless biosensor for sleep monitoring. Using ESP32 microcontrollers, the team collects Channel State Information (CSI) and analyzes how breathing, body movement, and changes in position affect the wireless signal. The goal is to build an end-to-end, consumer-friendly minimum viable product that can estimate respiratory patterns, detect movement and rest, and explore broader sleep-related patterns using signal processing and machine learning.",
+    difficulty: "Intermediate",
+    termLength: "Full academic year (Fall 2026 – Winter 2027)",
+    isPast: false,
+    lead: { name: "Arhm", role: "Project Lead" } /* TODO: swap in actual lead name + links */,
+    members: [],
+    content: {
+      type: "sections",
+      items: [
+        {
+          title: "Description",
+          body: "This project demonstrates how Wi-Fi signals can be used as a contactless biosensor for sleep monitoring. Using ESP32 microcontrollers, the team collects Channel State Information (CSI) and analyzes how breathing, body movement, and changes in position affect the wireless signal. The goal is to build an end-to-end, consumer-friendly minimum viable product that can estimate respiratory patterns, detect movement and rest, and explore broader sleep-related patterns using signal processing and machine learning."
+        },
+        {
+          title: "Skills Gained",
+          body: `- Hardware prototyping and CSI signal processing
+- Python for data analysis, feature extraction, time-series analysis
+- Machine learning (supervised, unsupervised, self-supervised)
+- Collaborative software and app development
+- 3D design & printing`
+        },
+        {
+          title: "Technical Details",
+          body: `Uses ESP32-C5-WROOM-1U modules running ESP-IDF/ESP-CSI to transmit Wi-Fi signals and collect CSI, streamed to a computer and processed in Python with NumPy, Pandas, and SciPy for cleaning, filtering, and feature extraction. The ML pipeline starts with public CSI datasets for baseline models, then adapts to a self-collected dataset across participants, positions, and rooms. If time permits, a consumer-oriented MVP is built with Xcode/React, with 3D printing for the sensing hardware.`
+        }
+      ]
+    }
+  },
+  {
+    slug: "failure-forensics",
+    name: "Failure Forensics",
+    tagline: "Tracing exactly where multi-stage AI pipelines break.",
+    description: "An AI observability and debugging platform that traces multi-stage AI pipelines to detect where failures originate, identify root causes, and convert failed cases into regression tests.",
+    tag: "AI Observability",
+    color: "blue",
+    stack: ["Python", "FastAPI", "Pydantic", "OpenTelemetry", "SQLite", "Docker"],
+    details: "Failure Forensics is an AI observability and debugging platform designed to understand where, why, and how failures occur inside multi-stage AI systems. Modern AI applications often consist of several connected stages such as document ingestion, extraction, classification, retrieval, and generation. When the final result is incorrect, it can be difficult to determine which stage originally caused the problem. Failure Forensics traces each step of the pipeline, records intermediate inputs and outputs, detects abnormal behaviour or quality degradation, and identifies the most likely root cause of a failure. The system also generates human-readable failure reports and converts failed cases into reusable evaluation tests.",
+    difficulty: "Intermediate",
+    termLength: "6 months (Fall 2026 – Winter 2027)",
+    isPast: false,
+    lead: { name: "Pranav", role: "Project Lead" } /* TODO: swap in actual lead name + links */,
+    members: [],
+    content: {
+      type: "sections",
+      items: [
+        {
+          title: "Description",
+          body: "Failure Forensics is an AI observability and debugging platform designed to understand where, why, and how failures occur inside multi-stage AI systems. Modern AI applications often consist of several connected stages such as document ingestion, extraction, classification, retrieval, and generation. When the final result is incorrect, it can be difficult to determine which stage originally caused the problem. Failure Forensics traces each step of the pipeline, records intermediate inputs and outputs, detects abnormal behaviour or quality degradation, and identifies the most likely root cause of a failure. The system also generates human-readable failure reports and converts failed cases into reusable evaluation tests."
+        },
+        {
+          title: "Skills Gained",
+          body: `- AI/LLM observability and tracing
+- Multi-stage AI pipeline development
+- Root-cause analysis and LLM evaluation
+- OpenTelemetry instrumentation
+- Backend API development with FastAPI and Pydantic
+- Building monitoring dashboards and regression tests
+- Docker and containerized development`
+        },
+        {
+          title: "Technical Details",
+          body: `Uses a multi-stage AI pipeline built with Python and FastAPI, Pydantic for structured data, and OpenAI/LLM APIs for AI processing and failure analysis. OpenTelemetry traces each stage to detect where failures originate, while SQLite/JSON stores traces and evaluation data. A React or Streamlit dashboard visualizes failures and root causes, and Docker is used for consistent deployment.`
+        }
+      ]
+    }
+  },
+  {
+    slug: "calendarai",
+    name: "CalendarAI: An Intelligent Academic Organizer",
+    tagline: "Turns course syllabi into one organized academic calendar.",
+    description: "A web app that uses large language models to extract due dates from uploaded syllabi and display them in a clean, interactive calendar with smart reminders and grade-tracking.",
+    tag: "LLMs",
+    color: "orange",
+    stack: ["React", "TypeScript", "FastAPI", "Supabase", "PostgreSQL", "Gemini API", "PyTorch"],
+    details: "CalendarAI is a web app that turns course syllabi into a single, organized academic calendar. Students upload their syllabi, and CalendarAI uses large language models to read and extract due dates for every assignment, lab, quiz, midterm, and final, and display it in a clean, interactive calendar. Beyond the core parser, the web app includes smart reminders for upcoming deadlines and grade-tracking.",
+    difficulty: "Intermediate",
+    termLength: "Full academic year (Fall 2026 – Winter 2027)",
+    isPast: false,
+    lead: { name: "Matthew Wang", role: "Project Lead" } /* TODO: swap in actual lead name + links */,
+    members: [],
+    content: {
+      type: "sections",
+      items: [
+        {
+          title: "Description",
+          body: "CalendarAI is a web app that turns course syllabi into a single, organized academic calendar. Students upload their syllabi, and CalendarAI uses large language models to read and extract due dates for every assignment, lab, quiz, midterm, and final, and display it in a clean, interactive calendar. Beyond the core parser, the web app includes smart reminders for upcoming deadlines and grade-tracking."
+        },
+        {
+          title: "Skills Gained",
+          body: `- Document parsing and information extraction from unstructured text
+- Evaluating AI accuracy with precision, recall, and test sets
+- Full-stack development with React, TypeScript, and FastAPI
+- Database design and authentication with Supabase
+- Prompt engineering and structured output generation
+- Deployment and collaborative development with GitHub`
+        },
+        {
+          title: "Technical Details",
+          body: `Frontend built with React, TypeScript, and Tailwind CSS, using FullCalendar and deployed on Vercel. Backend uses FastAPI (Python) for syllabus uploads, text extraction, and API routes, deployed on Render. Supabase (PostgreSQL) stores users, courses, and events, and handles authentication. The AI pipeline sends extracted syllabus text to the Gemini API, which returns structured events (title, type, date, time, weight) in JSON. The team will also explore knowledge distillation, fine-tuning a smaller PyTorch model on Gemini's labeled outputs.`
+        }
+      ]
+    }
+  },
+  {
+    slug: "pulseflux",
+    name: "PulseFlux: rPPG for Contactless Vital Sign Monitoring",
+    tagline: "Reading your heart rate from an ordinary webcam.",
+    description: "A web platform using webcam-based remote photoplethysmography (rPPG) and computer vision to estimate heart rate, HRV, and respiratory rate, visualized through a live dashboard.",
+    tag: "CV",
+    color: "green",
+    stack: ["OpenCV", "MediaPipe", "PyTorch", "FastAPI", "WebSocket", "React"],
+    details: "This project explores remote photoplethysmography (rPPG), a computer vision technique to read heart rate variability (HRV) and respiration rate from just an ordinary webcam video, by detecting tiny color changes in facial skin invisible to the human eye. No wearable or contact sensor is required. The team builds a real-time processing pipeline, compares a classical signal-processing algorithm against a fine-tuned deep learning model, validates accuracy against an Apple Watch as ground truth, and ships the whole thing as a deployed full-stack web app with a live dashboard. Extracted HRV features can also feed a pretrained classifier to track stress and well-being trends over time.",
+    difficulty: "Intermediate",
+    termLength: "Full academic year (Fall 2026 – Winter 2027)",
+    isPast: false,
+    lead: { name: "Khoi & Rie", role: "Project Lead" } /* TODO: swap in actual lead name + links */,
+    members: [],
+    content: {
+      type: "sections",
+      items: [
+        {
+          title: "Description",
+          body: "This project explores remote photoplethysmography (rPPG), a computer vision technique to read heart rate variability (HRV) and respiration rate from just an ordinary webcam video, by detecting tiny color changes in facial skin invisible to the human eye. No wearable or contact sensor is required. The team builds a real-time processing pipeline, compares a classical signal-processing algorithm against a fine-tuned deep learning model, validates accuracy against an Apple Watch as ground truth, and ships the whole thing as a deployed full-stack web app with a live dashboard. Extracted HRV features can also feed a pretrained classifier to track stress and well-being trends over time."
+        },
+        {
+          title: "Skills Gained",
+          body: `- Computer vision fundamentals (face detection, ROI tracking) with OpenCV and MediaPipe
+- Signal processing (filtering, Fourier analysis) on real physiological signals
+- Fine-tuning and evaluating pretrained deep learning models in PyTorch
+- Backend development with FastAPI and real-time WebSocket streaming
+- Frontend dashboard development with React
+- Database design for time-series health data
+- Deployment: Docker, CI/CD, cloud hosting
+- Benchmarking against ground truth and fairness/bias evaluation`
+        },
+        {
+          title: "Technical Details",
+          body: `Pipeline: webcam to face/ROI detection (MediaPipe) to signal extraction to filtering & FFT to heart rate, HRV, and respiration rate. Compares a fast, training-free classical algorithm (CHROM/POS) as the live baseline against a pretrained deep learning model (rPPG-Toolbox) as an accuracy benchmark. Uses UBFC-rPPG for training/evaluation and VitalVideo (six skin tones) to check accuracy across skin tones, validated against an Apple Watch. Stack: React + FastAPI + database, containerized and deployed with CI/CD.`
+        }
+      ]
+    }
+  },
+  {
+    slug: "foundations-of-deep-learning-reading-club",
+    name: "Foundations of Deep Learning Reading Club",
+    tagline: "The key ideas that led to modern deep learning.",
+    description: "A weekly reading club working through one foundational deep learning paper at a time, with a monthly hands-on implementation of a key figure or result from a chosen paper.",
+    tag: "Research",
+    color: "yellow",
+    stack: ["Discord", "Notion"],
+    details: "Weekly, the group reads one foundational paper that helps build understanding of modern AI, meeting afterward to discuss ideas, thoughts, and questions, and documenting the discussion. Once a month, the group chooses one paper to implement, recreating a figure with an interesting or beautiful result to build deeper understanding. The time commitment is a one-hour weekly in-person meeting plus reading and implementation time, estimated around four hours per week. Anyone interested and passionate about learning is welcome; a background in linear algebra, probability, and optionally machine learning basics is ideal but can be made up independently.",
+    difficulty: "Intermediate",
+    termLength: "Full academic year (Fall 2026 – Winter 2027)",
+    isPast: false,
+    lead: { name: "Raza", role: "Project Lead" } /* TODO: swap in actual lead name + links */,
+    members: [],
+    content: {
+      type: "sections",
+      items: [
+        {
+          title: "Description",
+          body: "Weekly, the group reads one foundational paper that helps build understanding of modern AI, meeting afterward to discuss ideas, thoughts, and questions, and documenting the discussion. Once a month, the group chooses one paper to implement, recreating a figure with an interesting or beautiful result to build deeper understanding. The time commitment is a one-hour weekly in-person meeting plus reading and implementation time, estimated around four hours per week. Anyone interested and passionate about learning is welcome; a background in linear algebra, probability, and optionally machine learning basics is ideal but can be made up independently."
+        },
+        {
+          title: "Skills Gained",
+          body: `- Reading and digesting complex research papers
+- Translating ideas into code
+- Long-term understanding of deep learning ideas that helps avoid fad thinking`
+        },
+        {
+          title: "Technical Details",
+          body: `Minimal technical software required; coordination happens over Discord and Notion. Papers are chosen so implementations can run without external compute or rented GPUs.`
+        }
+      ]
+    }
+  },
   {
     slug: "discord-anti-spam-bot",
     name: "Discord Anti-Spam & Moderation Bot",
@@ -40,7 +406,9 @@ export const projects: Project[] = [
     stack: ["BERT", "Python", "Regex", "Discord API"],
     details: "A smart defense system built to stop the scams we all hate. Combines BERT transformer models with regex to process 1,000+ daily messages.",
     difficulty: "Advanced (Machine Learning, Cloud Infrastructure, DevOps)",
-    termLength: "Active (Production Deployment)",
+    termLength: "Full academic year (Fall 2025 – Winter 2026)",
+    isPast: true,
+    year: "2025–26",
     source: "https://github.com/UndergraduateArtificialIntelligenceClub/Spam-Detection-Discord-Bot",
     lead: [{ name: "Aarush Bhat", role: "Project Lead", github: "https://github.com/aarushb" }, { name: "Sashreek Addanki", role: "Project Lead", github: "https://github.com/Sashreek007" }],
     members: [],
@@ -120,6 +488,8 @@ We believe you should own your community's data. While this bot logs data to bui
     details: "Step into the world of venture capital alongside the UofA Innovation Fund's investment team.",
     difficulty: "Business-focused (Strategic AI & Venture Analysis)",
     termLength: "Full academic year (Fall 2025 – Winter 2026)",
+    isPast: true,
+    year: "2025–26",
     lead: { name: "Andrew Obwocha", role: "Project Lead", github: "https://github.com/AndrewObwocha" },
     members: ["Andy Zhou", "Janvi Raulji", "Ivan Gesteira Costa Neto", "Chloe Mannsberger-Tétreault", "Aalpesh Dayal"],
     gallery: [
@@ -159,6 +529,8 @@ We believe you should own your community's data. While this bot logs data to bui
     details: "A personal study assistant where students upload PDFs, which are processed and stored in a vector database.",
     difficulty: "Beginner (AI basics and Retrieval-Augmented Generation)",
     termLength: "Full academic year (Fall 2025 – Winter 2026)",
+    isPast: true,
+    year: "2025–26",
     lead: { name: "Usaid Ahmed", role: "Project Lead", github: "https://github.com/Usaidahmed10" },
     members: ["Ayesha Junaid", "Jayden Ngo", "Lucas Chomey", "Amisha Mittal", "Waylon Wang"],
     content: {
@@ -190,6 +562,8 @@ We believe you should own your community's data. While this bot logs data to bui
     details: "Recognize gestures in real time and map them to system commands.",
     difficulty: "Intermediate (computer vision and automation)",
     termLength: "Full academic year (Fall 2025 – Winter 2026)",
+    isPast: true,
+    year: "2025–26",
     source: "https://github.com/UndergraduateArtificialIntelligenceClub/palm-pilot2.0",
     lead: { name: "Aarush Bhat", role: "Project Lead", github: "https://github.com/aarushb" },
     members: ["Joel Kamminga", "Yingjie Liu", "Rehan Shanavas", "Judy Zhu", "Tina Lin"],
@@ -222,6 +596,8 @@ We believe you should own your community's data. While this bot logs data to bui
     details: "Explores how macroeconomic stressors like inflation impact cryptocurrency adoption.",
     difficulty: "Beginner (Economics and Data Science)",
     termLength: "Fall 2025 - Winter 2026",
+    isPast: true,
+    year: "2025–26",
     lead: { name: "Viktoria Lysenko", role: "Project Lead", github: "https://github.com/viktorialysenko" },
     members: ["Amara Zin", "Gloria Mathew", "Dominik Vrbanek", "Raahim Khan"],
     content: {
@@ -253,6 +629,8 @@ We believe you should own your community's data. While this bot logs data to bui
     details: "Processes speech samples with a fine-tuned BERT model to estimate prediction scores.",
     difficulty: "Advanced (healthcare and NLP)",
     termLength: "Fall 2025 (with possibility of extension to full year)",
+    isPast: true,
+    year: "2025–26",
     source: "https://github.com/UndergraduateArtificialIntelligenceClub/Alzheimer_Screening_tool",
     lead: { name: "Xuan Khoi Nguyen", role: "Project Lead", github: "https://github.com/Khoi-Nguyen-Xuan" },
     members: ["Therese Coleongco", "Jessu Doroy", "Kai Tan", "Ayush Roy", "Jacob Garber", "Elena Jin"],
@@ -285,6 +663,8 @@ We believe you should own your community's data. While this bot logs data to bui
     details: "A Discord bot that reduces administrative workload for student clubs.",
     difficulty: "Intermediate (agentic AI systems)",
     termLength: "Full academic year (Fall 2025 – Winter 2026)",
+    isPast: true,
+    year: "2025–26",
     source: "https://github.com/UndergraduateArtificialIntelligenceClub/Clubmate-AI",
     lead: { name: "Sashreek Addanki", role: "Project Lead", github: "https://github.com/Sashreek007" },
     members: ["RAGHAV SETHI", "Francois Coleongco", "Lawrence Velilla", "Chetan Vig", "Daniel Liang"],
@@ -306,6 +686,7 @@ We believe you should own your community's data. While this bot logs data to bui
       ]
     }
   },
+  // projects from 2024–25 and earlier
   {
     slug: "nhl-positivity-index",
     name: "NHL Positivity Index",
@@ -318,6 +699,7 @@ We believe you should own your community's data. While this bot logs data to bui
     difficulty: "Advanced (NLP and Sentiment Analysis)",
     termLength: "Summer 2024",
     isPast: true,
+    year: "2024–25",
     source: "https://github.com/UndergraduateArtificialIntelligenceClub/NHL-Positivity-Index",
     lead: { name: "Jacob Winch", role: "Project Lead", linkedin: "https://www.linkedin.com/in/jacob-winch/" },
     members: ["Tanmay Munjal", "Heiby Lau", "Alexander Bradley", "Arden Monaghan", "Yukesh Subedi", "William Luo"],
@@ -362,6 +744,7 @@ Some examples of future work can include extending this project to future sports
     difficulty: "Intermediate",
     termLength: "Winter 2025",
     isPast: true,
+    year: "2024–25",
     source: "https://github.com/UndergraduateArtificialIntelligenceClub/uais_chatbot",
     lead: { name: "Sashreek Addanki", role: "Project Lead", github: "https://github.com/Sashreek007" },
     members: ["RAGHAV SETHI"],
@@ -404,6 +787,7 @@ We built a multifunctional Discord bot using \`discord.py\` that served as the c
     difficulty: "Business-focused (Strategic AI & Venture Analysis)",
     termLength: "Winter 2025",
     isPast: true,
+    year: "2024–25",
     lead: { name: "Andrew Obwocha", role: "Project Lead", github: "https://github.com/AndrewObwocha" },
     members: ["Andy Zhou", "Janvi Raulji", "Ivan Gesteira Costa Neto"],
     content: {
@@ -426,17 +810,23 @@ We built a multifunctional Discord bot using \`discord.py\` that served as the c
   }
 ];
 
-export const pastProjects: { year: string; items: { name: string; tagline: string; source?: string }[] }[] = [
-  {
-    year: "2024–25",
-    items: [
-      {
-        name: "NHL Positivity Index",
-        tagline: "Using NLP to quantify sentiment of NHL fanbases.",
-        source: "https://github.com/UndergraduateArtificialIntelligenceClub/NHL-Positivity-Index"
-      },
-      { name: "Intelligent Assistant Bot", tagline: "Automated RSVP and RAG support for 700+ members.", source: "https://github.com/UndergraduateArtificialIntelligenceClub/uais_chatbot" },
-      { name: "AI Due Diligence (2024)", tagline: "Inaugural cohort partnering with the UofA Innovation Fund." },
-    ],
-  },
-];
+export type PastProjectGroup = {
+  year: string;
+  items: { slug: string; name: string; tagline: string; source?: string }[];
+};
+
+// Auto-grouped from `projects`: any project with `isPast: true` is bucketed
+// by its `year` (e.g. "2025–26"). To archive a project, just set
+// `isPast: true` + `year` — no manual entry needed here.
+export const pastProjects: PastProjectGroup[] = (() => {
+  const groups = new Map<string, PastProjectGroup["items"]>();
+  for (const p of projects) {
+    if (!p.isPast) continue;
+    const y = p.year ?? "Archive";
+    if (!groups.has(y)) groups.set(y, []);
+    groups.get(y)!.push({ slug: p.slug, name: p.name, tagline: p.tagline, source: p.source });
+  }
+  return [...groups.entries()]
+    .sort((a, b) => parseInt(b[0], 10) - parseInt(a[0], 10))
+    .map(([year, items]) => ({ year, items }));
+})();
