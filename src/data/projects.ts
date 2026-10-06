@@ -597,6 +597,7 @@ We believe you should own your community's data. While this bot logs data to bui
     difficulty: "Beginner (Economics and Data Science)",
     termLength: "Fall 2025 - Winter 2026",
     isPast: true,
+    demo:"https://economic-drivers-of-cryptocurrency.vercel.app/",
     year: "2025–26",
     lead: { name: "Viktoria Lysenko", role: "Project Lead", github: "https://github.com/viktorialysenko" },
     members: ["Amara Zin", "Gloria Mathew", "Dominik Vrbanek", "Raahim Khan"],
