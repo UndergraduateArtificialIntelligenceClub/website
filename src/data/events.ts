@@ -83,7 +83,7 @@ export const events: UaisEvent[] = [
     location: "ETLC E2-001",
     semester: "Fall 2026",
     type: "Talk",
-    description: "AI in Industry Panel with Sony AI, amii, Govt of Alberta",
+    description: "AI in Industry Panel with Dura Digital, SonyAI, RLCore, Amii",
     link: "https://campus.hellorubric.com/?eid=76285",
   },
   {
