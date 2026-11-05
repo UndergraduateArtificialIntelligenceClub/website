@@ -1,6 +1,6 @@
 import { SimplePage } from "@/components/site/PageHeader";
 import { sponsorTiers } from "@/data/sponsors";
-import { Linkedin, ExternalLink } from "lucide-react";
+import { Linkedin, ExternalLink, FileText } from "lucide-react";
 
 const Sponsors = () => (
   <SimplePage
@@ -64,12 +64,22 @@ const Sponsors = () => (
         Reach hundreds of UAlberta students passionate about AI. We offer custom
         partnership packages spanning hackathons, recruiting events, and workshops.
       </p>
-      <a
-        href="mailto:uais@ualberta.ca"
-        className="mt-6 inline-block px-5 py-2.5 rounded-full bg-foreground text-background font-semibold"
-      >
-        uais@ualberta.ca
-      </a>
+      <div className="mt-6 flex flex-wrap items-center gap-3">
+        <a
+          href="mailto:uais@ualberta.ca"
+          className="inline-block px-5 py-2.5 rounded-full bg-foreground text-background font-semibold hover:bg-foreground/90 transition"
+        >
+          uais@ualberta.ca
+        </a>
+        <a
+          href="/sponsorship-package.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border hover:border-foreground/40 font-semibold transition"
+        >
+          <FileText className="h-4 w-4" /> Sponsorship Package (PDF)
+        </a>
+      </div>
     </div>
   </SimplePage>
 );
