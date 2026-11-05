@@ -33,6 +33,16 @@ export const presentations: Presentation[] = [
     era: "new"
   },
   {
+    // TODO: add slides/recording link manually when available.
+    title: "UAISxUSig Club Collab",
+    presenter: "Arhm",
+    date: "Oct 2, 2026",
+    tag: "Collab",
+    description: "Collaboration with USig exploring the impact of Artificial Intelligence in Surgical practice.",
+    slides: "https://www.canva.com/design/DAHWgzC-k5k/GPJmRLUgfufDq1_PPeOSCQ/edit",
+    era: "new"
+  },
+  {
     title: "Fall Project Kick-Off",
     date: "Sep 25, 2026",
     tag: "Kickoff",
