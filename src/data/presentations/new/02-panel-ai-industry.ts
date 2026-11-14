@@ -2,7 +2,7 @@
 // Auto-collected by src/data/presentations/index.ts — the folder ("new" or
 // "past") becomes its era, and filename prefixes control card order.
 
-import type { PresentationContent } from "../../_types";
+import type { PresentationContent } from "@/data/_types";
 
 export default {
   title: "Panel: \"AI: Industry\"",

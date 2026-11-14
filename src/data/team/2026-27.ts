@@ -2,7 +2,7 @@
 // src/data/team/index.ts takes the newest year file in this folder as "team".
 // To roll over a new year: copy this file, rename it to the new year, edit.
 
-import type { TeamMember } from "../_types";
+import type { TeamMember } from "@/data/_types";
 
 export default [
   {

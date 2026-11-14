@@ -1,7 +1,7 @@
 // 2025-26 executive team (archive).
 // The `year` field is the display heading; the filename is just organization.
 
-import type { PastExecYear } from "../../_types";
+import type { PastExecYear } from "@/data/_types";
 
 export default {
   year: "2025-26",

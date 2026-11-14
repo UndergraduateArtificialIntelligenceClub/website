@@ -2,7 +2,7 @@
 // Auto-collected by src/data/interviews/index.ts — the folder this file
 // sits in ("latest" or "past") becomes its category on the Interviews page.
 
-import type { InterviewContent } from "../../_types";
+import type { InterviewContent } from "@/data/_types";
 
 export default {
   slug: "justin-stevens",

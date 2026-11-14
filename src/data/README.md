@@ -29,7 +29,7 @@ infrastructure — never put content in them.**
 A content file always looks like this:
 
 ```ts
-import type { Project } from "../../_types";     // (path depth varies by folder)
+import type { Project } from "@/data/_types";
 
 export default {
   slug: "my-project",                            // becomes the URL

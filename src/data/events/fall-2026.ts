@@ -1,7 +1,7 @@
 // Fall 2026 events for the homepage calendar.
 // Auto-collected by src/data/events/index.ts — one file per semester.
 
-import type { UaisEvent } from "../_types";
+import type { UaisEvent } from "@/data/_types";
 
 export default [
   {

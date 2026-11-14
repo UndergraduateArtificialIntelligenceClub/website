@@ -2,7 +2,7 @@
 // Auto-collected by src/data/projects/index.ts (newest year folder first,
 // then by filename prefix — use 01-, 02- … to control card order).
 
-import type { Project } from "../../_types";
+import type { Project } from "@/data/_types";
 
 export default {
   slug: "pulseflux",

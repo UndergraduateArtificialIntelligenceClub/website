@@ -5,7 +5,7 @@
 // `import { projects } from "@/data/projects"`.
 
 export * from "./colors";
-export * from "./_types";
+export * from "@/data/_types";
 export * from "./projects/index";
 export * from "./team/index";
 export * from "./presentations/index";

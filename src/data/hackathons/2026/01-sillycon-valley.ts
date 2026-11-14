@@ -2,8 +2,8 @@
 // Auto-collected by src/data/hackathons/index.ts. Reuses the shared defaults
 // from ../_shared and overrides only what differs.
 
-import type { Hackathon } from "../../_types";
-import { baseHowItWorks, baseLogistics } from "../_shared";
+import type { Hackathon } from "@/data/_types";
+import { baseHowItWorks, baseLogistics } from "@/data/hackathons/_shared";
 
 export default {
   slug: "sillycon-valley-2026",
