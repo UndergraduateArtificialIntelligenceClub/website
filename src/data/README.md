@@ -22,9 +22,32 @@ src/data/
                        ↑ small single-topic files, edit them directly
 ```
 
+## Templates — start from `_template.ts`
+
+Every content folder has a **`_template.ts`** with every field commented.
+To add content: **copy the template → rename it → replace the example values
+→ delete the header comment**. That's the whole job.
+
+| You want to add…     | Copy `…/_template.ts` from       | Rename the copy to          |
+| -------------------- | -------------------------------- | --------------------------- |
+| a project            | `projects/2026-27/`              | `NN-slug.ts` in a year folder |
+| an interview         | `interviews/latest/` (or `past/`)| `NN-slug.ts`                |
+| a hackathon          | `hackathons/2026/`               | `NN-slug.ts` in a year folder |
+| a talk               | `presentations/new/` (or `past/`)| `NN-slug.ts`                |
+| a new exec year      | `team/`                          | `2027-28.ts`                |
+| a past exec year     | `team/past/`                     | `2026-27.ts`                |
+| a new semester       | `events/`                        | `fall-2027.ts`              |
+
+Rules that make this work:
+
+- Files named `index.ts` or starting with `_` are **infrastructure** — the
+  auto-collector ignores them, so templates never appear on the site.
+- Content files import their types via the alias `import type { … } from
+  "@/data/_types"` — so a copied file works from **any** folder, no path fixing.
+- The number prefix (`01-`, `02-` …) sets the display order within a section.
+
 Each folder has a tiny `index.ts` that auto-collects every `.ts` file below it
-(Vite's `import.meta.glob`). **Files named `index.ts` or starting with `_` are
-infrastructure — never put content in them.**
+(Vite's `import.meta.glob`). **Never put content in `index.ts` or `_`-files.**
 
 A content file always looks like this:
 

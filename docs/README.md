@@ -17,9 +17,10 @@ React components for normal content changes.
 | Constitution / club rubric         | `src/data/constitution.ts`                       |
 | Brand accent colors                | `src/data/colors.ts` + `src/index.css`           |
 
-**One file per item** — to add something, create a small file in the matching
-folder; to remove it, delete the file. Each folder's `index.ts` auto-collects
-everything. Full recipes: `src/data/README.md`.
+**One file per item** — to add something, **copy the `_template.ts` in the
+matching folder**, rename it, and fill it in; to remove something, delete its
+file. Each folder's `index.ts` auto-collects everything. Full recipes:
+`src/data/README.md`.
 
 After saving, the preview reloads automatically. No build step needed for content edits.
 
