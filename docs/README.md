@@ -6,16 +6,20 @@ React components for normal content changes.
 
 ## TL;DR — common updates
 
-| What you want to change            | File to edit                       |
-| ---------------------------------- | ---------------------------------- |
-| Current execs / past execs         | `src/data/team.ts`                 |
-| Weekly presentations               | `src/data/presentations.ts`        |
-| Hackathons (incl. prizes, food…)   | `src/data/hackathons.ts`           |
-| Projects                           | `src/data/projects.ts`             |
-| Interviews + Q&A transcripts       | `src/data/interviews.ts`           |
-| Events on the homepage calendar    | `src/data/events.ts`               |
-| Constitution / club rubric         | `src/data/constitution.ts`         |
-| Brand accent colors                | `src/data/colors.ts` + `src/index.css` |
+| What you want to change            | Where to edit                                    |
+| ---------------------------------- | ------------------------------------------------ |
+| Current execs / past execs         | `src/data/team/<year>.ts`, `team/past/`          |
+| Weekly presentations               | `src/data/presentations/<new\|past>/`            |
+| Hackathons (incl. prizes, food…)   | `src/data/hackathons/<year>/`                    |
+| Projects                           | `src/data/projects/<year>/`                      |
+| Interviews + Q&A transcripts       | `src/data/interviews/<latest\|past>/`            |
+| Events on the homepage calendar    | `src/data/events/<semester>.ts`                  |
+| Constitution / club rubric         | `src/data/constitution.ts`                       |
+| Brand accent colors                | `src/data/colors.ts` + `src/index.css`           |
+
+**One file per item** — to add something, create a small file in the matching
+folder; to remove it, delete the file. Each folder's `index.ts` auto-collects
+everything. Full recipes: `src/data/README.md`.
 
 After saving, the preview reloads automatically. No build step needed for content edits.
 

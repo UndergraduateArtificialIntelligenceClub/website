@@ -1,19 +1,10 @@
-// Team data. Edit this file to update current executives and past exec history.
-// The Team page (src/pages/Team.tsx) reads directly from these exports.
+// Current UAIS executive team.
+// src/data/team/index.ts takes the newest year file in this folder as "team".
+// To roll over a new year: copy this file, rename it to the new year, edit.
 
-export type TeamMember = {
-  slug: string;
-  name: string;
-  role: string;
-  bio: string;
-  image?: string;
-  linkedin?: string;
-  github?: string;
-  discord?: string;
-  site?: string;
-};
+import type { TeamMember } from "../_types";
 
-export const team: TeamMember[] = [
+export default [
   {
     slug: "kashish-gupta",
     name: "Kashish Gupta",
@@ -22,7 +13,7 @@ export const team: TeamMember[] = [
     image: "/images/headshots/kashishgupta2911.jpg",
     linkedin: "https://www.linkedin.com/in/kashish-gupta-72668320b",
     github: "https://github.com/kashishgupta2911",
-    discord: "kashishgupta2911"
+    discord: "kashishgupta2911",
   },
   {
     slug: "viktoriia-lysenko",
@@ -32,7 +23,7 @@ export const team: TeamMember[] = [
     image: "/images/headshots/viktoriiaLysenko.jpg",
     linkedin: "https://www.linkedin.com/in/viktoriia-lysenko7/",
     github: "https://github.com/viktorialysenko",
-    discord: "viktoria1"
+    discord: "viktoria1",
   },
   {
     slug: "andrew-obwocha",
@@ -42,7 +33,7 @@ export const team: TeamMember[] = [
     image: "/images/headshots/AndrewObwocha.jpg",
     linkedin: "https://www.linkedin.com/in/andrewobwocha/",
     github: "https://github.com/AndrewObwocha",
-    discord: "andrewobwocha"
+    discord: "andrewobwocha",
   },
   {
     slug: "rosanna-dovganyuk",
@@ -52,7 +43,7 @@ export const team: TeamMember[] = [
     image: "/images/headshots/rosannaDovganyuk.jpg",
     linkedin: "https://www.linkedin.com/in/rosanna-dovganyuk-143b82102/",
     github: "https://github.com/rosannadovganyuk3",
-    discord: "rosanna_92685"
+    discord: "rosanna_92685",
   },
   {
     slug: "dominik-vrbanek",
@@ -62,7 +53,7 @@ export const team: TeamMember[] = [
     image: "/images/headshots/dominikvrbanek.jpg",
     linkedin: "https://www.linkedin.com/in/dominik-vrbanek-39bba9408/",
     github: "https://github.com/dominikvrbanek",
-    discord: "dom__10"
+    discord: "dom__10",
   },
   {
     slug: "mousa-abuzar",
@@ -72,7 +63,7 @@ export const team: TeamMember[] = [
     image: "/images/headshots/mousaAbuzar.png",
     linkedin: "https://www.linkedin.com/in/mousa-abuzar/",
     github: "https://github.com/MousaAbuzar",
-    discord: "mousa_abuzar"
+    discord: "mousa_abuzar",
   },
   {
     slug: "raghav-sethi",
@@ -82,7 +73,7 @@ export const team: TeamMember[] = [
     image: "/images/headshots/raghavSethi.jpg",
     linkedin: "https://www.linkedin.com/in/raghav-sethi-a08501319/",
     github: "https://github.com/RaghavSethi006",
-    discord: "raghavsethi"
+    discord: "raghavsethi",
   },
   {
     slug: "connor-robinson",
@@ -92,7 +83,7 @@ export const team: TeamMember[] = [
     image: "/images/headshots/connorRobinson.webp",
     linkedin: "https://www.linkedin.com/in/connor-robinson-627255339/",
     github: "https://github.com/ConRobi",
-    discord: "Connorrobinson4067"
+    discord: "Connorrobinson4067",
   },
   {
     slug: "michael-lee",
@@ -102,7 +93,7 @@ export const team: TeamMember[] = [
     image: "/images/headshots/michealLee.webp",
     linkedin: "https://www.linkedin.com/in/michael-hanbyeol-lee/",
     github: "https://github.com/Meeko-Michael",
-    discord: "gamerzmeeko"
+    discord: "gamerzmeeko",
   },
   {
     slug: "hamidat-bello",
@@ -112,179 +103,6 @@ export const team: TeamMember[] = [
     image: "/images/headshots/hamidatb.jpg",
     linkedin: "https://www.linkedin.com/in/hamidatbello",
     github: "https://github.com/hamidatb",
-    discord: "heyitsh"
+    discord: "heyitsh",
   },
-];
-
-export const pastExecs: { year: string; members: { name: string; role: string; image?: string; discord?: string; linkedin?: string; github?: string }[] }[] = [
-  {
-    year: "2025-26",
-    members: [
-      {
-        name: "Hamidat Bello",
-        role: "President",
-        image: "/images/headshots/hamidatb.jpg",
-        linkedin: "https://www.linkedin.com/in/hamidatbello",
-        github: "https://github.com/hamidatb",
-        discord: "heyitsh"
-      },
-      {
-        name: "Austin Bao",
-        role: "Co-Vice President",
-        image: "/images/headshots/AustinBao.jpg",
-        linkedin: "https://www.linkedin.com/in/austinbao",
-        github: "https://github.com/AustinBao",
-        discord: "austinbao"
-      },
-      {
-        name: "Kashish Gupta",
-        role: "Co-Vice President",
-        image: "/images/headshots/kashishgupta2911.jpg",
-        linkedin: "https://www.linkedin.com/in/kashish-gupta-72668320b",
-        github: "https://github.com/kashishgupta2911",
-        discord: "kashishgupta2911"
-      },
-      {
-        name: "Andrew Obwocha",
-        role: "VP External",
-        image: "/images/headshots/AndrewObwocha.jpg",
-        linkedin: "https://www.linkedin.com/in/andrew-obwocha",
-        github: "https://github.com/AndrewObwocha",
-        discord: "andrewobwocha"
-      },
-      {
-        name: "Arnav Sachdeva",
-        role: "VP Internal",
-        image: "/images/headshots/arnavsachdeva594.jpg",
-        linkedin: "https://www.linkedin.com/in/arnavsachdeva2004",
-        github: "https://github.com/arnavsachdeva594",
-        discord: "arnavsachdeva594"
-      },
-      {
-        name: "Sanika Verma",
-        role: "General Secretary",
-        image: "/images/headshots/SanikaVerma.jpg",
-        linkedin: "https://www.linkedin.com/in/sanika-verma-668a89276",
-        github: "https://github.com/SanikaVerma",
-        discord: "sanikaverma"
-      },
-      {
-        name: "Katie Bauer",
-        role: "Treasurer",
-        image: "/images/headshots/klbauer1.jpg",
-        linkedin: "https://www.linkedin.com/in/katie-bauer-b1836930b",
-        github: "https://github.com/klbauer1",
-        discord: "klbauer1"
-      },
-      {
-        name: "Aarush Bhat",
-        role: "VP Technology",
-        image: "/images/headshots/aarushb.jpg",
-        linkedin: "https://www.linkedin.com/in/aarushdev",
-        github: "https://github.com/aarushb",
-        discord: "magnumhurricane"
-      },
-      {
-        name: "Viktoriia Lysenko",
-        role: "VP Media",
-        image: "/images/headshots/viktorialysenko.jpg",
-        linkedin: "https://www.linkedin.com/in/viktoriia-lysenko111",
-        github: "https://github.com/viktorialysenko",
-        discord: "viktorialysenko"
-      },
-      {
-        name: "Usaid Ahmed",
-        role: "Director of Tech",
-        image: "/images/headshots/Usaidahmed10.jpg",
-        linkedin: "https://www.linkedin.com/in/usaid-ahmed-2149422a2",
-        github: "https://github.com/Usaidahmed10",
-        discord: "usaidahmed10"
-      },
-      {
-        name: "Justin Stevens",
-        role: "Founder",
-        image: "/images/headshots/justinstevens42.jpg",
-        linkedin: "https://www.linkedin.com/in/justinstevens42",
-        github: "https://github.com/justinstevens42",
-        discord: "justinstevens42"
-      }
-    ],
-  },
-  {
-    year: "2023–24",
-    members: [
-      {
-        name: "Taran Purewal",
-        role: "President",
-        image: "/images/headshots/tsp01.jpg",
-        discord: "flashfire50",
-        linkedin: "https://www.linkedin.com/in/taranveer-purewal-9a073524b",
-        github: "https://github.com/tsp01"
-      },
-      {
-        name: "Jacob Winch",
-        role: "Vice President",
-        image: "/images/headshots/Jacob-Winch.jpg",
-        discord: ".jwinch",
-        linkedin: "https://www.linkedin.com/in/jacob-winch",
-        github: "https://github.com/Jacob-Winch"
-      },
-      {
-        name: "Yong Lee",
-        role: "Vice President",
-        image: "/images/headshots/yonglee.jpg",
-        discord: "gjftns7220",
-        linkedin: "https://www.linkedin.com/in/yong-lee-",
-        github: "https://github.com/gjftns7220"
-      },
-      {
-        name: "Arden Monaghan",
-        role: "Secretary",
-        image: "/images/headshots/ardenmonaghan.jpg",
-        discord: "bigriceman",
-        linkedin: "https://www.linkedin.com/in/arden-monaghan-574959243",
-        github: "https://github.com/ardenmonaghan"
-      },
-      {
-        name: "Hamidat Bello",
-        role: "VP Internal",
-        image: "/images/headshots/hamidatb.jpg",
-        discord: "heyitsh",
-        linkedin: "https://www.linkedin.com/in/hamidatbello",
-        github: "https://github.com/hamidatb"
-      },
-      {
-        name: "Manav Joshi",
-        role: "VP External",
-        image: "/images/headshots/mnkjoshi.jpg",
-        discord: "man4v",
-        linkedin: "https://www.linkedin.com/in/mnkjoshi",
-        github: "https://github.com/mnkjoshi"
-      },
-      {
-        name: "Affan Nazir",
-        role: "Treasurer",
-        image: "/images/headshots/MuhammadAffanNazir.jpg",
-        discord: "m.affan.nazir",
-        linkedin: "https://www.linkedin.com/in/affan-nazir",
-        github: "https://github.com/MuhammadAffanNazir"
-      },
-      {
-        name: "Aarush Bhat",
-        role: "VP Technology",
-        image: "/images/headshots/aarushb.jpg",
-        discord: "magnumhurricane",
-        linkedin: "https://www.linkedin.com/in/aarushdev",
-        github: "https://github.com/aarushb"
-      },
-      {
-        name: "Bertina Jeyakumar",
-        role: "VP Media",
-        image: "/images/headshots/bertina3107.jpg",
-        discord: "lilly_bertina",
-        linkedin: "https://www.linkedin.com/in/bertina-jeyakumar",
-        github: "https://github.com/bertina3107"
-      },
-    ],
-  },
-];
+] satisfies TeamMember[];

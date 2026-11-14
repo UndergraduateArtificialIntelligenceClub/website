@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -18,11 +18,27 @@ const staticRoutes = [
   "attendance",
 ];
 
-const dataFiles = [
-  { file: "src/data/projects.ts", prefix: "projects" },
-  { file: "src/data/hackathons.ts", prefix: "hackathons" },
-  { file: "src/data/interviews.ts", prefix: "interviews" },
+// One file per content item inside these folders (auto-collected by each
+// folder's index.ts). Walk the tree and pull the `slug` out of every .ts file,
+// skipping infrastructure files (index.ts, _*).
+const dataFolders = [
+  { folder: "src/data/projects", prefix: "projects" },
+  { folder: "src/data/hackathons", prefix: "hackathons" },
+  { folder: "src/data/interviews", prefix: "interviews" },
 ];
+
+const isContentFile = (name) =>
+  name.endsWith(".ts") && name !== "index.ts" && !name.startsWith("_");
+
+const collectContentFiles = async (dir) => {
+  const found = [];
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) found.push(...(await collectContentFiles(full)));
+    else if (isContentFile(entry.name)) found.push(full);
+  }
+  return found;
+};
 
 const redirectRoutes = {
   discord: "https://discord.gg/KapmJxs",
@@ -44,11 +60,14 @@ for (const route of staticRoutes) {
   await writeRouteIndex(route, indexHtml);
 }
 
-for (const { file, prefix } of dataFiles) {
-  const source = await readFile(path.join(root, file), "utf8");
-  const slugs = source.matchAll(/slug:\s*["']([^"']+)["']/g);
-  for (const [, slug] of slugs) {
-    await writeRouteIndex(`${prefix}/${slug}`, indexHtml);
+for (const { folder, prefix } of dataFolders) {
+  const files = await collectContentFiles(path.join(root, folder));
+  for (const file of files) {
+    const source = await readFile(file, "utf8");
+    const slugs = source.matchAll(/slug:\s*["']([^"']+)["']/g);
+    for (const [, slug] of slugs) {
+      await writeRouteIndex(`${prefix}/${slug}`, indexHtml);
+    }
   }
 }
 

@@ -1,31 +1,9 @@
-import { type Color } from "./colors";
+// Fall 2026 events for the homepage calendar.
+// Auto-collected by src/data/events/index.ts — one file per semester.
 
-/** Set to `true` when events are confirmed and the calendar is ready to show publicly. */
-export const eventsEnabled = true;
+import type { UaisEvent } from "../_types";
 
-export type UaisEvent = {
-  id: string;
-  title: string;
-  date: Date;
-  dateLabel: string;
-  time: string;
-  location: string;
-  semester: "Fall 2026" | "Winter 2027";
-  type: "Talk" | "Workshop" | "Social" | "Hackathon" | "Other";
-  description: string;
-  link?: string;
-};
-
-export const eventTypeColor: Record<UaisEvent["type"], Color> = {
-  Talk: "blue",
-  Workshop: "green",
-  Social: "pink",
-  Hackathon: "orange",
-  Other: "yellow",
-};
-
-export const events: UaisEvent[] = [
-  // ── Fall 2026 ──────────────────────────────────────────
+export default [
   {
     id: "fall-agm",
     title: "Fall Annual General Meeting (Fall AGM)",
@@ -76,7 +54,7 @@ export const events: UaisEvent[] = [
   // },
   {
     id: "panel-ai-industry",
-    title: 'Panel: "AI: Industry"',
+    title: "Panel: \"AI: Industry\"",
     date: new Date(2026, 9, 9),
     dateLabel: "Oct 9",
     time: "5:00 PM - 6:30 PM",
@@ -100,26 +78,26 @@ export const events: UaisEvent[] = [
   },
   {
     id: "computer-vision-workshop",
-    title: 'Workshop: "Build your own Computer Vision"',
+    title: "Workshop: \"Build your own Computer Vision\"",
     date: new Date(2026, 10, 6),
     dateLabel: "Nov 6",
     time: "5:00 PM - 6:30 PM",
     location: "SIC",
     semester: "Fall 2026",
     type: "Workshop",
-    description: 'Build your own Computer Vision workshop with Dominik - "Evolution of Computer Vision: One Problem-6 Solutions"',
-    link: 'https://campus.hellorubric.com/?eid=76614',
+    description: "Build your own Computer Vision workshop with Dominik - \"Evolution of Computer Vision: One Problem-6 Solutions\"",
+    link: "https://campus.hellorubric.com/?eid=76614",
   },
   {
     id: "panel-ai-research",
-    title: 'Panel: "Shaping the Future: AI Research"',
+    title: "Panel: \"Shaping the Future: AI Research\"",
     date: new Date(2026, 10, 20),
     dateLabel: "Nov 20",
     time: "5:00 PM - 6:30 PM",
     location: "ETLC E1-013",
     semester: "Fall 2026",
     type: "Talk",
-    description: 'AI Research Panel with Dr. Russ Greiner, Rosanna, Masters, PhD students',
+    description: "AI Research Panel with Dr. Russ Greiner, Rosanna, Masters, PhD students",
     link: "https://campus.hellorubric.com/?eid=76615",
   },
   // {
@@ -133,6 +111,4 @@ export const events: UaisEvent[] = [
   //   type: "Workshop",
   //   description: "Dura Digital - Talk or interactive workshop/demo (TBD)",
   // },
-
-  // ── Winter 2027 ────────────────────────────────────────
-];
+] satisfies UaisEvent[];
